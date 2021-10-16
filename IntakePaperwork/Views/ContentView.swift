@@ -17,15 +17,21 @@ struct ContentView: View {
                 NavigationLink {
                     EnglishListView()
                 } label: {
-                    Text("English")
+                    RectangleView(language: "English")
+                        .padding()
+                        .foregroundColor(.black)
                 }
                 NavigationLink {
                     SpanishListView()
                 } label: {
-                    Text("Spanish")
+                    RectangleView(language: "Spanish")
+                        .padding()
+                        .foregroundColor(.black)
                 }
+                Spacer()
 
-            }
+            }.navigationBarTitle("Select language")
+                .padding(.top)
         }
     }
 }

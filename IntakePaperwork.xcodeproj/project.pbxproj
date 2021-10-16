@@ -16,6 +16,7 @@
 		4F207D99271AAC8D00B74F3A /* EnglishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F207D98271AAC8D00B74F3A /* EnglishListView.swift */; };
 		4F207D9B271AAC9A00B74F3A /* SpanishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F207D9A271AAC9A00B74F3A /* SpanishListView.swift */; };
 		4F207D9D271AADC400B74F3A /* SurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F207D9C271AADC400B74F3A /* SurveyView.swift */; };
+		4F207D9F271AB69300B74F3A /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F207D9E271AB69300B74F3A /* RectangleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		4F207D98271AAC8D00B74F3A /* EnglishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishListView.swift; sourceTree = "<group>"; };
 		4F207D9A271AAC9A00B74F3A /* SpanishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanishListView.swift; sourceTree = "<group>"; };
 		4F207D9C271AADC400B74F3A /* SurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyView.swift; sourceTree = "<group>"; };
+		4F207D9E271AB69300B74F3A /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				4F207D85271AA69100B74F3A /* ContentView.swift */,
 				4F207D9A271AAC9A00B74F3A /* SpanishListView.swift */,
 				4F207D98271AAC8D00B74F3A /* EnglishListView.swift */,
+				4F207D9E271AB69300B74F3A /* RectangleView.swift */,
 				4F207D9C271AADC400B74F3A /* SurveyView.swift */,
 			);
 			path = Views;
@@ -166,6 +169,7 @@
 				4F207D86271AA69100B74F3A /* ContentView.swift in Sources */,
 				4F207D9B271AAC9A00B74F3A /* SpanishListView.swift in Sources */,
 				4F207D96271AAA6400B74F3A /* ModelView.swift in Sources */,
+				4F207D9F271AB69300B74F3A /* RectangleView.swift in Sources */,
 				4F207D84271AA69100B74F3A /* IntakePaperworkApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
