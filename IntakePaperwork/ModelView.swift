@@ -8,12 +8,15 @@
 import Foundation
 
 class SurveyModel: ObservableObject {
+    
     @Published var surveys = [Survey]()
     
     init() {
         getRemoteData()
     }
+    
     func getRemoteData() {
+        
         let UrlString = "https://dgerb88.github.io/Intake-Paperwork-data/FunctionalSurveys.json"
         let url = URL(string: UrlString)
         guard url != nil else {
@@ -28,9 +31,9 @@ class SurveyModel: ObservableObject {
             
             do {
                 let decoder = JSONDecoder()
-                let surveys = try decoder.decode([Survey].self, from: data!)
+                let surveyList = try decoder.decode([Survey].self, from: data!)
                 DispatchQueue.main.async {
-                    self.surveys += surveys
+                    self.surveys = surveyList
                 }
             }
             catch {
@@ -40,5 +43,4 @@ class SurveyModel: ObservableObject {
         }
         dataTask.resume()
     }
-    
 }

@@ -16,7 +16,7 @@ struct EnglishListView: View {
             LazyVStack {
                 ForEach(model.surveys) { survey in
                     NavigationLink {
-                        SurveyView()
+                        SurveyView(survey: survey)
                     } label: {
                         Text(survey.name)
                     }

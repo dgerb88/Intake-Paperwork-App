@@ -11,5 +11,8 @@ struct Survey: Identifiable, Decodable {
     var id: Int
     var name: String
     var language: String
+    var description: [String]
     var questions: [String]
+    var rating: [String]
+    
 }
