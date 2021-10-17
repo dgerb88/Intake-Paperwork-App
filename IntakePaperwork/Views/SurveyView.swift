@@ -11,6 +11,7 @@ struct SurveyView: View {
     
     @EnvironmentObject var model: SurveyModel
     var survey: Survey
+    
     @State var selectedValue = 0
     
     var body: some View {
@@ -24,17 +25,31 @@ struct SurveyView: View {
                     VStack(alignment: .leading) {
                         Text("\(survey.questions[index]):")
                             .font(.headline)
-                        Picker(survey.questions[index], selection: $selectedValue) {
+                        Picker("", selection: $selectedValue) {
                             ForEach(0..<survey.rating.count) { ratingIndex in
-                                Text(survey.rating[ratingIndex])
+                                Text(survey.rating[ratingIndex]).tag(ratingIndex)
                             }
                         }.pickerStyle(MenuPickerStyle())
                     }.padding(.bottom, 20)
-                    
-
                 }
+                Button {
+                    selectedValue = 0
+                } label: {
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor(.green)
+                            .frame(height: 48)
+                            .cornerRadius(10)
+                            .shadow(radius: 1)
+                        Text("Finish")
+                            .foregroundColor(.white)
+                            .bold()
+                    }
+                        
+                }
+
             }.padding()
-        }
+        }.navigationTitle(survey.name)
     }
 }
 

@@ -32,7 +32,7 @@ struct ContentView: View {
 
             }.navigationBarTitle("Select language")
                 .padding(.top)
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

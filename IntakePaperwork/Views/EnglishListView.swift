@@ -19,6 +19,7 @@ struct EnglishListView: View {
                         SurveyView(survey: survey)
                     } label: {
                         Text(survey.name)
+                            .foregroundColor(.black)
                     }
                 }
             }
