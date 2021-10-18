@@ -10,6 +10,7 @@ import Foundation
 class SurveyModel: ObservableObject {
     
     @Published var surveys = [Survey]()
+    @Published var selectedValue = [Int]()
     
     init() {
         getRemoteData()
@@ -42,5 +43,10 @@ class SurveyModel: ObservableObject {
             
         }
         dataTask.resume()
+    }
+    func appendArray(_ numberOfTimes: Int) {
+        for _ in 0..<numberOfTimes {
+            selectedValue.append(0)
+        }
     }
 }

@@ -17,6 +17,9 @@ struct EnglishListView: View {
                 ForEach(model.surveys) { survey in
                     NavigationLink {
                         SurveyView(survey: survey)
+                            .onAppear {
+                                model.appendArray(survey.questions.count)
+                            }
                     } label: {
                         Text(survey.name)
                             .foregroundColor(.black)
