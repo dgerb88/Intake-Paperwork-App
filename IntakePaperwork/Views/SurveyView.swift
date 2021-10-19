@@ -19,18 +19,16 @@ struct SurveyView: View {
         else {
             ScrollView {
                 LazyVStack(alignment: .leading) {
-                    Text(survey.description[0])
-                        .padding(.bottom, 5)
-                    Text(survey.description[1])
+                    Text(survey.description)
                         .padding(.bottom, 10)
                     
                     ForEach(0..<survey.questions.count) { index in
                         VStack(alignment: .leading) {
-                            Text("\(survey.questions[index]):")
+                            Text("\(survey.questions[index].title)")
                                 .font(.headline)
                             Picker("", selection: $model.selectedValue[index]) {
-                                ForEach(0..<survey.rating.count) { ratingIndex in
-                                    Text(survey.rating[ratingIndex]).tag(ratingIndex)
+                                ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
+                                    Text(survey.questions[index].rating[ratingIndex]).tag(ratingIndex)
                                 }
                             }.pickerStyle(MenuPickerStyle())
                         }.padding(.bottom, 20)

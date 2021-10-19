@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LanguageListView: View {
     
     @EnvironmentObject var model: SurveyModel
     
@@ -15,14 +15,14 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 NavigationLink {
-                    EnglishListView()
+                    FunctionalSurveyListView(language: "English")
                 } label: {
                     RectangleView(language: "English")
                         .padding()
                         .foregroundColor(.black)
                 }
                 NavigationLink {
-                    SpanishListView()
+                    FunctionalSurveyListView(language: "Spanish")
                 } label: {
                     RectangleView(language: "Spanish")
                         .padding()
@@ -36,9 +36,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LanguageListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LanguageListView()
             .environmentObject(SurveyModel())
     }
 }
