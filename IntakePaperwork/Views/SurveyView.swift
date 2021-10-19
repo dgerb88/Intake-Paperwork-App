@@ -27,10 +27,17 @@ struct SurveyView: View {
                             Text("\(survey.questions[index].title)")
                                 .font(.headline)
                             Picker("", selection: $model.selectedValue[index]) {
+                                if survey.language == "Spanish" {
+                                    Text("Selecccionar").tag(0)
+                                }
+                                else {
+                                    Text("Select").tag(0)
+                                }
                                 ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
-                                    Text(survey.questions[index].rating[ratingIndex]).tag(ratingIndex)
+                                    Text(survey.questions[index].rating[ratingIndex]).tag(ratingIndex+1)
                                 }
                             }.pickerStyle(MenuPickerStyle())
+
                         }.padding(.bottom, 20)
                     }
                    Button {
