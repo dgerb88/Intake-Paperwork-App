@@ -11,6 +11,8 @@ struct SurveyView: View {
     
     @EnvironmentObject var model: SurveyModel
     var survey: Survey
+    @State var score = 0
+    @State var finished = false
     
     var body: some View {
         ZStack {
@@ -85,9 +87,12 @@ struct SurveyView: View {
                                         Text("Survey not in scope")
                                     }
                                     Button {
-                                        for index in 0..<model.selectedValue.count {
-                                            model.selectedValue[index] = 0
+                                        if finished != true {
+                                            for index in 0..<model.selectedValue.count {
+                                                score += model.selectedValue[index]
+                                            }
                                         }
+                                        finished = true
                                         
                                     } label: {
                                         ZStack {
@@ -96,13 +101,24 @@ struct SurveyView: View {
                                                 .frame(height: 48)
                                                 .cornerRadius(10)
                                                 .shadow(radius: 1)
-                                            Text("Finish")
-                                                .foregroundColor(.white)
-                                                .bold()
+                                            if finished {
+                                                Text("Score \(score)/80")
+                                                    .foregroundColor(.white)
+                                                    .bold()
+                                            }
+                                            else {
+                                                Text("Finish")
+                                                    .foregroundColor(.white)
+                                                    .bold()
+                                            }
                                         }
                                         
                                     }.padding(.top, 5).padding(.bottom, 5)
-                                }.padding()                                    .padding(.horizontal, geo.size.width*1/30)
+                                }.padding()
+                                .padding(.horizontal, geo.size.width*1/30)
+                                .onDisappear {
+                                    finished = false
+                                }
 
                         }.padding(.horizontal, 130)
                 }.navigationTitle(survey.name).padding(.bottom, 20)
