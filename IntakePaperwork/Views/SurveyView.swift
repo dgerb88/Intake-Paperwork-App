@@ -84,7 +84,7 @@ struct SurveyView: View {
                                         }
                                     }
                                     else {
-                                        Text("Survey not in scope")
+                                        Text("Survey not found")
                                     }
                                     Button {
                                         if finished != true {
@@ -101,8 +101,13 @@ struct SurveyView: View {
                                                 .frame(height: 48)
                                                 .cornerRadius(10)
                                                 .shadow(radius: 1)
-                                            if finished {
-                                                Text("Score \(score)/80")
+                                            if finished && survey.name == "LEFS" {
+                                                Text("Score: \(score)/80")
+                                                    .foregroundColor(.white)
+                                                    .bold()
+                                            }
+                                            else if finished && survey.name == "Back Index" {
+                                                Text("Score: \(Int(Double(score*100/50)))%")
                                                     .foregroundColor(.white)
                                                     .bold()
                                             }
