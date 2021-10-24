@@ -27,7 +27,6 @@ struct FunctionalSurveyListView: View {
                                 NavigationLink {
                                     SurveyView(survey: survey)
                                         .onAppear {
-                                            model.selectedValue.removeAll()
                                             model.appendArray(survey.questions.count)
                                         }
                                 } label: {
