@@ -18,10 +18,7 @@ struct LanguageListView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Rectangle()
-                    .aspectRatio(contentMode: .fill)
-                    .foregroundColor(Color.init(.sRGB, red: 0.3, green: 0.7, blue: 1, opacity: 0.6))
-                    .ignoresSafeArea()
+                BackgroundView()
                 GeometryReader { geo in
                     VStack {
                         NavigationLink {
@@ -44,6 +41,7 @@ struct LanguageListView: View {
 
                     }.navigationBarTitle("Select language", displayMode: .inline)
                         .padding(.top, 30)
+                        
                 }
             }
         }.navigationViewStyle(StackNavigationViewStyle())

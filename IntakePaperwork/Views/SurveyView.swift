@@ -16,11 +16,7 @@ struct SurveyView: View {
     
     var body: some View {
         ZStack {
-            Rectangle()
-                .aspectRatio(contentMode: .fill)
-                .foregroundColor(Color.init(.sRGB, red: 0.3, green: 0.7, blue: 1, opacity: 0.6))
-                .ignoresSafeArea()
-            
+            BackgroundView()
             if model.selectedValue == [Int]() {
                 ProgressView()
             }
