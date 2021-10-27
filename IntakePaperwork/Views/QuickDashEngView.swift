@@ -58,6 +58,8 @@ struct QuickDashEngView: View {
                     }
                 }.padding(.bottom, 10)
             }
+            Divider()
+                .foregroundColor(.black)
             HStack {
                 Spacer()
                 HStack {
@@ -94,6 +96,8 @@ struct QuickDashEngView: View {
                     Spacer()
                 }
             }
+            Divider()
+                .foregroundColor(.black)
             HStack {
                 Spacer()
                 HStack {
@@ -135,7 +139,10 @@ struct QuickDashEngView: View {
                     Spacer()
                 }
             }
-            
+            Divider()
+                .foregroundColor(.black)
+        }
+        VStack(alignment: .leading) {
             Text("Please rate the severity of the following symptoms in the last week:")
                 .bold()
                 .padding(.vertical, 20)
@@ -181,8 +188,7 @@ struct QuickDashEngView: View {
                         .padding(.bottom, 20)
                 }
             }
-        }
-        VStack(alignment: .leading) {
+            Divider()
             HStack {
                 Spacer()
                 HStack {
