@@ -11,8 +11,6 @@ struct SurveyView: View {
     
     @EnvironmentObject var model: SurveyModel
     var survey: Survey
-    @State var score = 0
-    @State var finished = false
     var truth = true
     
     var body: some View {
@@ -72,18 +70,18 @@ struct SurveyView: View {
                                         Text("Survey not found")
                                     }
                                     Button {
-                                        if finished != true {
+                                        if model.finishedSurvey != true {
                                             for index in 0..<model.selectedValue.count {
                                                 if survey.name == "QuickDash" {
-                                                    score += model.selectedValue[index] + 1
+                                                    model.score += model.selectedValue[index] + 1
                                                 }
                                                 else {
-                                                    score += model.selectedValue[index]
+                                                    model.score += model.selectedValue[index]
 
                                                 }
                                             }
                                         }
-                                        finished = true
+                                        model.finishedSurvey = true
                                         
                                     } label: {
                                         ZStack {
@@ -92,18 +90,18 @@ struct SurveyView: View {
                                                 .frame(height: 48)
                                                 .cornerRadius(10)
                                                 .shadow(radius: 1)
-                                            if finished && survey.name == "LEFS" {
-                                                Text("Score: \(score)/80")
+                                            if model.finishedSurvey && survey.name == "LEFS" {
+                                                Text("Score: \(model.score)/80")
                                                     .foregroundColor(.white)
                                                     .bold()
                                             }
-                                            else if finished && survey.name == "Back Index" {
-                                                Text("Score: \(Int(Double(score*100/50)))%")
+                                            else if model.finishedSurvey && survey.name == "Back Index" {
+                                                Text("Score: \(Int(Double(model.score*100/50)))%")
                                                     .foregroundColor(.white)
                                                     .bold()
                                             }
-                                            else if finished && survey.name == "QuickDash" {
-                                                Text("Score: \(Int(Double(score/11)-1)*25)/100")
+                                            else if model.finishedSurvey && survey.name == "QuickDash" {
+                                                Text("Score: \(Int(Double(model.score/11)-1)*25)/100")
                                                     .foregroundColor(.white)
                                                     .bold()
                                             }
@@ -117,7 +115,7 @@ struct SurveyView: View {
                                     }.padding(.top, 5).padding(.bottom, 5)
                                 }
                                 .onDisappear {
-                                    finished = false
+                                    model.finishedSurvey = false
                                 }
                                 
                                 

@@ -52,6 +52,10 @@ struct QuickDashEngView: View {
                                 }
                             }.pickerStyle(SegmentedPickerStyle())
                                 .frame(width: 410)
+                                .onChange(of: model.selectedValue) { newValue in
+                                    model.finishedSurvey = false
+                                    model.score = 0
+                                }
                             Spacer()
                         }
                         

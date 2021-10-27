@@ -23,6 +23,10 @@ struct LefsView: View {
                         Text(String(ratingIndex)).tag(ratingIndex)
                     }
                 }.pickerStyle(SegmentedPickerStyle())
+                    .onChange(of: model.selectedValue) { newValue in
+                        model.finishedSurvey = false
+                        model.score = 0
+                    }
                 
             }.padding(.bottom, 40).padding(.top, 10)
         }

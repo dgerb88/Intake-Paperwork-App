@@ -22,6 +22,10 @@ struct BackIndexView: View {
                         Text(String(ratingIndex)).tag(ratingIndex)
                     }
                 }.pickerStyle(SegmentedPickerStyle())
+                    .onChange(of: model.selectedValue) { newValue in
+                        model.finishedSurvey = false
+                        model.score = 0
+                    }
                 ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
                     Text(survey.questions[index].rating[ratingIndex]).tag(ratingIndex)
                 }.padding(.leading, 10)
