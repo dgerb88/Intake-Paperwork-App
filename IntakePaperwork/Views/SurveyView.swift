@@ -28,7 +28,6 @@ struct SurveyView: View {
                             .foregroundColor(.white)
                             .cornerRadius(5)
                             .shadow(radius: 5)
-                            .padding(.horizontal, geo.size.width*1/30)
                         VStack(alignment: .leading) {
                             Text(survey.description)
                                 .font(.headline)
@@ -125,8 +124,8 @@ struct SurveyView: View {
                             }.navigationTitle(survey.name).padding(.bottom, 20).onDisappear {
                                 model.selectedValue.removeAll()
                             }
-                        }.padding().padding(.horizontal, geo.size.width*1/30)
-                    }.padding(.horizontal, 130)
+                        }.padding()
+                    }.padding(.horizontal, geo.size.width*4/30)
                 }
             }
         }
