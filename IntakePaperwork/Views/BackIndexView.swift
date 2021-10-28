@@ -18,30 +18,26 @@ struct BackIndexView: View {
                 .foregroundColor(.white)
                 .cornerRadius(5)
                 .shadow(radius: 5)
-            VStack {
+            VStack(alignment: .leading) {
                 Text(survey.description)
                     .font(.headline)
                     .padding(.bottom, 10)
                 Divider()
                 ForEach(0..<survey.questions.count) { index in
-                    VStack(alignment: .leading) {
-                        Text("\(survey.questions[index].title)")
-                            .font(.title)
-                        Picker("", selection: $model.selectedValue[index]) {
-                            ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
-                                Text(String(ratingIndex)).tag(ratingIndex)
-                            }
-                        }.pickerStyle(SegmentedPickerStyle())
-                            .onChange(of: model.selectedValue) { newValue in
-                                model.finishedSurvey = false
-                                model.score = 0
-                            }
+                    Text("\(survey.questions[index].title)")
+                        .font(.title)
+                    Picker("", selection: $model.selectedValue[index]) {
                         ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
-                            Text(survey.questions[index].rating[ratingIndex]).tag(ratingIndex)
-                        }.padding(.leading, 10)
-                        
-                        
-                    }
+                            Text(String(ratingIndex)).tag(ratingIndex)
+                        }
+                    }.pickerStyle(SegmentedPickerStyle())
+                        .onChange(of: model.selectedValue) { newValue in
+                            model.finishedSurvey = false
+                            model.score = 0
+                        }
+                    ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
+                        Text(survey.questions[index].rating[ratingIndex]).tag(ratingIndex)
+                    }.padding(.leading, 10)
                 }
                 Button {
                     if model.finishedSurvey != true {
