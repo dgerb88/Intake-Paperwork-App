@@ -43,7 +43,7 @@ struct FunctionalSurveyListView: View {
                                 }
                             }
                         }
-                    }.padding().padding(.top, 30)
+                    }.padding().padding(.top, 20)
                 }
             
         }.navigationBarTitleDisplayMode( .inline)

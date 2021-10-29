@@ -36,7 +36,7 @@ struct LanguageListView: View {
                         }
                         Spacer()
 
-                    }.padding(.top, 30)
+                    }.padding(.top, 20)
                         
                 }
             }.navigationBarTitleDisplayMode( .inline)

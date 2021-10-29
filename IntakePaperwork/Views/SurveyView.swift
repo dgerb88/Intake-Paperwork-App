@@ -54,7 +54,7 @@ struct SurveyView: View {
                                         .font(.largeTitle)
                                 }
                             }
-                        }.padding(.horizontal, geo.size.width*4/30).padding(.top, 30)
+                        }.padding(.horizontal, geo.size.width*4/30).padding(.top, 20)
                 }
             }
         }
