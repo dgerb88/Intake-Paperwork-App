@@ -24,8 +24,8 @@ struct SurveyView: View {
                     VStack(alignment: .leading) {
                             
                             ScrollView {
-                                VStack(alignment: .leading) {
-                                    
+                                LazyVStack(alignment: .leading, spacing: 30) {
+                                    InformationAndPoliciesView()
                                     if survey.name == "LEFS" {
                                         LefsView(survey: survey)
                                     }
@@ -45,7 +45,7 @@ struct SurveyView: View {
                                 }
                                 
                                 
-                            }.navigationTitle(survey.name).padding(.bottom, 20)
+                            }.navigationTitle("Intake Paperwork").padding(.bottom, 20)
                             .onDisappear {
                                 model.selectedValue.removeAll()
                             }

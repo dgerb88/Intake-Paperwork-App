@@ -20,6 +20,11 @@
 		4F8B17D92727C76C000A1573 /* BackIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B17D82727C76C000A1573 /* BackIndexView.swift */; };
 		4F8B17DB2727C998000A1573 /* LefsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B17DA2727C998000A1573 /* LefsView.swift */; };
 		4FCC6326272B5AF70041BE4C /* FunctionalSurveyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6325272B5AF70041BE4C /* FunctionalSurveyListView.swift */; };
+		4FCC6330272B5E3E0041BE4C /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC632F272B5E3E0041BE4C /* PrivacyPolicyView.swift */; };
+		4FCC6332272B5E4F0041BE4C /* DryNeedlingConsentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6331272B5E4F0041BE4C /* DryNeedlingConsentView.swift */; };
+		4FCC6334272B5E620041BE4C /* MedicalHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6333272B5E620041BE4C /* MedicalHistoryView.swift */; };
+		4FCC6336272B5FAC0041BE4C /* InsuranceIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6335272B5FAC0041BE4C /* InsuranceIntakeView.swift */; };
+		4FCC6338272B5FCF0041BE4C /* InformationAndPoliciesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6337272B5FCF0041BE4C /* InformationAndPoliciesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +42,11 @@
 		4F8B17D82727C76C000A1573 /* BackIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackIndexView.swift; sourceTree = "<group>"; };
 		4F8B17DA2727C998000A1573 /* LefsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LefsView.swift; sourceTree = "<group>"; };
 		4FCC6325272B5AF70041BE4C /* FunctionalSurveyListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionalSurveyListView.swift; sourceTree = "<group>"; };
+		4FCC632F272B5E3E0041BE4C /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		4FCC6331272B5E4F0041BE4C /* DryNeedlingConsentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DryNeedlingConsentView.swift; sourceTree = "<group>"; };
+		4FCC6333272B5E620041BE4C /* MedicalHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistoryView.swift; sourceTree = "<group>"; };
+		4FCC6335272B5FAC0041BE4C /* InsuranceIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceIntakeView.swift; sourceTree = "<group>"; };
+		4FCC6337272B5FCF0041BE4C /* InformationAndPoliciesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAndPoliciesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,7 @@
 				4F207D93271AA99000B74F3A /* Model.swift */,
 				4F207D97271AAC7300B74F3A /* Views */,
 				4F207D95271AAA6400B74F3A /* ModelView.swift */,
+				4FCC632E272B5E170041BE4C /* Intake paper views */,
 				4F207D87271AA69200B74F3A /* Assets.xcassets */,
 				4F207D89271AA69200B74F3A /* Preview Content */,
 			);
@@ -95,11 +106,31 @@
 				4F207D9E271AB69300B74F3A /* RectangleView.swift */,
 				4F3EB9552725F3A7007384FA /* BackgroundView.swift */,
 				4F207D9C271AADC400B74F3A /* SurveyView.swift */,
-				4F12AAC52727BBD5006905FD /* QuickDashEngView.swift */,
-				4F8B17DA2727C998000A1573 /* LefsView.swift */,
-				4F8B17D82727C76C000A1573 /* BackIndexView.swift */,
+				4FCC632D272B5DE30041BE4C /* Survey Views */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4FCC632D272B5DE30041BE4C /* Survey Views */ = {
+			isa = PBXGroup;
+			children = (
+				4F8B17DA2727C998000A1573 /* LefsView.swift */,
+				4F8B17D82727C76C000A1573 /* BackIndexView.swift */,
+				4F12AAC52727BBD5006905FD /* QuickDashEngView.swift */,
+			);
+			path = "Survey Views";
+			sourceTree = "<group>";
+		};
+		4FCC632E272B5E170041BE4C /* Intake paper views */ = {
+			isa = PBXGroup;
+			children = (
+				4FCC632F272B5E3E0041BE4C /* PrivacyPolicyView.swift */,
+				4FCC6331272B5E4F0041BE4C /* DryNeedlingConsentView.swift */,
+				4FCC6333272B5E620041BE4C /* MedicalHistoryView.swift */,
+				4FCC6335272B5FAC0041BE4C /* InsuranceIntakeView.swift */,
+				4FCC6337272B5FCF0041BE4C /* InformationAndPoliciesView.swift */,
+			);
+			path = "Intake paper views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,13 +206,18 @@
 				4F8B17DB2727C998000A1573 /* LefsView.swift in Sources */,
 				4FCC6326272B5AF70041BE4C /* FunctionalSurveyListView.swift in Sources */,
 				4F12AAC62727BBD5006905FD /* QuickDashEngView.swift in Sources */,
+				4FCC6334272B5E620041BE4C /* MedicalHistoryView.swift in Sources */,
+				4FCC6330272B5E3E0041BE4C /* PrivacyPolicyView.swift in Sources */,
+				4FCC6332272B5E4F0041BE4C /* DryNeedlingConsentView.swift in Sources */,
 				4F207D9D271AADC400B74F3A /* SurveyView.swift in Sources */,
 				4F3EB9562725F3A7007384FA /* BackgroundView.swift in Sources */,
 				4F207D94271AA99000B74F3A /* Model.swift in Sources */,
 				4F207D86271AA69100B74F3A /* LanguageListView.swift in Sources */,
 				4F8B17D92727C76C000A1573 /* BackIndexView.swift in Sources */,
+				4FCC6336272B5FAC0041BE4C /* InsuranceIntakeView.swift in Sources */,
 				4F207D96271AAA6400B74F3A /* ModelView.swift in Sources */,
 				4F207D9F271AB69300B74F3A /* RectangleView.swift in Sources */,
+				4FCC6338272B5FCF0041BE4C /* InformationAndPoliciesView.swift in Sources */,
 				4F207D84271AA69100B74F3A /* IntakePaperworkApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
