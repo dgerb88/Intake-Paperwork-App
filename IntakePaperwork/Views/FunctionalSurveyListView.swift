@@ -16,37 +16,45 @@ struct FunctionalSurveyListView: View {
     var body: some View {
         ZStack {
             BackgroundView()
-            ScrollView {
                 GeometryReader { geo in
                     LazyVStack(spacing: 20) {
-                        ForEach(model.surveys) { survey in
-                            if survey.language == language {
-                                NavigationLink {
-                                    SurveyView(survey: survey)
-                                        .onAppear {
-                                            model.appendArray(survey.questions.count)
-                                        }
-                                } label: {
-                                        ZStack {
-                                            Rectangle()
-                                                .foregroundColor(.white)
-                                                .cornerRadius(5)
-                                                .shadow(radius: 5)
-                                                .frame(height: 75)
-                                                .padding(.horizontal, geo.size.width*2/9)
-                                            Text(survey.name)
-                                                .font(.title)
-                                                .bold()
-                                                .foregroundColor(.black)
-                                        }
+                        ScrollView {
+                            ForEach(model.surveys) { survey in
+                                if survey.language == language {
+                                    NavigationLink {
+                                        SurveyView(survey: survey)
+                                            .onAppear {
+                                                model.appendArray(survey.questions.count)
+                                            }
+                                    } label: {
+                                            ZStack {
+                                                Rectangle()
+                                                    .foregroundColor(.white)
+                                                    .cornerRadius(5)
+                                                    .shadow(radius: 5)
+                                                    .frame(height: 75)
+                                                    .padding(.horizontal, geo.size.width*3/18)
+                                                Text(survey.name)
+                                                    .font(.title)
+                                                    .bold()
+                                                    .foregroundColor(.black)
+                                            }.padding(.bottom, 20)
+                                    }
                                 }
                             }
                         }
-                    }.padding()
-                        .padding(.top, 30)
+                    }.padding().padding(.top, 30)
                 }
-            }.navigationBarTitle("Select Outcome Measure", displayMode: .inline)
-        }
+            
+        }.navigationBarTitleDisplayMode( .inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Select Functional Survey")
+                        .bold()
+                        .foregroundColor(.white)
+                        .font(.largeTitle)
+                }
+            }
     }
 }
 struct FunctionalSurveyListView_Previews: PreviewProvider {

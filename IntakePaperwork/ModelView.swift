@@ -13,6 +13,7 @@ class SurveyModel: ObservableObject {
     @Published var selectedValue = [Int]()
     @Published var score = 0
     @Published var finishedSurvey = false
+    @Published var contentSelected:Int?
     
     init() {
         getRemoteData()

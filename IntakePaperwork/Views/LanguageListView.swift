@@ -11,17 +11,13 @@ struct LanguageListView: View {
     
     @EnvironmentObject var model: SurveyModel
     
-    init() {
-            UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 30)!]
-        }
-    
     var body: some View {
         NavigationView {
             ZStack {
                 BackgroundView()
                 GeometryReader { geo in
                     VStack {
-                        NavigationLink {
+                       NavigationLink {
                             FunctionalSurveyListView(language: "English")
                         } label: {
                             RectangleView(language: "English")
@@ -29,6 +25,7 @@ struct LanguageListView: View {
                                 .padding(.horizontal, geo.size.width*3/18)
                                 .foregroundColor(.black)
                         }
+                        
                         NavigationLink {
                             FunctionalSurveyListView(language: "Spanish")
                         } label: {
@@ -39,12 +36,20 @@ struct LanguageListView: View {
                         }
                         Spacer()
 
-                    }.navigationBarTitle("Select language", displayMode: .inline)
-                        .padding(.top, 30)
+                    }.padding(.top, 30)
                         
                 }
-            }
+            }.navigationBarTitleDisplayMode( .inline)
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("Select Language")
+                            .bold()
+                            .foregroundColor(.white)
+                            .font(.largeTitle)
+                    }
+                }
         }.navigationViewStyle(StackNavigationViewStyle())
+            .accentColor(.white)
     }
 }
 

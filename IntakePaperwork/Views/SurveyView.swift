@@ -20,9 +20,7 @@ struct SurveyView: View {
             }
             else {
                 GeometryReader { geo in
-                        
                     VStack(alignment: .leading) {
-                            
                             ScrollView {
                                 LazyVStack(alignment: .leading, spacing: 30) {
                                     InformationAndPoliciesView()
@@ -42,15 +40,21 @@ struct SurveyView: View {
                                 }
                                 .onDisappear {
                                     model.finishedSurvey = false
+                                    model.selectedValue.removeAll()
+
                                 }
                                 
                                 
-                            }.navigationTitle("Intake Paperwork").padding(.bottom, 20)
-                            .onDisappear {
-                                model.selectedValue.removeAll()
+                            }.navigationBarTitleDisplayMode( .inline)
+                            .toolbar {
+                                ToolbarItem(placement: .principal) {
+                                    Text("Intake Paperwork")
+                                        .bold()
+                                        .foregroundColor(.white)
+                                        .font(.largeTitle)
+                                }
                             }
-                        }.padding(.horizontal, geo.size.width*4/30)
-                    
+                        }.padding(.horizontal, geo.size.width*4/30).padding(.top, 30)
                 }
             }
         }
