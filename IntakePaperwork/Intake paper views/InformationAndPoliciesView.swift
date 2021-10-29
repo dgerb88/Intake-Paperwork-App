@@ -67,10 +67,14 @@ struct InformationAndPoliciesView: View {
                             } label: {
                                 if button[0] == false {
                                     Image(systemName: "square")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
                                         .foregroundColor(.black)
                                 }
                                 else {
                                     Image(systemName: "checkmark.square")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
                                         .foregroundColor(.black)
                                 }
                             }
@@ -87,10 +91,14 @@ struct InformationAndPoliciesView: View {
                             } label: {
                                 if button[1] == false {
                                     Image(systemName: "square")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
                                         .foregroundColor(.black)
                                 }
                                 else {
                                     Image(systemName: "checkmark.square")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
                                         .foregroundColor(.black)
                                 }
                             }
@@ -107,10 +115,14 @@ struct InformationAndPoliciesView: View {
                             } label: {
                                 if button[2] == false {
                                     Image(systemName: "square")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
                                         .foregroundColor(.black)
                                 }
                                 else {
                                     Image(systemName: "checkmark.square")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
                                         .foregroundColor(.black)
                                 }
                             }
@@ -127,10 +139,14 @@ struct InformationAndPoliciesView: View {
                             } label: {
                                 if button[3] == false {
                                     Image(systemName: "square")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
                                         .foregroundColor(.black)
                                 }
                                 else {
                                     Image(systemName: "checkmark.square")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
                                         .foregroundColor(.black)
                                 }
                             }
@@ -147,10 +163,14 @@ struct InformationAndPoliciesView: View {
                             } label: {
                                 if button[4] == false {
                                     Image(systemName: "square")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
                                         .foregroundColor(.black)
                                 }
                                 else {
                                     Image(systemName: "checkmark.square")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
                                         .foregroundColor(.black)
                                 }
                             }
@@ -181,8 +201,14 @@ struct InformationAndPoliciesView: View {
                             .foregroundColor(.black)
                     }
                     HStack {
-                        TextField("Sign Here", text: $signatures[0])
-                            .frame(width: 250)
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(Color.init(.sRGB, red: 0, green: 0.42745, blue: 0.61961, opacity: 0.1))
+                                .frame(width: 200, height: 25)
+                            TextField("Sign Here", text: $signatures[0])
+                                .frame(width: 200)
+                                .padding(.leading, 20)
+                        }
                         //Date
                     }
                     Text("RELEASE FROM LIABILITY DISCLAIMER:")
@@ -210,8 +236,14 @@ struct InformationAndPoliciesView: View {
                             .foregroundColor(.black)
                     }
                     HStack {
-                        TextField("Sign Here", text: $signatures[1])
-                            .frame(width: 250)
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(Color.init(.sRGB, red: 0, green: 0.42745, blue: 0.61961, opacity: 0.1))
+                                .frame(width: 200, height: 25)
+                            TextField("Sign Here", text: $signatures[1])
+                                .frame(width: 200)
+                                .padding(.leading, 20)
+                        }
                         //Date
                     }.padding(.bottom)
                 }.padding(.horizontal).padding(.bottom)
