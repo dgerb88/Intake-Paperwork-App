@@ -26,21 +26,32 @@ struct InformationAndPoliciesView: View {
                 VStack(alignment: .leading) {
                     Text("Please thoroughly fill out this form. All information in kept completely confidential. This information is necessary in order to give you the most effective treatment for your personal case. ")
                         .bold()
-                    HStack {
-                        Text("Emergency contact name: ")
-                            .padding(.trailing)
-                        TextField("Name", text: $ContactName)
-                    }
-                    HStack {
-                        Text("Emergency contact phone number: ")
-                            .padding(.trailing)
-                        TextField("Phone Number", text: $ContactPhoneNumber)
-                    }
-                    HStack {
-                        Text("Emergency contect relation to patient: ")
-                            .padding(.trailing)
-                        TextField("Relationship", text: $ContactRelation)
-                    }
+                    HStack(alignment: .top, spacing: 50) {
+                        VStack(alignment: .leading) {
+                            Text("Emergency contact name: ")
+                                .padding(.bottom, 15)
+                                .padding(.top, 10)
+                            Text("Emergency contact phone number: ")
+                                .padding(.bottom, 15)
+                            Text("Emergency contect relation to patient: ")
+
+                        }
+                        VStack(alignment: .leading) {
+                            TextField("Name", text: $ContactName)
+                                .padding(.leading, 20)
+                                .accentColor(.black)
+                                .textFieldStyle(.roundedBorder)
+                            TextField("Phone Number", text: $ContactPhoneNumber)
+                                .padding(.leading, 20)
+                                .accentColor(.black)
+                                .textFieldStyle(.roundedBorder)
+                            TextField("Relationship", text: $ContactRelation)
+                                .padding(.leading, 20)
+                                .accentColor(.black)
+                                .textFieldStyle(.roundedBorder)
+                        }.padding(.trailing, 30)
+                    }.padding(.bottom)
+                   
                     //How would you like to receive appointment reminders?
                         //Text, email, call picker
                     
@@ -201,15 +212,14 @@ struct InformationAndPoliciesView: View {
                             .foregroundColor(.black)
                     }
                     HStack {
-                        ZStack {
-                            Rectangle()
-                                .foregroundColor(Color.init(.sRGB, red: 0, green: 0.42745, blue: 0.61961, opacity: 0.1))
-                                .frame(width: 200, height: 25)
-                            TextField("Sign Here", text: $signatures[0])
-                                .frame(width: 200)
-                                .padding(.leading, 20)
-                        }
-                        //Date
+                        TextField("Sign Here", text: $signatures[0])
+                            .frame(width: 300)
+                            .padding(.leading, 20)
+                            .accentColor(.black)
+                            .textFieldStyle(.roundedBorder)
+                    
+                    //Date
+                        
                     }
                     Text("RELEASE FROM LIABILITY DISCLAIMER:")
                         .bold()
@@ -236,15 +246,13 @@ struct InformationAndPoliciesView: View {
                             .foregroundColor(.black)
                     }
                     HStack {
-                        ZStack {
-                            Rectangle()
-                                .foregroundColor(Color.init(.sRGB, red: 0, green: 0.42745, blue: 0.61961, opacity: 0.1))
-                                .frame(width: 200, height: 25)
                             TextField("Sign Here", text: $signatures[1])
-                                .frame(width: 200)
+                                .frame(width: 300)
                                 .padding(.leading, 20)
-                        }
-                        //Date
+                                .accentColor(.black)
+                                .textFieldStyle(.roundedBorder)
+                            //Date
+                        
                     }.padding(.bottom)
                 }.padding(.horizontal).padding(.bottom)
             }

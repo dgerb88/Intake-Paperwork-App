@@ -19,7 +19,6 @@ struct SurveyView: View {
                 ProgressView()
             }
             else {
-                GeometryReader { geo in
                     VStack(alignment: .leading) {
                             ScrollView {
                                 LazyVStack(alignment: .leading, spacing: 30) {
@@ -54,8 +53,9 @@ struct SurveyView: View {
                                         .font(.largeTitle)
                                 }
                             }
-                        }.padding(.horizontal, geo.size.width*4/30).padding(.top, 20)
-                }
+                    }.frame(width: UIScreen.main.bounds.width-40)
+                        .padding(.top, 20)
+                
             }
         }
     }
