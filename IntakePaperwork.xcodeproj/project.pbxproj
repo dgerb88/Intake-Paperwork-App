@@ -18,6 +18,7 @@
 		4F207D9F271AB69300B74F3A /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F207D9E271AB69300B74F3A /* RectangleView.swift */; };
 		4F3EB9562725F3A7007384FA /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EB9552725F3A7007384FA /* BackgroundView.swift */; };
 		4F46EEAB272E4D6F00D8EEE3 /* QuickDashSpanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F46EEAA272E4D6F00D8EEE3 /* QuickDashSpanView.swift */; };
+		4F46EEAD272E5BF000D8EEE3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F46EEAC272E5BF000D8EEE3 /* SettingsView.swift */; };
 		4F8B17D92727C76C000A1573 /* BackIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B17D82727C76C000A1573 /* BackIndexView.swift */; };
 		4F8B17DB2727C998000A1573 /* LefsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B17DA2727C998000A1573 /* LefsView.swift */; };
 		4FCC6326272B5AF70041BE4C /* FunctionalSurveyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6325272B5AF70041BE4C /* FunctionalSurveyListView.swift */; };
@@ -41,6 +42,7 @@
 		4F207D9E271AB69300B74F3A /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 		4F3EB9552725F3A7007384FA /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		4F46EEAA272E4D6F00D8EEE3 /* QuickDashSpanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickDashSpanView.swift; sourceTree = "<group>"; };
+		4F46EEAC272E5BF000D8EEE3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4F8B17D82727C76C000A1573 /* BackIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackIndexView.swift; sourceTree = "<group>"; };
 		4F8B17DA2727C998000A1573 /* LefsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LefsView.swift; sourceTree = "<group>"; };
 		4FCC6325272B5AF70041BE4C /* FunctionalSurveyListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionalSurveyListView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				4F207D85271AA69100B74F3A /* LanguageListView.swift */,
+				4F46EEAC272E5BF000D8EEE3 /* SettingsView.swift */,
 				4FCC6325272B5AF70041BE4C /* FunctionalSurveyListView.swift */,
 				4F207D9E271AB69300B74F3A /* RectangleView.swift */,
 				4F3EB9552725F3A7007384FA /* BackgroundView.swift */,
@@ -209,6 +212,7 @@
 				4F8B17DB2727C998000A1573 /* LefsView.swift in Sources */,
 				4FCC6326272B5AF70041BE4C /* FunctionalSurveyListView.swift in Sources */,
 				4F12AAC62727BBD5006905FD /* QuickDashEngView.swift in Sources */,
+				4F46EEAD272E5BF000D8EEE3 /* SettingsView.swift in Sources */,
 				4FCC6334272B5E620041BE4C /* MedicalHistoryView.swift in Sources */,
 				4FCC6330272B5E3E0041BE4C /* PrivacyPolicyView.swift in Sources */,
 				4FCC6332272B5E4F0041BE4C /* DryNeedlingConsentView.swift in Sources */,

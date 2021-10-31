@@ -22,7 +22,9 @@ struct SurveyView: View {
                     VStack(alignment: .leading) {
                             ScrollView {
                                 LazyVStack(alignment: .leading, spacing: 30) {
-                                    InformationAndPoliciesView()
+                                    if model.eval == true && model.includeInformationAndPolicies == true {
+                                        InformationAndPoliciesView()
+                                    }
                                     if survey.name == "LEFS" {
                                         LefsView(survey: survey)
                                     }

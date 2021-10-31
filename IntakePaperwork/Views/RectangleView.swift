@@ -20,7 +20,7 @@ struct RectangleView: View {
                 .frame(height: 100)
             Text(language)
                 .bold()
-                .font(.title)
+                .font(.largeTitle)
         }
         
     }

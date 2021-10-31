@@ -15,14 +15,13 @@ struct LanguageListView: View {
         NavigationView {
             ZStack {
                 BackgroundView()
-                GeometryReader { geo in
                     VStack {
                        NavigationLink {
                             FunctionalSurveyListView(language: "English")
                         } label: {
                             RectangleView(language: "English")
                                 .padding()
-                                .padding(.horizontal, geo.size.width*3/18)
+                                .frame(width: UIScreen.main.bounds.width-40)
                                 .foregroundColor(.black)
                         }
                         
@@ -32,13 +31,16 @@ struct LanguageListView: View {
                             RectangleView(language: "Spanish")
                                 .padding()
                                 .foregroundColor(.black)
-                                .padding(.horizontal, geo.size.width*3/18)
+                                .frame(width: UIScreen.main.bounds.width-40)
                         }
+                        SettingsView()
+                            .padding()
+                            .padding(.top, 100)
+                            .frame(width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height*7/12)
                         Spacer()
-
                     }.padding(.top, 20)
                         
-                }
+                
             }.navigationBarTitleDisplayMode( .inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) {

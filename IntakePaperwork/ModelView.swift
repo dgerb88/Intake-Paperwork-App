@@ -14,6 +14,13 @@ class SurveyModel: ObservableObject {
     @Published var score = 0
     @Published var finishedSurvey = false
     @Published var contentSelected:Int?
+    @Published var eval = false
+    @Published var includeInformationAndPolicies = true
+    @Published var includeInsuranceIntake = true
+    @Published var includeMedicalHistory = true
+    @Published var includeDryNeedlingConsent = true
+    @Published var includePrivacyPolicy = true
+    
     
     init() {
         getRemoteData()
