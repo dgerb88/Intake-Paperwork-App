@@ -53,6 +53,7 @@ struct QuickDashEngView: View {
                         VStack(alignment: .leading) {
                             HStack {
                                 Text("\(index+1). \(survey.questions[index].title)")
+                                    .fixedSize(horizontal: false, vertical: true)
                                 Spacer()
                                 
                                 VStack {
@@ -98,6 +99,7 @@ struct QuickDashEngView: View {
                     HStack {
                         Text("\(7). \(survey.questions[6].title)")
                             .padding(.leading, 5)
+                            .fixedSize(horizontal: false, vertical: true)
                         Spacer()
                         
                         VStack {
@@ -141,6 +143,7 @@ struct QuickDashEngView: View {
                     HStack {
                         Text("\(8). \(survey.questions[7].title)")
                             .padding(.leading, 5)
+                            .fixedSize(horizontal: false, vertical: true)
                         Spacer()
                         
                         VStack {
@@ -233,6 +236,7 @@ struct QuickDashEngView: View {
                     HStack {
                         Text("\(11). \(survey.questions[10].title)")
                             .padding(.leading, 5)
+                            .fixedSize(horizontal: false, vertical: true)
                         Spacer()
                         
                         VStack {

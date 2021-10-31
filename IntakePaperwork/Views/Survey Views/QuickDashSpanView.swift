@@ -48,12 +48,13 @@ struct QuickDashSpanView: View {
                                 Text("puedo")
                                 Text("ejecutar")
                             }
-                        }.frame(width: 410)
+                        }.frame(width: 420)
                     }
                     ForEach(0..<6) { index in
                         VStack(alignment: .leading) {
                             HStack {
                                 Text("\(index+1). \(survey.questions[index].title)")
+                                    .fixedSize(horizontal: false, vertical: true)
                                 Spacer()
                                 
                                 VStack {
@@ -77,30 +78,31 @@ struct QuickDashSpanView: View {
                         .foregroundColor(.black)
                     HStack {
                         Spacer()
-                        HStack {
+                        HStack(spacing: 10) {
                             VStack {
                                 Text("Para")
                                 Text("nada")
-                            }
+                            }.padding(.trailing, 20)
                             VStack {
                                 Text("Un")
                                 Text("Poco")
-                            }
+                            }.padding(.trailing, 10).padding(.leading, 20)
                             VStack {
                                 Text("Moderado")
                             }
                             VStack {
                                 Text("Bastante")
-                            }
+                            }.padding(.trailing, 5)
                             VStack {
                                 Text("Incapaz")
                             }
-                        }.frame(width: 410)
+                        }.frame(width: 420)
                             .padding(.bottom, 10)
                     }
                     HStack {
                         Text("\(7). \(survey.questions[6].title)")
                             .padding(.leading, 5)
+                            .fixedSize(horizontal: false, vertical: true)
                         Spacer()
                         
                         VStack {
@@ -109,7 +111,7 @@ struct QuickDashSpanView: View {
                                     Text(String(ratingIndex+1)).tag(ratingIndex)
                                 }
                             }.pickerStyle(SegmentedPickerStyle())
-                                .frame(width: 400)
+                                .frame(width: 410)
                             Spacer()
                         }
                     }
@@ -121,11 +123,11 @@ struct QuickDashSpanView: View {
                             VStack {
                                 Text("Para")
                                 Text("nada")
-                            }
+                            }.padding(.trailing, 20).padding(.leading, 20)
                             VStack {
                                 Text("Un")
                                 Text("poco")
-                            }
+                            }.padding(.trailing, 20).padding(.leading, 5)
                             VStack {
                                 Text("Con")
                                 Text("moderación")
@@ -138,12 +140,13 @@ struct QuickDashSpanView: View {
                                 Text("Limitado/a")
                                 Text("Totalmente")
                             }
-                        }.frame(width: 410)
+                        }.frame(width: 420)
                             .padding(.vertical, 10)
                     }
                     HStack {
                         Text("\(8). \(survey.questions[7].title)")
                             .padding(.leading, 5)
+                            .fixedSize(horizontal: false, vertical: true)
                         Spacer()
                         
                         VStack {
@@ -152,7 +155,7 @@ struct QuickDashSpanView: View {
                                     Text(String(ratingIndex+1)).tag(ratingIndex)
                                 }
                             }.pickerStyle(SegmentedPickerStyle())
-                                .frame(width: 400)
+                                .frame(width: 410)
                             Spacer()
                         }
                     }
@@ -160,7 +163,7 @@ struct QuickDashSpanView: View {
                         .foregroundColor(.black)
                 }
                 VStack(alignment: .leading) {
-                    Text("Por favor califique la gravedad de los síntomas siguientes durante la última semana")
+                    Text("Por favor califique la gravedad de los síntomas siguientes durante la última semana:")
                         .bold()
                         .padding(.vertical, 20)
                     
@@ -170,12 +173,12 @@ struct QuickDashSpanView: View {
                             VStack {
                                 Text("Ningún")
                                 Text("Síntoma")
-                            }.padding(.leading, 20)
-                            Text("Leve").padding(.trailing, 10).padding(.leading, 30)
-                            Text("Moderado").padding(.trailing, 20).padding(.leading, 10)
+                            }.padding(.leading, 10).padding(.trailing, 10)
+                            Text("Leve").padding(.trailing, 5).padding(.leading, 10)
+                            Text("Moderado").padding(.trailing, 10).padding(.leading, 10)
                             Text("Severo").padding(.trailing, 10)
                             Text("Extremo")
-                        }.frame(width: 410)
+                        }.frame(width: 420)
                             .padding(.bottom, 10)
                     }
                     HStack {
@@ -189,7 +192,7 @@ struct QuickDashSpanView: View {
                                     Text(String(ratingIndex+1)).tag(ratingIndex)
                                 }
                             }.pickerStyle(SegmentedPickerStyle())
-                                .frame(width: 400)
+                                .frame(width: 410)
                             
                         }
                     }.padding(.bottom, 20)
@@ -204,7 +207,7 @@ struct QuickDashSpanView: View {
                                     Text(String(ratingIndex+1)).tag(ratingIndex)
                                 }
                             }.pickerStyle(SegmentedPickerStyle())
-                                .frame(width: 400)
+                                .frame(width: 410)
                                 .padding(.bottom, 20)
                         }
                     }
@@ -233,12 +236,13 @@ struct QuickDashSpanView: View {
                                 Text("no puedo")
                                 Text("dormir")
                             }
-                        }.frame(width: 410)
+                        }.frame(width: 420)
                             .padding(.vertical, 10)
                     }
                     HStack {
                         Text("\(11). \(survey.questions[10].title)")
                             .padding(.leading, 5)
+                            .fixedSize(horizontal: false, vertical: true)
                         Spacer()
                         
                         VStack {
@@ -247,7 +251,7 @@ struct QuickDashSpanView: View {
                                     Text(String(ratingIndex+1)).tag(ratingIndex)
                                 }
                             }.pickerStyle(SegmentedPickerStyle())
-                                .frame(width: 400)
+                                .frame(width: 410)
                                 .padding(.bottom, 50)
                         }
                     }
