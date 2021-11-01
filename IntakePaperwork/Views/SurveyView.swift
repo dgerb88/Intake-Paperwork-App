@@ -37,6 +37,9 @@ struct SurveyView: View {
                                     else if survey.name == "QuickDash" && survey.language == "Spanish" {
                                         QuickDashSpanView(survey: survey)
                                     }
+                                    else if survey.name == "Neck Disability Index" && survey.language == "English" {
+                                        NDIView(survey: survey)
+                                    }
                                     else {
                                         Text("Survey not found")
                                     }
@@ -63,5 +66,6 @@ struct SurveyView: View {
             }
         }
     }
+    
 }
 

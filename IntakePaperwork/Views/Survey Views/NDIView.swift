@@ -1,13 +1,13 @@
 //
-//  BackIndexView.swift
+//  NDIView.swift
 //  IntakePaperwork
 //
-//  Created by Dax Gerber on 10/25/21.
+//  Created by Dax Gerber on 11/1/21.
 //
 
 import SwiftUI
 
-struct BackIndexView: View {
+struct NDIView: View {
     
     @EnvironmentObject var model: SurveyModel
     var survey: Survey
@@ -36,7 +36,7 @@ struct BackIndexView: View {
                             model.score = 0
                         }
                     ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
-                        Text(survey.questions[index].rating[ratingIndex]).tag(ratingIndex)
+                        Text("\(ratingIndex) - \(survey.questions[index].rating[ratingIndex])").tag(ratingIndex)
                     }.padding(.leading, 10)
                     Divider().padding(.bottom)
                 }
@@ -56,7 +56,7 @@ struct BackIndexView: View {
                             .cornerRadius(10)
                             .shadow(radius: 1)
                         if model.finishedSurvey {
-                            Text("Score: \(Int(Double(model.score*100/50)))%")
+                            Text("Score: \(model.score)/50")
                                 .foregroundColor(.white)
                                 .bold()
                         }
@@ -73,6 +73,7 @@ struct BackIndexView: View {
                 model.score = 0
             }.padding()
         }
+
     }
 }
 

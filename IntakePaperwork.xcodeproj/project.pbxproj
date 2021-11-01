@@ -27,6 +27,7 @@
 		4FCC6334272B5E620041BE4C /* MedicalHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6333272B5E620041BE4C /* MedicalHistoryView.swift */; };
 		4FCC6336272B5FAC0041BE4C /* InsuranceIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6335272B5FAC0041BE4C /* InsuranceIntakeView.swift */; };
 		4FCC6338272B5FCF0041BE4C /* InformationAndPoliciesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6337272B5FCF0041BE4C /* InformationAndPoliciesView.swift */; };
+		4FCD26AB273052A900F4859F /* NDIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD26AA273052A900F4859F /* NDIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		4FCC6333272B5E620041BE4C /* MedicalHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistoryView.swift; sourceTree = "<group>"; };
 		4FCC6335272B5FAC0041BE4C /* InsuranceIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceIntakeView.swift; sourceTree = "<group>"; };
 		4FCC6337272B5FCF0041BE4C /* InformationAndPoliciesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAndPoliciesView.swift; sourceTree = "<group>"; };
+		4FCD26AA273052A900F4859F /* NDIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				4F8B17DA2727C998000A1573 /* LefsView.swift */,
 				4F8B17D82727C76C000A1573 /* BackIndexView.swift */,
 				4F12AAC52727BBD5006905FD /* QuickDashEngView.swift */,
+				4FCD26AA273052A900F4859F /* NDIView.swift */,
 				4F46EEAA272E4D6F00D8EEE3 /* QuickDashSpanView.swift */,
 			);
 			path = "Survey Views";
@@ -214,6 +217,7 @@
 				4F12AAC62727BBD5006905FD /* QuickDashEngView.swift in Sources */,
 				4F46EEAD272E5BF000D8EEE3 /* SettingsView.swift in Sources */,
 				4FCC6334272B5E620041BE4C /* MedicalHistoryView.swift in Sources */,
+				4FCD26AB273052A900F4859F /* NDIView.swift in Sources */,
 				4FCC6330272B5E3E0041BE4C /* PrivacyPolicyView.swift in Sources */,
 				4FCC6332272B5E4F0041BE4C /* DryNeedlingConsentView.swift in Sources */,
 				4F207D9D271AADC400B74F3A /* SurveyView.swift in Sources */,
