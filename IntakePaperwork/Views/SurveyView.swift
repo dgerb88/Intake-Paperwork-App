@@ -25,6 +25,9 @@ struct SurveyView: View {
                                     if model.eval == true && model.includeInformationAndPolicies == true {
                                         InformationAndPoliciesView()
                                     }
+                                    if model.eval == true && model.includeDryNeedlingConsent == true {
+                                        DryNeedlingConsentView()
+                                    }
                                     if survey.name == "LEFS" {
                                         LefsView(survey: survey)
                                     }

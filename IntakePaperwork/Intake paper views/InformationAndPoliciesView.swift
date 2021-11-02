@@ -218,7 +218,8 @@ struct InformationAndPoliciesView: View {
                             .accentColor(.black)
                             .textFieldStyle(.roundedBorder)
                     
-                    //Date
+                        Text("Date: ")
+                            .padding(.leading)
                         
                     }
                     Text("RELEASE FROM LIABILITY DISCLAIMER:")
@@ -251,7 +252,8 @@ struct InformationAndPoliciesView: View {
                                 .padding(.leading, 20)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
-                            //Date
+                            Text("Date: ")
+                                .padding(.leading)
                         
                     }.padding(.bottom)
                 }.padding(.horizontal).padding(.bottom)
