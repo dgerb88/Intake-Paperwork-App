@@ -14,6 +14,7 @@ struct InformationAndPoliciesView: View {
     @State var ContactName = ""
     @State var ContactPhoneNumber = ""
     @State var ContactRelation = ""
+    @State var EmailAddress = ""
 
     
     var body: some View {
@@ -24,6 +25,10 @@ struct InformationAndPoliciesView: View {
                 .shadow(radius: 5)
             VStack {
                 VStack(alignment: .leading) {
+                    Text("Information and Policies")
+                        .bold()
+                        .font(.largeTitle)
+                        .padding(.bottom, 30)
                     Text("Please thoroughly fill out this form. All information in kept completely confidential. This information is necessary in order to give you the most effective treatment for your personal case. ")
                         .bold()
                     HStack(alignment: .top, spacing: 50) {
@@ -33,7 +38,9 @@ struct InformationAndPoliciesView: View {
                                 .padding(.top, 10)
                             Text("Emergency contact phone number: ")
                                 .padding(.bottom, 15)
-                            Text("Emergency contect relation to patient: ")
+                            Text("Emergency contact relation to patient: ")
+                                .padding(.bottom, 15)
+                            Text("Personal Email address: ")
 
                         }
                         VStack(alignment: .leading) {
@@ -46,6 +53,10 @@ struct InformationAndPoliciesView: View {
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                             TextField("Relationship", text: $ContactRelation)
+                                .padding(.leading, 20)
+                                .accentColor(.black)
+                                .textFieldStyle(.roundedBorder)
+                            TextField("Email address", text: $EmailAddress)
                                 .padding(.leading, 20)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
