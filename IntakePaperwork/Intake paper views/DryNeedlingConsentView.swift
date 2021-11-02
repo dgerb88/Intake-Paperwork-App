@@ -37,6 +37,7 @@ struct DryNeedlingConsentView: View {
                         Button {
                             if button[0] == false {
                                 button[0] = true
+                                button[1] = false
                             }
                             else {
                                 button[0] = false
@@ -65,6 +66,7 @@ struct DryNeedlingConsentView: View {
                         Button {
                             if button[1] == false {
                                 button[1] = true
+                                button[0] = false
                             }
                             else {
                                 button[1] = false
