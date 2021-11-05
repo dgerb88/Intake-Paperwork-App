@@ -33,10 +33,10 @@ struct LanguageListView: View {
                                 .foregroundColor(.black)
                                 .frame(width: UIScreen.main.bounds.width-40)
                         }
-                        SettingsView()
+                        SelectionView()
                             .padding()
                             .padding(.top, 100)
-                            .frame(width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height*7/12)
+                            .frame(width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height*15/24)
                         Spacer()
                     }.padding(.top, 20)
                         

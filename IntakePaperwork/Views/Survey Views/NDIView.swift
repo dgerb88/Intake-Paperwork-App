@@ -56,15 +56,29 @@ struct NDIView: View {
                             .cornerRadius(10)
                             .shadow(radius: 1)
                         if model.finishedSurvey {
-                            Text("Score: \(model.score)/50")
-                                .foregroundColor(.white)
-                                .bold()
+                            if survey.language == "English" {
+                                Text("Score: \(model.score)/50")
+                                    .foregroundColor(.white)
+                                    .bold()
+                            }
+                            else {
+                                Text("Puntuación: \(model.score)/50")
+                                    .foregroundColor(.white)
+                                    .bold()
+                            }
                         }
                         
                         else {
-                            Text("Finish")
-                                .foregroundColor(.white)
-                                .bold()
+                            if survey.language == "English" {
+                                Text("Finish")
+                                    .foregroundColor(.white)
+                                    .bold()
+                            }
+                            else {
+                                Text("Terminar")
+                                    .foregroundColor(.white)
+                                    .bold()
+                            }
                         }
                     }
                     

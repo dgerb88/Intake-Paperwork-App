@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingsView: View {
+struct SelectionView: View {
     
     @EnvironmentObject var model: SurveyModel
     
@@ -20,12 +20,12 @@ struct SettingsView: View {
             ScrollView {
                 VStack(alignment: .center) {
                     VStack {
-                        Text("Settings")
+                        Text("Selections")
                             .bold()
                             .font(.largeTitle)
                             .padding(.bottom, 30)
                         Divider()
-                        Toggle("Intake paperwork included?", isOn: $model.eval)
+                        Toggle("Intake forms included", isOn: $model.eval)
                         Divider()
                             .padding(.bottom,30)
                         
@@ -59,9 +59,3 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-            .environmentObject(SurveyModel())
-    }
-}
