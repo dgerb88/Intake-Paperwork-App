@@ -10,6 +10,14 @@ import SwiftUI
 struct LanguageListView: View {
     
     @EnvironmentObject var model: SurveyModel
+    var selectionHeight: Int {
+        if model.eval == true {
+            return 15
+        }
+        else {
+            return 7
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -36,7 +44,7 @@ struct LanguageListView: View {
                         SelectionView()
                             .padding()
                             .padding(.top, 100)
-                            .frame(width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height*15/24)
+                            .frame(width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height*CGFloat(selectionHeight)/24)
                         Spacer()
                     }.padding(.top, 20)
                         

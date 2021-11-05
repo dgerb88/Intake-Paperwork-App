@@ -31,25 +31,27 @@ struct SelectionView: View {
                         
                         
                     }
-                    VStack(alignment: .leading) {
-                        Text("Which intake forms would you like to include?")
-                            .bold()
-                            .font(.title)
-                            .padding(.bottom,30)
-                        Divider()
-                        Toggle("Information and policies", isOn: $model.includeInformationAndPolicies)
-                        Divider()
-                        Toggle("Insurance intake", isOn: $model.includeInsuranceIntake)
-                        Divider()
-                        
-                    }
-                    VStack {
-                        Toggle("Medical History", isOn: $model.includeMedicalHistory)
-                        Divider()
-                        Toggle("Dry Needling consent", isOn: $model.includeDryNeedlingConsent)
-                        Divider()
-                        Toggle("Privacy Policy", isOn: $model.includePrivacyPolicy)
-                        Divider()
+                    if model.eval == true {
+                        VStack(alignment: .leading) {
+                            Text("Which intake forms would you like to include?")
+                                .bold()
+                                .font(.title)
+                                .padding(.bottom,30)
+                            Divider()
+                            Toggle("Information and policies", isOn: $model.includeInformationAndPolicies)
+                            Divider()
+                            Toggle("Insurance intake", isOn: $model.includeInsuranceIntake)
+                            Divider()
+                            
+                        }
+                        VStack {
+                            Toggle("Medical History", isOn: $model.includeMedicalHistory)
+                            Divider()
+                            Toggle("Dry Needling consent", isOn: $model.includeDryNeedlingConsent)
+                            Divider()
+                            Toggle("Privacy Policy", isOn: $model.includePrivacyPolicy)
+                            Divider()
+                        }
                     }
                     
                 }.padding()
