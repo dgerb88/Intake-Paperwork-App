@@ -492,6 +492,20 @@ struct NewSelectionView: View {
                     Spacer()
                 }.padding()
             }
+        }.onAppear {
+            model.eval = false
+            model.progressNote = false
+            model.includePrivacyPolicy = true
+            model.includeMedicalHistory = true
+            model.includeInsuranceIntake = true
+            model.includeInformationAndPolicies = true
+            model.includeDryNeedlingConsent = true
+            isSpanish = false
+            isEnglish = true
+            LefsSelected = false
+            NdiSelected = false
+            BackIndexSelected = false
+            QuickDashSelected = false
         }
         
     }
