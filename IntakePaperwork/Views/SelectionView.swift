@@ -28,8 +28,6 @@ struct SelectionView: View {
                         Toggle("Intake forms included", isOn: $model.eval)
                         Divider()
                             .padding(.bottom,30)
-                        
-                        
                     }
                     if model.eval == true {
                         VStack(alignment: .leading) {

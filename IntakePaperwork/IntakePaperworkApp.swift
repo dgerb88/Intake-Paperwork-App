@@ -11,7 +11,7 @@ import SwiftUI
 struct IntakePaperworkApp: App {
     var body: some Scene {
         WindowGroup {
-            LanguageListView()
+            HomeView()
                 .environmentObject(SurveyModel())
         }
     }

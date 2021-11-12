@@ -274,11 +274,13 @@ struct QuickDashSpanView: View {
                             if model.finishedSurvey {
                                 Text("Puntuación: \(model.score)/55")
                                     .foregroundColor(.white)
+                                    .font(.title)
                                     .bold()
                             }
                             else {
                                 Text("Terminar")
                                     .foregroundColor(.white)
+                                    .font(.title)
                                     .bold()
                             }
                         }

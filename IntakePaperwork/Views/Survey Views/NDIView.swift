@@ -72,11 +72,13 @@ struct NDIView: View {
                             if survey.language == "English" {
                                 Text("Finish")
                                     .foregroundColor(.white)
+                                    .font(.title)
                                     .bold()
                             }
                             else {
                                 Text("Terminar")
                                     .foregroundColor(.white)
+                                    .font(.title)
                                     .bold()
                             }
                         }

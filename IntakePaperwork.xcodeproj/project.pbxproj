@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F12AAC62727BBD5006905FD /* QuickDashEngView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F12AAC52727BBD5006905FD /* QuickDashEngView.swift */; };
 		4F207D84271AA69100B74F3A /* IntakePaperworkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F207D83271AA69100B74F3A /* IntakePaperworkApp.swift */; };
-		4F207D86271AA69100B74F3A /* LanguageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F207D85271AA69100B74F3A /* LanguageListView.swift */; };
+		4F207D86271AA69100B74F3A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F207D85271AA69100B74F3A /* HomeView.swift */; };
 		4F207D88271AA69200B74F3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F207D87271AA69200B74F3A /* Assets.xcassets */; };
 		4F207D8B271AA69200B74F3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F207D8A271AA69200B74F3A /* Preview Assets.xcassets */; };
 		4F207D94271AA99000B74F3A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F207D93271AA99000B74F3A /* Model.swift */; };
@@ -19,6 +19,7 @@
 		4F3EB9562725F3A7007384FA /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EB9552725F3A7007384FA /* BackgroundView.swift */; };
 		4F46EEAB272E4D6F00D8EEE3 /* QuickDashSpanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F46EEAA272E4D6F00D8EEE3 /* QuickDashSpanView.swift */; };
 		4F46EEAD272E5BF000D8EEE3 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F46EEAC272E5BF000D8EEE3 /* SelectionView.swift */; };
+		4F82A6C8273EE446003DC3BF /* NewSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82A6C7273EE446003DC3BF /* NewSelectionView.swift */; };
 		4F8B17D92727C76C000A1573 /* BackIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B17D82727C76C000A1573 /* BackIndexView.swift */; };
 		4F8B17DB2727C998000A1573 /* LefsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B17DA2727C998000A1573 /* LefsView.swift */; };
 		4FCC6326272B5AF70041BE4C /* FunctionalSurveyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6325272B5AF70041BE4C /* FunctionalSurveyListView.swift */; };
@@ -34,7 +35,7 @@
 		4F12AAC52727BBD5006905FD /* QuickDashEngView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickDashEngView.swift; sourceTree = "<group>"; };
 		4F207D80271AA69100B74F3A /* IntakePaperwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntakePaperwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F207D83271AA69100B74F3A /* IntakePaperworkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakePaperworkApp.swift; sourceTree = "<group>"; };
-		4F207D85271AA69100B74F3A /* LanguageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListView.swift; sourceTree = "<group>"; };
+		4F207D85271AA69100B74F3A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4F207D87271AA69200B74F3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F207D8A271AA69200B74F3A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4F207D93271AA99000B74F3A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		4F3EB9552725F3A7007384FA /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		4F46EEAA272E4D6F00D8EEE3 /* QuickDashSpanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickDashSpanView.swift; sourceTree = "<group>"; };
 		4F46EEAC272E5BF000D8EEE3 /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
+		4F82A6C7273EE446003DC3BF /* NewSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSelectionView.swift; sourceTree = "<group>"; };
 		4F8B17D82727C76C000A1573 /* BackIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackIndexView.swift; sourceTree = "<group>"; };
 		4F8B17DA2727C998000A1573 /* LefsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LefsView.swift; sourceTree = "<group>"; };
 		4FCC6325272B5AF70041BE4C /* FunctionalSurveyListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionalSurveyListView.swift; sourceTree = "<group>"; };
@@ -107,8 +109,9 @@
 		4F207D97271AAC7300B74F3A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4F207D85271AA69100B74F3A /* LanguageListView.swift */,
+				4F207D85271AA69100B74F3A /* HomeView.swift */,
 				4F46EEAC272E5BF000D8EEE3 /* SelectionView.swift */,
+				4F82A6C7273EE446003DC3BF /* NewSelectionView.swift */,
 				4FCC6325272B5AF70041BE4C /* FunctionalSurveyListView.swift */,
 				4F207D9E271AB69300B74F3A /* RectangleView.swift */,
 				4F3EB9552725F3A7007384FA /* BackgroundView.swift */,
@@ -216,6 +219,7 @@
 				4FCC6326272B5AF70041BE4C /* FunctionalSurveyListView.swift in Sources */,
 				4F12AAC62727BBD5006905FD /* QuickDashEngView.swift in Sources */,
 				4F46EEAD272E5BF000D8EEE3 /* SelectionView.swift in Sources */,
+				4F82A6C8273EE446003DC3BF /* NewSelectionView.swift in Sources */,
 				4FCC6334272B5E620041BE4C /* MedicalHistoryView.swift in Sources */,
 				4FCD26AB273052A900F4859F /* NDIView.swift in Sources */,
 				4FCC6330272B5E3E0041BE4C /* PrivacyPolicyView.swift in Sources */,
@@ -224,7 +228,7 @@
 				4F3EB9562725F3A7007384FA /* BackgroundView.swift in Sources */,
 				4F207D94271AA99000B74F3A /* Model.swift in Sources */,
 				4F46EEAB272E4D6F00D8EEE3 /* QuickDashSpanView.swift in Sources */,
-				4F207D86271AA69100B74F3A /* LanguageListView.swift in Sources */,
+				4F207D86271AA69100B74F3A /* HomeView.swift in Sources */,
 				4F8B17D92727C76C000A1573 /* BackIndexView.swift in Sources */,
 				4FCC6336272B5FAC0041BE4C /* InsuranceIntakeView.swift in Sources */,
 				4F207D96271AAA6400B74F3A /* ModelView.swift in Sources */,

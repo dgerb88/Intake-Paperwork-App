@@ -82,6 +82,7 @@ struct LefsView: View {
                         else {
                             Text("Finish")
                                 .foregroundColor(.white)
+                                .font(.title)
                                 .bold()
                         }
                     }
