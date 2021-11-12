@@ -52,210 +52,446 @@ struct NewSelectionView: View {
                 .foregroundColor(.white)
                 .cornerRadius(5)
                 .shadow(radius: 5)
-            VStack {
+            ScrollView {
                 VStack {
-                    Button {
-                        if isEnglish == false {
-                            isEnglish = true
-                            isSpanish = false
-                        }
-                        
-                    } label: {
-                        if isEnglish == true {
-                            HStack {
-                                Text("English")
-                                    .foregroundColor(.green)
-                                    .font(.title2)
-                                Spacer()
-                                Image(systemName: "circle.fill")
-                                    .foregroundColor(.green)
-                            }.padding(.horizontal, 20)
-                        }
-                        else {
-                            HStack {
-                                Text("English")
-                                    .foregroundColor(.black)
-                                    .font(.title2)
-                                Spacer()
-                            }.padding(.horizontal, 20)
-                        }
-                    }
-                    Button {
-                        if isSpanish == false {
-                            isEnglish = false
-                            isSpanish = true
-                        }
-
-                    } label: {
-                        if isSpanish == true {
-                            HStack {
-                                Text("Spanish")
-                                    .foregroundColor(.green)
-                                    .font(.title2)
-                                Spacer()
-                                Image(systemName: "circle.fill")
-                                    .foregroundColor(.green)
-                            }.padding(.horizontal, 20)
-                        }
-                        else {
-                            HStack {
-                                Text("Spanish")
-                                    .foregroundColor(.black)
-                                    .font(.title2)
-                                Spacer()
-                            }.padding(.horizontal, 20)
-                        }
-                    }
-                }
-                VStack {
-                    Button {
-                        if LefsSelected == true {
-                            LefsSelected = false
-                        }
-                        else {
-                            LefsSelected = true
-                            BackIndexSelected = false
-                            NdiSelected = false
-                            QuickDashSelected = false
-                        }
-                    } label: {
-                        if LefsSelected == true {
-                            HStack {
-                                Text("LEFS")
-                                    .foregroundColor(.green)
-                                .font(.title2)
-                                Spacer()
-                                Image(systemName: "circle.fill")
-                                    .foregroundColor(.green)
-                            }.padding(.horizontal, 20)
-                        }
-                        else {
-                            HStack {
-                                Text("LEFS")
-                                    .foregroundColor(.black)
-                                .font(.title2)
-                                Spacer()
-                            }.padding(.horizontal, 20)
-                        }
-                    }
-                    Button {
-                        if NdiSelected == true {
-                            NdiSelected = false
-                        }
-                        else {
-                            NdiSelected = true
-                            BackIndexSelected = false
-                            LefsSelected = false
-                            QuickDashSelected = false
-                        }
-                    } label: {
-                        if NdiSelected == true {
-                            HStack {
-                                Text("NDI")
-                                    .foregroundColor(.green)
-                                .font(.title2)
-                                Spacer()
-                                Image(systemName: "circle.fill")
-                                    .foregroundColor(.green)
-                            }.padding(.horizontal, 20)
-                        }
-                        else {
-                            HStack {
-                                Text("NDI")
-                                    .foregroundColor(.black)
-                                .font(.title2)
-                                Spacer()
-                            }.padding(.horizontal, 20)
-                        }
-                    }
-                    Button {
-                        if BackIndexSelected == true {
-                            BackIndexSelected = false
-                        }
-                        else {
-                            BackIndexSelected = true
-                            LefsSelected = false
-                            NdiSelected = false
-                            QuickDashSelected = false
-                        }
-                    } label: {
-                        if BackIndexSelected == true {
-                            HStack {
-                                Text("Back Index")
-                                    .foregroundColor(.green)
-                                .font(.title2)
-                                Spacer()
-                                Image(systemName: "circle.fill")
-                                    .foregroundColor(.green)
-                            }.padding(.horizontal, 20)
-                        }
-                        else {
-                            HStack {
-                                Text("Back Index")
-                                    .foregroundColor(.black)
-                                .font(.title2)
-                                Spacer()
-                            }.padding(.horizontal, 20)
-                        }
-                    }
-                    Button {
-                        if QuickDashSelected == true {
-                            QuickDashSelected = false
-                        }
-                        else {
-                            QuickDashSelected = true
-                            BackIndexSelected = false
-                            NdiSelected = false
-                            LefsSelected = false
-                        }
-                    } label: {
-                        if QuickDashSelected == true {
-                            HStack {
-                                Text("Quick Dash")
-                                    .foregroundColor(.green)
-                                    .font(.title2)
-                                Spacer()
-                                Image(systemName: "circle.fill")
-                                    .foregroundColor(.green)
-                            }.padding(.horizontal, 20)
-                        }
-                        else {
-                            HStack {
-                                Text("Quick Dash")
-                                    .foregroundColor(.black)
-                                    .font(.title2)
-                                Spacer()
-                            }.padding(.horizontal, 20)
-                        }
-                    }
-
-                }
-                VStack {
-                    ForEach(model.surveys) { survey in
-                        if survey.name == nameSelected && survey.language == language {
-                            NavigationLink {
-                                SurveyView(survey: survey)
-                                    .onAppear {
-                                        model.appendArray(survey.questions.count)
-                                    }
-                            } label: {
-                                ZStack {
-                                    Rectangle()
+                    //MARK: Language
+                    VStack {
+                        Text("Language")
+                            .bold()
+                            .font(.largeTitle)
+                            .padding(.bottom, 20)
+                        Button {
+                            if isEnglish == false {
+                                isEnglish = true
+                                isSpanish = false
+                            }
+                            
+                        } label: {
+                            if isEnglish == true {
+                                HStack {
+                                    Text("English")
                                         .foregroundColor(.green)
-                                        .frame(height: 48)
-                                        .cornerRadius(10)
-                                        .shadow(radius: 1)
-                                    Text("Go")
+                                        .font(.title2)
+                                    Spacer()
+                                    Image(systemName: "circle.fill")
+                                        .foregroundColor(.green)
+                                }.padding(.horizontal, 20)
+                            }
+                            else {
+                                HStack {
+                                    Text("English")
+                                        .foregroundColor(.black)
+                                        .font(.title2)
+                                    Spacer()
+                                }.padding(.horizontal, 20)
+                            }
+                        }
+                        Divider()
+                        Button {
+                            if isSpanish == false {
+                                isEnglish = false
+                                isSpanish = true
+                            }
+
+                        } label: {
+                            if isSpanish == true {
+                                HStack {
+                                    Text("Spanish")
+                                        .foregroundColor(.green)
+                                        .font(.title2)
+                                    Spacer()
+                                    Image(systemName: "circle.fill")
+                                        .foregroundColor(.green)
+                                }.padding(.horizontal, 20)
+                            }
+                            else {
+                                HStack {
+                                    Text("Spanish")
+                                        .foregroundColor(.black)
+                                        .font(.title2)
+                                    Spacer()
+                                }.padding(.horizontal, 20)
+                            }
+                        }
+                        Divider().padding(.bottom, 20)
+                        
+                    }
+                    //MARK: Intake Paperwork
+                    VStack {
+                        Text("Forms Included")
+                            .bold()
+                            .font(.largeTitle)
+                            .padding(.bottom, 20)
+                        Button {
+                            if model.eval == false {
+                                model.eval = true
+                                model.progressNote = false
+                            }
+                        } label: {
+                            if model.eval == true {
+                                HStack {
+                                    Text("Eval")
+                                        .foregroundColor(.green)
+                                    .font(.title2)
+                                    Spacer()
+                                    Image(systemName: "circle.fill")
+                                        .foregroundColor(.green)
+                                }.padding(.horizontal, 20)
+                            }
+                            else {
+                                HStack {
+                                    Text("Eval")
+                                        .foregroundColor(.black)
+                                    .font(.title2)
+                                    Spacer()
+                                }.padding(.horizontal, 20)
+                            }
+                        }
+                        Divider()
+                        Button {
+                            if model.progressNote == false {
+                                model.eval = false
+                                model.progressNote = true
+                            }
+                        } label: {
+                            if model.progressNote == true {
+                                HStack {
+                                    Text("Progress Note")
+                                        .foregroundColor(.green)
+                                    .font(.title2)
+                                    Spacer()
+                                    Image(systemName: "circle.fill")
+                                        .foregroundColor(.green)
+                                }.padding(.horizontal, 20)
+                            }
+                            else {
+                                HStack {
+                                    Text("Progress Note")
+                                        .foregroundColor(.black)
+                                    .font(.title2)
+                                    Spacer()
+                                }.padding(.horizontal, 20)
+                            }
+                        }
+                        Divider().padding(.bottom, 20)
+                        VStack {
+                            if model.eval == true {
+                                VStack {
+                                    Text("Which intake forms would you like to include?")
                                         .bold()
-                                        .font(.title)
-                                        .foregroundColor(.white)
+                                        .font(.largeTitle)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                        .padding(.bottom, 20)
+                                     Button {
+                                        if model.includeDryNeedlingConsent == true {
+                                            model.includeDryNeedlingConsent = false
+                                        }
+                                        else {
+                                            model.includeDryNeedlingConsent = true
+                                        }
+                                    } label: {
+                                        if model.includeDryNeedlingConsent == true {
+                                            HStack {
+                                                Text("Dry Needling Consent")
+                                                    .foregroundColor(.green)
+                                                    .font(.title2)
+                                                Spacer()
+                                                Image(systemName: "circle.fill")
+                                                    .foregroundColor(.green)
+                                            }.padding(.horizontal, 20)
+                                        }
+                                        else {
+                                            HStack {
+                                                Text("Dry Needling Consent")
+                                                    .foregroundColor(.black)
+                                                    .font(.title2)
+                                                Spacer()
+                                            }.padding(.horizontal, 20)
+                                        }
+                                    }
+                                    Divider()
+                                    Button {
+                                        if model.includeMedicalHistory == true {
+                                            model.includeMedicalHistory = false
+                                        }
+                                        else {
+                                            model.includeMedicalHistory = true
+                                        }
+                                    } label: {
+                                        if model.includeMedicalHistory == true {
+                                            HStack {
+                                                Text("Medical History")
+                                                    .foregroundColor(.green)
+                                                    .font(.title2)
+                                                Spacer()
+                                                Image(systemName: "circle.fill")
+                                                    .foregroundColor(.green)
+                                            }.padding(.horizontal, 20)
+                                        }
+                                        else {
+                                            HStack {
+                                                Text("Medical History")
+                                                    .foregroundColor(.black)
+                                                .font(.title2)
+                                                Spacer()
+                                            }.padding(.horizontal, 20)
+                                        }
+                                    }
+                                    Divider()
+                                    Button {
+                                        if model.includePrivacyPolicy == true {
+                                            model.includePrivacyPolicy = false
+                                        }
+                                        else {
+                                            model.includePrivacyPolicy = true
+                                        }
+                                    } label: {
+                                        if model.includePrivacyPolicy == true {
+                                            HStack {
+                                                Text("Privacy Policy")
+                                                    .foregroundColor(.green)
+                                                .font(.title2)
+                                                Spacer()
+                                                Image(systemName: "circle.fill")
+                                                    .foregroundColor(.green)
+                                            }.padding(.horizontal, 20)
+                                        }
+                                        else {
+                                            HStack {
+                                                Text("Privacy Policy")
+                                                    .foregroundColor(.black)
+                                                .font(.title2)
+                                                Spacer()
+                                            }.padding(.horizontal, 20)
+                                        }
+                                    }
+                                    Divider()
+                                }
+                                VStack {
+                                    Button {
+                                        if model.includeInsuranceIntake == true {
+                                            model.includeInsuranceIntake = false
+                                        }
+                                        else {
+                                            model.includeInsuranceIntake = true
+                                        }
+                                    } label: {
+                                        if model.includeInsuranceIntake == true {
+                                            HStack {
+                                                Text("Insurance Intake")
+                                                    .foregroundColor(.green)
+                                                .font(.title2)
+                                                Spacer()
+                                                Image(systemName: "circle.fill")
+                                                    .foregroundColor(.green)
+                                            }.padding(.horizontal, 20)
+                                        }
+                                        else {
+                                            HStack {
+                                                Text("Insurance Intake")
+                                                    .foregroundColor(.black)
+                                                .font(.title2)
+                                                Spacer()
+                                            }.padding(.horizontal, 20)
+                                        }
+                                    }
+                                    Divider()
+                                    Button {
+                                        if model.includeInformationAndPolicies == true {
+                                            model.includeInformationAndPolicies = false
+                                        }
+                                        else {
+                                            model.includeInformationAndPolicies = true
+                                        }
+                                    } label: {
+                                        if model.includeInformationAndPolicies == true {
+                                            HStack {
+                                                Text("Information and Policies")
+                                                    .foregroundColor(.green)
+                                                .font(.title2)
+                                                Spacer()
+                                                Image(systemName: "circle.fill")
+                                                    .foregroundColor(.green)
+                                            }.padding(.horizontal, 20)
+                                        }
+                                        else {
+                                            HStack {
+                                                Text("Information and Policies")
+                                                    .foregroundColor(.black)
+                                                .font(.title2)
+                                                Spacer()
+                                            }.padding(.horizontal, 20)
+                                        }
+                                    }
+                                    Divider()
                                 }
                             }
                         }
+
+                    }.padding(.bottom, 20)
+                    //MARK: Survey
+                    VStack {
+                        Text("Survey")
+                            .bold()
+                            .font(.largeTitle)
+                            .padding(.bottom, 20)
+                        Button {
+                            if LefsSelected == false {
+                                LefsSelected = true
+                                BackIndexSelected = false
+                                NdiSelected = false
+                                QuickDashSelected = false
+                            }
+                        } label: {
+                            if LefsSelected == true {
+                                HStack {
+                                    Text("LEFS")
+                                        .foregroundColor(.green)
+                                    .font(.title2)
+                                    Spacer()
+                                    Image(systemName: "circle.fill")
+                                        .foregroundColor(.green)
+                                }.padding(.horizontal, 20)
+                            }
+                            else {
+                                HStack {
+                                    Text("LEFS")
+                                        .foregroundColor(.black)
+                                    .font(.title2)
+                                    Spacer()
+                                }.padding(.horizontal, 20)
+                            }
+                        }
+                        Divider()
+                        Button {
+                            if NdiSelected == false {
+                                NdiSelected = true
+                                BackIndexSelected = false
+                                LefsSelected = false
+                                QuickDashSelected = false
+                            }
+                            
+                        } label: {
+                            if NdiSelected == true {
+                                HStack {
+                                    Text("NDI")
+                                        .foregroundColor(.green)
+                                    .font(.title2)
+                                    Spacer()
+                                    Image(systemName: "circle.fill")
+                                        .foregroundColor(.green)
+                                }.padding(.horizontal, 20)
+                            }
+                            else {
+                                HStack {
+                                    Text("NDI")
+                                        .foregroundColor(.black)
+                                    .font(.title2)
+                                    Spacer()
+                                }.padding(.horizontal, 20)
+                            }
+                        }
+                        Divider()
+                        Button {
+                            if BackIndexSelected == false {
+                                BackIndexSelected = true
+                                LefsSelected = false
+                                NdiSelected = false
+                                QuickDashSelected = false
+                            }
+                            
+                        } label: {
+                            if BackIndexSelected == true {
+                                HStack {
+                                    Text("Back Index")
+                                        .foregroundColor(.green)
+                                    .font(.title2)
+                                    Spacer()
+                                    Image(systemName: "circle.fill")
+                                        .foregroundColor(.green)
+                                }.padding(.horizontal, 20)
+                            }
+                            else {
+                                HStack {
+                                    Text("Back Index")
+                                        .foregroundColor(.black)
+                                    .font(.title2)
+                                    Spacer()
+                                }.padding(.horizontal, 20)
+                            }
+                        }
+                        Divider()
+                        Button {
+                            if QuickDashSelected == false {
+                                QuickDashSelected = true
+                                BackIndexSelected = false
+                                NdiSelected = false
+                                LefsSelected = false
+                            }
+            
+                        } label: {
+                            if QuickDashSelected == true {
+                                HStack {
+                                    Text("Quick Dash")
+                                        .foregroundColor(.green)
+                                        .font(.title2)
+                                    Spacer()
+                                    Image(systemName: "circle.fill")
+                                        .foregroundColor(.green)
+                                }.padding(.horizontal, 20)
+                            }
+                            else {
+                                HStack {
+                                    Text("Quick Dash")
+                                        .foregroundColor(.black)
+                                        .font(.title2)
+                                    Spacer()
+                                }.padding(.horizontal, 20)
+                            }
+                        }
+                        Divider().padding(.bottom, 20)
+
                     }
-                }
-                Spacer()
-            }.padding()
+                    //MARK: Go button
+                    VStack {
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(.green)
+                                .frame(height: 48)
+                                .cornerRadius(10)
+                                .shadow(radius: 1)
+                            Text("Go")
+                                .bold()
+                                .font(.title)
+                                .foregroundColor(.white)
+                            ForEach(model.surveys) { survey in
+                                if survey.name == nameSelected && survey.language == language {
+                                    NavigationLink {
+                                        SurveyView(survey: survey)
+                                            .onAppear {
+                                                model.appendArray(survey.questions.count)
+                                            }
+                                    } label: {
+                                        ZStack {
+                                            Rectangle()
+                                                .foregroundColor(.green)
+                                                .frame(height: 48)
+                                                .cornerRadius(10)
+                                                .shadow(radius: 1)
+                                            Text("Go")
+                                                .bold()
+                                                .font(.title)
+                                                .foregroundColor(.white)
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                    Spacer()
+                }.padding()
+            }
         }
         
     }
