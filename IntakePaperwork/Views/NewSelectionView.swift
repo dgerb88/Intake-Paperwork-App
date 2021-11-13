@@ -60,61 +60,70 @@ struct NewSelectionView: View {
                             .bold()
                             .font(.largeTitle)
                             .padding(.bottom, 20)
-                        Button {
-                            if isEnglish == false {
-                                isEnglish = true
-                                isSpanish = false
-                            }
-                            
-                        } label: {
-                            if isEnglish == true {
-                                HStack {
-                                    Text("English")
-                                        .foregroundColor(.green)
-                                        .font(.title2)
-                                    Spacer()
-                                    Image(systemName: "circle.fill")
-                                        .foregroundColor(.green)
-                                }.padding(.horizontal, 20)
-                            }
-                            else {
-                                HStack {
-                                    Text("English")
-                                        .foregroundColor(.black)
-                                        .font(.title2)
-                                    Spacer()
-                                }.padding(.horizontal, 20)
-                            }
-                        }
-                        Divider()
-                        Button {
-                            if isSpanish == false {
-                                isEnglish = false
-                                isSpanish = true
+                        HStack(spacing: 0) {
+                            Button {
+                                if isEnglish == false {
+                                    isEnglish = true
+                                    isSpanish = false
+                                }
+                            } label: {
+                                ZStack {
+                                    if isEnglish == true {
+                                        Rectangle()
+                                            .foregroundColor(Color.init(.sRGB, red: 0.50196, green: 0.50196, blue: 0.50196, opacity: 0.2))
+                                            .frame(height: 48)
+                                            .cornerRadius(5)
+                                            .shadow(radius: 1)
+                                        Text("English")
+                                            .foregroundColor(.black)
+                                    }
+                                    else {
+                                        Rectangle()
+                                            .foregroundColor(.white)
+                                            .frame(height: 48)
+                                            .cornerRadius(5)
+                                            .shadow(color: .gray, radius: 1)
+                                        Text("English")
+                                            .foregroundColor(.black)
+                                    }
+                                
+                                
                             }
 
-                        } label: {
-                            if isSpanish == true {
-                                HStack {
-                                    Text("Spanish")
-                                        .foregroundColor(.green)
-                                        .font(.title2)
-                                    Spacer()
-                                    Image(systemName: "circle.fill")
-                                        .foregroundColor(.green)
-                                }.padding(.horizontal, 20)
-                            }
-                            else {
-                                HStack {
-                                    Text("Spanish")
-                                        .foregroundColor(.black)
-                                        .font(.title2)
-                                    Spacer()
-                                }.padding(.horizontal, 20)
-                            }
                         }
-                        Divider().padding(.bottom, 20)
+                            Button {
+                                if isSpanish == false {
+                                    isSpanish = true
+                                    isEnglish = false
+                                }
+                            } label: {
+                                ZStack {
+                                    if isSpanish == true {
+                                        Rectangle()
+                                            .foregroundColor(Color.init(.sRGB, red: 0.50196, green: 0.50196, blue: 0.50196, opacity: 0.2))
+                                            .frame(height: 48)
+                                            .cornerRadius(5)
+                                            .shadow(radius: 1)
+                                        Text("Spanish")
+                                            .foregroundColor(.black)
+                                    }
+                                    else {
+                                        Rectangle()
+                                            .foregroundColor(.white)
+                                            .frame(height: 48)
+                                            .cornerRadius(5)
+                                            .shadow(color: .gray, radius: 1)
+                                        Text("Spanish")
+                                            .foregroundColor(.black)
+                                    }
+                                
+                                
+                            }
+
+                        }
+
                         
+                    }.padding(.bottom, 20)
                     }
                     //MARK: Intake Paperwork
                     VStack {
