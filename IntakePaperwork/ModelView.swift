@@ -13,8 +13,7 @@ class SurveyModel: ObservableObject {
     @Published var selectedValue = [Int]()
     @Published var score = 0
     @Published var finishedSurvey = false
-    @Published var eval = false
-    @Published var progressNote = false
+    @Published var eval = true
     @Published var includeInformationAndPolicies = true
     @Published var includeInsuranceIntake = true
     @Published var includeMedicalHistory = true

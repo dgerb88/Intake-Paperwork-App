@@ -124,69 +124,17 @@ struct NewSelectionView: View {
 
                         
                     }.padding(.bottom, 20)
-                    }
+                    }.padding(.horizontal, 20)
                     //MARK: Intake Paperwork
                     VStack {
-                        Text("Forms Included")
-                            .bold()
-                            .font(.largeTitle)
-                            .padding(.bottom, 20)
-                        Button {
-                            if model.eval == false {
-                                model.eval = true
-                                model.progressNote = false
-                            }
-                        } label: {
-                            if model.eval == true {
-                                HStack {
-                                    Text("Eval")
-                                        .foregroundColor(.green)
-                                    .font(.title2)
-                                    Spacer()
-                                    Image(systemName: "circle.fill")
-                                        .foregroundColor(.green)
-                                }.padding(.horizontal, 20)
-                            }
-                            else {
-                                HStack {
-                                    Text("Eval")
-                                        .foregroundColor(.black)
-                                    .font(.title2)
-                                    Spacer()
-                                }.padding(.horizontal, 20)
-                            }
-                        }
-                        Divider()
-                        Button {
-                            if model.progressNote == false {
-                                model.eval = false
-                                model.progressNote = true
-                            }
-                        } label: {
-                            if model.progressNote == true {
-                                HStack {
-                                    Text("Progress Note")
-                                        .foregroundColor(.green)
-                                    .font(.title2)
-                                    Spacer()
-                                    Image(systemName: "circle.fill")
-                                        .foregroundColor(.green)
-                                }.padding(.horizontal, 20)
-                            }
-                            else {
-                                HStack {
-                                    Text("Progress Note")
-                                        .foregroundColor(.black)
-                                    .font(.title2)
-                                    Spacer()
-                                }.padding(.horizontal, 20)
-                            }
-                        }
+                        Toggle("Include intake forms", isOn: $model.eval)
+                            .font(Font.title2)
+                            .padding(.horizontal, 20)
                         Divider().padding(.bottom, 20)
                         VStack {
                             if model.eval == true {
                                 VStack {
-                                    Text("Which intake forms would you like to include?")
+                                    Text("Intake forms selection")
                                         .bold()
                                         .font(.largeTitle)
                                         .fixedSize(horizontal: false, vertical: true)
@@ -201,16 +149,22 @@ struct NewSelectionView: View {
                                     } label: {
                                         if model.includeDryNeedlingConsent == true {
                                             HStack {
+                                                Image(systemName: "checkmark.square")
+                                                    .font(Font.title2.weight(.bold))
+                                                    .foregroundColor(.black)
+                                                    .padding(.trailing, 5)
                                                 Text("Dry Needling Consent")
-                                                    .foregroundColor(.green)
+                                                    .bold()
+                                                    .foregroundColor(.black)
                                                     .font(.title2)
                                                 Spacer()
-                                                Image(systemName: "circle.fill")
-                                                    .foregroundColor(.green)
                                             }.padding(.horizontal, 20)
                                         }
                                         else {
                                             HStack {
+                                                Image(systemName: "square")
+                                                    .foregroundColor(.black)
+                                                    .padding(.trailing, 5)
                                                 Text("Dry Needling Consent")
                                                     .foregroundColor(.black)
                                                     .font(.title2)
@@ -229,19 +183,24 @@ struct NewSelectionView: View {
                                     } label: {
                                         if model.includeMedicalHistory == true {
                                             HStack {
+                                                Image(systemName: "checkmark.square")
+                                                    .font(Font.title2.weight(.bold))
+                                                    .foregroundColor(.black)
+                                                    .padding(.trailing, 5)
                                                 Text("Medical History")
-                                                    .foregroundColor(.green)
-                                                    .font(.title2)
+                                                    .foregroundColor(.black)
+                                                    .font(Font.title2.weight(.bold))
                                                 Spacer()
-                                                Image(systemName: "circle.fill")
-                                                    .foregroundColor(.green)
                                             }.padding(.horizontal, 20)
                                         }
                                         else {
                                             HStack {
+                                                Image(systemName: "square")
+                                                    .foregroundColor(.black)
+                                                    .padding(.trailing, 5)
                                                 Text("Medical History")
                                                     .foregroundColor(.black)
-                                                .font(.title2)
+                                                    .font(.title2)
                                                 Spacer()
                                             }.padding(.horizontal, 20)
                                         }
@@ -257,16 +216,21 @@ struct NewSelectionView: View {
                                     } label: {
                                         if model.includePrivacyPolicy == true {
                                             HStack {
+                                                Image(systemName: "checkmark.square")
+                                                    .font(Font.title2.weight(.bold))
+                                                    .foregroundColor(.black)
+                                                    .padding(.trailing, 5)
                                                 Text("Privacy Policy")
-                                                    .foregroundColor(.green)
-                                                .font(.title2)
+                                                    .foregroundColor(.black)
+                                                    .font(Font.title2.weight(.bold))
                                                 Spacer()
-                                                Image(systemName: "circle.fill")
-                                                    .foregroundColor(.green)
                                             }.padding(.horizontal, 20)
                                         }
                                         else {
                                             HStack {
+                                                Image(systemName: "square")
+                                                    .foregroundColor(.black)
+                                                    .padding(.trailing, 5)
                                                 Text("Privacy Policy")
                                                     .foregroundColor(.black)
                                                 .font(.title2)
@@ -287,16 +251,21 @@ struct NewSelectionView: View {
                                     } label: {
                                         if model.includeInsuranceIntake == true {
                                             HStack {
+                                                Image(systemName: "checkmark.square")
+                                                    .font(Font.title2.weight(.bold))
+                                                    .foregroundColor(.black)
+                                                    .padding(.trailing, 5)
                                                 Text("Insurance Intake")
-                                                    .foregroundColor(.green)
-                                                .font(.title2)
+                                                    .foregroundColor(.black)
+                                                    .font(Font.title2.weight(.bold))
                                                 Spacer()
-                                                Image(systemName: "circle.fill")
-                                                    .foregroundColor(.green)
                                             }.padding(.horizontal, 20)
                                         }
                                         else {
                                             HStack {
+                                                Image(systemName: "square")
+                                                    .foregroundColor(.black)
+                                                    .padding(.trailing, 5)
                                                 Text("Insurance Intake")
                                                     .foregroundColor(.black)
                                                 .font(.title2)
@@ -315,16 +284,21 @@ struct NewSelectionView: View {
                                     } label: {
                                         if model.includeInformationAndPolicies == true {
                                             HStack {
+                                                Image(systemName: "checkmark.square")
+                                                    .font(Font.title2.weight(.bold))
+                                                    .foregroundColor(.black)
+                                                    .padding(.trailing, 5)
                                                 Text("Information and Policies")
-                                                    .foregroundColor(.green)
-                                                .font(.title2)
+                                                    .foregroundColor(.black)
+                                                    .font(Font.title2.weight(.bold))
                                                 Spacer()
-                                                Image(systemName: "circle.fill")
-                                                    .foregroundColor(.green)
                                             }.padding(.horizontal, 20)
                                         }
                                         else {
                                             HStack {
+                                                Image(systemName: "square")
+                                                    .foregroundColor(.black)
+                                                    .padding(.trailing, 5)
                                                 Text("Information and Policies")
                                                     .foregroundColor(.black)
                                                 .font(.title2)
@@ -354,19 +328,25 @@ struct NewSelectionView: View {
                         } label: {
                             if LefsSelected == true {
                                 HStack {
+                                    Image(systemName: "checkmark.square")
+                                        .font(Font.title2.weight(.bold))
+                                        .foregroundColor(.black)
+                                        .padding(.trailing, 5)
                                     Text("LEFS")
-                                        .foregroundColor(.green)
+                                        .bold()
+                                        .foregroundColor(.black)
                                     .font(.title2)
                                     Spacer()
-                                    Image(systemName: "circle.fill")
-                                        .foregroundColor(.green)
                                 }.padding(.horizontal, 20)
                             }
                             else {
                                 HStack {
+                                    Image(systemName: "square")
+                                        .foregroundColor(.black)
+                                        .padding(.trailing, 5)
                                     Text("LEFS")
                                         .foregroundColor(.black)
-                                    .font(.title2)
+                                        .font(.title2)
                                     Spacer()
                                 }.padding(.horizontal, 20)
                             }
@@ -383,19 +363,25 @@ struct NewSelectionView: View {
                         } label: {
                             if NdiSelected == true {
                                 HStack {
+                                    Image(systemName: "checkmark.square")
+                                        .font(Font.title2.weight(.bold))
+                                        .foregroundColor(.black)
+                                        .padding(.trailing, 5)
                                     Text("NDI")
-                                        .foregroundColor(.green)
+                                        .bold()
+                                        .foregroundColor(.black)
                                     .font(.title2)
                                     Spacer()
-                                    Image(systemName: "circle.fill")
-                                        .foregroundColor(.green)
                                 }.padding(.horizontal, 20)
                             }
                             else {
                                 HStack {
+                                    Image(systemName: "square")
+                                        .foregroundColor(.black)
+                                        .padding(.trailing, 5)
                                     Text("NDI")
                                         .foregroundColor(.black)
-                                    .font(.title2)
+                                        .font(.title2)
                                     Spacer()
                                 }.padding(.horizontal, 20)
                             }
@@ -412,19 +398,25 @@ struct NewSelectionView: View {
                         } label: {
                             if BackIndexSelected == true {
                                 HStack {
+                                    Image(systemName: "checkmark.square")
+                                        .font(Font.title2.weight(.bold))
+                                        .foregroundColor(.black)
+                                        .padding(.trailing, 5)
                                     Text("Back Index")
-                                        .foregroundColor(.green)
-                                    .font(.title2)
+                                        .bold()
+                                        .foregroundColor(.black)
+                                        .font(.title2)
                                     Spacer()
-                                    Image(systemName: "circle.fill")
-                                        .foregroundColor(.green)
                                 }.padding(.horizontal, 20)
                             }
                             else {
                                 HStack {
+                                    Image(systemName: "square")
+                                        .foregroundColor(.black)
+                                        .padding(.trailing, 5)
                                     Text("Back Index")
                                         .foregroundColor(.black)
-                                    .font(.title2)
+                                        .font(.title2)
                                     Spacer()
                                 }.padding(.horizontal, 20)
                             }
@@ -441,16 +433,22 @@ struct NewSelectionView: View {
                         } label: {
                             if QuickDashSelected == true {
                                 HStack {
+                                    Image(systemName: "checkmark.square")
+                                        .font(Font.title2.weight(.bold))
+                                        .foregroundColor(.black)
+                                        .padding(.trailing, 5)
                                     Text("Quick Dash")
-                                        .foregroundColor(.green)
+                                        .bold()
+                                        .foregroundColor(.black)
                                         .font(.title2)
                                     Spacer()
-                                    Image(systemName: "circle.fill")
-                                        .foregroundColor(.green)
                                 }.padding(.horizontal, 20)
                             }
                             else {
                                 HStack {
+                                    Image(systemName: "square")
+                                        .foregroundColor(.black)
+                                        .padding(.trailing, 5)
                                     Text("Quick Dash")
                                         .foregroundColor(.black)
                                         .font(.title2)
@@ -503,7 +501,6 @@ struct NewSelectionView: View {
             }
         }.onAppear {
             model.eval = false
-            model.progressNote = false
             model.includePrivacyPolicy = true
             model.includeMedicalHistory = true
             model.includeInsuranceIntake = true
