@@ -25,7 +25,7 @@ struct HomeView: View {
                 BackgroundView()
                     VStack {
                         NewSelectionView()
-                            .padding()
+                            .padding(.bottom, 30)
                             .frame(width: UIScreen.main.bounds.width)
                         Spacer()
                     }.padding(.top, 20)

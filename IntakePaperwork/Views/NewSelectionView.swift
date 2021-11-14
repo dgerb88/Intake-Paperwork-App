@@ -500,7 +500,7 @@ struct NewSelectionView: View {
                 }.padding()
             }
         }.onAppear {
-            model.eval = false
+            model.eval = true
             model.includePrivacyPolicy = true
             model.includeMedicalHistory = true
             model.includeInsuranceIntake = true
