@@ -41,9 +41,10 @@ struct InformationAndPoliciesView: View {
                             Text("Emergency contact relation to patient: ")
                                 .padding(.bottom, 15)
                             Text("Personal Email address: ")
+                                .padding(.top, 10)
 
                         }
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .leading, spacing: 15) {
                             TextField("Name", text: $ContactName)
                                 .padding(.leading, 20)
                                 .accentColor(.black)

@@ -22,11 +22,20 @@ struct SurveyView: View {
                     VStack(alignment: .leading) {
                             ScrollView {
                                 LazyVStack(alignment: .leading, spacing: 30) {
+                                    if model.eval == true && model.includeMedicalHistory == true {
+                                        MedicalHistoryView()
+                                    }
                                     if model.eval == true && model.includeInformationAndPolicies == true {
                                         InformationAndPoliciesView()
                                     }
                                     if model.eval == true && model.includeDryNeedlingConsent == true {
                                         DryNeedlingConsentView()
+                                    }
+                                    if model.eval == true && model.includePrivacyPolicy == true {
+                                        PrivacyPolicyView()
+                                    }
+                                    if model.eval == true && model.includeInsuranceIntake == true {
+                                        InsuranceIntakeView()
                                     }
                                     if survey.name == "LEFS" {
                                         LefsView(survey: survey)
