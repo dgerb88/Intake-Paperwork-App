@@ -42,7 +42,7 @@ struct NewSelectionView: View {
             return ""
         }
     }
-
+    
     
     
     var body: some View {
@@ -90,11 +90,11 @@ struct NewSelectionView: View {
                                             Text("English")
                                                 .foregroundColor(.black)
                                         }
-                                    
+                                        
+                                        
+                                    }
                                     
                                 }
-
-                            }
                                 Button {
                                     if isSpanish == false {
                                         isSpanish = true
@@ -120,14 +120,14 @@ struct NewSelectionView: View {
                                             Text("Spanish")
                                                 .foregroundColor(.black)
                                         }
-                                    
+                                        
+                                        
+                                    }
                                     
                                 }
-
-                            }
-
-                            
-                        }.padding(.bottom, 20)
+                                
+                                
+                            }.padding(.bottom, 20)
                         }.padding(.top, 20).padding(.horizontal, 20)
                     }
                     //MARK: Intake Paperwork
@@ -147,7 +147,7 @@ struct NewSelectionView: View {
                             VStack {
                                 if model.eval == true {
                                     VStack {
-                                         Button {
+                                        Button {
                                             if model.includeDryNeedlingConsent == true {
                                                 model.includeDryNeedlingConsent = false
                                             }
@@ -241,7 +241,7 @@ struct NewSelectionView: View {
                                                         .padding(.trailing, 5)
                                                     Text("Privacy Policy")
                                                         .foregroundColor(.black)
-                                                    .font(.title2)
+                                                        .font(.title2)
                                                     Spacer()
                                                 }.padding(.horizontal, 20)
                                             }
@@ -276,7 +276,7 @@ struct NewSelectionView: View {
                                                         .padding(.trailing, 5)
                                                     Text("Insurance Intake")
                                                         .foregroundColor(.black)
-                                                    .font(.title2)
+                                                        .font(.title2)
                                                     Spacer()
                                                 }.padding(.horizontal, 20)
                                             }
@@ -309,7 +309,7 @@ struct NewSelectionView: View {
                                                         .padding(.trailing, 5)
                                                     Text("Information and Policies")
                                                         .foregroundColor(.black)
-                                                    .font(.title2)
+                                                        .font(.title2)
                                                     Spacer()
                                                 }.padding(.horizontal, 20)
                                             }
@@ -318,7 +318,7 @@ struct NewSelectionView: View {
                                     }
                                 }
                             }
-
+                            
                         }.padding(20)
                     }
                     //MARK: Survey
@@ -347,7 +347,7 @@ struct NewSelectionView: View {
                                         Text("LEFS")
                                             .bold()
                                             .foregroundColor(.black)
-                                        .font(.title2)
+                                            .font(.title2)
                                         Spacer()
                                     }.padding(.horizontal, 20)
                                 }
@@ -378,7 +378,7 @@ struct NewSelectionView: View {
                                         Text("NDI")
                                             .bold()
                                             .foregroundColor(.black)
-                                        .font(.title2)
+                                            .font(.title2)
                                         Spacer()
                                     }.padding(.horizontal, 20)
                                 }
@@ -430,7 +430,7 @@ struct NewSelectionView: View {
                                     NdiSelected = false
                                     LefsSelected = false
                                 }
-                
+                                
                             } label: {
                                 if QuickDashSelected == true {
                                     HStack {
@@ -491,11 +491,11 @@ struct NewSelectionView: View {
                                     }
                                 }
                             }
-
-
+                            
+                            
                         }.padding(20)
                     }
-                                        Spacer()
+                    Spacer()
                 }.padding()
             }
         }.onAppear {
