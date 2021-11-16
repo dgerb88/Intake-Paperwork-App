@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SideBarMenuView: View {
+    
+    @EnvironmentObject var model: SurveyModel
+    
     var body: some View {
         ZStack {
             BackgroundView()
@@ -21,8 +24,9 @@ struct SideBarMenuView: View {
                             HStack {
                                 Text("Settings")
                                     .font(Font.title)
-                                Spacer()
                                 Image(systemName: "chevron.right")
+                                    .padding(.leading, 30)
+                                Spacer()
                             }
                         }
                         Divider()
@@ -32,14 +36,15 @@ struct SideBarMenuView: View {
                             HStack {
                                 Text("PDF retrieval")
                                     .font(Font.title)
-                                Spacer()
                                 Image(systemName: "chevron.right")
+                                    .padding(.leading, 30)
+                                Spacer()
                             }
                         }
                         Divider()
                     }.listStyle(SidebarListStyle())
                 }
-            }.padding(.top)
+            }
         }
         .navigationBarTitleDisplayMode( .inline)
         .toolbar {

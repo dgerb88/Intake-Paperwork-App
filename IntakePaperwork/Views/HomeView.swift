@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var model: SurveyModel
+    
     var selectionHeight: Int {
         if model.eval == true {
             return 15
@@ -23,14 +24,31 @@ struct HomeView: View {
         NavigationView {
             ZStack {
                 BackgroundView()
-                    VStack {
-                        NewSelectionView()
-                            .frame(width: UIScreen.main.bounds.width)
-                        Spacer()
-                    }.padding(.top, 20)
+                VStack {
+                    ZStack {
+                        SideBarMenuView()
+                            .frame(width: UIScreen.main.bounds.width/3)
+                        HStack {
+                            if model.sideBarShowing == true {
+                                Spacer()
+                                NewSelectionView()
+                                    .frame(width: UIScreen.main.bounds.width*2/3)
+                            }
+                            else {
+                                NewSelectionView()
+                                    .frame(width: UIScreen.main.bounds.width)
+                            }
+                        }
+                            
+                        
+                    }
+                }.padding(.top, 10)
                         
                 
-            }.navigationBarTitleDisplayMode( .inline)
+            }.onAppear(perform: {
+                model.sideBarShowing = false
+            })
+            .navigationBarTitleDisplayMode( .inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         Text("Forms Setup")
@@ -39,8 +57,13 @@ struct HomeView: View {
                             .font(.largeTitle)
                     }
                     ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink {
-                            SideBarMenuView()
+                        Button {
+                            if model.sideBarShowing == true {
+                                model.sideBarShowing = false
+                            }
+                            else {
+                                model.sideBarShowing = true
+                            }
                         } label: {
                             Image(systemName: "line.3.horizontal")
                                 .foregroundColor(.white)

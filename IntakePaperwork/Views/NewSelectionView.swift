@@ -507,6 +507,9 @@ struct NewSelectionView: View {
             BackIndexSelected = false
             QuickDashSelected = false
         }
+        .onTapGesture(perform: {
+            model.sideBarShowing = false
+        })
         
     }
 }

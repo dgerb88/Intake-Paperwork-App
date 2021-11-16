@@ -19,6 +19,7 @@ class SurveyModel: ObservableObject {
     @Published var includeMedicalHistory = true
     @Published var includeDryNeedlingConsent = true
     @Published var includePrivacyPolicy = true
+    @Published var sideBarShowing = false
     
     
     init() {
