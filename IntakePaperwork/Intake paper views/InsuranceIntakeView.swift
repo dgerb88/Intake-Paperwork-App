@@ -219,10 +219,9 @@ struct InsuranceIntakeView: View {
                             .frame(width: 300)
                         Text("Date: ")
                             .padding(.leading)
-                        if signature != "" {
-                            Text(Date().addingTimeInterval(600), style: .date)
+                        Text(Date().addingTimeInterval(600), style: .date)
                                 .padding(.leading)
-                        }
+                        
                     }
                 }
             }.padding()

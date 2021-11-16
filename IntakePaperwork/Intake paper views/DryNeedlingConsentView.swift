@@ -294,10 +294,10 @@ struct DryNeedlingConsentView: View {
                                 .textFieldStyle(.roundedBorder)
                             Text("Date: ")
                             .padding(.leading)
-                            if signature != "" {
-                                Text(Date().addingTimeInterval(600), style: .date)
+                            Text(Date().addingTimeInterval(600), style: .date)
                                     .padding(.leading)
-                            }
+                            
+                            
                         
                     }.padding(.bottom)
                     Text("You have the right to withdraw consent for this procedure at any time before it is performed.")
