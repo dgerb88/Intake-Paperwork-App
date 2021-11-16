@@ -86,7 +86,7 @@ struct NewSelectionView: View {
                                                 .foregroundColor(Color.init(.sRGB, red: 0.50196, green: 0.50196, blue: 0.50196, opacity: 0.2))
                                                 .frame(height: 48)
                                                 .cornerRadius(5)
-                                                .shadow(radius: 1)
+                                                .shadow(color: .black, radius: 1)
                                             Text("English")
                                                 .foregroundColor(.black)
                                         }
@@ -116,7 +116,7 @@ struct NewSelectionView: View {
                                                 .foregroundColor(Color.init(.sRGB, red: 0.50196, green: 0.50196, blue: 0.50196, opacity: 0.2))
                                                 .frame(height: 48)
                                                 .cornerRadius(5)
-                                                .shadow(radius: 1)
+                                                .shadow(color: .black, radius: 1)
                                             Text("Spanish")
                                                 .foregroundColor(.black)
                                         }
@@ -158,13 +158,12 @@ struct NewSelectionView: View {
                                             if model.includeDryNeedlingConsent == true {
                                                 HStack {
                                                     Image(systemName: "checkmark.square")
-                                                        .font(Font.title2.weight(.bold))
+                                                        .font(Font.title2.weight(.semibold))
                                                         .foregroundColor(.black)
                                                         .padding(.trailing, 5)
                                                     Text("Dry Needling Consent")
-                                                        .bold()
                                                         .foregroundColor(.black)
-                                                        .font(.title2)
+                                                        .font(Font.title2.weight(.semibold))
                                                     Spacer()
                                                 }.padding(.horizontal, 20)
                                             }
@@ -192,12 +191,12 @@ struct NewSelectionView: View {
                                             if model.includeMedicalHistory == true {
                                                 HStack {
                                                     Image(systemName: "checkmark.square")
-                                                        .font(Font.title2.weight(.bold))
+                                                        .font(Font.title2.weight(.semibold))
                                                         .foregroundColor(.black)
                                                         .padding(.trailing, 5)
                                                     Text("Medical History")
                                                         .foregroundColor(.black)
-                                                        .font(Font.title2.weight(.bold))
+                                                        .font(Font.title2.weight(.semibold))
                                                     Spacer()
                                                 }.padding(.horizontal, 20)
                                             }
@@ -225,12 +224,12 @@ struct NewSelectionView: View {
                                             if model.includePrivacyPolicy == true {
                                                 HStack {
                                                     Image(systemName: "checkmark.square")
-                                                        .font(Font.title2.weight(.bold))
+                                                        .font(Font.title2.weight(.semibold))
                                                         .foregroundColor(.black)
                                                         .padding(.trailing, 5)
                                                     Text("Privacy Policy")
                                                         .foregroundColor(.black)
-                                                        .font(Font.title2.weight(.bold))
+                                                        .font(Font.title2.weight(.semibold))
                                                     Spacer()
                                                 }.padding(.horizontal, 20)
                                             }
@@ -260,12 +259,12 @@ struct NewSelectionView: View {
                                             if model.includeInsuranceIntake == true {
                                                 HStack {
                                                     Image(systemName: "checkmark.square")
-                                                        .font(Font.title2.weight(.bold))
+                                                        .font(Font.title2.weight(.semibold))
                                                         .foregroundColor(.black)
                                                         .padding(.trailing, 5)
                                                     Text("Insurance Intake")
                                                         .foregroundColor(.black)
-                                                        .font(Font.title2.weight(.bold))
+                                                        .font(Font.title2.weight(.semibold))
                                                     Spacer()
                                                 }.padding(.horizontal, 20)
                                             }
@@ -293,12 +292,12 @@ struct NewSelectionView: View {
                                             if model.includeInformationAndPolicies == true {
                                                 HStack {
                                                     Image(systemName: "checkmark.square")
-                                                        .font(Font.title2.weight(.bold))
+                                                        .font(Font.title2.weight(.semibold))
                                                         .foregroundColor(.black)
                                                         .padding(.trailing, 5)
                                                     Text("Information and Policies")
                                                         .foregroundColor(.black)
-                                                        .font(Font.title2.weight(.bold))
+                                                        .font(Font.title2.weight(.semibold))
                                                     Spacer()
                                                 }.padding(.horizontal, 20)
                                             }
@@ -342,12 +341,11 @@ struct NewSelectionView: View {
                                 if LefsSelected == true {
                                     HStack {
                                         Image(systemName: "checkmark")
-                                            .font(Font.title2.weight(.bold))
+                                            .font(Font.title2.weight(.semibold))
                                             .foregroundColor(.black)
                                         Text("LEFS")
-                                            .bold()
+                                            .font(Font.title2.weight(.semibold))
                                             .foregroundColor(.black)
-                                            .font(.title2)
                                         Spacer()
                                     }.padding(.horizontal, 20)
                                 }
@@ -373,12 +371,11 @@ struct NewSelectionView: View {
                                 if NdiSelected == true {
                                     HStack {
                                         Image(systemName: "checkmark")
-                                            .font(Font.title2.weight(.bold))
+                                            .font(Font.title2.weight(.semibold))
                                             .foregroundColor(.black)
                                         Text("NDI")
-                                            .bold()
+                                            .font(Font.title2.weight(.semibold))
                                             .foregroundColor(.black)
-                                            .font(.title2)
                                         Spacer()
                                     }.padding(.horizontal, 20)
                                 }
@@ -404,12 +401,11 @@ struct NewSelectionView: View {
                                 if BackIndexSelected == true {
                                     HStack {
                                         Image(systemName: "checkmark")
-                                            .font(Font.title2.weight(.bold))
+                                            .font(Font.title2.weight(.semibold))
                                             .foregroundColor(.black)
                                         Text("Back Index")
-                                            .bold()
+                                            .font(Font.title2.weight(.semibold))
                                             .foregroundColor(.black)
-                                            .font(.title2)
                                         Spacer()
                                     }.padding(.horizontal, 20)
                                 }
@@ -435,12 +431,11 @@ struct NewSelectionView: View {
                                 if QuickDashSelected == true {
                                     HStack {
                                         Image(systemName: "checkmark")
-                                            .font(Font.title2.weight(.bold))
+                                            .font(Font.title2.weight(.semibold))
                                             .foregroundColor(.black)
                                         Text("Quick Dash")
-                                            .bold()
+                                            .font(Font.title2.weight(.semibold))
                                             .foregroundColor(.black)
-                                            .font(.title2)
                                         Spacer()
                                     }.padding(.horizontal, 20)
                                 }
@@ -507,7 +502,7 @@ struct NewSelectionView: View {
             model.includeDryNeedlingConsent = true
             isSpanish = false
             isEnglish = true
-            LefsSelected = false
+            LefsSelected = true
             NdiSelected = false
             BackIndexSelected = false
             QuickDashSelected = false
