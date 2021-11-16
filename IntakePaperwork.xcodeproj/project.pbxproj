@@ -17,6 +17,9 @@
 		4F207D9D271AADC400B74F3A /* SurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F207D9C271AADC400B74F3A /* SurveyView.swift */; };
 		4F3EB9562725F3A7007384FA /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EB9552725F3A7007384FA /* BackgroundView.swift */; };
 		4F46EEAB272E4D6F00D8EEE3 /* QuickDashSpanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F46EEAA272E4D6F00D8EEE3 /* QuickDashSpanView.swift */; };
+		4F66742227445DA5006B9ED0 /* SideBarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66742127445DA5006B9ED0 /* SideBarMenuView.swift */; };
+		4F667424274462B0006B9ED0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F667423274462B0006B9ED0 /* SettingsView.swift */; };
+		4F667426274464B6006B9ED0 /* PDFRetrievalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F667425274464B6006B9ED0 /* PDFRetrievalView.swift */; };
 		4F82A6C8273EE446003DC3BF /* NewSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82A6C7273EE446003DC3BF /* NewSelectionView.swift */; };
 		4F8B17D92727C76C000A1573 /* BackIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B17D82727C76C000A1573 /* BackIndexView.swift */; };
 		4F8B17DB2727C998000A1573 /* LefsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B17DA2727C998000A1573 /* LefsView.swift */; };
@@ -40,6 +43,9 @@
 		4F207D9C271AADC400B74F3A /* SurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyView.swift; sourceTree = "<group>"; };
 		4F3EB9552725F3A7007384FA /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		4F46EEAA272E4D6F00D8EEE3 /* QuickDashSpanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickDashSpanView.swift; sourceTree = "<group>"; };
+		4F66742127445DA5006B9ED0 /* SideBarMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarMenuView.swift; sourceTree = "<group>"; };
+		4F667423274462B0006B9ED0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4F667425274464B6006B9ED0 /* PDFRetrievalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFRetrievalView.swift; sourceTree = "<group>"; };
 		4F82A6C7273EE446003DC3BF /* NewSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSelectionView.swift; sourceTree = "<group>"; };
 		4F8B17D82727C76C000A1573 /* BackIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackIndexView.swift; sourceTree = "<group>"; };
 		4F8B17DA2727C998000A1573 /* LefsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LefsView.swift; sourceTree = "<group>"; };
@@ -107,6 +113,9 @@
 				4F82A6C7273EE446003DC3BF /* NewSelectionView.swift */,
 				4F3EB9552725F3A7007384FA /* BackgroundView.swift */,
 				4F207D9C271AADC400B74F3A /* SurveyView.swift */,
+				4F66742127445DA5006B9ED0 /* SideBarMenuView.swift */,
+				4F667425274464B6006B9ED0 /* PDFRetrievalView.swift */,
+				4F667423274462B0006B9ED0 /* SettingsView.swift */,
 				4FCC632D272B5DE30041BE4C /* Survey Views */,
 			);
 			path = Views;
@@ -206,9 +215,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F66742227445DA5006B9ED0 /* SideBarMenuView.swift in Sources */,
 				4F8B17DB2727C998000A1573 /* LefsView.swift in Sources */,
 				4F12AAC62727BBD5006905FD /* QuickDashEngView.swift in Sources */,
 				4F82A6C8273EE446003DC3BF /* NewSelectionView.swift in Sources */,
+				4F667426274464B6006B9ED0 /* PDFRetrievalView.swift in Sources */,
 				4FCC6334272B5E620041BE4C /* MedicalHistoryView.swift in Sources */,
 				4FCD26AB273052A900F4859F /* NDIView.swift in Sources */,
 				4FCC6330272B5E3E0041BE4C /* PrivacyPolicyView.swift in Sources */,
@@ -223,6 +234,7 @@
 				4F207D96271AAA6400B74F3A /* ModelView.swift in Sources */,
 				4FCC6338272B5FCF0041BE4C /* InformationAndPoliciesView.swift in Sources */,
 				4F207D84271AA69100B74F3A /* IntakePaperworkApp.swift in Sources */,
+				4F667424274462B0006B9ED0 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

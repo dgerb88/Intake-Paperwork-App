@@ -38,6 +38,16 @@ struct HomeView: View {
                             .foregroundColor(.white)
                             .font(.largeTitle)
                     }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        NavigationLink {
+                            SideBarMenuView()
+                        } label: {
+                            Image(systemName: "line.3.horizontal")
+                                .foregroundColor(.white)
+                                .font(Font.title.weight(.bold))
+                        }
+                    }
+                    
                 }
         }.navigationViewStyle(StackNavigationViewStyle())
             .accentColor(.white)
