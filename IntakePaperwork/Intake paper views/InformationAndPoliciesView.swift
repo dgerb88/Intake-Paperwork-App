@@ -229,9 +229,12 @@ struct InformationAndPoliciesView: View {
                             .padding(.leading, 20)
                             .accentColor(.black)
                             .textFieldStyle(.roundedBorder)
-                    
                         Text("Date: ")
                             .padding(.leading)
+                        if signatures[0] != "" {
+                            Text(Date().addingTimeInterval(600), style: .date)
+                                .padding(.leading)
+                        }
                         
                     }
                     Text("RELEASE FROM LIABILITY DISCLAIMER:")
@@ -266,6 +269,10 @@ struct InformationAndPoliciesView: View {
                                 .textFieldStyle(.roundedBorder)
                             Text("Date: ")
                                 .padding(.leading)
+                            if signatures[1] != "" {
+                                Text(Date().addingTimeInterval(600), style: .date)
+                                    .padding(.leading)
+                            }
                         
                     }.padding(.bottom)
                 }.padding(.horizontal).padding(.bottom)

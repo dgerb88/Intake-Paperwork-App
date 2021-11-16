@@ -82,6 +82,10 @@ struct InsuranceIntakeView: View {
                         .bold()
                         .font(.title)
                         .padding(.top, 10)
+                    Text("Please check the box to indicate that you understand the following:")
+                        .bold()
+                        .padding(.vertical)
+                        .font(.title3)
                     HStack(alignment: .top) {
                         Button {
                             if button[0] == false {
@@ -215,6 +219,10 @@ struct InsuranceIntakeView: View {
                             .frame(width: 300)
                         Text("Date: ")
                             .padding(.leading)
+                        if signature != "" {
+                            Text(Date().addingTimeInterval(600), style: .date)
+                                .padding(.leading)
+                        }
                     }
                 }
             }.padding()
