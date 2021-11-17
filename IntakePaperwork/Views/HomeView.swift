@@ -15,24 +15,23 @@ struct HomeView: View {
         NavigationView {
             ZStack(alignment: .center) {
                 BackgroundView()
-                NewSelectionView()
-                    .frame(width: UIScreen.main.bounds.width)
-                    .padding(.top)
-                if model.sideBarShowing == true {
-                    HStack(spacing: 0) {
-                        SideBarMenuView()
-                            .frame(width: UIScreen.main.bounds.width/20)
-                            .padding(.leading, UIScreen.main.bounds.width)
-                        NewSelectionView()
-                            .frame(width: UIScreen.main.bounds.width)
-                            .disabled(model.sideBarShowing ? true : false)
-                            .onTapGesture(perform: {
+                HStack(spacing: 0) {
+                    SideBarMenuView()
+                        .frame(width: 0)
+                        .padding(.leading, model.sideBarShowing ? UIScreen.main.bounds.width: 0)
+                    NewSelectionView()
+                        .frame(width: UIScreen.main.bounds.width)
+                        .disabled(model.sideBarShowing ? true : false)
+                        .onTapGesture(perform: {
+                            withAnimation {
                                 model.sideBarShowing = false
-                            })
-                    }.frame(width: UIScreen.main.bounds.width*2)
-                        .padding(.top)
-                    .transition(.move(edge: .leading))
-                }
+                            }
+                        })
+                }.padding(.top)
+                .frame(width: UIScreen.main.bounds.width*2)
+                    .padding(.top)
+                .transition(.move(edge: .leading))
+                
             }.frame(width: UIScreen.main.bounds.width)
             .onAppear(perform: {
                 model.sideBarShowing = false
@@ -48,7 +47,9 @@ struct HomeView: View {
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button {
                             if model.sideBarShowing == true {
-                                model.sideBarShowing = false
+                                withAnimation {
+                                    model.sideBarShowing = false
+                                }
                             }
                             else {
                                 withAnimation {

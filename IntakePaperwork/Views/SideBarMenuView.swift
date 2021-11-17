@@ -15,21 +15,21 @@ struct SideBarMenuView: View {
         ZStack {
             BackgroundView()
             Rectangle()
-                .foregroundColor(Color.init(.sRGB, red: 0.82745, green: 0.82745, blue: 0.82745, opacity: 1))
+                .foregroundColor(Color.init(.sRGB, red: 0.82745, green: 0.82745, blue: 0.82745, opacity: 0.9))
             VStack {
                 Divider().padding(.bottom)
                 NavigationLink {
                     SettingsView()
                 } label: {
                     HStack {
-                        Image(systemName: "gear")
+                        Image(systemName: "gearshape")
                             .foregroundColor(.black)
                             .font(Font.title)
                         Text("Settings")
                             .font(Font.title)
                             .foregroundColor(.black)
                         Image(systemName: "chevron.right")
-                            .padding(.leading, 230)
+                            .padding(.leading, 220)
                             .foregroundColor(.black)
                         Spacer()
                     }.padding(.leading)
@@ -47,7 +47,7 @@ struct SideBarMenuView: View {
                             .font(Font.title)
                             .foregroundColor(.black)
                         Image(systemName: "chevron.right")
-                            .padding(.leading, 180)
+                            .padding(.leading, 170)
                             .foregroundColor(.black)
                         Spacer()
                     }.padding(.leading)
