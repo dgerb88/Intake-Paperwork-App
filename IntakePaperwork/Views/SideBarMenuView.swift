@@ -14,47 +14,51 @@ struct SideBarMenuView: View {
     var body: some View {
         ZStack {
             BackgroundView()
-                .frame(width: UIScreen.main.bounds.width)
-            ZStack {
-                VStack {
-                    List {
-                        NavigationLink {
-                            SettingsView()
-                        } label: {
-                            HStack {
-                                Text("Settings")
-                                    .font(Font.title)
-                                Image(systemName: "chevron.right")
-                                    .padding(.leading, 30)
-                                Spacer()
-                            }
-                        }
-                        Divider()
-                        NavigationLink {
-                            PDFRetrievalView()
-                        } label: {
-                            HStack {
-                                Text("PDF retrieval")
-                                    .font(Font.title)
-                                Image(systemName: "chevron.right")
-                                    .padding(.leading, 30)
-                                Spacer()
-                            }
-                        }
-                        Divider()
-                    }.listStyle(SidebarListStyle())
+            Rectangle()
+                .foregroundColor(.pink)
+            VStack {
+                Divider().padding(.bottom)
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    HStack {
+                        Text("Settings")
+                            .font(Font.title)
+                            .foregroundColor(.black)
+                        Image(systemName: "chevron.right")
+                            .padding(.leading, 30)
+                            .foregroundColor(.black)
+                        Spacer()
+                    }.padding(.leading)
+                }
+                Divider()
+                NavigationLink {
+                    PDFRetrievalView()
+                } label: {
+                    HStack {
+                        Text("PDF retrieval")
+                            .font(Font.title)
+                            .foregroundColor(.black)
+                        Image(systemName: "chevron.right")
+                            .padding(.leading, 30)
+                            .foregroundColor(.black)
+                        Spacer()
+                    }.padding(.leading)
+                }
+                Divider()
+                Spacer()
+            }
+            
+        }.frame(width: UIScreen.main.bounds.width/20)
+            .navigationBarTitleDisplayMode( .inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Menu")
+                        .bold()
+                        .foregroundColor(.white)
+                        .font(.largeTitle)
                 }
             }
-        }
-        .navigationBarTitleDisplayMode( .inline)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Text("Menu")
-                    .bold()
-                    .foregroundColor(.white)
-                    .font(.largeTitle)
-            }
-        }
     }
 }
 

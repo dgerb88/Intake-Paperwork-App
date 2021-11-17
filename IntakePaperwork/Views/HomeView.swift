@@ -11,41 +11,32 @@ struct HomeView: View {
     
     @EnvironmentObject var model: SurveyModel
     
-    var selectionHeight: Int {
-        if model.eval == true {
-            return 15
-        }
-        else {
-            return 7
-        }
-    }
-    
     var body: some View {
         NavigationView {
-            ZStack {
+            ZStack(alignment: .center) {
                 BackgroundView()
-                VStack {
-                    ZStack {
+                NewSelectionView()
+                    .frame(width: UIScreen.main.bounds.width)
+                    .padding(.top)
+                if model.sideBarShowing == true {
+                    HStack(spacing: 0) {
                         SideBarMenuView()
-                            .frame(width: UIScreen.main.bounds.width/3)
-                        HStack {
-                            if model.sideBarShowing == true {
-                                Spacer()
-                                NewSelectionView()
-                                    .frame(width: UIScreen.main.bounds.width*2/3)
-                            }
-                            else {
-                                NewSelectionView()
-                                    .frame(width: UIScreen.main.bounds.width)
-                            }
-                        }
-                            
-                        
-                    }
-                }.padding(.top, 10)
+                            .frame(width: UIScreen.main.bounds.width/20)
+                            .padding(.leading, UIScreen.main.bounds.width)
+                        NewSelectionView()
+                            .frame(width: UIScreen.main.bounds.width)
+                            .disabled(model.sideBarShowing ? true : false)
+                            .onTapGesture(perform: {
+                                model.sideBarShowing = false
+                            })
+                    }.frame(width: UIScreen.main.bounds.width*2)
+                        .padding(.top)
+                }
+                    
                         
                 
-            }.onAppear(perform: {
+            }.frame(width: UIScreen.main.bounds.width)
+            .onAppear(perform: {
                 model.sideBarShowing = false
             })
             .navigationBarTitleDisplayMode( .inline)

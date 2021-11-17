@@ -493,7 +493,9 @@ struct NewSelectionView: View {
                     Spacer()
                 }.padding()
             }
-        }.onAppear {
+        }
+        .frame(width: UIScreen.main.bounds.width)
+        .onAppear {
             model.eval = true
             model.includePrivacyPolicy = true
             model.includeMedicalHistory = true
@@ -507,9 +509,6 @@ struct NewSelectionView: View {
             BackIndexSelected = false
             QuickDashSelected = false
         }
-        .onTapGesture(perform: {
-            model.sideBarShowing = false
-        })
         
     }
 }
