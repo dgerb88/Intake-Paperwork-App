@@ -31,10 +31,8 @@ struct HomeView: View {
                             })
                     }.frame(width: UIScreen.main.bounds.width*2)
                         .padding(.top)
+                    .transition(.move(edge: .leading))
                 }
-                    
-                        
-                
             }.frame(width: UIScreen.main.bounds.width)
             .onAppear(perform: {
                 model.sideBarShowing = false
@@ -53,7 +51,9 @@ struct HomeView: View {
                                 model.sideBarShowing = false
                             }
                             else {
-                                model.sideBarShowing = true
+                                withAnimation {
+                                    model.sideBarShowing = true
+                                }
                             }
                         } label: {
                             Image(systemName: "line.3.horizontal")

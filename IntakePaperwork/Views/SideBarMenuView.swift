@@ -15,18 +15,21 @@ struct SideBarMenuView: View {
         ZStack {
             BackgroundView()
             Rectangle()
-                .foregroundColor(.pink)
+                .foregroundColor(Color.init(.sRGB, red: 0.82745, green: 0.82745, blue: 0.82745, opacity: 1))
             VStack {
                 Divider().padding(.bottom)
                 NavigationLink {
                     SettingsView()
                 } label: {
                     HStack {
+                        Image(systemName: "gear")
+                            .foregroundColor(.black)
+                            .font(Font.title)
                         Text("Settings")
                             .font(Font.title)
                             .foregroundColor(.black)
                         Image(systemName: "chevron.right")
-                            .padding(.leading, 30)
+                            .padding(.leading, 230)
                             .foregroundColor(.black)
                         Spacer()
                     }.padding(.leading)
@@ -36,11 +39,15 @@ struct SideBarMenuView: View {
                     PDFRetrievalView()
                 } label: {
                     HStack {
+                        Image(systemName: "doc")
+                            .foregroundColor(.black)
+                            .font(Font.title)
+                            .padding(.leading, 3)
                         Text("PDF retrieval")
                             .font(Font.title)
                             .foregroundColor(.black)
                         Image(systemName: "chevron.right")
-                            .padding(.leading, 30)
+                            .padding(.leading, 180)
                             .foregroundColor(.black)
                         Spacer()
                     }.padding(.leading)
