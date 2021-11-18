@@ -67,8 +67,10 @@ struct NewSelectionView: View {
                             HStack(spacing: 0) {
                                 Button {
                                     if isEnglish == false {
-                                        isEnglish = true
-                                        isSpanish = false
+                                        withAnimation {
+                                            isEnglish = true
+                                            isSpanish = false
+                                        }
                                     }
                                 } label: {
                                     ZStack {
@@ -97,8 +99,10 @@ struct NewSelectionView: View {
                                 }
                                 Button {
                                     if isSpanish == false {
-                                        isSpanish = true
-                                        isEnglish = false
+                                        withAnimation {
+                                            isSpanish = true
+                                            isEnglish = false
+                                        }
                                     }
                                 } label: {
                                     ZStack {

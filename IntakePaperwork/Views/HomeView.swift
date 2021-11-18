@@ -30,8 +30,7 @@ struct HomeView: View {
                             .frame(width: model.sideBarShowing ? UIScreen.main.bounds.width/2 : 0)
                             .transition(.move(edge: .leading))
                             .border(Color.gray, width: 1)
-                        VStack {
-                            Divider().padding(.bottom)
+                        List {
                             NavigationLink {
                                 SettingsView()
                             } label: {
@@ -44,9 +43,8 @@ struct HomeView: View {
                                         .foregroundColor(.black)
                                         .padding(.trailing, 50)
                                     Spacer()
-                                }.padding(.leading)
+                                }.padding(.leading).padding(.vertical)
                             }
-                            Divider()
                             NavigationLink {
                                 PDFRetrievalView()
                             } label: {
@@ -60,10 +58,8 @@ struct HomeView: View {
                                         .foregroundColor(.black)
                                         .padding(.trailing, 50)
                                     Spacer()
-                                }.padding(.leading)
+                                }.padding(.leading).padding(.vertical)
                             }
-                            Divider()
-                            Spacer()
                         }.frame(width: model.sideBarShowing ? UIScreen.main.bounds.width/2 : 0)
                         
                     }.frame(width: model.sideBarShowing ? UIScreen.main.bounds.width/2 : 0)
