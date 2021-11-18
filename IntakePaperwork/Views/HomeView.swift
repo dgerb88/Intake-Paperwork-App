@@ -15,10 +15,7 @@ struct HomeView: View {
         NavigationView {
             ZStack(alignment: .center) {
                 BackgroundView()
-                HStack(spacing: 0) {
-                    SideBarMenuView()
-                        .frame(width: 0)
-                        .padding(.leading, model.sideBarShowing ? UIScreen.main.bounds.width: 0)
+                ZStack(alignment: .leading) {
                     NewSelectionView()
                         .frame(width: UIScreen.main.bounds.width)
                         .disabled(model.sideBarShowing ? true : false)
@@ -27,7 +24,50 @@ struct HomeView: View {
                                 model.sideBarShowing = false
                             }
                         })
-                }.padding(.top)
+                    ZStack(alignment: .leading) {
+                        Rectangle()
+                            .foregroundColor(Color.init(.sRGB, red: 0.92941, green: 0.92941, blue: 0.92941, opacity: 1))
+                            .frame(width: model.sideBarShowing ? UIScreen.main.bounds.width/2 : 0)
+                            .transition(.move(edge: .leading))
+                            .border(Color.gray, width: 1)
+                        VStack {
+                            Divider().padding(.bottom)
+                            NavigationLink {
+                                SettingsView()
+                            } label: {
+                                HStack {
+                                    Image(systemName: "gearshape")
+                                        .foregroundColor(.black)
+                                        .font(Font.title)
+                                    Text("Settings")
+                                        .font(Font.title)
+                                        .foregroundColor(.black)
+                                        .padding(.trailing, 50)
+                                    Spacer()
+                                }.padding(.leading)
+                            }
+                            Divider()
+                            NavigationLink {
+                                PDFRetrievalView()
+                            } label: {
+                                HStack {
+                                    Image(systemName: "doc")
+                                        .foregroundColor(.black)
+                                        .font(Font.title)
+                                        .padding(.leading, 3)
+                                    Text("PDF retrieval")
+                                        .font(Font.title)
+                                        .foregroundColor(.black)
+                                        .padding(.trailing, 50)
+                                    Spacer()
+                                }.padding(.leading)
+                            }
+                            Divider()
+                            Spacer()
+                        }.frame(width: model.sideBarShowing ? UIScreen.main.bounds.width/2 : 0)
+                        
+                    }.frame(width: model.sideBarShowing ? UIScreen.main.bounds.width/2 : 0)
+                }
                 .frame(width: UIScreen.main.bounds.width*2)
                     .padding(.top)
                 .transition(.move(edge: .leading))

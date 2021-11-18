@@ -51,7 +51,7 @@ struct NewSelectionView: View {
             Rectangle()
                 .foregroundColor(Color.init(.sRGB, red: 0.92941, green: 0.92941, blue: 0.92941, opacity: 1))
                 .cornerRadius(5)
-                .shadow(radius: 5)
+                .shadow(radius: 5)                
             ScrollView {
                 VStack(spacing: 30) {
                     //MARK: Language
