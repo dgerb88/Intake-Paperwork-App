@@ -17,6 +17,7 @@ struct MedicalHistoryView: View {
     @State var primaryReasonOther = ""
     @State var dateProblemStarted = ""
     @State private var button = [false, false, false, false, false, false, false, false, false, false, false]
+    @State var button2 = [false, false, false, false, false]
     @State var diagnosticTesting = ""
     @State var secondReason = ""
     @State var historyCondition = ""
@@ -25,6 +26,7 @@ struct MedicalHistoryView: View {
     @State var dateNextDoc = ""
     @State var PTin12 = ""
     @State var weeksPregnant = ""
+    @State var otherConditions = ""
     
     
     var body: some View {
@@ -442,6 +444,192 @@ struct MedicalHistoryView: View {
                     }
                 }
                 Divider().padding(.vertical)
+                VStack(alignment: .leading) {
+                    Text("Please mark any conditions you have a PERSONAL history of(not family history):")
+                        .font(Font.title2.weight(.bold))
+                }
+                HStack(alignment: .top, spacing: 5) {
+                    VStack(alignment: .leading, spacing: 3) {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 3) {
+                                HStack(alignment: .top) {
+                                    Button {
+                                        if button2[0] {
+                                            button2[0] = false
+                                        }
+                                        else {
+                                            button2[0] = true
+                                        }
+                                    } label: {
+                                        Image(systemName: "square")
+                                    }
+                                    Text("Abnormal bleeding")
+                                }
+                                HStack(alignment: .top) {
+                                    Button {
+                                        if button2[1] {
+                                            button2[1] = false
+                                        }
+                                        else {
+                                            button2[1] = true
+                                        }
+                                    } label: {
+                                        Image(systemName: "square")
+                                    }
+                                    Text("Angina(chest pain")
+                                }
+                                HStack(alignment: .top) {
+                                    Button {
+                                        if button2[2] {
+                                            button2[2] = false
+                                        }
+                                        else {
+                                            button2[2] = true
+                                        }
+                                    } label: {
+                                        Image(systemName: "square")
+                                    }
+                                    Text("Anxiety")
+                                }
+                                HStack(alignment: .top) {
+                                    Button {
+                                        if button2[3] {
+                                            button2[3] = false
+                                        }
+                                        else {
+                                            button2[3] = true
+                                        }
+                                    } label: {
+                                        Image(systemName: "square")
+                                    }
+                                    Text("Arrythmia")
+                                }
+                                HStack(alignment: .top) {
+                                    Button {
+                                        if button2[4] {
+                                            button2[4] = false
+                                        }
+                                        else {
+                                            button2[4] = true
+                                        }
+                                    } label: {
+                                        Image(systemName: "square")
+                                    }
+                                    Text("Asthma")
+                                }
+                                HStack(alignment: .top) {
+                                    Button {
+                                        if button2[5] {
+                                            button2[5] = false
+                                        }
+                                        else {
+                                            button2[5] = true
+                                        }
+                                    } label: {
+                                        Image(systemName: "square")
+                                    }
+                                    Text("Bipolar")
+                                }
+                                HStack(alignment: .top) {
+                                    Button {
+                                        if button2[6] {
+                                            button2[6] = false
+                                        }
+                                        else {
+                                            button2[6] = true
+                                        }
+                                    } label: {
+                                        Image(systemName: "square")
+                                    }
+                                    Text("Blood clotting disorder")
+                                }
+                            }
+                        }
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("Bowel incontinence")
+                            Text("Cancer")
+                            Text("Cellulitis")
+                            Text("Chronic back pain")
+                            Text("Chronic neck pain")
+                            Text("Crohn's Disease")
+                            Text("Closed head injury")
+                            Text("Colitis")
+                        }
+                    }
+                        .fixedSize(horizontal: false, vertical: true)
+                    VStack(alignment: .leading, spacing: 3) {
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("Congestive Heart Failure")
+                            Text("COPD")
+                            Text("CVA(stroke)")
+                            Text("Degenerative Disc Disease")
+                            Text("Depression")
+                            Text("Diabetes(Type 1)")
+                        }
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("Diabetes(Type 2")
+                            Text("DVT(Deep Vein Thrombosis)")
+                            Text("Fibromyalgia")
+                            Text("Frequent UTI")
+                            Text("GERD")
+                            Text("Glaucoma")
+                            Text("Gout")
+                        }
+                        
+
+                    }
+                        .fixedSize(horizontal: false, vertical: true)
+                    VStack(alignment: .leading, spacing: 3) {
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("Heart Disease")
+                            Text("Hepatitis B")
+                            Text("Hepatitis C")
+                            Text("Hiatal Hernia")
+                            Text("High Cholesterol")
+                            Text("HIV/AIDS")
+                            Text("Hypertension")
+                        }
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("Hypothyroidism")
+                            Text("IBS")
+                            Text("Joint pain")
+                            Text("Lymphedema")
+                            Text("Migraine Headaches")
+                            Text("MRSA")
+                            Text("Multiple Sclerosis")
+                        }
+
+                    }                        .fixedSize(horizontal: false, vertical: true)
+                    VStack(alignment: .leading) {
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("MI(heart attack)")
+                            Text("Osteoarthritis")
+                            Text("Osteoporosis")
+                            Text("Peripheral Neuropathy")
+                            Text("Psoriatic Arthritis")
+                            Text("PVD(Peripheral Vascular Disease")
+                            Text("Rheumatoid Arthritis")
+                        }
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("Scoliosis")
+                            Text("Seizure Disorder")
+                            Text("Shortness of breath")
+                            Text("Sleeping disorder")
+                            Text("TB(Tuberculosis")
+                            Text("Urinary Incontinence")
+                            Text("None of the above")
+                        }
+                    }                        .fixedSize(horizontal: false, vertical: true)
+                }.padding(.top)
+                VStack(alignment: .leading) {
+                    Text("Other conditions not listed:")
+                        .padding(.top)
+                    TextField("Conditions", text: $otherConditions)
+                        .accentColor(.black)
+                        .textFieldStyle(.roundedBorder)
+                        .padding(.bottom, 5)
+                        .frame(width: 350)
+                }
                 
             }.padding()
         }.accentColor(.blue)
