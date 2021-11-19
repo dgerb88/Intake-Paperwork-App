@@ -63,7 +63,7 @@ struct SurveyView: View {
                                 }
                                 
                                 
-                            }.navigationBarTitleDisplayMode( .inline)
+                            }.navigationBarTitleDisplayMode(.inline)
                             .toolbar {
                                 ToolbarItem(placement: .principal) {
                                     Text("Intake Paperwork")
@@ -72,8 +72,8 @@ struct SurveyView: View {
                                         .font(.largeTitle)
                                 }
                             }
-                    }.frame(width: UIScreen.main.bounds.width-40)
-                        .padding(.top, 20)
+                    }.frame(width: UIScreen.main.bounds.width-10)
+                        .padding()
                 
             }
         }

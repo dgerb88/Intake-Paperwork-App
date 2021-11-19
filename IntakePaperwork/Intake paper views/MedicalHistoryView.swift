@@ -979,45 +979,522 @@ struct MedicalHistoryView: View {
                         .fixedSize(horizontal: false, vertical: true)
                     VStack(alignment: .leading, spacing: 3) {
                         VStack(alignment: .leading, spacing: 3) {
-                            Text("Heart Disease")
-                            Text("Hepatitis B")
-                            Text("Hepatitis C")
-                            Text("Hiatal Hernia")
-                            Text("High Cholesterol")
-                            Text("HIV/AIDS")
-                            Text("Hypertension")
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[28] {
+                                        button2[28] = false
+                                    }
+                                    else {
+                                        button2[28] = true
+                                    }
+                                } label: {
+                                    if button2[28] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Heart Disease")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[29] {
+                                        button2[29] = false
+                                    }
+                                    else {
+                                        button2[29] = true
+                                    }
+                                } label: {
+                                    if button2[29] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Hepatitis B")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[30] {
+                                        button2[30] = false
+                                    }
+                                    else {
+                                        button2[30] = true
+                                    }
+                                } label: {
+                                    if button2[30] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Hepatitis C")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[31] {
+                                        button2[31] = false
+                                    }
+                                    else {
+                                        button2[31] = true
+                                    }
+                                } label: {
+                                    if button2[31] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Hiatal Hernia")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[32] {
+                                        button2[32] = false
+                                    }
+                                    else {
+                                        button2[32] = true
+                                    }
+                                } label: {
+                                    if button2[32] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("High Cholesterol")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[33] {
+                                        button2[33] = false
+                                    }
+                                    else {
+                                        button2[33] = true
+                                    }
+                                } label: {
+                                    if button2[33] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("HIV/AIDS")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[34] {
+                                        button2[34] = false
+                                    }
+                                    else {
+                                        button2[34] = true
+                                    }
+                                } label: {
+                                    if button2[34] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Hypertension")
+                            }.foregroundColor(.black)
                         }
                         VStack(alignment: .leading, spacing: 3) {
-                            Text("Hypothyroidism")
-                            Text("IBS")
-                            Text("Joint pain")
-                            Text("Lymphedema")
-                            Text("Migraine Headaches")
-                            Text("MRSA")
-                            Text("Multiple Sclerosis")
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[35] {
+                                        button2[35] = false
+                                    }
+                                    else {
+                                        button2[35] = true
+                                    }
+                                } label: {
+                                    if button2[35] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Hypothyroidism")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[36] {
+                                        button2[36] = false
+                                    }
+                                    else {
+                                        button2[36] = true
+                                    }
+                                } label: {
+                                    if button2[36] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("IBS")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[37] {
+                                        button2[37] = false
+                                    }
+                                    else {
+                                        button2[37] = true
+                                    }
+                                } label: {
+                                    if button2[37] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Joint pain")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[38] {
+                                        button2[38] = false
+                                    }
+                                    else {
+                                        button2[38] = true
+                                    }
+                                } label: {
+                                    if button2[38] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Lymphedema")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[39] {
+                                        button2[39] = false
+                                    }
+                                    else {
+                                        button2[39] = true
+                                    }
+                                } label: {
+                                    if button2[39] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Migraine headaches")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[40] {
+                                        button2[40] = false
+                                    }
+                                    else {
+                                        button2[40] = true
+                                    }
+                                } label: {
+                                    if button2[40] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("MRSA")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[41] {
+                                        button2[41] = false
+                                    }
+                                    else {
+                                        button2[41] = true
+                                    }
+                                } label: {
+                                    if button2[41] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Multiple Sclerosis")
+                            }.foregroundColor(.black)
                         }
 
-                    }                        .fixedSize(horizontal: false, vertical: true)
+                    }.fixedSize(horizontal: false, vertical: true)
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading, spacing: 3) {
-                            Text("MI(heart attack)")
-                            Text("Osteoarthritis")
-                            Text("Osteoporosis")
-                            Text("Peripheral Neuropathy")
-                            Text("Psoriatic Arthritis")
-                            Text("PVD(Peripheral Vascular Disease")
-                            Text("Rheumatoid Arthritis")
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[42] {
+                                        button2[42] = false
+                                    }
+                                    else {
+                                        button2[42] = true
+                                    }
+                                } label: {
+                                    if button2[42] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("MI(heart attack)")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[43] {
+                                        button2[43] = false
+                                    }
+                                    else {
+                                        button2[43] = true
+                                    }
+                                } label: {
+                                    if button2[43] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Osteoarthritis")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[44] {
+                                        button2[44] = false
+                                    }
+                                    else {
+                                        button2[44] = true
+                                    }
+                                } label: {
+                                    if button2[44] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Osteoporosis")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[45] {
+                                        button2[45] = false
+                                    }
+                                    else {
+                                        button2[45] = true
+                                    }
+                                } label: {
+                                    if button2[45] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Peripheral Neuropathy")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[46] {
+                                        button2[46] = false
+                                    }
+                                    else {
+                                        button2[46] = true
+                                    }
+                                } label: {
+                                    if button2[46] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Psoriatic Arthritis")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[47] {
+                                        button2[47] = false
+                                    }
+                                    else {
+                                        button2[47] = true
+                                    }
+                                } label: {
+                                    if button2[47] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("PVD(Peripheral Vascular Disease")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[48] {
+                                        button2[48] = false
+                                    }
+                                    else {
+                                        button2[48] = true
+                                    }
+                                } label: {
+                                    if button2[48] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Rheumatoid Arthritis")
+                            }.foregroundColor(.black)
                         }
                         VStack(alignment: .leading, spacing: 3) {
-                            Text("Scoliosis")
-                            Text("Seizure Disorder")
-                            Text("Shortness of breath")
-                            Text("Sleeping disorder")
-                            Text("TB(Tuberculosis")
-                            Text("Urinary Incontinence")
-                            Text("None of the above")
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[49] {
+                                        button2[49] = false
+                                    }
+                                    else {
+                                        button2[49] = true
+                                    }
+                                } label: {
+                                    if button2[49] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Scoliosis")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[50] {
+                                        button2[50] = false
+                                    }
+                                    else {
+                                        button2[50] = true
+                                    }
+                                } label: {
+                                    if button2[50] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Seizure Disorder")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[51] {
+                                        button2[51] = false
+                                    }
+                                    else {
+                                        button2[51] = true
+                                    }
+                                } label: {
+                                    if button2[51] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Shortness of breath")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[52] {
+                                        button2[52] = false
+                                    }
+                                    else {
+                                        button2[52] = true
+                                    }
+                                } label: {
+                                    if button2[52] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Sleeping disorder")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[53] {
+                                        button2[53] = false
+                                    }
+                                    else {
+                                        button2[53] = true
+                                    }
+                                } label: {
+                                    if button2[53] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("TB(Tuberculosis")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[54] {
+                                        button2[54] = false
+                                    }
+                                    else {
+                                        button2[54] = true
+                                    }
+                                } label: {
+                                    if button2[54] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("Urinary Incontinence")
+                            }.foregroundColor(.black)
+                            HStack(alignment: .top) {
+                                Button {
+                                    if button2[55] {
+                                        button2[55] = false
+                                    }
+                                    else {
+                                        button2[55] = true
+                                    }
+                                } label: {
+                                    if button2[55] {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    else {
+                                        Image(systemName: "square")
+                                    }
+                                }
+                                Text("None of the above")
+                            }.foregroundColor(.black)
+
                         }
-                    }                        .fixedSize(horizontal: false, vertical: true)
+                    }.fixedSize(horizontal: false, vertical: true)
                 }.padding(.top)
                 VStack(alignment: .leading) {
                     Text("Other conditions not listed:")
@@ -1027,6 +1504,8 @@ struct MedicalHistoryView: View {
                         .textFieldStyle(.roundedBorder)
                         .padding(.bottom, 5)
                         .frame(width: 350)
+                    Divider().padding(.vertical)
+                    
                 }
                 
             }.padding()
