@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
+   
+    
     var body: some View {
         ZStack {
             BackgroundView()
@@ -15,9 +17,7 @@ struct SettingsView: View {
             ZStack {
                 VStack {
                     List {
-                        Text("Settings 1")
-                        Text("Settings 2")
-                        Text("Settings 3")
+                        Text("Settings")
                     }
                 }
             }.padding(.top)
