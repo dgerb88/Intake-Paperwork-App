@@ -100,10 +100,12 @@ class SurveyModel: ObservableObject {
         showInfoAndPolicies = true
         showInsuranceIntake = true
         showMedicalHistory = true
-        ptName = "(PT name here)"
-        ptCredential = "DPT"
-        clinicName = "(Your clinic's name here)"
-        phoneNumber = "(Clinic phone number here)"
+        ptName = ""
+        ptCredential = ""
+        clinicName = ""
+        phoneNumber = ""
+        cancelFee = ""
+        noShowFee = ""
         UserDefaults.standard.setValue(true, forKey: Constants.isSettingsPreloaded)
     }
     
