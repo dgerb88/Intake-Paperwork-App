@@ -65,6 +65,21 @@ class SurveyModel: ObservableObject {
             UserDefaults.standard.set(self.clinicName, forKey: Constants.clinicName)
         }
     }
+    @Published var cancelFee: String = UserDefaults.standard.string(forKey: Constants.cancelFee) ?? "" {
+        didSet {
+            UserDefaults.standard.set(self.cancelFee, forKey: Constants.cancelFee)
+        }
+    }
+    @Published var noShowFee: String = UserDefaults.standard.string(forKey: Constants.noShowFee) ?? "" {
+        didSet {
+            UserDefaults.standard.set(self.noShowFee, forKey: Constants.noShowFee)
+        }
+    }
+    @Published var phoneNumber: String = UserDefaults.standard.string(forKey: Constants.phoneNumber) ?? "" {
+        didSet {
+            UserDefaults.standard.set(self.phoneNumber, forKey: Constants.phoneNumber)
+        }
+    }
     
     init() {
         getRemoteData()
@@ -88,6 +103,7 @@ class SurveyModel: ObservableObject {
         ptName = "(PT name here)"
         ptCredential = "DPT"
         clinicName = "(Your clinic's name here)"
+        phoneNumber = "(Clinic phone number here)"
         UserDefaults.standard.setValue(true, forKey: Constants.isSettingsPreloaded)
     }
     

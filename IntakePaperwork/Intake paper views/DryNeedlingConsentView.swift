@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DryNeedlingConsentView: View {
     
+    @EnvironmentObject var model:SurveyModel
+    
     @State var button = [false, false, false, false, false, false, false, false, false]
     @State var signature = ""
     var body: some View {
@@ -56,7 +58,7 @@ struct DryNeedlingConsentView: View {
                                     .foregroundColor(.black)
                             }
                         }.padding(.leading, 5)
-                        Text("I hereby authorize J. Dax Gerber, DPT to perform Functional Dry Needling during my treatment.")
+                        Text("I hereby authorize \(model.ptName), \(model.ptCredential) to perform Functional Dry Needling during my treatment.")
                             .padding(.bottom)
                     }
                     Text("Patient refusal of service:")

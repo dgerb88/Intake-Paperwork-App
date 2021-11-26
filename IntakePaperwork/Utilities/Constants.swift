@@ -19,8 +19,9 @@ struct Constants {
     static var ptname = "ptName"
     static var ptCredential = "ptCredential"
     static var clinicName = "clinicName"
-
-
+    static var cancelFee = "cancelFee"
+    static var noShowFee = "noShowFee"
+    static var phoneNumber = "phoneNumber"
 
     
 }

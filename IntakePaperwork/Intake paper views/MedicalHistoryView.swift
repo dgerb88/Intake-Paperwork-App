@@ -56,7 +56,8 @@ struct MedicalHistoryView: View {
                                 Text("Neck pain").tag(2)
                                 Text("Back pain").tag(1)
                                 Text("Please select").tag(0)
-                            }.pickerStyle(MenuPickerStyle())
+                            }
+                                .pickerStyle(MenuPickerStyle())
                                 .padding(.leading)
                             if primaryReason == 7 {
                                 Text("Please describe:")

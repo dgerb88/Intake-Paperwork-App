@@ -9,6 +9,8 @@ import SwiftUI
 
 struct InsuranceIntakeView: View {
     
+    @EnvironmentObject var model:SurveyModel
+    
     @State var patientName = ""
     @State var InsuranceName = ["", ""]
     @State var memberId = ["", ""]
@@ -75,7 +77,7 @@ struct InsuranceIntakeView: View {
                         .bold()
                         .font(.title)
                         .padding(.top, 20)
-                    Text("Agreement: Avista Physical Therapy would like to be as transparent as possible in regard to fees for services and responsibilities. Because we recognize the need for a clear understanding between patient and medical provider regarding financial arrangements for healthcare, the following information is provided to avoid any misunderstanding concerning protected health information and payment for professional services.")
+                    Text("Agreement: \(model.clinicName) would like to be as transparent as possible in regard to fees for services and responsibilities. Because we recognize the need for a clear understanding between patient and medical provider regarding financial arrangements for healthcare, the following information is provided to avoid any misunderstanding concerning protected health information and payment for professional services.")
                         .fixedSize(horizontal: false, vertical: true)
 
                     Text("Insurance Patient Financial Responsibility Form - Consents")
@@ -183,20 +185,20 @@ struct InsuranceIntakeView: View {
                         .bold()
                         .font(.title)
                         .padding(.top, 10)
-                    Text("I understand that I am financially responsible for my health insurance deductible, coinsurance, or non-covered service. Copayments are due at time of service. In the event that my health plan determines a service to be “not payable”, I will be responsible for the complete charge and agree to pay the costs of all services provided. In the event that my insurer does not pay all of the medical charges incurred, I hereby authorize Avista Physical Therapy to automatically charge the credit or debit card on my account for the remaining balance due.")
+                    Text("I understand that I am financially responsible for my health insurance deductible, coinsurance, or non-covered service. Copayments are due at time of service. In the event that my health plan determines a service to be “not payable”, I will be responsible for the complete charge and agree to pay the costs of all services provided. In the event that my insurer does not pay all of the medical charges incurred, I hereby authorize \(model.clinicName) to automatically charge the credit or debit card on my account for the remaining balance due.")
                         .fixedSize(horizontal: false, vertical: true)
 
                     Text("Insurance Authorization for Assigment of Benefits:")
                         .bold()
                         .font(.title)
                         .padding(.top, 10)
-                    Text("I hereby authorize and direct payment of my medical benefits to Avista Physical Therapy on my behalf for any services furnished to me by the providers.")
+                    Text("I hereby authorize and direct payment of my medical benefits to \(model.clinicName) on my behalf for any services furnished to me by the providers.")
                         .fixedSize(horizontal: false, vertical: true)
                     Text("Authorization to Release Records:")
                         .bold()
                         .font(.title)
                         .padding(.top, 10)
-                    Text("I hereby authorize Avista Physical Therapy to release to my insurer, governmental agencies, or any other entity financially responsible for my medical care, all information, including diagnosis and the records of any treatment or examination rendered to me needed to substantiate payment for such medical services as well as information required for pre-certification, authorization or referral to other medical provider")
+                    Text("I hereby authorize \(model.clinicName) to release to my insurer, governmental agencies, or any other entity financially responsible for my medical care, all information, including diagnosis and the records of any treatment or examination rendered to me needed to substantiate payment for such medical services as well as information required for pre-certification, authorization or referral to other medical provider")
                         .fixedSize(horizontal: false, vertical: true)
                     Text("I have read and understand these policies and my responsibility concerning the payment of these services")
                         .bold()
