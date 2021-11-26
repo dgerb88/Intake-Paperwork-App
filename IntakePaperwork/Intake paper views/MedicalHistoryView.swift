@@ -1477,31 +1477,39 @@ struct MedicalHistoryView: View {
                                 }
                                 Text("Urinary Incontinence")
                             }.foregroundColor(.black)
-                            HStack(alignment: .top) {
-                                Button {
-                                    if button2[55] {
-                                        button2[55] = false
-                                    }
-                                    else {
-                                        button2[55] = true
-                                    }
-                                } label: {
-                                    if button2[55] {
-                                        Image(systemName: "checkmark.square")
-                                    }
-                                    else {
-                                        Image(systemName: "square")
-                                    }
-                                }
-                                Text("None of the above")
-                            }.foregroundColor(.black)
-
                         }
                     }.fixedSize(horizontal: false, vertical: true)
                 }.padding(.top)
                 VStack(alignment: .leading) {
+                    HStack(alignment: .top) {
+                        Button {
+                            if button2[55] {
+                                button2[55] = false
+                            }
+                            else {
+                                for index in (0..<button2.count) {
+                                    button2[index] = false
+                                }
+                                button2[55] = true
+                            }
+                        } label: {
+                            if button2[55] {
+                                Image(systemName: "checkmark.square")
+                                    .font(.headline)
+
+                            }
+                            else {
+                                Image(systemName: "square")
+                                    .font(.headline)
+
+                            }
+                        }
+                        Text("None of the above")
+                            .font(.headline)
+                    }.foregroundColor(.black).padding(.top, 10)
                     Text("Other conditions not listed:")
-                        .padding(.top)
+                        .padding(.top, 10)
+                        .font(.headline)
                     TextField("Conditions", text: $otherConditions)
                         .accentColor(.black)
                         .textFieldStyle(.roundedBorder)
@@ -1510,7 +1518,9 @@ struct MedicalHistoryView: View {
                     Divider().padding(.vertical)
                     
                 }
-                
+                VStack(alignment: .leading) {
+                    
+                }
             }.padding()
         }
         .accentColor(.blue)

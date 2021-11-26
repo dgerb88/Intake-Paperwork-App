@@ -29,6 +29,7 @@
 		4FCC6336272B5FAC0041BE4C /* InsuranceIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6335272B5FAC0041BE4C /* InsuranceIntakeView.swift */; };
 		4FCC6338272B5FCF0041BE4C /* InformationAndPoliciesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6337272B5FCF0041BE4C /* InformationAndPoliciesView.swift */; };
 		4FCD26AB273052A900F4859F /* NDIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD26AA273052A900F4859F /* NDIView.swift */; };
+		4FD901E52750B7A50042FEBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD901E42750B7A50042FEBD /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		4FCC6335272B5FAC0041BE4C /* InsuranceIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceIntakeView.swift; sourceTree = "<group>"; };
 		4FCC6337272B5FCF0041BE4C /* InformationAndPoliciesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAndPoliciesView.swift; sourceTree = "<group>"; };
 		4FCD26AA273052A900F4859F /* NDIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDIView.swift; sourceTree = "<group>"; };
+		4FD901E42750B7A50042FEBD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +92,8 @@
 				4F207D83271AA69100B74F3A /* IntakePaperworkApp.swift */,
 				4F207D93271AA99000B74F3A /* Model.swift */,
 				4F207D97271AAC7300B74F3A /* Views */,
-				4F207D95271AAA6400B74F3A /* ModelView.swift */,
+				4FD901AE2750AAA00042FEBD /* Models */,
+				4FD901E32750B7870042FEBD /* Utilities */,
 				4FCC632E272B5E170041BE4C /* Intake paper views */,
 				4F207D87271AA69200B74F3A /* Assets.xcassets */,
 				4F207D89271AA69200B74F3A /* Preview Content */,
@@ -143,6 +146,22 @@
 				4FCC6337272B5FCF0041BE4C /* InformationAndPoliciesView.swift */,
 			);
 			path = "Intake paper views";
+			sourceTree = "<group>";
+		};
+		4FD901AE2750AAA00042FEBD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F207D95271AAA6400B74F3A /* ModelView.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4FD901E32750B7870042FEBD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4FD901E42750B7A50042FEBD /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FD901E52750B7A50042FEBD /* Constants.swift in Sources */,
 				4F66742227445DA5006B9ED0 /* SideBarMenuView.swift in Sources */,
 				4F8B17DB2727C998000A1573 /* LefsView.swift in Sources */,
 				4F12AAC62727BBD5006905FD /* QuickDashEngView.swift in Sources */,

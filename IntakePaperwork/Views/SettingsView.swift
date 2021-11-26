@@ -8,16 +8,26 @@
 import SwiftUI
 
 struct SettingsView: View {
-   
+    
+    @EnvironmentObject var model: SurveyModel
     
     var body: some View {
         ZStack {
             BackgroundView()
                 .frame(width: UIScreen.main.bounds.width)
             ZStack {
-                VStack {
+                VStack(alignment: .leading) {
                     List {
-                        Text("Settings")
+                        Toggle("Dry Needling", isOn: self.$model.showDryNeedling)
+                            .padding(.horizontal)
+                        Toggle("Medical History", isOn: self.$model.showMedicalHistory)
+                            .padding(.horizontal)
+                        Toggle("Privacy Policy", isOn: self.$model.showPrivacyPolicy)
+                            .padding(.horizontal)
+                        Toggle("Insurance Intake", isOn: self.$model.showInsuranceIntake)
+                            .padding(.horizontal)
+                        Toggle("Information and Policies", isOn: self.$model.showInfoAndPolicies)
+                            .padding(.horizontal)
                     }
                 }
             }.padding(.top)
