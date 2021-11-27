@@ -31,6 +31,11 @@ struct MedicalHistoryView: View {
     @State var occupation = ""
     @State var button3 = [false, false, false]
     @State var workRestrictions = ""
+    @State var workDuties = "Duties"
+    @State var button4 = [false, false]
+    @State var timesFallen = ""
+    @State var reasonFall = ""
+    @State var button5 = [false, false]
     
     
     var body: some View {
@@ -1553,6 +1558,7 @@ struct MedicalHistoryView: View {
                             .padding(.bottom)
                         Text("If employed, current ability to work: ")
                             .font(Font.title3.weight(.bold))
+                            .padding(.bottom, 5)
                         VStack(alignment: .leading) {
                             Button {
                                 if button3[0] == false {
@@ -1571,6 +1577,7 @@ struct MedicalHistoryView: View {
                                             .foregroundColor(.black)
                                     }
                                     Text("Able to perform all duties/No restrictions")
+                                        .foregroundColor(.black)
                                 }
                             }
                             Button {
@@ -1590,6 +1597,7 @@ struct MedicalHistoryView: View {
                                             .foregroundColor(.black)
                                     }
                                     Text("Restricted duties/schedule")
+                                        .foregroundColor(.black)
                                 }
                             }
                             Button {
@@ -1609,9 +1617,10 @@ struct MedicalHistoryView: View {
                                             .foregroundColor(.black)
                                     }
                                     Text("Off work, temporary disability")
+                                        .foregroundColor(.black)
                                 }
                             }
-                            Text("Please outline any restrictions, if any")
+                            Text("Please outline any restrictions, if any:")
                                 .font(Font.headline)
                                 .padding(.top)
                             TextField("Restrictions", text: $workRestrictions)
@@ -1622,6 +1631,115 @@ struct MedicalHistoryView: View {
 
                         }
                         
+                    }
+                    VStack(alignment: .leading) {
+                        Text("Please describe any work duties you are currently unable to perform?(i.e. sitting for extended periods, standing for extended periods, repetitive lifting, etc.")
+                            .font(Font.title3.weight(.bold))
+                            .fixedSize(horizontal: false, vertical: true)
+                        TextEditor(text: $workDuties)
+                            .foregroundColor(workDuties == "Duties" ? Color.gray.opacity(0.5) : .black)
+                            .frame(width: 350, height: 75)
+                            .border(Color.init(.sRGB, red: 0.92941, green: 0.92941, blue: 0.92941, opacity: 1), width: 1)
+                            .padding(.bottom)
+                            .onTapGesture {
+                                if workDuties == "Duties" {
+                                    workDuties = ""
+                                }
+                            }
+                        Text("Have you fallen in the last 12 months?")
+                            .font(Font.title3.weight(.bold))
+                            .padding(.bottom, 5)
+                        HStack {
+                            Button {
+                                if button4[0] == false {
+                                    button4[0] = true
+                                    button4[1] = false
+                                }
+                            } label: {
+                                HStack {
+                                    if button4[0] == false {
+                                        Image(systemName: "square")
+                                    }
+                                    else {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    Text("Yes")
+                                        .padding(.leading, 5)
+                                }.foregroundColor(.black)
+                            }.padding(.trailing)
+                            Button {
+                                if button4[1] == false {
+                                    button4[1] = true
+                                    button4[0] = false
+                                }
+                            } label: {
+                                HStack {
+                                    if button4[1] == false {
+                                        Image(systemName: "square")
+                                    }
+                                    else {
+                                        Image(systemName: "checkmark.square")
+                                    }
+                                    Text("No")
+                                        .padding(.leading, 5)
+                                }.foregroundColor(.black)
+                            }
+
+                        }.padding(.bottom, 5)
+                        if button4[0] == true {
+                            VStack(alignment: .leading) {
+                                Text("How many times?")
+                                TextField("Number of falls", text: $timesFallen)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .padding(.bottom, 5)
+                                    .frame(width: 350)
+                                Text("Reason for fall(s)?")
+                                TextField("Reason", text: $reasonFall)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .padding(.bottom, 5)
+                                    .frame(width: 350)
+                                Text("Did any falls result in injury?")
+                                HStack {
+                                    Button {
+                                        if button5[0] == false {
+                                            button5[0] = true
+                                            button5[1] = false
+                                        }
+                                    } label: {
+                                        HStack {
+                                            if button5[0] == false {
+                                                Image(systemName: "square")
+                                            }
+                                            else {
+                                                Image(systemName: "checkmark.square")
+                                            }
+                                            Text("Yes")
+                                                .padding(.leading, 5)
+                                        }.foregroundColor(.black)
+                                    }
+                                    Button {
+                                        if button5[1] == false {
+                                            button5[1] = true
+                                            button5[0] = false
+                                        }
+                                    } label: {
+                                        HStack {
+                                            if button5[1] == false {
+                                                Image(systemName: "square")
+                                            }
+                                            else {
+                                                Image(systemName: "checkmark.square")
+                                            }
+                                            Text("No")
+                                                .padding(.leading, 5)
+                                        }.foregroundColor(.black)
+                                    }
+
+                                }
+                            }
+                        }
                     }
                 }
             }.padding()
