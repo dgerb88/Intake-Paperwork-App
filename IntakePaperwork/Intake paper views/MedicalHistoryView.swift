@@ -20,13 +20,17 @@ struct MedicalHistoryView: View {
     @State var button2 = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     @State var diagnosticTesting = ""
     @State var secondReason = ""
-    @State var historyCondition = ""
+    @State var historyCondition = "History"
     @State var dateSurgery = ""
     @State var typeSurgery = ""
     @State var dateNextDoc = ""
     @State var PTin12 = ""
     @State var weeksPregnant = ""
     @State var otherConditions = ""
+    @State var medicationsList = "List"
+    @State var occupation = ""
+    @State var button3 = [false, false, false]
+    @State var workRestrictions = ""
     
     
     var body: some View {
@@ -237,8 +241,14 @@ struct MedicalHistoryView: View {
                                 .font(Font.title3.weight(.bold))
                                 .fixedSize(horizontal: false, vertical: true)
                             TextEditor(text: $historyCondition)
-                                .background(Color.init(.sRGB, red: 0.92941, green: 0.92941, blue: 0.92941, opacity: 1))
+                                .foregroundColor(historyCondition == "History" ? Color.gray.opacity(0.5) : .black)
                                 .frame(width: 350, height: 75)
+                                .border(Color.init(.sRGB, red: 0.92941, green: 0.92941, blue: 0.92941, opacity: 1), width: 1)
+                                .onTapGesture {
+                                    if historyCondition == "History" {
+                                        historyCondition = ""
+                                    }
+                                }
                         }
                         VStack(alignment: .leading) {
                             Text("Have you received physical therapy in the last 12 months?")
@@ -1519,8 +1529,100 @@ struct MedicalHistoryView: View {
                     Divider().padding(.vertical)
                     
                 }
-                VStack(alignment: .leading) {
-                    
+                HStack(alignment: .top, spacing: 40) {
+                    VStack(alignment: .leading) {
+                        Text("Please list all medications you are currently taking(including dose and frequency, if possible):")
+                            .font(Font.title3.weight(.bold))
+                            .fixedSize(horizontal: false, vertical: true)
+                        TextEditor(text: $medicationsList)
+                            .foregroundColor(medicationsList == "List" ? Color.gray.opacity(0.5) : .black)
+                            .frame(width: 350, height: 75)
+                            .border(Color.init(.sRGB, red: 0.92941, green: 0.92941, blue: 0.92941, opacity: 1), width: 1)
+                            .padding(.bottom)
+                            .onTapGesture {
+                                if medicationsList == "List" {
+                                    medicationsList = ""
+                                }
+                            }
+                        Text("Occupation: ")
+                            .font(Font.title3.weight(.bold))
+                        TextField("Text here", text: $occupation)
+                            .accentColor(.black)
+                            .textFieldStyle(.roundedBorder)
+                            .frame(width: 350)
+                            .padding(.bottom)
+                        Text("If employed, current ability to work: ")
+                            .font(Font.title3.weight(.bold))
+                        VStack(alignment: .leading) {
+                            Button {
+                                if button3[0] == false {
+                                    button3[0] = true
+                                    button3[1] = false
+                                    button3[2] = false
+                                }
+                            } label: {
+                                HStack {
+                                    if button3[0] == false {
+                                        Image(systemName: "square")
+                                            .foregroundColor(.black)
+                                    }
+                                    else {
+                                        Image(systemName: "checkmark.square")
+                                            .foregroundColor(.black)
+                                    }
+                                    Text("Able to perform all duties/No restrictions")
+                                }
+                            }
+                            Button {
+                                if button3[1] == false {
+                                    button3[1] = true
+                                    button3[0] = false
+                                    button3[2] = false
+                                }
+                            } label: {
+                                HStack {
+                                    if button3[1] == false {
+                                        Image(systemName: "square")
+                                            .foregroundColor(.black)
+                                    }
+                                    else {
+                                        Image(systemName: "checkmark.square")
+                                            .foregroundColor(.black)
+                                    }
+                                    Text("Restricted duties/schedule")
+                                }
+                            }
+                            Button {
+                                if button3[2] == false {
+                                    button3[2] = true
+                                    button3[0] = false
+                                    button3[1] = false
+                                }
+                            } label: {
+                                HStack {
+                                    if button3[2] == false {
+                                        Image(systemName: "square")
+                                            .foregroundColor(.black)
+                                    }
+                                    else {
+                                        Image(systemName: "checkmark.square")
+                                            .foregroundColor(.black)
+                                    }
+                                    Text("Off work, temporary disability")
+                                }
+                            }
+                            Text("Please outline any restrictions, if any")
+                                .font(Font.headline)
+                                .padding(.top)
+                            TextField("Restrictions", text: $workRestrictions)
+                                .accentColor(.black)
+                                .textFieldStyle(.roundedBorder)
+                                .frame(width: 350)
+                                .padding(.bottom)
+
+                        }
+                        
+                    }
                 }
             }.padding()
         }
