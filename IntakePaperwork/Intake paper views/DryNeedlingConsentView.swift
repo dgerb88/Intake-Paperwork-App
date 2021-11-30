@@ -26,7 +26,7 @@ struct DryNeedlingConsentView: View {
                     .padding(.bottom, 30)
                 VStack(alignment: .leading) {
                     
-                    Text("PATIENT CONSENT FOR FUNCTIONAL DRY NEEDLING (FDN):")
+                    Text("Patient consent for function dry needling (FDN):")
                         .bold()
                         .font(.title2)
                         .padding(.bottom, 3)

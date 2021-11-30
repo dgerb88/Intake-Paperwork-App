@@ -1648,6 +1648,7 @@ struct MedicalHistoryView: View {
                             }
                         Text("Have you fallen in the last 12 months?")
                             .font(Font.title3.weight(.bold))
+                            .fixedSize(horizontal: false, vertical: true)
                             .padding(.bottom, 5)
                         HStack {
                             Button {
@@ -1701,6 +1702,7 @@ struct MedicalHistoryView: View {
                                     .padding(.bottom, 5)
                                     .frame(width: 350)
                                 Text("Did any falls result in injury?")
+                                    .padding(.bottom, 5)
                                 HStack {
                                     Button {
                                         if button5[0] == false {
