@@ -150,41 +150,7 @@ struct NewSelectionView: View {
                             VStack {
                                 if model.eval == true {
                                     VStack {
-                                        if model.showDryNeedling {
-                                            Button {
-                                                if model.includeDryNeedlingConsent == true {
-                                                    model.includeDryNeedlingConsent = false
-                                                }
-                                                else {
-                                                    model.includeDryNeedlingConsent = true
-                                                }
-                                            } label: {
-                                                if model.includeDryNeedlingConsent == true {
-                                                    HStack {
-                                                        Image(systemName: "checkmark.square")
-                                                            .font(Font.title2.weight(.semibold))
-                                                            .foregroundColor(.black)
-                                                            .padding(.trailing, 5)
-                                                        Text("Dry Needling Consent")
-                                                            .foregroundColor(.black)
-                                                            .font(Font.title2.weight(.semibold))
-                                                        Spacer()
-                                                    }.padding(.horizontal, 20)
-                                                }
-                                                else {
-                                                    HStack {
-                                                        Image(systemName: "square")
-                                                            .foregroundColor(.black)
-                                                            .padding(.trailing, 5)
-                                                        Text("Dry Needling Consent")
-                                                            .foregroundColor(.black)
-                                                            .font(.title2)
-                                                        Spacer()
-                                                    }.padding(.horizontal, 20)
-                                                }
-                                            }
-                                            Divider()
-                                        }
+                                        
                                         if model.showMedicalHistory {
                                             Button {
                                                 if model.includeMedicalHistory == true {
@@ -212,6 +178,80 @@ struct NewSelectionView: View {
                                                             .foregroundColor(.black)
                                                             .padding(.trailing, 5)
                                                         Text("Medical History")
+                                                            .foregroundColor(.black)
+                                                            .font(.title2)
+                                                        Spacer()
+                                                    }.padding(.horizontal, 20)
+                                                }
+                                            }
+                                            Divider()
+                                        }
+                                        if model.showInsuranceIntake {
+                                            Button {
+                                                if model.includeInsuranceIntake == true {
+                                                    model.includeInsuranceIntake = false
+                                                }
+                                                else {
+                                                    model.includeInsuranceIntake = true
+                                                }
+                                            } label: {
+                                                if model.includeInsuranceIntake == true {
+                                                    HStack {
+                                                        Image(systemName: "checkmark.square")
+                                                            .font(Font.title2.weight(.semibold))
+                                                            .foregroundColor(.black)
+                                                            .padding(.trailing, 5)
+                                                        Text("Insurance Intake")
+                                                            .foregroundColor(.black)
+                                                            .font(Font.title2.weight(.semibold))
+                                                        Spacer()
+                                                    }.padding(.horizontal, 20)
+                                                }
+                                                else {
+                                                    HStack {
+                                                        Image(systemName: "square")
+                                                            .foregroundColor(.black)
+                                                            .padding(.trailing, 5)
+                                                        Text("Insurance Intake")
+                                                            .foregroundColor(.black)
+                                                            .font(.title2)
+                                                        Spacer()
+                                                    }.padding(.horizontal, 20)
+                                                }
+                                            }
+                                            Divider()
+                                        }
+                                        
+                                    }
+                                    VStack {
+                                        
+                                        if model.showInfoAndPolicies {
+                                            Button {
+                                                if model.includeInformationAndPolicies == true {
+                                                    model.includeInformationAndPolicies = false
+                                                }
+                                                else {
+                                                    model.includeInformationAndPolicies = true
+                                                }
+                                            } label: {
+                                                if model.includeInformationAndPolicies == true {
+                                                    HStack {
+                                                        Image(systemName: "checkmark.square")
+                                                            .font(Font.title2.weight(.semibold))
+                                                            .foregroundColor(.black)
+                                                            .padding(.trailing, 5)
+                                                        Text("Information and Policies")
+                                                            .foregroundColor(.black)
+                                                            .font(Font.title2.weight(.semibold))
+                                                        Spacer()
+                                                    }.padding(.horizontal, 20)
+                                                }
+                                                else {
+                                                    HStack {
+                                                        Image(systemName: "square")
+                                                            .foregroundColor(.black)
+                                                            .padding(.trailing, 5)
+                                                        Text("Information and Policies")
                                                             .foregroundColor(.black)
                                                             .font(.title2)
                                                         Spacer()
@@ -255,78 +295,42 @@ struct NewSelectionView: View {
                                             }
                                             Divider()
                                         }
-                                    }
-                                    VStack {
-                                        if model.showInsuranceIntake {
-                                            Button {
-                                                if model.includeInsuranceIntake == true {
-                                                    model.includeInsuranceIntake = false
+                                            if model.showDryNeedling {
+                                                Button {
+                                                    if model.includeDryNeedlingConsent == true {
+                                                        model.includeDryNeedlingConsent = false
+                                                    }
+                                                    else {
+                                                        model.includeDryNeedlingConsent = true
+                                                    }
+                                                } label: {
+                                                    if model.includeDryNeedlingConsent == true {
+                                                        HStack {
+                                                            Image(systemName: "checkmark.square")
+                                                                .font(Font.title2.weight(.semibold))
+                                                                .foregroundColor(.black)
+                                                                .padding(.trailing, 5)
+                                                            Text("Dry Needling Consent")
+                                                                .foregroundColor(.black)
+                                                                .font(Font.title2.weight(.semibold))
+                                                            Spacer()
+                                                        }.padding(.horizontal, 20)
+                                                    }
+                                                    else {
+                                                        HStack {
+                                                            Image(systemName: "square")
+                                                                .foregroundColor(.black)
+                                                                .padding(.trailing, 5)
+                                                            Text("Dry Needling Consent")
+                                                                .foregroundColor(.black)
+                                                                .font(.title2)
+                                                            Spacer()
+                                                        }.padding(.horizontal, 20)
+                                                    }
                                                 }
-                                                else {
-                                                    model.includeInsuranceIntake = true
-                                                }
-                                            } label: {
-                                                if model.includeInsuranceIntake == true {
-                                                    HStack {
-                                                        Image(systemName: "checkmark.square")
-                                                            .font(Font.title2.weight(.semibold))
-                                                            .foregroundColor(.black)
-                                                            .padding(.trailing, 5)
-                                                        Text("Insurance Intake")
-                                                            .foregroundColor(.black)
-                                                            .font(Font.title2.weight(.semibold))
-                                                        Spacer()
-                                                    }.padding(.horizontal, 20)
-                                                }
-                                                else {
-                                                    HStack {
-                                                        Image(systemName: "square")
-                                                            .foregroundColor(.black)
-                                                            .padding(.trailing, 5)
-                                                        Text("Insurance Intake")
-                                                            .foregroundColor(.black)
-                                                            .font(.title2)
-                                                        Spacer()
-                                                    }.padding(.horizontal, 20)
-                                                }
+                                                Divider()
                                             }
-                                            Divider()
-                                        }
-                                        if model.showInfoAndPolicies {
-                                            Button {
-                                                if model.includeInformationAndPolicies == true {
-                                                    model.includeInformationAndPolicies = false
-                                                }
-                                                else {
-                                                    model.includeInformationAndPolicies = true
-                                                }
-                                            } label: {
-                                                if model.includeInformationAndPolicies == true {
-                                                    HStack {
-                                                        Image(systemName: "checkmark.square")
-                                                            .font(Font.title2.weight(.semibold))
-                                                            .foregroundColor(.black)
-                                                            .padding(.trailing, 5)
-                                                        Text("Information and Policies")
-                                                            .foregroundColor(.black)
-                                                            .font(Font.title2.weight(.semibold))
-                                                        Spacer()
-                                                    }.padding(.horizontal, 20)
-                                                }
-                                                else {
-                                                    HStack {
-                                                        Image(systemName: "square")
-                                                            .foregroundColor(.black)
-                                                            .padding(.trailing, 5)
-                                                        Text("Information and Policies")
-                                                            .foregroundColor(.black)
-                                                            .font(.title2)
-                                                        Spacer()
-                                                    }.padding(.horizontal, 20)
-                                                }
-                                            }
-                                            Divider()
-                                        }
+                                        
                                     }
                                 }
                             }

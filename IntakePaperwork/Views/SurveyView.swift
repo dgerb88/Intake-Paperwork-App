@@ -26,18 +26,18 @@ struct SurveyView: View {
                                         if model.showMedicalHistory == true && model.includeMedicalHistory == true {
                                             MedicalHistoryView()
                                         }
+                                        if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {
+                                            InsuranceIntakeView()
+                                        }
                                         if model.showInfoAndPolicies == true && model.includeInformationAndPolicies == true {
                                             InformationAndPoliciesView()
-                                        }
-                                        if model.showDryNeedling == true && model.includeDryNeedlingConsent == true {
-                                            DryNeedlingConsentView()
                                         }
                                         if model.showPrivacyPolicy == true && model.includePrivacyPolicy == true {
                                             PrivacyPolicyView()
                                         }
-                                        if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {
-                                            InsuranceIntakeView()
-                                        }
+                                        if model.showDryNeedling == true && model.includeDryNeedlingConsent == true {
+                                            DryNeedlingConsentView()
+                                        }                                        
                                     }
                                     if survey.name == "LEFS" {
                                         LefsView(survey: survey)
