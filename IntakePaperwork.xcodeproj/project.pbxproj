@@ -29,6 +29,7 @@
 		4FCC6336272B5FAC0041BE4C /* InsuranceIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6335272B5FAC0041BE4C /* InsuranceIntakeView.swift */; };
 		4FCC6338272B5FCF0041BE4C /* InformationAndPoliciesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6337272B5FCF0041BE4C /* InformationAndPoliciesView.swift */; };
 		4FCD26AB273052A900F4859F /* NDIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD26AA273052A900F4859F /* NDIView.swift */; };
+		4FD830572758205D0075B219 /* PDFViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD830562758205D0075B219 /* PDFViewer.swift */; };
 		4FD901E52750B7A50042FEBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD901E42750B7A50042FEBD /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		4FCC6335272B5FAC0041BE4C /* InsuranceIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceIntakeView.swift; sourceTree = "<group>"; };
 		4FCC6337272B5FCF0041BE4C /* InformationAndPoliciesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAndPoliciesView.swift; sourceTree = "<group>"; };
 		4FCD26AA273052A900F4859F /* NDIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDIView.swift; sourceTree = "<group>"; };
+		4FD830562758205D0075B219 /* PDFViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewer.swift; sourceTree = "<group>"; };
 		4FD901E42750B7A50042FEBD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 				4F207D9C271AADC400B74F3A /* SurveyView.swift */,
 				4F66742127445DA5006B9ED0 /* SideBarMenuView.swift */,
 				4F667425274464B6006B9ED0 /* PDFRetrievalView.swift */,
+				4FD830562758205D0075B219 /* PDFViewer.swift */,
 				4F667423274462B0006B9ED0 /* SettingsView.swift */,
 				4FCC632D272B5DE30041BE4C /* Survey Views */,
 			);
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FD830572758205D0075B219 /* PDFViewer.swift in Sources */,
 				4FD901E52750B7A50042FEBD /* Constants.swift in Sources */,
 				4F66742227445DA5006B9ED0 /* SideBarMenuView.swift in Sources */,
 				4F8B17DB2727C998000A1573 /* LefsView.swift in Sources */,
