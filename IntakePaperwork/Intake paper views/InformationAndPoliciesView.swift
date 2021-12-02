@@ -11,12 +11,12 @@ struct InformationAndPoliciesView: View {
     
     @EnvironmentObject var model:SurveyModel
     
-    @State var button = [false, false, false, false, false]
-    @State var signatures = ["", ""]
-    @State var ContactName = ""
-    @State var ContactPhoneNumber = ""
-    @State var ContactRelation = ""
-    @State var EmailAddress = ""
+    @State var buttonInfo = [false, false, false, false, false]
+    @State var signaturesInfo = ["", ""]
+    @State var ContactNameInfo = ""
+    @State var ContactPhoneNumberInfo = ""
+    @State var ContactRelationInfo = ""
+    @State var EmailAddressInfo = ""
 
     
     var body: some View {
@@ -47,19 +47,19 @@ struct InformationAndPoliciesView: View {
 
                         }
                         VStack(alignment: .leading, spacing: 15) {
-                            TextField("Name", text: $ContactName)
+                            TextField("Name", text: $ContactNameInfo)
                                 .padding(.leading, 20)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
-                            TextField("Phone Number", text: $ContactPhoneNumber)
+                            TextField("Phone Number", text: $ContactPhoneNumberInfo)
                                 .padding(.leading, 20)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
-                            TextField("Relationship", text: $ContactRelation)
+                            TextField("Relationship", text: $ContactRelationInfo)
                                 .padding(.leading, 20)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
-                            TextField("Email address", text: $EmailAddress)
+                            TextField("Email address", text: $EmailAddressInfo)
                                 .padding(.leading, 20)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
@@ -83,14 +83,14 @@ struct InformationAndPoliciesView: View {
                     VStack(alignment: .leading, spacing: 10) {
                         HStack(alignment: .top) {
                             Button {
-                                if button[0] == false {
-                                    button[0] = true
+                                if buttonInfo[0] == false {
+                                    buttonInfo[0] = true
                                 }
                                 else {
-                                    button[0] = false
+                                    buttonInfo[0] = false
                                 }
                             } label: {
-                                if button[0] == false {
+                                if buttonInfo[0] == false {
                                     Image(systemName: "square")
                                         .resizable()
                                         .frame(width: 20, height: 20)
@@ -107,14 +107,14 @@ struct InformationAndPoliciesView: View {
                         }
                         HStack(alignment: .top) {
                             Button {
-                                if button[1] == false {
-                                    button[1] = true
+                                if buttonInfo[1] == false {
+                                    buttonInfo[1] = true
                                 }
                                 else {
-                                    button[1] = false
+                                    buttonInfo[1] = false
                                 }
                             } label: {
-                                if button[1] == false {
+                                if buttonInfo[1] == false {
                                     Image(systemName: "square")
                                         .resizable()
                                         .frame(width: 20, height: 20)
@@ -131,14 +131,14 @@ struct InformationAndPoliciesView: View {
                         }
                         HStack(alignment: .top) {
                             Button {
-                                if button[2] == false {
-                                    button[2] = true
+                                if buttonInfo[2] == false {
+                                    buttonInfo[2] = true
                                 }
                                 else {
-                                    button[2] = false
+                                    buttonInfo[2] = false
                                 }
                             } label: {
-                                if button[2] == false {
+                                if buttonInfo[2] == false {
                                     Image(systemName: "square")
                                         .resizable()
                                         .frame(width: 20, height: 20)
@@ -155,14 +155,14 @@ struct InformationAndPoliciesView: View {
                         }
                         HStack(alignment: .top) {
                             Button {
-                                if button[3] == false {
-                                    button[3] = true
+                                if buttonInfo[3] == false {
+                                    buttonInfo[3] = true
                                 }
                                 else {
-                                    button[3] = false
+                                    buttonInfo[3] = false
                                 }
                             } label: {
-                                if button[3] == false {
+                                if buttonInfo[3] == false {
                                     Image(systemName: "square")
                                         .resizable()
                                         .frame(width: 20, height: 20)
@@ -179,14 +179,14 @@ struct InformationAndPoliciesView: View {
                         }
                         HStack(alignment: .top) {
                             Button {
-                                if button[4] == false {
-                                    button[4] = true
+                                if buttonInfo[4] == false {
+                                    buttonInfo[4] = true
                                 }
                                 else {
-                                    button[4] = false
+                                    buttonInfo[4] = false
                                 }
                             } label: {
-                                if button[4] == false {
+                                if buttonInfo[4] == false {
                                     Image(systemName: "square")
                                         .resizable()
                                         .frame(width: 20, height: 20)
@@ -211,7 +211,7 @@ struct InformationAndPoliciesView: View {
                         .padding(.bottom, 5)
                         .font(.title3)
                     Text("By signing below, I hereby consent to the evaluation and treatment of my condition by a licensed physical therapist employed by \(model.clinicName). The physical therapist will explain the nature and purposes of these procedures, evaluation, and course of treatment. The physical therapist will inform me of expected benefits and complications, and any discomforts, and risk that may arise, as well as alternatives to the proposed treatment and the risk and consequences of no treatment.")
-                    if signatures[0] == "" {
+                    if signaturesInfo[0] == "" {
                         Text("Electronic Signature of PATIENT or LEGAL GUARDIAN:")
                             .bold()
                             .padding(.top, 10)
@@ -226,7 +226,7 @@ struct InformationAndPoliciesView: View {
                             .foregroundColor(.black)
                     }
                     HStack {
-                        TextField("Sign Here", text: $signatures[0])
+                        TextField("Sign Here", text: $signaturesInfo[0])
                             .frame(width: 300)
                             .padding(.leading, 20)
                             .accentColor(.black)
@@ -248,7 +248,7 @@ struct InformationAndPoliciesView: View {
                         .bold()
                         .padding(.vertical, 5)
                     Text("“I HAVE READ THE ABOVE WAIVER AND RELEASE AND BY SIGNING IT AGREE. IT IS MY INTENTION TO EXEMPT AND RELIEVE \(model.clinicName.uppercased()) FROM LIABILITY FOR PERSONAL INJURY, PROPERTY DAMAGE OR WRONGFUL DEATH CAUSED BY NEGLIGENCE OR ANY OTHER CAUSE.”")
-                    if signatures[1] == "" {
+                    if signaturesInfo[1] == "" {
                         Text("Electronic Signature of PATIENT or LEGAL GUARDIAN:")
                             .bold()
                             .padding(.top, 10)
@@ -263,7 +263,7 @@ struct InformationAndPoliciesView: View {
                             .foregroundColor(.black)
                     }
                     HStack {
-                            TextField("Sign Here", text: $signatures[1])
+                            TextField("Sign Here", text: $signaturesInfo[1])
                                 .frame(width: 300)
                                 .padding(.leading, 20)
                                 .accentColor(.black)

@@ -11,8 +11,8 @@ struct DryNeedlingConsentView: View {
     
     @EnvironmentObject var model:SurveyModel
     
-    @State var button = [false, false, false, false, false, false, false, false, false]
-    @State var signature = ""
+    @State var buttonNeedle = [false, false, false, false, false, false, false, false, false]
+    @State var signatureNeedle = ""
     var body: some View {
         ZStack {
             Rectangle()
@@ -37,15 +37,15 @@ struct DryNeedlingConsentView: View {
                         .font(.title2)
                     HStack(alignment: .top) {
                         Button {
-                            if button[0] == false {
-                                button[0] = true
-                                button[1] = false
+                            if buttonNeedle[0] == false {
+                                buttonNeedle[0] = true
+                                buttonNeedle[1] = false
                             }
                             else {
-                                button[0] = false
+                                buttonNeedle[0] = false
                             }
                         } label: {
-                            if button[0] == false {
+                            if buttonNeedle[0] == false {
                                 Image(systemName: "square")
                                     .resizable()
                                     .frame(width: 20, height: 20)
@@ -66,15 +66,15 @@ struct DryNeedlingConsentView: View {
                         .font(.title2)
                     HStack(alignment: .top) {
                         Button {
-                            if button[1] == false {
-                                button[1] = true
-                                button[0] = false
+                            if buttonNeedle[1] == false {
+                                buttonNeedle[1] = true
+                                buttonNeedle[0] = false
                             }
                             else {
-                                button[1] = false
+                                buttonNeedle[1] = false
                             }
                         } label: {
-                            if button[1] == false {
+                            if buttonNeedle[1] == false {
                                 Image(systemName: "square")
                                     .resizable()
                                     .frame(width: 20, height: 20)
@@ -97,16 +97,16 @@ struct DryNeedlingConsentView: View {
                         .font(.title3)
                     HStack(alignment: .top) {
                         Button {
-                            if button[2] == false {
-                                button[2] = true
-                                button[3] = false
-                                button[4] = false
+                            if buttonNeedle[2] == false {
+                                buttonNeedle[2] = true
+                                buttonNeedle[3] = false
+                                buttonNeedle[4] = false
                             }
                             else {
-                                button[2] = false
+                                buttonNeedle[2] = false
                             }
                         } label: {
-                            if button[2] == false {
+                            if buttonNeedle[2] == false {
                                 Image(systemName: "square")
                                     .resizable()
                                     .frame(width: 20, height: 20)
@@ -121,16 +121,16 @@ struct DryNeedlingConsentView: View {
                         }.padding(.leading, 5)
                         Text("Yes").padding(.trailing)
                         Button {
-                            if button[3] == false {
-                                button[3] = true
-                                button[2] = false
-                                button[4] = false
+                            if buttonNeedle[3] == false {
+                                buttonNeedle[3] = true
+                                buttonNeedle[2] = false
+                                buttonNeedle[4] = false
                             }
                             else {
-                                button[3] = false
+                                buttonNeedle[3] = false
                             }
                         } label: {
-                            if button[3] == false {
+                            if buttonNeedle[3] == false {
                                 Image(systemName: "square")
                                     .resizable()
                                     .frame(width: 20, height: 20)
@@ -145,16 +145,16 @@ struct DryNeedlingConsentView: View {
                         }
                         Text("No").padding(.trailing)
                         Button {
-                            if button[4] == false {
-                                button[4] = true
-                                button[2] = false
-                                button[3] = false
+                            if buttonNeedle[4] == false {
+                                buttonNeedle[4] = true
+                                buttonNeedle[2] = false
+                                buttonNeedle[3] = false
                             }
                             else {
-                                button[4] = false
+                                buttonNeedle[4] = false
                             }
                         } label: {
-                            if button[4] == false {
+                            if buttonNeedle[4] == false {
                                 Image(systemName: "square")
                                     .resizable()
                                     .frame(width: 20, height: 20)
@@ -176,15 +176,15 @@ struct DryNeedlingConsentView: View {
                         .font(.title3)
                     HStack(alignment: .top) {
                         Button {
-                            if button[5] == false {
-                                button[5] = true
-                                button[6] = false
+                            if buttonNeedle[5] == false {
+                                buttonNeedle[5] = true
+                                buttonNeedle[6] = false
                             }
                             else {
-                                button[5] = false
+                                buttonNeedle[5] = false
                             }
                         } label: {
-                            if button[5] == false {
+                            if buttonNeedle[5] == false {
                                 Image(systemName: "square")
                                     .resizable()
                                     .frame(width: 20, height: 20)
@@ -199,15 +199,15 @@ struct DryNeedlingConsentView: View {
                         }.padding(.leading, 5)
                         Text("Yes").padding(.trailing)
                         Button {
-                            if button[6] == false {
-                                button[6] = true
-                                button[5] = false
+                            if buttonNeedle[6] == false {
+                                buttonNeedle[6] = true
+                                buttonNeedle[5] = false
                             }
                             else {
-                                button[6] = false
+                                buttonNeedle[6] = false
                             }
                         } label: {
-                            if button[6] == false {
+                            if buttonNeedle[6] == false {
                                 Image(systemName: "square")
                                     .resizable()
                                     .frame(width: 20, height: 20)
@@ -228,15 +228,15 @@ struct DryNeedlingConsentView: View {
                         .font(.title3)
                     HStack(alignment: .top) {
                         Button {
-                            if button[7] == false {
-                                button[7] = true
-                                button[8] = false
+                            if buttonNeedle[7] == false {
+                                buttonNeedle[7] = true
+                                buttonNeedle[8] = false
                             }
                             else {
-                                button[7] = false
+                                buttonNeedle[7] = false
                             }
                         } label: {
-                            if button[7] == false {
+                            if buttonNeedle[7] == false {
                                 Image(systemName: "square")
                                     .resizable()
                                     .frame(width: 20, height: 20)
@@ -251,15 +251,15 @@ struct DryNeedlingConsentView: View {
                         }.padding(.leading, 5)
                         Text("Yes").padding(.trailing)
                         Button {
-                            if button[8] == false {
-                                button[8] = true
-                                button[7] = false
+                            if buttonNeedle[8] == false {
+                                buttonNeedle[8] = true
+                                buttonNeedle[7] = false
                             }
                             else {
-                                button[8] = false
+                                buttonNeedle[8] = false
                             }
                         } label: {
-                            if button[8] == false {
+                            if buttonNeedle[8] == false {
                                 Image(systemName: "square")
                                     .resizable()
                                     .frame(width: 20, height: 20)
@@ -275,7 +275,7 @@ struct DryNeedlingConsentView: View {
                         Text("No").padding(.trailing)
                         
                     }
-                    if signature == "" {
+                    if signatureNeedle == "" {
                         Text("Patient/Legal Guardian Electronic Signature:")
                             .bold()
                             .font(.title2)
@@ -289,7 +289,7 @@ struct DryNeedlingConsentView: View {
                             .padding(.top, 5)
                     }
                     HStack {
-                            TextField("Sign Here", text: $signature)
+                            TextField("Sign Here", text: $signatureNeedle)
                                 .frame(width: 300)
                                 .padding(.leading, 20)
                                 .accentColor(.black)

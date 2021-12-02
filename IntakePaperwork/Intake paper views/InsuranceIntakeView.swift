@@ -11,12 +11,12 @@ struct InsuranceIntakeView: View {
     
     @EnvironmentObject var model:SurveyModel
     
-    @State var patientName = ""
-    @State var InsuranceName = ["", ""]
-    @State var memberId = ["", ""]
-    @State var groupNumber = ["", ""]
-    @State var signature = ""
-    @State var button = [false, false, false, false, false, false, false]
+    @State var patientNameInsurance = ""
+    @State var InsuranceNameInsurance = ["", ""]
+    @State var memberIdInsurance = ["", ""]
+    @State var groupNumberInsurance = ["", ""]
+    @State var signatureInsurance = ""
+    @State var buttonInsurance = [false, false, false, false, false, false, false]
 
     var body: some View {
         ZStack {
@@ -33,39 +33,39 @@ struct InsuranceIntakeView: View {
                     HStack(alignment: .top, spacing: 20) {
                         VStack(alignment: .leading, spacing: 5) {
                             Text("Name of Patient or Legal Guardian(if patient is a minor):")
-                            TextField("Name", text: $patientName)
+                            TextField("Name", text: $patientNameInsurance)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                                 .padding(.bottom, 5)
                             Text("Name of Primary Insurance Carrier:")
-                            TextField("Insurance Name", text: $InsuranceName[0])
+                            TextField("Insurance Name", text: $InsuranceNameInsurance[0])
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                                 .padding(.bottom, 5)
                             Text("Member ID:")
-                            TextField("ID number", text: $memberId[0])
+                            TextField("ID number", text: $memberIdInsurance[0])
                                 .padding(.bottom, 5)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                             Text("Group Number:")
-                            TextField("Number", text: $groupNumber[0])
+                            TextField("Number", text: $groupNumberInsurance[0])
                                 .padding(.bottom, 5)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                         }
                         VStack(alignment: .leading, spacing: 5) {
                             Text("Name of Secondary Insurance Carrier (if applicable):")
-                            TextField("Secondary Insurance Name", text: $InsuranceName[1])
+                            TextField("Secondary Insurance Name", text: $InsuranceNameInsurance[1])
                                 .padding(.bottom, 5)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                             Text("Member ID:")
-                            TextField("ID number", text: $memberId[1])
+                            TextField("ID number", text: $memberIdInsurance[1])
                                 .padding(.bottom, 5)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                             Text("Group Number:")
-                            TextField("Number", text: $groupNumber[1])
+                            TextField("Number", text: $groupNumberInsurance[1])
                                 .padding(.bottom, 5)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
@@ -90,14 +90,14 @@ struct InsuranceIntakeView: View {
                         .font(.title3)
                     HStack(alignment: .top) {
                         Button {
-                            if button[0] == false {
-                                button[0] = true
+                            if buttonInsurance[0] == false {
+                                buttonInsurance[0] = true
                             }
                             else {
-                                button[0] = false
+                                buttonInsurance[0] = false
                             }
                         } label: {
-                            if button[0] == true {
+                            if buttonInsurance[0] == true {
                                 Image(systemName: "checkmark.square")
                                     .font(Font.title2)
                                     .foregroundColor(.black)
@@ -113,14 +113,14 @@ struct InsuranceIntakeView: View {
                     }.padding(.bottom, 10)
                     HStack(alignment: .top) {
                         Button {
-                            if button[1] == false {
-                                button[1] = true
+                            if buttonInsurance[1] == false {
+                                buttonInsurance[1] = true
                             }
                             else {
-                                button[1] = false
+                                buttonInsurance[1] = false
                             }
                         } label: {
-                            if button[1] == true {
+                            if buttonInsurance[1] == true {
                                 Image(systemName: "checkmark.square")
                                     .font(Font.title2)
                                     .foregroundColor(.black)
@@ -136,14 +136,14 @@ struct InsuranceIntakeView: View {
                     }.padding(.bottom, 10)
                     HStack(alignment: .top) {
                         Button {
-                            if button[2] == false {
-                                button[2] = true
+                            if buttonInsurance[2] == false {
+                                buttonInsurance[2] = true
                             }
                             else {
-                                button[2] = false
+                                buttonInsurance[2] = false
                             }
                         } label: {
-                            if button[2] == true {
+                            if buttonInsurance[2] == true {
                                 Image(systemName: "checkmark.square")
                                     .font(Font.title2)
                                     .foregroundColor(.black)
@@ -158,14 +158,14 @@ struct InsuranceIntakeView: View {
                     }.padding(.bottom, 10)
                     HStack(alignment: .top) {
                         Button {
-                            if button[3] == false {
-                                button[3] = true
+                            if buttonInsurance[3] == false {
+                                buttonInsurance[3] = true
                             }
                             else {
-                                button[3] = false
+                                buttonInsurance[3] = false
                             }
                         } label: {
-                            if button[3] == true {
+                            if buttonInsurance[3] == true {
                                 Image(systemName: "checkmark.square")
                                     .font(Font.title2)
                                     .foregroundColor(.black)
@@ -205,7 +205,7 @@ struct InsuranceIntakeView: View {
                         .fixedSize(horizontal: false, vertical: true)
                         .font(.title3)
                         .padding(.vertical, 10)
-                    if signature == "" {
+                    if signatureInsurance == "" {
                         Text("Signature of patient or legal guardian:")
                             .foregroundColor(.red)
                     }
@@ -214,7 +214,7 @@ struct InsuranceIntakeView: View {
                             .foregroundColor(.black)
                     }
                     HStack {
-                        TextField("Signature", text: $signature)
+                        TextField("Signature", text: $signatureInsurance)
                             .padding(.bottom, 5)
                             .accentColor(.black)
                             .textFieldStyle(.roundedBorder)

@@ -74,17 +74,10 @@ struct LefsView: View {
                             .frame(height: 48)
                             .cornerRadius(10)
                             .shadow(radius: 1)
-                        if model.finishedSurvey {
-                            Text("Score: \(model.score)/80")
-                                .foregroundColor(.white)
-                                .bold()
-                        }
-                        else {
-                            Text("Finish")
-                                .foregroundColor(.white)
-                                .font(.title)
-                                .bold()
-                        }
+                        Text("Finish")
+                            .foregroundColor(.white)
+                            .font(.title)
+                            .bold()
                     }
                     
                 }.padding(.top, 5)

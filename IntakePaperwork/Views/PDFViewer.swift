@@ -19,6 +19,7 @@ struct PDFViewer: View {
                 model.PDFimage.append(MedicalHistoryView().snapshot())
             } label: {
                 Text("Push me")
+                    .foregroundColor(.black)
             }
 
         }

@@ -10,8 +10,8 @@ import SwiftUI
 struct PrivacyPolicyView: View {
     
     @EnvironmentObject var model: SurveyModel
-    @State var signature = ""
-    @State var button = [false, false]
+    @State var signaturePrivate = ""
+    @State var buttonPrivate = [false, false]
     
     
     var body: some View {
@@ -32,14 +32,14 @@ struct PrivacyPolicyView: View {
                     .padding(.bottom, 10)
                 HStack(alignment: .top) {
                     Button {
-                        if button[0] == false {
-                            button[0] = true
+                        if buttonPrivate[0] == false {
+                            buttonPrivate[0] = true
                         }
                         else {
-                            button[0] = false
+                            buttonPrivate[0] = false
                         }
                     } label: {
-                        if button[0] == false {
+                        if buttonPrivate[0] == false {
                             Image(systemName: "square")
                                 .padding(.trailing, 3)
                                 .foregroundColor(.black)
@@ -59,14 +59,14 @@ struct PrivacyPolicyView: View {
                     .padding(.bottom, 10)
                 HStack(alignment: .top) {
                     Button {
-                        if button[1] == false {
-                            button[1] = true
+                        if buttonPrivate[1] == false {
+                            buttonPrivate[1] = true
                         }
                         else {
-                            button[1] = false
+                            buttonPrivate[1] = false
                         }
                     } label: {
-                        if button[1] == false {
+                        if buttonPrivate[1] == false {
                             Image(systemName: "square")
                                 .padding(.trailing, 3)
                                 .foregroundColor(.black)
@@ -80,7 +80,7 @@ struct PrivacyPolicyView: View {
 
                     Text("I hereby give my consent for \(model.clinicName) to use and disclose protected health information (PHI) about me to carry out treatment, payment, and health care operations. I understand that I retain the right to revoke this consent by notifying the practice in writing at any time, at which point \(model.clinicName) has 30 days to respond to my request.")
                 }.padding(.bottom)
-                if signature == "" {
+                if signaturePrivate == "" {
                     Text("Patient/Legal Guardian Electronic Signature:")
                         .bold()
                         .font(.title2)
@@ -94,7 +94,7 @@ struct PrivacyPolicyView: View {
                         .padding(.top, 5)
                 }
                 HStack {
-                        TextField("Sign Here", text: $signature)
+                        TextField("Sign Here", text: $signaturePrivate)
                             .frame(width: 300)
                             .padding(.leading, 20)
                             .accentColor(.black)

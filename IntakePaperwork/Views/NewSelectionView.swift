@@ -482,9 +482,6 @@ struct NewSelectionView: View {
                                         if survey.name == nameSelected && survey.language == language {
                                             NavigationLink {
                                                 SurveyView(survey: survey)
-                                                    .onAppear {
-                                                        model.appendArray(survey.questions.count)
-                                                    }
                                             } label: {
                                                 ZStack {
                                                     Rectangle()
