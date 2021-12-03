@@ -522,6 +522,13 @@ struct NewSelectionView: View {
             NdiSelected = false
             BackIndexSelected = false
             QuickDashSelected = false
+            model.countInfoView = 0
+            model.countprivacyView = 0
+            model.countNeedleView = 0
+            model.countMedicalView = 0
+            model.countInsuranceView = 0
+            model.savedPDFimage = model.PDFimage
+            model.PDFimage.removeAll()
         }
         
     }

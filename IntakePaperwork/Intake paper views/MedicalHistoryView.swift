@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MedicalHistoryView: View {
     
+    @EnvironmentObject var model:SurveyModel
+    
     init() {
         UITextView.appearance().backgroundColor = .clear
     }
@@ -37,13 +39,8 @@ struct MedicalHistoryView: View {
     @State var reasonFall = ""
     @State var button5 = [false, false]
     
-    
-    var body: some View {
+    var medView: some View {
         ZStack {
-            Rectangle()
-                .foregroundColor(.white)
-                .cornerRadius(5)
-                .shadow(radius: 5)
             VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
                     Text("Medical History")
@@ -1747,8 +1744,17 @@ struct MedicalHistoryView: View {
             }.padding()
         }
         .accentColor(.blue)
-        .onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        .frame(width: UIScreen.main.bounds.width)
+    }
+
+    
+    var body: some View {
+        medView.onDisappear {
+            if model.countMedicalView == 0 {
+                let image = medView.snapshot()
+                model.PDFimage.append(image)
+                model.countMedicalView += 1
+            }
         }
     }
 }

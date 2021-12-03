@@ -18,12 +18,8 @@ struct InsuranceIntakeView: View {
     @State var signatureInsurance = ""
     @State var buttonInsurance = [false, false, false, false, false, false, false]
 
-    var body: some View {
+    var insuranceView: some View {
         ZStack {
-            Rectangle()
-                .foregroundColor(.white)
-                .cornerRadius(5)
-                .shadow(radius: 5)
             VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
                     Text("Insurance Information")
@@ -227,10 +223,18 @@ struct InsuranceIntakeView: View {
                     }
                 }
             }.padding()
-        }
-            .onTapGesture {
-                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }.frame(width: UIScreen.main.bounds.width)
+    }
+
+    
+    var body: some View {
+        insuranceView.onDisappear {
+            if model.countInsuranceView == 0 {
+                let image = insuranceView.snapshot()
+                model.PDFimage.append(image)
+                model.countInsuranceView += 1
             }
+        }
     }
 }
 

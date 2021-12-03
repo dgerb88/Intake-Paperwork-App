@@ -12,6 +12,7 @@ class SurveyModel: ObservableObject {
         
     @Published var surveys = [Survey]()
     @Published var PDFimage = [UIImage]()
+    @Published var savedPDFimage = [UIImage]()
     @Published var selectedValue = [Int]()
     @Published var score = 0
     @Published var finishedSurvey = false
@@ -22,6 +23,14 @@ class SurveyModel: ObservableObject {
     @Published var includeDryNeedlingConsent = true
     @Published var includePrivacyPolicy = true
     @Published var sideBarShowing = false
+    @Published var countInfoView = 0
+    @Published var countprivacyView = 0
+    @Published var countNeedleView = 0
+    @Published var countMedicalView = 0
+    @Published var countInsuranceView = 0
+
+
+
     
     //MARK: User default bools
     @Published var showDryNeedling: Bool = UserDefaults.standard.bool(forKey: Constants.showDryNeedling) {

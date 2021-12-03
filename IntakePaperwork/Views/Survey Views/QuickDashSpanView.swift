@@ -12,12 +12,8 @@ struct QuickDashSpanView: View {
     @EnvironmentObject var model: SurveyModel
     var survey: Survey
     
-    var body: some View {
+    var quickDashSpanView: some View {
         ZStack {
-            Rectangle()
-                .foregroundColor(.white)
-                .cornerRadius(5)
-                .shadow(radius: 5)
             VStack {
                 Text(survey.description)
                     .font(.headline)
@@ -67,6 +63,9 @@ struct QuickDashSpanView: View {
                                         .onChange(of: model.selectedValue) { newValue in
                                             model.finishedSurvey = false
                                             model.score = 0
+                                            for index in 0..<model.selectedValue.count {
+                                                model.score += model.selectedValue[index] + 1
+                                            }
                                         }
                                     Spacer()
                                 }
@@ -255,15 +254,18 @@ struct QuickDashSpanView: View {
                                 .padding(.bottom, 50)
                         }
                     }
+                    HStack {
+                        Spacer()
+                        Text("Puntuación: \(model.score)/55")
+                            .bold()
+                            .font(.title)
+                            .padding()
+                    }
+                    .padding(.vertical, 5)
                     Button {
-                        if model.finishedSurvey != true {
-                            for index in 0..<model.selectedValue.count {
-                                model.score += model.selectedValue[index] + 1
-                            }
-                            
-                        }
+                        let image = quickDashSpanView.snapshot()
+                        model.PDFimage.append(image)
                         model.finishedSurvey = true
-                        
                     } label: {
                         ZStack {
                             Rectangle()
@@ -271,27 +273,20 @@ struct QuickDashSpanView: View {
                                 .frame(height: 48)
                                 .cornerRadius(10)
                                 .shadow(radius: 1)
-                            if model.finishedSurvey {
-                                Text("Puntuación: \(model.score)/55")
-                                    .foregroundColor(.white)
-                                    .font(.title)
-                                    .bold()
-                            }
-                            else {
-                                Text("Terminar")
-                                    .foregroundColor(.white)
-                                    .font(.title)
-                                    .bold()
-                            }
+                            Text("Finish")
+                                .foregroundColor(.white)
+                                .font(.title)
+                                .bold()
                         }
-                        
-                    }.padding(.vertical, 5)
-                }.onAppear {
-                    model.score = 0
+                    }.disabled(model.finishedSurvey ? true : false)
                 }
             }.padding()
-        }
+        }.frame(width: UIScreen.main.bounds.width)
 
+    }
+    
+    var body: some View {
+        quickDashSpanView
     }
 }
 

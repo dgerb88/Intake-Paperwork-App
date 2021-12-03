@@ -13,13 +13,8 @@ struct PrivacyPolicyView: View {
     @State var signaturePrivate = ""
     @State var buttonPrivate = [false, false]
     
-    
-    var body: some View {
+    var privacyView: some View {
         ZStack {
-            Rectangle()
-                .foregroundColor(.white)
-                .cornerRadius(5)
-                .shadow(radius: 5)
             VStack(alignment: .leading) {
                 
                 Text("Notice of Privacy Practices")
@@ -105,8 +100,19 @@ struct PrivacyPolicyView: View {
                                 .padding(.leading)
                 }
             }.padding()
-        }.onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }.frame(width: UIScreen.main.bounds.width)
+    }
+
+    
+    var body: some View {
+        privacyView.onDisappear {
+            if model.eval == true {
+                if model.countprivacyView == 0 {
+                    let image = privacyView.snapshot()
+                    model.PDFimage.append(image)
+                    model.countprivacyView += 1
+                }
+            }
         }
     }
 }

@@ -13,12 +13,9 @@ struct DryNeedlingConsentView: View {
     
     @State var buttonNeedle = [false, false, false, false, false, false, false, false, false]
     @State var signatureNeedle = ""
-    var body: some View {
+    
+    var needleView: some View {
         ZStack {
-            Rectangle()
-                .foregroundColor(.white)
-                .cornerRadius(5)
-                .shadow(radius: 5)
             VStack(alignment: .leading) {
                 Text("Dry Needling Consent Form")
                     .bold()
@@ -305,9 +302,18 @@ struct DryNeedlingConsentView: View {
                     Text("You have the right to withdraw consent for this procedure at any time before it is performed.")
                 }
             }.padding()
-        }.onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-        }
+        }.frame(width: UIScreen.main.bounds.width)
+    }
+
+    
+    var body: some View {
+        needleView.onDisappear {
+            if model.countNeedleView == 0 {
+                let image = needleView.snapshot()
+                model.PDFimage.append(image)
+                model.countNeedleView += 1
+            }
+    }
     }
 }
 

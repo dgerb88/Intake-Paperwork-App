@@ -12,12 +12,8 @@ struct LefsView: View {
     @EnvironmentObject var model: SurveyModel
     var survey: Survey
     
-    var body: some View {
+    var lefsView: some View {
         ZStack {
-            Rectangle()
-                .foregroundColor(.white)
-                .cornerRadius(5)
-                .shadow(radius: 5)
             VStack(alignment: .leading) {
                 Text(survey.description)
                     .font(.headline)
@@ -48,25 +44,57 @@ struct LefsView: View {
                             .font(.headline)
                             .padding(.bottom, 5)
                         Picker("", selection: $model.selectedValue[index]) {
-                            ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
+                            ForEach(0..<5) { ratingIndex in
                                 Text(String(ratingIndex)).tag(ratingIndex)
                             }
                         }.pickerStyle(SegmentedPickerStyle())
                             .onChange(of: model.selectedValue) { newValue in
                                 model.finishedSurvey = false
                                 model.score = 0
+                                for index in 0..<model.selectedValue.count {
+                                    model.score += model.selectedValue[index]
+                                }
                             }
                         
                     }.padding(.bottom, 40).padding(.top, 10)
                 }
+                HStack {
+                    Spacer()
+                    Text("Score: \(model.score)/80")
+                        .font(.title)
+                    .padding()
+                }
                 Button {
-                    if model.finishedSurvey != true {
-                        for index in 0..<model.selectedValue.count {
-                            model.score += model.selectedValue[index]
+                  /*  if model.eval == true {
+                        if model.showMedicalHistory == true && model.includeMedicalHistory == true {
+                            let image = MedicalHistoryView().snapshot()
+                            model.PDFimage.append(image)
                         }
+                        if model.showPrivacyPolicy == true && model.includePrivacyPolicy == true {
+                            let image = PrivacyPolicyView().snapshot()
+                            model.PDFimage.append(image)
+                        }
+                        if model.showDryNeedling == true && model.includeDryNeedlingConsent == true {
+                            let image = DryNeedlingConsentView().snapshot()
+                            model.PDFimage.append(image)
+                        }
+                        if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {
+                            let image = InsuranceIntakeView().snapshot()
+                            model.PDFimage.append(image)
+                        }
+                        
+                    } */
+                  /*  if survey.name == "Back Index" {
+                        let image = backIndexView.snapshot()
+                        model.PDFimage.append(image)
                     }
+                    else if survey.name == "QuickDash" && survey.language == "English" {
+                        let image = quickDashEngView.snapshot()
+                        model.PDFimage.append(image)
+                    } */
+                    let image = lefsView.snapshot()
+                    model.PDFimage.append(image)
                     model.finishedSurvey = true
-                    
                 } label: {
                     ZStack {
                         Rectangle()
@@ -79,11 +107,13 @@ struct LefsView: View {
                             .font(.title)
                             .bold()
                     }
-                    
-                }.padding(.top, 5)
+                }.disabled(model.finishedSurvey ? true : false)
             }.padding()
-        }
-        .onAppear {
+        }.frame(width: UIScreen.main.bounds.width)
+    }
+
+    var body: some View {
+        lefsView.onAppear {
             model.score = 0
         }
     }

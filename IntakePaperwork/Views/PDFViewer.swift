@@ -15,13 +15,6 @@ struct PDFViewer: View {
     var body: some View {
         VStack {
             PDFViewUI(image: model.PDFimage)
-            Button {
-                model.PDFimage.append(MedicalHistoryView().snapshot())
-            } label: {
-                Text("Push me")
-                    .foregroundColor(.black)
-            }
-
         }
     }
 }

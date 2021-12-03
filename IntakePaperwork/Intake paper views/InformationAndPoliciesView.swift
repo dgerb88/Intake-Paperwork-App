@@ -18,13 +18,8 @@ struct InformationAndPoliciesView: View {
     @State var ContactRelationInfo = ""
     @State var EmailAddressInfo = ""
 
-    
-    var body: some View {
+    var infoView: some View {
         ZStack {
-            Rectangle()
-                .foregroundColor(.white)
-                .cornerRadius(5)
-                .shadow(radius: 5)
             VStack {
                 VStack(alignment: .leading) {
                     Text("Information and Policies")
@@ -277,8 +272,17 @@ struct InformationAndPoliciesView: View {
                     }.padding(.bottom)
                 }.padding(.horizontal).padding(.bottom)
             }
-        }.onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }.frame(width: UIScreen.main.bounds.width)
+    }
+
+    
+    var body: some View {
+        infoView.onDisappear {
+                if model.countInfoView == 0 {
+                    let image = infoView.snapshot()
+                    model.PDFimage.append(image)
+                    model.countInfoView += 1
+                }
         }
     }
 }
