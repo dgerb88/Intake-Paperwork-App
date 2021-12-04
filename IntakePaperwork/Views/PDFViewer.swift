@@ -15,6 +15,13 @@ struct PDFViewer: View {
     var body: some View {
         VStack {
             PDFViewUI(image: model.PDFimage)
+            Button {
+                model.viewSelectionInt = nil
+            } label: {
+                Text("Push me")
+                    .foregroundColor(.black)
+            }
+
         }
     }
 }

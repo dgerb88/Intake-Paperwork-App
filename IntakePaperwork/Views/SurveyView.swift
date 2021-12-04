@@ -35,7 +35,7 @@ struct SurveyView: View {
                                                     .foregroundColor(.white)
                                                     .cornerRadius(5)
                                                     .shadow(radius: 5)
-                                                MedicalHistoryView()
+                                                MedicalHistoryView(survey: survey)
                                             }.onTapGesture {
                                                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                                             }
@@ -46,7 +46,7 @@ struct SurveyView: View {
                                                     .foregroundColor(.white)
                                                     .cornerRadius(5)
                                                     .shadow(radius: 5)
-                                                InsuranceIntakeView()
+                                                InsuranceIntakeView(survey: survey)
                                             }.onTapGesture {
                                                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                                             }
@@ -57,7 +57,7 @@ struct SurveyView: View {
                                                     .foregroundColor(.white)
                                                     .cornerRadius(5)
                                                     .shadow(radius: 5)
-                                                InformationAndPoliciesView()
+                                                InformationAndPoliciesView(survey: survey)
                                             }.onTapGesture {
                                                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                                             }
@@ -68,7 +68,7 @@ struct SurveyView: View {
                                                     .foregroundColor(.white)
                                                     .cornerRadius(5)
                                                     .shadow(radius: 5)
-                                                PrivacyPolicyView()
+                                                PrivacyPolicyView(survey: survey)
                                             }.onTapGesture {
                                                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                                             }
@@ -79,7 +79,7 @@ struct SurveyView: View {
                                                     .foregroundColor(.white)
                                                     .cornerRadius(5)
                                                     .shadow(radius: 5)
-                                                DryNeedlingConsentView()
+                                                DryNeedlingConsentView(survey: survey)
                                             }.onTapGesture {
                                                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                                             }
@@ -138,6 +138,7 @@ struct SurveyView: View {
                                     } label: {
                                         Text("Get there")
                                     }
+                                    
 
                                 }
                             }.navigationBarTitleDisplayMode(.inline)

@@ -10,7 +10,7 @@ import SwiftUI
 struct InformationAndPoliciesView: View {
     
     @EnvironmentObject var model:SurveyModel
-    
+    var survey: Survey
     @State var buttonInfo = [false, false, false, false, false]
     @State var signaturesInfo = ["", ""]
     @State var ContactNameInfo = ""
@@ -277,12 +277,45 @@ struct InformationAndPoliciesView: View {
 
     
     var body: some View {
-        infoView.onDisappear {
-                if model.countInfoView == 0 {
-                    let image = infoView.snapshot()
-                    model.PDFimage.append(image)
-                    model.countInfoView += 1
+        ScrollView {
+            VStack {
+                infoView.onDisappear {
+                            let image = infoView.snapshot()
+                            model.PDFimage.append(image)
+                        
                 }
+                NavigationLink {
+                    if model.showPrivacyPolicy == true && model.includePrivacyPolicy == true {
+                        PrivacyPolicyView(survey: survey)
+                    }
+                    else if model.showDryNeedling == true && model.includeDryNeedlingConsent == true {
+                        DryNeedlingConsentView(survey: survey)
+                    }
+                    else {
+                        if survey.name == "LEFS" {
+                            LefsView(survey: survey)
+                        }
+                        else if survey.name == "Back Index" {
+                            BackIndexView(survey: survey)
+                        }
+                        else if survey.name == "QuickDash" && survey.language == "English" {
+                            QuickDashEngView(survey: survey)
+                        }
+                        else if survey.name == "QuickDash" && survey.language == "Spanish" {
+                            QuickDashSpanView(survey: survey)
+                        }
+                        else if survey.name == "Neck Disability Index" {
+                            NDIView(survey: survey)
+                        }
+                        else {
+                            Text("Survey not found")
+                        }
+                    }
+                } label: {
+                    Text("Push me")
+                        .foregroundColor(.black)
+                }
+            }
         }
     }
 }

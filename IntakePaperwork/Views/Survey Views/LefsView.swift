@@ -38,83 +38,78 @@ struct LefsView: View {
                         .padding(.leading, 20)
                 }
                 Divider()
-                ForEach(0..<survey.questions.count) { index in
-                    VStack(alignment: .leading) {
-                        Text("\(survey.questions[index].title)")
-                            .font(.headline)
-                            .padding(.bottom, 5)
-                        Picker("", selection: $model.selectedValue[index]) {
-                            ForEach(0..<5) { ratingIndex in
-                                Text(String(ratingIndex)).tag(ratingIndex)
-                            }
-                        }.pickerStyle(SegmentedPickerStyle())
-                            .onChange(of: model.selectedValue) { newValue in
-                                model.finishedSurvey = false
-                                model.score = 0
-                                for index in 0..<model.selectedValue.count {
-                                    model.score += model.selectedValue[index]
+                    ForEach(0..<survey.questions.count) { index in
+                        VStack(alignment: .leading) {
+                            Text("\(survey.questions[index].title)")
+                                .font(.headline)
+                                .padding(.bottom, 5)
+                            Picker("", selection: $model.selectedValue[index]) {
+                                ForEach(0..<5) { ratingIndex in
+                                    Text(String(ratingIndex)).tag(ratingIndex)
                                 }
-                            }
-                        
-                    }.padding(.bottom, 40).padding(.top, 10)
-                }
-                HStack {
-                    Spacer()
-                    Text("Score: \(model.score)/80")
-                        .font(.title)
-                    .padding()
-                }
-                Button {
-                  /*  if model.eval == true {
-                        if model.showMedicalHistory == true && model.includeMedicalHistory == true {
-                            let image = MedicalHistoryView().snapshot()
-                            model.PDFimage.append(image)
-                        }
-                        if model.showPrivacyPolicy == true && model.includePrivacyPolicy == true {
-                            let image = PrivacyPolicyView().snapshot()
-                            model.PDFimage.append(image)
-                        }
-                        if model.showDryNeedling == true && model.includeDryNeedlingConsent == true {
-                            let image = DryNeedlingConsentView().snapshot()
-                            model.PDFimage.append(image)
-                        }
-                        if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {
-                            let image = InsuranceIntakeView().snapshot()
-                            model.PDFimage.append(image)
-                        }
-                        
-                    } */
-                  /*  if survey.name == "Back Index" {
-                        let image = backIndexView.snapshot()
-                        model.PDFimage.append(image)
+                            }.pickerStyle(SegmentedPickerStyle())
+                                .onChange(of: model.selectedValue) { newValue in
+                                    model.finishedSurvey = false
+                                    model.score = 0
+                                    for index in 0..<model.selectedValue.count {
+                                        model.score += model.selectedValue[index]
+                                    }
+                                }
+                            
+                        }.padding(.bottom, 40).padding(.top, 10)
                     }
-                    else if survey.name == "QuickDash" && survey.language == "English" {
-                        let image = quickDashEngView.snapshot()
-                        model.PDFimage.append(image)
-                    } */
-                    let image = lefsView.snapshot()
-                    model.PDFimage.append(image)
-                    model.finishedSurvey = true
-                } label: {
-                    ZStack {
-                        Rectangle()
-                            .foregroundColor(.green)
-                            .frame(height: 48)
-                            .cornerRadius(10)
-                            .shadow(radius: 1)
-                        Text("Finish")
-                            .foregroundColor(.white)
+                    HStack {
+                        Spacer()
+                        Text("Score: \(model.score)/80")
                             .font(.title)
-                            .bold()
+                        .padding()
                     }
-                }.disabled(model.finishedSurvey ? true : false)
+                    Button {
+                        let image = lefsView.snapshot()
+                        model.PDFimage.append(image)
+                        model.finishedSurvey = true
+                    } label: {
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(.green)
+                                .frame(height: 48)
+                                .cornerRadius(10)
+                                .shadow(radius: 1)
+                            Text("Finish")
+                                .foregroundColor(.white)
+                                .font(.title)
+                                .bold()
+                        }
+                    }.disabled(model.finishedSurvey ? true : false)
+                
             }.padding()
         }.frame(width: UIScreen.main.bounds.width)
     }
 
     var body: some View {
-        lefsView.onAppear {
-            model.score = 0
+        if model.selectedValue == [Int]() {
+            ProgressView().onAppear {
+                model.selectedValue.removeAll()
+                model.appendArray(survey.questions.count)
+            }
+        }
+        else {
+            ScrollView {
+                VStack {
+                    lefsView.onAppear {
+                        model.score = 0
+                        model.finishedSurvey = false
+                        model.selectedValue.removeAll()
+                        model.appendArray(survey.questions.count)
+                    }
+                    NavigationLink {
+                        PDFViewer()
+                    } label: {
+                        Text("Push me")
+                            .foregroundColor(.black)
+                    }
+                }
+            }
         }
     }
 }

@@ -23,11 +23,7 @@ class SurveyModel: ObservableObject {
     @Published var includeDryNeedlingConsent = true
     @Published var includePrivacyPolicy = true
     @Published var sideBarShowing = false
-    @Published var countInfoView = 0
-    @Published var countprivacyView = 0
-    @Published var countNeedleView = 0
-    @Published var countMedicalView = 0
-    @Published var countInsuranceView = 0
+    @Published var viewSelectionInt: Int?
 
 
 

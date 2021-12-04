@@ -10,6 +10,7 @@ import SwiftUI
 struct DryNeedlingConsentView: View {
     
     @EnvironmentObject var model:SurveyModel
+    var survey: Survey
     
     @State var buttonNeedle = [false, false, false, false, false, false, false, false, false]
     @State var signatureNeedle = ""
@@ -295,9 +296,6 @@ struct DryNeedlingConsentView: View {
                             .padding(.leading)
                             Text(Date().addingTimeInterval(600), style: .date)
                                     .padding(.leading)
-                            
-                            
-                        
                     }.padding(.bottom)
                     Text("You have the right to withdraw consent for this procedure at any time before it is performed.")
                 }
@@ -305,20 +303,38 @@ struct DryNeedlingConsentView: View {
         }.frame(width: UIScreen.main.bounds.width)
     }
 
-    
     var body: some View {
-        needleView.onDisappear {
-            if model.countNeedleView == 0 {
-                let image = needleView.snapshot()
-                model.PDFimage.append(image)
-                model.countNeedleView += 1
+        ScrollView {
+            VStack {
+                needleView.onDisappear {
+                        let image = needleView.snapshot()
+                        model.PDFimage.append(image)
+                }
+                NavigationLink {
+                    if survey.name == "LEFS" {
+                        LefsView(survey: survey)
+                    }
+                    else if survey.name == "Back Index" {
+                        BackIndexView(survey: survey)
+                    }
+                    else if survey.name == "QuickDash" && survey.language == "English" {
+                        QuickDashEngView(survey: survey)
+                    }
+                    else if survey.name == "QuickDash" && survey.language == "Spanish" {
+                        QuickDashSpanView(survey: survey)
+                    }
+                    else if survey.name == "Neck Disability Index" {
+                        NDIView(survey: survey)
+                    }
+                    else {
+                        Text("Survey not found")
+                    }
+                } label: {
+                    Text("Push me")
+                        .foregroundColor(.black)
+                }
             }
-    }
+        }
     }
 }
 
-struct DryNeedlingConsentView_Previews: PreviewProvider {
-    static var previews: some View {
-        DryNeedlingConsentView()
-    }
-}

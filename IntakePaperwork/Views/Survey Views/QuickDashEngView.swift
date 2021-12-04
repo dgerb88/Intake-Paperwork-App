@@ -282,8 +282,28 @@ struct QuickDashEngView: View {
 
     
     var body: some View {
-        quickDashEngView.onAppear {
-            model.score = 0
+        if model.selectedValue == [Int]() {
+            ProgressView().onAppear {
+                model.selectedValue.removeAll()
+                model.appendArray(survey.questions.count)
+            }
+        }
+        else {
+            ScrollView {
+                VStack {
+                    quickDashEngView.onAppear {
+                        model.score = 0
+                        model.selectedValue.removeAll()
+                        model.appendArray(survey.questions.count)
+                    }
+                    NavigationLink {
+                        PDFViewer()
+                    } label: {
+                        Text("Push me")
+                            .foregroundColor(.black)
+                    }
+                }
+            }
         }
     }
 }

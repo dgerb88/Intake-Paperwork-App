@@ -12,6 +12,7 @@ struct PrivacyPolicyView: View {
     @EnvironmentObject var model: SurveyModel
     @State var signaturePrivate = ""
     @State var buttonPrivate = [false, false]
+    var survey: Survey
     
     var privacyView: some View {
         ZStack {
@@ -105,12 +106,39 @@ struct PrivacyPolicyView: View {
 
     
     var body: some View {
-        privacyView.onDisappear {
-            if model.eval == true {
-                if model.countprivacyView == 0 {
+        ScrollView {
+            VStack {
+                privacyView.onDisappear {
                     let image = privacyView.snapshot()
                     model.PDFimage.append(image)
-                    model.countprivacyView += 1
+                }
+                NavigationLink {
+                    if model.showDryNeedling == true && model.includeDryNeedlingConsent == true {
+                        DryNeedlingConsentView(survey: survey)
+                    }
+                    else {
+                        if survey.name == "LEFS" {
+                            LefsView(survey: survey)
+                        }
+                        else if survey.name == "Back Index" {
+                            BackIndexView(survey: survey)
+                        }
+                        else if survey.name == "QuickDash" && survey.language == "English" {
+                            QuickDashEngView(survey: survey)
+                        }
+                        else if survey.name == "QuickDash" && survey.language == "Spanish" {
+                            QuickDashSpanView(survey: survey)
+                        }
+                        else if survey.name == "Neck Disability Index" {
+                            NDIView(survey: survey)
+                        }
+                        else {
+                            Text("Survey not found")
+                        }
+                    }
+                } label: {
+                    Text("Push me")
+                        .foregroundColor(.black)
                 }
             }
         }

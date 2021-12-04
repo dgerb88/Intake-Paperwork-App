@@ -480,8 +480,65 @@ struct NewSelectionView: View {
                                         .foregroundColor(.white)
                                     ForEach(model.surveys) { survey in
                                         if survey.name == nameSelected && survey.language == language {
-                                            NavigationLink {
-                                                SurveyView(survey: survey)
+                                            NavigationLink(tag: 0,
+                                                           selection: $model.viewSelectionInt) {
+                                                if model.eval == true {
+                                                    if model.showMedicalHistory == true && model.includeMedicalHistory == true {
+                                                        MedicalHistoryView(survey: survey)
+                                                    }
+                                                    else if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {
+                                                        InsuranceIntakeView(survey: survey)
+                                                    }
+                                                    else if model.showInfoAndPolicies == true && model.includeInformationAndPolicies == true {
+                                                        InformationAndPoliciesView(survey: survey)
+                                                    }
+                                                    else if model.showPrivacyPolicy == true && model.includePrivacyPolicy == true {
+                                                        PrivacyPolicyView(survey: survey)
+                                                    }
+                                                    else if model.showDryNeedling == true && model.includeDryNeedlingConsent == true {
+                                                        DryNeedlingConsentView(survey: survey)
+                                                    }
+                                                    else {
+                                                        if survey.name == "LEFS" {
+                                                            LefsView(survey: survey)
+                                                        }
+                                                        else if survey.name == "Back Index" {
+                                                            BackIndexView(survey: survey)
+                                                        }
+                                                        else if survey.name == "QuickDash" && survey.language == "English" {
+                                                            QuickDashEngView(survey: survey)
+                                                        }
+                                                        else if survey.name == "QuickDash" && survey.language == "Spanish" {
+                                                            QuickDashSpanView(survey: survey)
+                                                        }
+                                                        else if survey.name == "Neck Disability Index" {
+                                                            NDIView(survey: survey)
+                                                        }
+                                                        else {
+                                                            Text("Survey not found")
+                                                        }
+                                                    }
+                                                }
+                                                else {
+                                                    if survey.name == "LEFS" {
+                                                        LefsView(survey: survey)
+                                                    }
+                                                    else if survey.name == "Back Index" {
+                                                        BackIndexView(survey: survey)
+                                                    }
+                                                    else if survey.name == "QuickDash" && survey.language == "English" {
+                                                        QuickDashEngView(survey: survey)
+                                                    }
+                                                    else if survey.name == "QuickDash" && survey.language == "Spanish" {
+                                                        QuickDashSpanView(survey: survey)
+                                                    }
+                                                    else if survey.name == "Neck Disability Index" {
+                                                        NDIView(survey: survey)
+                                                    }
+                                                    else {
+                                                        Text("Survey not found")
+                                                    }
+                                                }
                                             } label: {
                                                 ZStack {
                                                     Rectangle()
@@ -522,11 +579,6 @@ struct NewSelectionView: View {
             NdiSelected = false
             BackIndexSelected = false
             QuickDashSelected = false
-            model.countInfoView = 0
-            model.countprivacyView = 0
-            model.countNeedleView = 0
-            model.countMedicalView = 0
-            model.countInsuranceView = 0
             model.savedPDFimage = model.PDFimage
             model.PDFimage.removeAll()
         }
@@ -535,8 +587,6 @@ struct NewSelectionView: View {
 }
 
 
-struct NewSelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewSelectionView()
-    }
-}
+
+
+

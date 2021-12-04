@@ -10,11 +10,8 @@ import SwiftUI
 struct MedicalHistoryView: View {
     
     @EnvironmentObject var model:SurveyModel
-    
-    init() {
-        UITextView.appearance().backgroundColor = .clear
-    }
-    
+    var survey: Survey
+
     @State var primaryReason = 0
     @State var primaryReasonOther = ""
     @State var dateProblemStarted = ""
@@ -1749,18 +1746,52 @@ struct MedicalHistoryView: View {
 
     
     var body: some View {
-        medView.onDisappear {
-            if model.countMedicalView == 0 {
-                let image = medView.snapshot()
-                model.PDFimage.append(image)
-                model.countMedicalView += 1
+        ScrollView {
+            VStack {
+                medView.onDisappear {
+                        let image = medView.snapshot()
+                        model.PDFimage.append(image)
+                }
+                NavigationLink {
+                    if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {
+                        InsuranceIntakeView(survey: survey)
+                    }
+                    else if model.showInfoAndPolicies == true && model.includeInformationAndPolicies == true {
+                        InformationAndPoliciesView(survey: survey)
+                    }
+                    else if model.showPrivacyPolicy == true && model.includePrivacyPolicy == true {
+                        PrivacyPolicyView(survey: survey)
+                    }
+                    else if model.showDryNeedling == true && model.includeDryNeedlingConsent == true {
+                        DryNeedlingConsentView(survey: survey)
+                    }
+                    else {
+                        if survey.name == "LEFS" {
+                            LefsView(survey: survey)
+                        }
+                        else if survey.name == "Back Index" {
+                            BackIndexView(survey: survey)
+                        }
+                        else if survey.name == "QuickDash" && survey.language == "English" {
+                            QuickDashEngView(survey: survey)
+                        }
+                        else if survey.name == "QuickDash" && survey.language == "Spanish" {
+                            QuickDashSpanView(survey: survey)
+                        }
+                        else if survey.name == "Neck Disability Index" {
+                            NDIView(survey: survey)
+                        }
+                        else {
+                            Text("Survey not found")
+                        }
+                    }
+                } label: {
+                    Text("Push me")
+                        .foregroundColor(.black)
+                }
             }
         }
     }
 }
 
-struct MedicalHistoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        MedicalHistoryView()
-    }
-}
+

@@ -17,7 +17,7 @@ struct InsuranceIntakeView: View {
     @State var groupNumberInsurance = ["", ""]
     @State var signatureInsurance = ""
     @State var buttonInsurance = [false, false, false, false, false, false, false]
-
+    var survey: Survey
     var insuranceView: some View {
         ZStack {
             VStack(alignment: .leading) {
@@ -228,18 +228,49 @@ struct InsuranceIntakeView: View {
 
     
     var body: some View {
-        insuranceView.onDisappear {
-            if model.countInsuranceView == 0 {
-                let image = insuranceView.snapshot()
-                model.PDFimage.append(image)
-                model.countInsuranceView += 1
+        ScrollView {
+            VStack {
+                insuranceView.onDisappear {
+                        let image = insuranceView.snapshot()
+                        model.PDFimage.append(image)
+                }
+                NavigationLink {
+                    if model.showInfoAndPolicies == true && model.includeInformationAndPolicies == true {
+                        InformationAndPoliciesView(survey: survey)
+                    }
+                    else if model.showPrivacyPolicy == true && model.includePrivacyPolicy == true {
+                        PrivacyPolicyView(survey: survey)
+                    }
+                    else if model.showDryNeedling == true && model.includeDryNeedlingConsent == true {
+                        DryNeedlingConsentView(survey: survey)
+                    }
+                    else {
+                        if survey.name == "LEFS" {
+                            LefsView(survey: survey)
+                        }
+                        else if survey.name == "Back Index" {
+                            BackIndexView(survey: survey)
+                        }
+                        else if survey.name == "QuickDash" && survey.language == "English" {
+                            QuickDashEngView(survey: survey)
+                        }
+                        else if survey.name == "QuickDash" && survey.language == "Spanish" {
+                            QuickDashSpanView(survey: survey)
+                        }
+                        else if survey.name == "Neck Disability Index" {
+                            NDIView(survey: survey)
+                        }
+                        else {
+                            Text("Survey not found")
+                        }
+                    }
+                } label: {
+                    Text("Push me")
+                        .foregroundColor(.black)
+                }
             }
         }
     }
 }
 
-struct InsuranceIntakeView_Previews: PreviewProvider {
-    static var previews: some View {
-        InsuranceIntakeView()
-    }
-}
+

@@ -69,8 +69,28 @@ struct BackIndexView: View {
     }
 
     var body: some View {
-        backIndexView.onAppear {
-            model.score = 0
+        if model.selectedValue == [Int]() {
+            ProgressView().onAppear {
+                model.selectedValue.removeAll()
+                model.appendArray(survey.questions.count)
+            }
+        }
+        else {
+            ScrollView {
+                VStack {
+                    backIndexView.onAppear {
+                        model.score = 0
+                        model.selectedValue.removeAll()
+                        model.appendArray(survey.questions.count)
+                    }
+                    NavigationLink {
+                        PDFViewer()
+                    } label: {
+                        Text("Push me")
+                            .foregroundColor(.black)
+                    }
+                }
+            }
         }
     }
 }
