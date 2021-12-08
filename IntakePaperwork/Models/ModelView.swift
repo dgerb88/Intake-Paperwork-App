@@ -23,6 +23,8 @@ class SurveyModel: ObservableObject {
     @Published var includePrivacyPolicy = true
     @Published var sideBarShowing = false
     @Published var viewSelectionInt: Int?
+    @Published var PDFfile: NSData?
+    @Published var PDFfileArray = [NSData]()
 
 
 
@@ -147,5 +149,20 @@ class SurveyModel: ObservableObject {
         for _ in 0..<numberOfTimes {
             selectedValue.append(0)
         }
+    }
+    func createPDF(image: UIImage) -> NSData? {
+
+        let pdfData = NSMutableData()
+        let pdfConsumer = CGDataConsumer(data: pdfData as CFMutableData)!
+
+        var mediaBox = CGRect.init(x: 0, y: 0, width: image.size.width, height: image.size.height)
+
+        let pdfContext = CGContext(consumer: pdfConsumer, mediaBox: &mediaBox, nil)!
+
+        pdfContext.beginPage(mediaBox: &mediaBox)
+        pdfContext.draw(image.cgImage!, in: mediaBox)
+        pdfContext.endPage()
+
+        return pdfData
     }
 }

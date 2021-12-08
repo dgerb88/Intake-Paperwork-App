@@ -14,38 +14,48 @@ struct BackIndexView: View {
     
     var backIndexView: some View {
         ZStack {
-            VStack(alignment: .leading) {
-                Text(survey.description)
-                    .font(.headline)
-                    .padding(.bottom, 10)
-                Divider()
-                ForEach(0..<survey.questions.count) { index in
-                    Text("\(survey.questions[index].title)")
-                        .font(.title)
-                    Picker("", selection: $model.selectedValue[index]) {
-                        ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
-                            Text(String(ratingIndex)).tag(ratingIndex)
-                        }
-                    }.pickerStyle(SegmentedPickerStyle())
-                        .onChange(of: model.selectedValue) { newValue in
-                            model.score = 0
-                            for index in 0..<model.selectedValue.count {
-                                model.score += model.selectedValue[index]
+            VStack {
+                VStack(alignment: .center) {
+                    VStack(alignment: .center) {
+                        Text("Back Index")
+                            .bold()
+                            .font(.largeTitle)
+                            .padding(.bottom, 30)
+                    }.padding(.top)
+                }
+                VStack(alignment: .leading) {
+                    Text(survey.description)
+                        .font(.headline)
+                        .padding(.bottom, 10)
+                    Divider()
+                    ForEach(0..<survey.questions.count) { index in
+                        Text("\(survey.questions[index].title)")
+                            .font(.title)
+                        Picker("", selection: $model.selectedValue[index]) {
+                            ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
+                                Text(String(ratingIndex)).tag(ratingIndex)
                             }
-                        }
-                    ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
-                        Text(survey.questions[index].rating[ratingIndex]).tag(ratingIndex)
-                    }.padding(.leading, 10)
-                    Divider().padding(.bottom)
-                }
-                
-                HStack {
-                    Spacer()
-                    Text("Score: \(Int(Double(model.score*100/50)))%")
-                        .font(.title)
-                        .padding()
-                }
-            }.padding()
+                        }.pickerStyle(SegmentedPickerStyle())
+                            .onChange(of: model.selectedValue) { newValue in
+                                model.score = 0
+                                for index in 0..<model.selectedValue.count {
+                                    model.score += model.selectedValue[index]
+                                }
+                            }
+                        ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
+                            Text(survey.questions[index].rating[ratingIndex]).tag(ratingIndex)
+                        }.padding(.leading, 10)
+                        Divider().padding(.bottom)
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        Text("Score: \(Int(Double(model.score*100/50)))%")
+                            .font(.title)
+                            .padding()
+                    }
+                }.padding(.bottom).padding(.horizontal)
+            }
         }.frame(width: UIScreen.main.bounds.width)
     }
 
@@ -66,17 +76,14 @@ struct BackIndexView: View {
                             .cornerRadius(5)
                             .shadow(radius: 5)
                         VStack {
-                            backIndexView.onAppear {
-                                model.score = 0
-                                model.selectedValue.removeAll()
-                                model.appendArray(survey.questions.count)
-                            }.onDisappear {
-                                let image = backIndexView.snapshot()
-                                model.PDFimage.append(image)
-                            }
+                            backIndexView
+                                    .onDisappear {
+                                        let image = backIndexView.snapshot()
+                                        model.PDFimage.append(image)
+                                    }
 
                             NavigationLink {
-                                PDFViewer()
+                                FinishedView()
                             } label: {
                                 ZStack {
                                     Rectangle()
@@ -91,6 +98,10 @@ struct BackIndexView: View {
                                 }.padding().padding(.bottom)
                             }.navigationBarBackButtonHidden(true)
                         }
+                    }.onAppear {
+                        model.score = 0
+                        model.selectedValue.removeAll()
+                        model.appendArray(survey.questions.count)
                     }
                 }
             }

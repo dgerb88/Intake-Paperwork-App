@@ -581,6 +581,7 @@ struct NewSelectionView: View {
             QuickDashSelected = false
             model.savedPDFimage = model.PDFimage
             model.PDFimage.removeAll()
+            model.PDFfileArray.removeAll()
         }
         
     }

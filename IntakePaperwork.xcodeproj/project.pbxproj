@@ -28,6 +28,8 @@
 		4FCC6336272B5FAC0041BE4C /* InsuranceIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6335272B5FAC0041BE4C /* InsuranceIntakeView.swift */; };
 		4FCC6338272B5FCF0041BE4C /* InformationAndPoliciesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6337272B5FCF0041BE4C /* InformationAndPoliciesView.swift */; };
 		4FCD26AB273052A900F4859F /* NDIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD26AA273052A900F4859F /* NDIView.swift */; };
+		4FD32B352760619600CEC1C9 /* FinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD32B342760619600CEC1C9 /* FinishedView.swift */; };
+		4FD32B372760654B00CEC1C9 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD32B362760654B00CEC1C9 /* SheetView.swift */; };
 		4FD830572758205D0075B219 /* PDFViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD830562758205D0075B219 /* PDFViewer.swift */; };
 		4FD901E52750B7A50042FEBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD901E42750B7A50042FEBD /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,8 @@
 		4FCC6335272B5FAC0041BE4C /* InsuranceIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceIntakeView.swift; sourceTree = "<group>"; };
 		4FCC6337272B5FCF0041BE4C /* InformationAndPoliciesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAndPoliciesView.swift; sourceTree = "<group>"; };
 		4FCD26AA273052A900F4859F /* NDIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDIView.swift; sourceTree = "<group>"; };
+		4FD32B342760619600CEC1C9 /* FinishedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedView.swift; sourceTree = "<group>"; };
+		4FD32B362760654B00CEC1C9 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		4FD830562758205D0075B219 /* PDFViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewer.swift; sourceTree = "<group>"; };
 		4FD901E42750B7A50042FEBD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +122,8 @@
 				4F66742127445DA5006B9ED0 /* SideBarMenuView.swift */,
 				4F667425274464B6006B9ED0 /* PDFRetrievalView.swift */,
 				4FD830562758205D0075B219 /* PDFViewer.swift */,
+				4FD32B362760654B00CEC1C9 /* SheetView.swift */,
+				4FD32B342760619600CEC1C9 /* FinishedView.swift */,
 				4F667423274462B0006B9ED0 /* SettingsView.swift */,
 				4FCC632D272B5DE30041BE4C /* Survey Views */,
 			);
@@ -236,6 +242,7 @@
 			files = (
 				4FD830572758205D0075B219 /* PDFViewer.swift in Sources */,
 				4FD901E52750B7A50042FEBD /* Constants.swift in Sources */,
+				4FD32B352760619600CEC1C9 /* FinishedView.swift in Sources */,
 				4F66742227445DA5006B9ED0 /* SideBarMenuView.swift in Sources */,
 				4F8B17DB2727C998000A1573 /* LefsView.swift in Sources */,
 				4F12AAC62727BBD5006905FD /* QuickDashEngView.swift in Sources */,
@@ -244,6 +251,7 @@
 				4FCC6334272B5E620041BE4C /* MedicalHistoryView.swift in Sources */,
 				4FCD26AB273052A900F4859F /* NDIView.swift in Sources */,
 				4FCC6330272B5E3E0041BE4C /* PrivacyPolicyView.swift in Sources */,
+				4FD32B372760654B00CEC1C9 /* SheetView.swift in Sources */,
 				4FCC6332272B5E4F0041BE4C /* DryNeedlingConsentView.swift in Sources */,
 				4F3EB9562725F3A7007384FA /* BackgroundView.swift in Sources */,
 				4F207D94271AA99000B74F3A /* Model.swift in Sources */,

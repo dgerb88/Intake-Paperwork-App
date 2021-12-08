@@ -38,8 +38,8 @@ struct MedicalHistoryView: View {
     
     var medView: some View {
         ZStack {
-            VStack(alignment: .leading) {
-                VStack(alignment: .leading) {
+            VStack {
+                VStack(alignment: .center) {
                     Text("Medical History")
                         .bold()
                         .font(.largeTitle)
@@ -1755,10 +1755,13 @@ struct MedicalHistoryView: View {
                         .cornerRadius(5)
                         .shadow(radius: 5)
                     VStack {
-                        medView.onDisappear {
+                        medView
+                            .onDisappear {
                                 let image = medView.snapshot()
                                 model.PDFimage.append(image)
-                        }
+                                model.PDFfile = model.createPDF(image: image)
+                                model.PDFfileArray.append(model.PDFfile!)
+                            }
                         NavigationLink {
                             if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {
                                 InsuranceIntakeView(survey: survey)

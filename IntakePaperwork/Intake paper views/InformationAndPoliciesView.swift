@@ -21,11 +21,14 @@ struct InformationAndPoliciesView: View {
     var infoView: some View {
         ZStack {
             VStack {
-                VStack(alignment: .leading) {
+                VStack(alignment: .center) {
                     Text("Information and Policies")
                         .bold()
                         .font(.largeTitle)
                         .padding(.bottom, 30)
+                }.padding()
+                VStack(alignment: .leading) {
+                    
                     Text("Please thoroughly fill out this form. All information in kept completely confidential. This information is necessary in order to give you the most effective treatment for your personal case. ")
                         .bold()
                     HStack(alignment: .top, spacing: 50) {
@@ -64,7 +67,7 @@ struct InformationAndPoliciesView: View {
                     //How would you like to receive appointment reminders?
                         //Text, email, call picker
                     
-                }.padding(.top).padding(.horizontal)
+                }.padding(.horizontal)
                 VStack(alignment: .leading) {
                     Text("Important Rules and Policies:")
                         .bold()
@@ -286,11 +289,13 @@ struct InformationAndPoliciesView: View {
                         .cornerRadius(5)
                         .shadow(radius: 5)
                     VStack {
-                        infoView.onDisappear {
-                                    let image = infoView.snapshot()
-                                    model.PDFimage.append(image)
-                                
-                        }
+                        infoView
+                            .onDisappear {
+                                let image = infoView.snapshot()
+                                model.PDFimage.append(image)
+                                model.PDFfile = model.createPDF(image: image)
+                                model.PDFfileArray.append(model.PDFfile!)
+                            }
                         NavigationLink {
                             if model.showPrivacyPolicy == true && model.includePrivacyPolicy == true {
                                 PrivacyPolicyView(survey: survey)
@@ -331,7 +336,7 @@ struct InformationAndPoliciesView: View {
                                     .bold()
                             }.padding().padding(.bottom)
                         }.navigationBarBackButtonHidden(true)
-                    }.padding()
+                    }
                 }
             }
         }

@@ -14,47 +14,55 @@ struct NDIView: View {
     
     var ndiView: some View {
         ZStack {
-            VStack(alignment: .leading) {
-                Text(survey.description)
-                    .font(.headline)
-                    .padding(.bottom, 10)
-                    .fixedSize(horizontal: false, vertical: true)
-                Divider()
-                ForEach(0..<survey.questions.count) { index in
-                    Text("\(survey.questions[index].title)")
-                        .font(.title)
-                    Picker("", selection: $model.selectedValue[index]) {
-                        ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
-                            Text(String(ratingIndex)).tag(ratingIndex)
-                        }
-                    }.pickerStyle(SegmentedPickerStyle())
-                        .onChange(of: model.selectedValue) { newValue in
-                            model.score = 0
-                            for index in 0..<model.selectedValue.count {
-                                model.score += model.selectedValue[index]
+            VStack {
+                VStack(alignment: .center) {
+                    Text("Neck Disability Index")
+                        .bold()
+                        .font(.largeTitle)
+                        .padding(.bottom, 30)
+                }.padding(.top)
+                VStack(alignment: .leading) {
+                    Text(survey.description)
+                        .font(.headline)
+                        .padding(.bottom, 10)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Divider()
+                    ForEach(0..<survey.questions.count) { index in
+                        Text("\(survey.questions[index].title)")
+                            .font(.title)
+                        Picker("", selection: $model.selectedValue[index]) {
+                            ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
+                                Text(String(ratingIndex)).tag(ratingIndex)
                             }
+                        }.pickerStyle(SegmentedPickerStyle())
+                            .onChange(of: model.selectedValue) { newValue in
+                                model.score = 0
+                                for index in 0..<model.selectedValue.count {
+                                    model.score += model.selectedValue[index]
+                                }
+                            }
+                        ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
+                            Text("\(ratingIndex) - \(survey.questions[index].rating[ratingIndex])").tag(ratingIndex)
+                        }.padding(.leading, 10)
+                        Divider().padding(.bottom)
+                    }
+                    HStack {
+                        Spacer()
+                        if survey.language == "English" {
+                            Text("Score: \(model.score)/50")
+                                .foregroundColor(.black)
+                                .font(.title)
+                                .padding()
                         }
-                    ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
-                        Text("\(ratingIndex) - \(survey.questions[index].rating[ratingIndex])").tag(ratingIndex)
-                    }.padding(.leading, 10)
-                    Divider().padding(.bottom)
-                }
-                HStack {
-                    Spacer()
-                    if survey.language == "English" {
-                        Text("Score: \(model.score)/50")
-                            .foregroundColor(.black)
-                            .font(.title)
-                            .padding()
+                        else {
+                            Text("Puntuación: \(model.score)/50")
+                                .foregroundColor(.black)
+                                .font(.title)
+                                .padding()
+                        }
                     }
-                    else {
-                        Text("Puntuación: \(model.score)/50")
-                            .foregroundColor(.black)
-                            .font(.title)
-                            .padding()
-                    }
-                }
-            }.padding()
+                }.padding(.bottom).padding(.horizontal)
+            }
         }.frame(width: UIScreen.main.bounds.width)
 
     }
@@ -76,17 +84,13 @@ struct NDIView: View {
                             .cornerRadius(5)
                             .shadow(radius: 5)
                         VStack {
-                            ndiView.onAppear {
-                                model.score = 0
-                                model.selectedValue.removeAll()
-                                model.appendArray(survey.questions.count)
-                            }.onDisappear {
+                            ndiView.onDisappear {
                                 let image = ndiView.snapshot()
                                 model.PDFimage.append(image)
                             }
 
                             NavigationLink {
-                                PDFViewer()
+                                FinishedView()
                             } label: {
                                 ZStack {
                                     Rectangle()
@@ -101,6 +105,10 @@ struct NDIView: View {
                                 }.padding().padding(.bottom)
                             }.navigationBarBackButtonHidden(true)
                         }
+                    }.onAppear {
+                        model.score = 0
+                        model.selectedValue.removeAll()
+                        model.appendArray(survey.questions.count)
                     }
                 }
             }
