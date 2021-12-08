@@ -106,39 +106,57 @@ struct PrivacyPolicyView: View {
 
     
     var body: some View {
-        ScrollView {
-            VStack {
-                privacyView.onDisappear {
-                    let image = privacyView.snapshot()
-                    model.PDFimage.append(image)
-                }
-                NavigationLink {
-                    if model.showDryNeedling == true && model.includeDryNeedlingConsent == true {
-                        DryNeedlingConsentView(survey: survey)
+        ZStack {
+            BackgroundView()
+            ScrollView {
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.white)
+                        .cornerRadius(5)
+                        .shadow(radius: 5)
+                    VStack {
+                        privacyView.onDisappear {
+                            let image = privacyView.snapshot()
+                            model.PDFimage.append(image)
+                        }
+                        NavigationLink {
+                            if model.showDryNeedling == true && model.includeDryNeedlingConsent == true {
+                                DryNeedlingConsentView(survey: survey)
+                            }
+                            else {
+                                if survey.name == "LEFS" {
+                                    LefsView(survey: survey)
+                                }
+                                else if survey.name == "Back Index" {
+                                    BackIndexView(survey: survey)
+                                }
+                                else if survey.name == "QuickDash" && survey.language == "English" {
+                                    QuickDashEngView(survey: survey)
+                                }
+                                else if survey.name == "QuickDash" && survey.language == "Spanish" {
+                                    QuickDashSpanView(survey: survey)
+                                }
+                                else if survey.name == "Neck Disability Index" {
+                                    NDIView(survey: survey)
+                                }
+                                else {
+                                    Text("Survey not found")
+                                }
+                            }
+                        } label: {
+                            ZStack {
+                                Rectangle()
+                                    .foregroundColor(.green)
+                                    .frame(height: 48)
+                                    .cornerRadius(10)
+                                    .shadow(radius: 1)
+                                Text("Finish")
+                                    .foregroundColor(.white)
+                                    .font(.title)
+                                    .bold()
+                            }.padding().padding(.bottom)
+                        }.navigationBarBackButtonHidden(true)
                     }
-                    else {
-                        if survey.name == "LEFS" {
-                            LefsView(survey: survey)
-                        }
-                        else if survey.name == "Back Index" {
-                            BackIndexView(survey: survey)
-                        }
-                        else if survey.name == "QuickDash" && survey.language == "English" {
-                            QuickDashEngView(survey: survey)
-                        }
-                        else if survey.name == "QuickDash" && survey.language == "Spanish" {
-                            QuickDashSpanView(survey: survey)
-                        }
-                        else if survey.name == "Neck Disability Index" {
-                            NDIView(survey: survey)
-                        }
-                        else {
-                            Text("Survey not found")
-                        }
-                    }
-                } label: {
-                    Text("Push me")
-                        .foregroundColor(.black)
                 }
             }
         }

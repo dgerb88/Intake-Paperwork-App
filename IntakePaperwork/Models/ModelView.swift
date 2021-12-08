@@ -15,7 +15,6 @@ class SurveyModel: ObservableObject {
     @Published var savedPDFimage = [UIImage]()
     @Published var selectedValue = [Int]()
     @Published var score = 0
-    @Published var finishedSurvey = false
     @Published var eval = true
     @Published var includeInformationAndPolicies = true
     @Published var includeInsuranceIntake = true

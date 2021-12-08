@@ -551,7 +551,7 @@ struct NewSelectionView: View {
                                                         .font(.title)
                                                         .foregroundColor(.white)
                                                 }
-                                            }
+                                            }.navigationBarBackButtonHidden(true)
                                         }
                                         
                                     }

@@ -60,7 +60,6 @@ struct QuickDashEngView: View {
                                     }.pickerStyle(SegmentedPickerStyle())
                                         .frame(width: 410)
                                         .onChange(of: model.selectedValue) { newValue in
-                                            model.finishedSurvey = false
                                             model.score = 0
                                             for index in 0..<model.selectedValue.count {
                                                 model.score += model.selectedValue[index]
@@ -256,24 +255,6 @@ struct QuickDashEngView: View {
                             .padding()
                     }
                     .padding(.vertical, 5)
-                    Button {
-                        let image = quickDashEngView.snapshot()
-                        model.PDFimage.append(image)
-                        model.finishedSurvey = true
-                    } label: {
-                        ZStack {
-                            Rectangle()
-                                .foregroundColor(.green)
-                                .frame(height: 48)
-                                .cornerRadius(10)
-                                .shadow(radius: 1)
-                            Text("Finish")
-                                .foregroundColor(.white)
-                                .font(.title)
-                                .bold()
-                        }
-                    }.disabled(model.finishedSurvey ? true : false)
-
                 }
             }.padding()
         }.frame(width: UIScreen.main.bounds.width)
@@ -289,18 +270,36 @@ struct QuickDashEngView: View {
             }
         }
         else {
-            ScrollView {
-                VStack {
-                    quickDashEngView.onAppear {
-                        model.score = 0
-                        model.selectedValue.removeAll()
-                        model.appendArray(survey.questions.count)
-                    }
-                    NavigationLink {
-                        PDFViewer()
-                    } label: {
-                        Text("Push me")
-                            .foregroundColor(.black)
+            ZStack {
+                BackgroundView()
+                ScrollView {
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor(.white)
+                            .cornerRadius(5)
+                            .shadow(radius: 5)
+                        VStack {
+                            quickDashEngView.onAppear {
+                                model.score = 0
+                                model.selectedValue.removeAll()
+                                model.appendArray(survey.questions.count)
+                            }
+                            NavigationLink {
+                                PDFViewer()
+                            } label: {
+                                ZStack {
+                                    Rectangle()
+                                        .foregroundColor(.green)
+                                        .frame(height: 48)
+                                        .cornerRadius(10)
+                                        .shadow(radius: 1)
+                                    Text("Finish")
+                                        .foregroundColor(.white)
+                                        .font(.title)
+                                        .bold()
+                                }.padding().padding(.bottom)
+                            }.navigationBarBackButtonHidden(true)
+                        }
                     }
                 }
             }

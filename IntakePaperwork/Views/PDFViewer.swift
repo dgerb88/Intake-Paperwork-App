@@ -18,9 +18,18 @@ struct PDFViewer: View {
             Button {
                 model.viewSelectionInt = nil
             } label: {
-                Text("Push me")
-                    .foregroundColor(.black)
-            }
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.green)
+                        .frame(height: 48)
+                        .cornerRadius(10)
+                        .shadow(radius: 1)
+                    Text("Finish")
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .bold()
+                }.padding().padding(.bottom)
+            }.navigationBarBackButtonHidden(true)
 
         }
     }
