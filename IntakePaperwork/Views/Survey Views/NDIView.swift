@@ -80,7 +80,11 @@ struct NDIView: View {
                                 model.score = 0
                                 model.selectedValue.removeAll()
                                 model.appendArray(survey.questions.count)
+                            }.onDisappear {
+                                let image = privacyView.snapshot()
+                                model.PDFimage.append(image)
                             }
+
                             NavigationLink {
                                 PDFViewer()
                             } label: {
