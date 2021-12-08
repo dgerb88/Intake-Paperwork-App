@@ -89,7 +89,7 @@ struct LefsView: View {
                                 model.selectedValue.removeAll()
                                 model.appendArray(survey.questions.count)
                             }.onDisappear {
-                                let image = privacyView.snapshot()
+                                let image = lefsView.snapshot()
                                 model.PDFimage.append(image)
                             }
                             NavigationLink {

@@ -71,7 +71,7 @@ struct BackIndexView: View {
                                 model.selectedValue.removeAll()
                                 model.appendArray(survey.questions.count)
                             }.onDisappear {
-                                let image = privacyView.snapshot()
+                                let image = backIndexView.snapshot()
                                 model.PDFimage.append(image)
                             }
 

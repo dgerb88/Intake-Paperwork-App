@@ -81,7 +81,7 @@ struct NDIView: View {
                                 model.selectedValue.removeAll()
                                 model.appendArray(survey.questions.count)
                             }.onDisappear {
-                                let image = privacyView.snapshot()
+                                let image = ndiView.snapshot()
                                 model.PDFimage.append(image)
                             }
 

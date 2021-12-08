@@ -289,7 +289,7 @@ struct QuickDashSpanView: View {
                                 model.selectedValue.removeAll()
                                 model.appendArray(survey.questions.count)
                             }.onDisappear {
-                                let image = privacyView.snapshot()
+                                let image = quickDashSpanView.snapshot()
                                 model.PDFimage.append(image)
                             }
 
