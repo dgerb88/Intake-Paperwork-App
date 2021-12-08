@@ -46,7 +46,7 @@ struct FinishedView: View {
                     } label: {
                         Image(systemName: "arrow.up.doc")
                             .resizable(resizingMode: .tile)
-                            .frame(width: 35, height: 40)
+                            .frame(width: 30, height: 40)
                             .foregroundColor(.white)
                     }.padding().padding(.trailing, 40)
                 }

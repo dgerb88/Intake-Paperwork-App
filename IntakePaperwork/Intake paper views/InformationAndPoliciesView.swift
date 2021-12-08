@@ -330,7 +330,7 @@ struct InformationAndPoliciesView: View {
                                     .frame(height: 48)
                                     .cornerRadius(10)
                                     .shadow(radius: 1)
-                                Text("Finish")
+                                Text("Next")
                                     .foregroundColor(.white)
                                     .font(.title)
                                     .bold()

@@ -69,7 +69,7 @@ struct QuickDashEngView: View {
                                             .onChange(of: model.selectedValue) { newValue in
                                                 model.score = 0
                                                 for index in 0..<model.selectedValue.count {
-                                                    model.score += model.selectedValue[index]
+                                                    model.score += model.selectedValue[index]+1
                                                 }
                                             }
                                         Spacer()
