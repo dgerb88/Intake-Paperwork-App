@@ -45,7 +45,8 @@ struct HomeView: View {
                                     Spacer()
                                 }.padding(.leading).padding(.vertical)
                             }
-                            NavigationLink {
+                            NavigationLink(tag: 1,
+                        selection: $model.viewSelectionInt) {
                                 PDFRetrievalView()
                             } label: {
                                 HStack {
