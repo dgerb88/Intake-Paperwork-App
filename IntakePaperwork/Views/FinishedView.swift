@@ -35,29 +35,51 @@ struct FinishedView: View {
                     Button {
                         model.viewSelectionInt = nil
                     } label: {
-                        Image(systemName: "house")
-                            .resizable(resizingMode: .tile)
-                            .frame(width: 40, height: 40)
-                            .foregroundColor(.white)
-                    }.padding().padding(.leading, 40)
+                        VStack {
+                            Image(systemName: "house")
+                                .resizable(resizingMode: .tile)
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(.white)
+                            Text("Home")
+                                .foregroundColor(.white)
+                        }
+                    }.padding(.top).padding(.leading, 40)
+                    Spacer()
+                    NavigationLink {
+                        PDFViewer(image: model.PDFimage)
+                    } label: {
+                        VStack {
+                            Image(systemName: "doc")
+                                .resizable(resizingMode: .tile)
+                                .frame(width: 22, height: 30)
+                                .foregroundColor(.white)
+                            Text("View")
+                                .foregroundColor(.white)
+                        }
+                        
+                    }.padding(.top)
                     Spacer()
                     Button {
                         showSheetView = true
                     } label: {
-                        Image(systemName: "arrow.up.doc")
-                            .resizable(resizingMode: .tile)
-                            .frame(width: 30, height: 40)
-                            .foregroundColor(.white)
-                    }.padding().padding(.trailing, 40)
+                        VStack {
+                            Image(systemName: "arrow.up.doc")
+                                .resizable(resizingMode: .tile)
+                                .frame(width: 22, height: 30)
+                                .foregroundColor(.white)
+                            Text("Share")
+                                .foregroundColor(.white)
+                        }
+                    }.padding(.top).padding(.trailing, 40)
                 }
 
             }
-        }.navigationBarBackButtonHidden(true)
+        }
+            .navigationBarBackButtonHidden(true)
+            .onAppear {
+                model.savedPDFimage.append(model.PDFimage)
+            }
     }
 }
 
-struct FinishedView_Previews: PreviewProvider {
-    static var previews: some View {
-        FinishedView()
-    }
-}
+

@@ -12,7 +12,7 @@ class SurveyModel: ObservableObject {
         
     @Published var surveys = [Survey]()
     @Published var PDFimage = [UIImage]()
-    @Published var savedPDFimage = [UIImage]()
+    @Published var savedPDFimage = [[UIImage]()]
     @Published var selectedValue = [Int]()
     @Published var score = 0
     @Published var eval = true

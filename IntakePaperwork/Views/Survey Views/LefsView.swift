@@ -25,6 +25,7 @@ struct LefsView: View {
                     Text(survey.description)
                         .font(.headline)
                         .padding(.bottom, 10)
+                        .fixedSize(horizontal: false, vertical: true)
                     if survey.language == "English" {
                         Text("The following scale applies to every question:")
                             .font(.headline)
@@ -118,9 +119,9 @@ struct LefsView: View {
                 }
             }
                 .onAppear {
-                    model.score = 0
                     model.selectedValue.removeAll()
                     model.appendArray(survey.questions.count)
+                    model.score = 0
                 }
         }
     }

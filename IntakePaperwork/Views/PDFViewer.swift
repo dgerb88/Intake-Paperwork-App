@@ -11,26 +11,47 @@ import PDFKit
 struct PDFViewer: View {
     
     @EnvironmentObject var model: SurveyModel
+    @State var showSheetView = false
+    var image: [UIImage]
     
     var body: some View {
-        VStack {
-            PDFViewUI(image: model.PDFimage)
-            Button {
-                model.viewSelectionInt = nil
-            } label: {
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(.green)
-                        .frame(height: 48)
-                        .cornerRadius(10)
-                        .shadow(radius: 1)
-                    Text("Finish")
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .bold()
-                }.padding().padding(.bottom)
-            }.navigationBarBackButtonHidden(true)
+        ZStack {
+            BackgroundView()
+            VStack {
+                PDFViewUI(image: image)
+                    .sheet(isPresented: $showSheetView) {
+                    ShareSheet(activityItems: model.PDFfileArray)
+            }
+                HStack {
+                    Button {
+                        model.viewSelectionInt = nil
+                    } label: {
+                        VStack {
+                            Image(systemName: "house")
+                                .resizable(resizingMode: .tile)
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(.white)
+                            Text("Home")
+                                .foregroundColor(.white)
+                        }
+                    }.padding().padding(.leading, 40)
+                    Spacer()
+                    Button {
+                        showSheetView = true
+                    } label: {
+                        VStack {
+                            Image(systemName: "arrow.up.doc")
+                                .resizable(resizingMode: .tile)
+                                .frame(width: 22, height: 30)
+                                .foregroundColor(.white)
+                            Text("Share")
+                                .foregroundColor(.white)
+                        }
+                    }.padding().padding(.trailing, 40)
+                    
+                }
 
+            }.padding(.top)
         }
     }
 }

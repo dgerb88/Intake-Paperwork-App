@@ -68,14 +68,16 @@ struct HomeView: View {
                     .padding(.top)
                 .transition(.move(edge: .leading))
                 
-            }.frame(width: UIScreen.main.bounds.width)
+            }
+            .frame(width: UIScreen.main.bounds.width)
             .onAppear(perform: {
                 model.sideBarShowing = false
             })
+            .navigationBarBackButtonHidden(true)
             .navigationBarTitleDisplayMode( .inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
-                        Text("Forms Setup")
+                        Text("Home")
                             .bold()
                             .foregroundColor(.white)
                             .font(.largeTitle)

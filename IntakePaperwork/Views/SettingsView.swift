@@ -14,7 +14,6 @@ struct SettingsView: View {
     var body: some View {
         ZStack {
             BackgroundView()
-                .frame(width: UIScreen.main.bounds.width)
             ZStack {
                 VStack(alignment: .leading) {
                     List {
