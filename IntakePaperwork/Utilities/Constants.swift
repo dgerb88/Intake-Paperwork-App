@@ -22,6 +22,4 @@ struct Constants {
     static var cancelFee = "cancelFee"
     static var noShowFee = "noShowFee"
     static var phoneNumber = "phoneNumber"
-
-    
 }

@@ -575,6 +575,8 @@ struct NewSelectionView: View {
             model.includeDryNeedlingConsent = true
             isSpanish = false
             isEnglish = true
+            model.selectedValue.removeAll()
+            model.appendArray(25)
             LefsSelected = true
             NdiSelected = false
             BackIndexSelected = false
@@ -582,7 +584,6 @@ struct NewSelectionView: View {
             model.PDFimage.removeAll()
             model.PDFfileArray.removeAll()
         }
-        
     }
 }
 

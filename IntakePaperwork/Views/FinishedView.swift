@@ -29,7 +29,7 @@ struct FinishedView: View {
                         .padding(.horizontal, 50)
                         .sheet(isPresented: $showSheetView) {
                             ShareSheet(activityItems: model.PDFfileArray)
-                    }
+                        }
                 }
                 HStack {
                     Button {
@@ -46,7 +46,7 @@ struct FinishedView: View {
                     }.padding(.top).padding(.leading, 40)
                     Spacer()
                     NavigationLink {
-                        PDFViewer(image: model.PDFimage)
+                        PDFViewer(image: model.PDFimage, nsDataArray: model.PDFfileArray)
                     } label: {
                         VStack {
                             Image(systemName: "doc")
@@ -72,13 +72,10 @@ struct FinishedView: View {
                         }
                     }.padding(.top).padding(.trailing, 40)
                 }
-
+                
             }
         }
-            .navigationBarBackButtonHidden(true)
-            .onAppear {
-                model.savedPDFimage.append(model.PDFimage)
-            }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

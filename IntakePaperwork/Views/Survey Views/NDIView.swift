@@ -64,55 +64,52 @@ struct NDIView: View {
                 }.padding(.bottom).padding(.horizontal)
             }
         }.frame(width: UIScreen.main.bounds.width)
-
+        
     }
     
     var body: some View {
-        if model.selectedValue == [Int]() {
-            ProgressView().onAppear {
-                model.selectedValue.removeAll()
-                model.appendArray(survey.questions.count)
-            }
-        }
-        else {
-            ZStack {
-                BackgroundView()
-                ScrollView {
-                    ZStack {
-                        Rectangle()
-                            .foregroundColor(.white)
-                            .cornerRadius(5)
-                            .shadow(radius: 5)
-                        VStack {
-                            ndiView.onDisappear {
-                                let image = ndiView.snapshot()
-                                model.PDFimage.append(image)
-                            }
-
-                            NavigationLink {
-                                FinishedView()
-                            } label: {
-                                ZStack {
-                                    Rectangle()
-                                        .foregroundColor(.green)
-                                        .frame(height: 48)
-                                        .cornerRadius(10)
-                                        .shadow(radius: 1)
-                                    Text("Finish")
-                                        .foregroundColor(.white)
-                                        .font(.title)
-                                        .bold()
-                                }.padding().padding(.bottom)
-                            }.navigationBarBackButtonHidden(true)
+        ZStack {
+            BackgroundView()
+            ScrollView {
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.white)
+                        .cornerRadius(5)
+                        .shadow(radius: 5)
+                    VStack {
+                        ndiView.onDisappear {
+                            let image = ndiView.snapshot()
+                            model.PDFimage.append(image)
+                            model.PDFfile = model.createPDF(image: image)
+                            model.PDFfileArray.append(model.PDFfile!)
+                            model.savedPDFimage.append(model.PDFimage)
+                            model.PDFfileArrayArray.append(model.PDFfileArray)
                         }
-                    }.onAppear {
-                        model.score = 0
-                        model.selectedValue.removeAll()
-                        model.appendArray(survey.questions.count)
+                        
+                        NavigationLink {
+                            FinishedView()
+                        } label: {
+                            ZStack {
+                                Rectangle()
+                                    .foregroundColor(.green)
+                                    .frame(height: 48)
+                                    .cornerRadius(10)
+                                    .shadow(radius: 1)
+                                Text("Finish")
+                                    .foregroundColor(.white)
+                                    .font(.title)
+                                    .bold()
+                            }.padding().padding(.bottom)
+                        }.navigationBarBackButtonHidden(true)
                     }
+                }.onAppear {
+                    model.score = 0
+                    model.selectedValue.removeAll()
+                    model.appendArray(survey.questions.count)
                 }
             }
         }
+        
     }
 }
 

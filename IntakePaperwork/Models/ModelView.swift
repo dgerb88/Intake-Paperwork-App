@@ -25,6 +25,8 @@ class SurveyModel: ObservableObject {
     @Published var viewSelectionInt: Int?
     @Published var PDFfile: NSData?
     @Published var PDFfileArray = [NSData]()
+    @Published var PDFfileArrayArray = [[NSData]]()
+
 
 
 

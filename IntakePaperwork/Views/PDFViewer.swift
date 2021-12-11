@@ -13,6 +13,7 @@ struct PDFViewer: View {
     @EnvironmentObject var model: SurveyModel
     @State var showSheetView = false
     var image: [UIImage]
+    var nsDataArray: [NSData]
     
     var body: some View {
         ZStack {
@@ -20,7 +21,7 @@ struct PDFViewer: View {
             VStack {
                 PDFViewUI(image: image)
                     .sheet(isPresented: $showSheetView) {
-                    ShareSheet(activityItems: model.PDFfileArray)
+                    ShareSheet(activityItems: nsDataArray)
             }
                 HStack {
                     Button {

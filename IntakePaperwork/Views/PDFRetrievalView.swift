@@ -17,14 +17,12 @@ struct PDFRetrievalView: View {
             BackgroundView()
                 .frame(width: UIScreen.main.bounds.width)
             ZStack {
-                Rectangle()
-                    .foregroundColor(.white)
                 VStack {
                     List {
-                        if model.savedPDFimage != [[UIImage]]() {
-                            ForEach(0..<model.savedPDFimage.count) { index in
+                        if model.savedPDFimage != [[UIImage]]() && model.PDFfileArrayArray != [[NSData]]() {
+                            ForEach(0..<model.savedPDFimage.count, id: \.self) { index in
                                 NavigationLink {
-                                    PDFViewer(image: model.savedPDFimage[index])
+                                    PDFViewer(image: model.savedPDFimage[index], nsDataArray: model.PDFfileArrayArray[index])
                                 } label : {
                                     HStack {
                                         Text(Date().addingTimeInterval(600), style: .date)
@@ -38,6 +36,21 @@ struct PDFRetrievalView: View {
                             Text("No PDF's files available")
                         }
                     }
+                    HStack {
+                        Button {
+                            model.PDFfileArrayArray.removeAll()
+                            model.savedPDFimage.removeAll()
+                        } label: {
+                            Image(systemName: "trash")
+                                .resizable(resizingMode: .tile)
+                                .frame(width: 22, height: 30)
+                                .foregroundColor(.white)
+                                .padding(.leading, 40)
+                                .padding(.bottom, 5)
+                        }
+                        Spacer()
+
+                    }.padding()
                 }
             }.padding(.top)
         }.navigationBarTitleDisplayMode(.inline)
