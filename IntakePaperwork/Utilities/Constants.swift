@@ -22,4 +22,6 @@ struct Constants {
     static var cancelFee = "cancelFee"
     static var noShowFee = "noShowFee"
     static var phoneNumber = "phoneNumber"
+    static var PDFfileArrayArray = "PDFfileArrayArray"
+    static var savedImageArray = "saveImageArray"
 }
