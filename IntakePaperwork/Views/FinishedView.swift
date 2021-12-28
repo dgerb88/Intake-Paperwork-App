@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FinishedView: View {
     
+    @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var model: SurveyModel
     @State var showSheetView = false
     
@@ -75,8 +76,10 @@ struct FinishedView: View {
                 
             }
         }
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(true)        
     }
+    
+    
 }
 
 

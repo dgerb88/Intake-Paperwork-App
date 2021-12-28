@@ -9,6 +9,9 @@ import SwiftUI
 
 struct PDFRetrievalView: View {
     
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "timestamp", ascending: false)]) var CoreDataItems: FetchedResults<Items>
+    
     @EnvironmentObject var model: SurveyModel
     @State var showSheetView = false 
     
@@ -19,27 +22,24 @@ struct PDFRetrievalView: View {
             ZStack {
                 VStack {
                     List {
-                        if model.savedPDFimage != [[UIImage]]() && model.PDFfileArrayArray != [[NSData]]() {
-                            ForEach(0..<model.savedPDFimage.count, id: \.self) { index in
-                                NavigationLink {
-                                    PDFViewer(image: model.savedPDFimage[index], nsDataArray: model.PDFfileArrayArray[index])
-                                } label : {
-                                    HStack {
-                                        Text(Date().addingTimeInterval(600), style: .date)
-                                            .padding(.trailing)
-                                        Text(Date().addingTimeInterval(600), style: .time)
-                                    }
+                        ForEach(CoreDataItems) { item in
+                            NavigationLink {
+                                PDFViewer(image: item.imageArray, nsDataArray: item.pdfArray)
+                            } label : {
+                                HStack {
+                                    Text("\((item.timestamp?.addingTimeInterval(1))!, style: .date)")
+                                        .padding(.trailing)
+                                    Text("\((item.timestamp?.addingTimeInterval(1))!, style: .time)")
                                 }
                             }
-                        }
-                        else {
-                            Text("No PDF's files available")
                         }
                     }
                     HStack {
                         Button {
-                            model.PDFfileArrayArray.removeAll()
-                            model.savedPDFimage.removeAll()
+                            for item in CoreDataItems {
+                                viewContext.delete(item)
+                            }
+                            try! viewContext.save()
                         } label: {
                             Image(systemName: "trash")
                                 .resizable(resizingMode: .tile)
@@ -64,6 +64,9 @@ struct PDFRetrievalView: View {
             }
 
     }
+    
+    
+    
 }
 
 

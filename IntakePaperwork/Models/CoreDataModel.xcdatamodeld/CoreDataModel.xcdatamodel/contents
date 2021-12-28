@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Items" representedClassName="Items" syncable="YES">
+        <attribute name="imageArray" optional="YES" attributeType="Transformable" customClassName="[UIImage]"/>
+        <attribute name="pdfArray" optional="YES" attributeType="Transformable" customClassName="[NSData]"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <elements>
+        <element name="Items" positionX="-54" positionY="-9" width="128" height="74"/>
+    </elements>
+</model>

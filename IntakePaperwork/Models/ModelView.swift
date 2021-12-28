@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class SurveyModel: ObservableObject {
-        
+
     @Published var surveys = [Survey]()
     @Published var PDFimage = [UIImage]()
     @Published var savedPDFimage = [[UIImage]]()

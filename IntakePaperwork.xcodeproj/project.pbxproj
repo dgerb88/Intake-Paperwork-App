@@ -22,6 +22,10 @@
 		4F82A6C8273EE446003DC3BF /* NewSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82A6C7273EE446003DC3BF /* NewSelectionView.swift */; };
 		4F8B17D92727C76C000A1573 /* BackIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B17D82727C76C000A1573 /* BackIndexView.swift */; };
 		4F8B17DB2727C998000A1573 /* LefsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B17DA2727C998000A1573 /* LefsView.swift */; };
+		4FA55E36277BBD4100456AB6 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FA55E34277BBD4100456AB6 /* CoreDataModel.xcdatamodeld */; };
+		4FA55E39277BBDB200456AB6 /* Items+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA55E37277BBDB200456AB6 /* Items+CoreDataClass.swift */; };
+		4FA55E3A277BBDB200456AB6 /* Items+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA55E38277BBDB200456AB6 /* Items+CoreDataProperties.swift */; };
+		4FA55E3C277BBE5700456AB6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA55E3B277BBE5700456AB6 /* Persistence.swift */; };
 		4FCC6330272B5E3E0041BE4C /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC632F272B5E3E0041BE4C /* PrivacyPolicyView.swift */; };
 		4FCC6332272B5E4F0041BE4C /* DryNeedlingConsentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6331272B5E4F0041BE4C /* DryNeedlingConsentView.swift */; };
 		4FCC6334272B5E620041BE4C /* MedicalHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6333272B5E620041BE4C /* MedicalHistoryView.swift */; };
@@ -51,6 +55,10 @@
 		4F82A6C7273EE446003DC3BF /* NewSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSelectionView.swift; sourceTree = "<group>"; };
 		4F8B17D82727C76C000A1573 /* BackIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackIndexView.swift; sourceTree = "<group>"; };
 		4F8B17DA2727C998000A1573 /* LefsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LefsView.swift; sourceTree = "<group>"; };
+		4FA55E35277BBD4100456AB6 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		4FA55E37277BBDB200456AB6 /* Items+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4FA55E38277BBDB200456AB6 /* Items+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4FA55E3B277BBE5700456AB6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4FCC632F272B5E3E0041BE4C /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		4FCC6331272B5E4F0041BE4C /* DryNeedlingConsentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DryNeedlingConsentView.swift; sourceTree = "<group>"; };
 		4FCC6333272B5E620041BE4C /* MedicalHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistoryView.swift; sourceTree = "<group>"; };
@@ -77,6 +85,8 @@
 		4F207D77271AA69000B74F3A = {
 			isa = PBXGroup;
 			children = (
+				4FA55E37277BBDB200456AB6 /* Items+CoreDataClass.swift */,
+				4FA55E38277BBDB200456AB6 /* Items+CoreDataProperties.swift */,
 				4F207D82271AA69100B74F3A /* IntakePaperwork */,
 				4F207D81271AA69100B74F3A /* Products */,
 			);
@@ -158,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				4F207D95271AAA6400B74F3A /* ModelView.swift */,
+				4FA55E34277BBD4100456AB6 /* CoreDataModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				4FD901E42750B7A50042FEBD /* Constants.swift */,
+				4FA55E3B277BBE5700456AB6 /* Persistence.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -241,12 +253,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FD830572758205D0075B219 /* PDFViewer.swift in Sources */,
+				4FA55E39277BBDB200456AB6 /* Items+CoreDataClass.swift in Sources */,
 				4FD901E52750B7A50042FEBD /* Constants.swift in Sources */,
 				4FD32B352760619600CEC1C9 /* FinishedView.swift in Sources */,
 				4F66742227445DA5006B9ED0 /* SideBarMenuView.swift in Sources */,
 				4F8B17DB2727C998000A1573 /* LefsView.swift in Sources */,
 				4F12AAC62727BBD5006905FD /* QuickDashEngView.swift in Sources */,
 				4F82A6C8273EE446003DC3BF /* NewSelectionView.swift in Sources */,
+				4FA55E3A277BBDB200456AB6 /* Items+CoreDataProperties.swift in Sources */,
+				4FA55E3C277BBE5700456AB6 /* Persistence.swift in Sources */,
 				4F667426274464B6006B9ED0 /* PDFRetrievalView.swift in Sources */,
 				4FCC6334272B5E620041BE4C /* MedicalHistoryView.swift in Sources */,
 				4FCD26AB273052A900F4859F /* NDIView.swift in Sources */,
@@ -254,6 +269,7 @@
 				4FD32B372760654B00CEC1C9 /* SheetView.swift in Sources */,
 				4FCC6332272B5E4F0041BE4C /* DryNeedlingConsentView.swift in Sources */,
 				4F3EB9562725F3A7007384FA /* BackgroundView.swift in Sources */,
+				4FA55E36277BBD4100456AB6 /* CoreDataModel.xcdatamodeld in Sources */,
 				4F207D94271AA99000B74F3A /* Model.swift in Sources */,
 				4F46EEAB272E4D6F00D8EEE3 /* QuickDashSpanView.swift in Sources */,
 				4F207D86271AA69100B74F3A /* HomeView.swift in Sources */,
@@ -467,6 +483,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4FA55E34277BBD4100456AB6 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4FA55E35277BBD4100456AB6 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 4FA55E35277BBD4100456AB6 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4F207D78271AA69000B74F3A /* Project object */;
 }

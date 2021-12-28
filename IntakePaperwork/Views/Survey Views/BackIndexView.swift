@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BackIndexView: View {
     
+    @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var model: SurveyModel
     var survey: Survey
     
@@ -77,6 +78,7 @@ struct BackIndexView: View {
                                 model.PDFfileArray.append(model.PDFfile!)
                                 model.savedPDFimage.append(model.PDFimage)
                                 model.PDFfileArrayArray.append(model.PDFfileArray)
+                                addItem(image: model.PDFimage, pdf: model.PDFfileArray)
                             }
                         
                         NavigationLink {
@@ -103,6 +105,18 @@ struct BackIndexView: View {
             }
         }
         
+    }
+    func addItem(image: [UIImage], pdf: [NSData]) {
+        let newItem = Items(context: viewContext)
+        newItem.timestamp = Date()
+        newItem.imageArray = image
+        newItem.pdfArray = pdf
+
+        do {
+            try viewContext.save()
+        } catch {
+            // Error
+        }
     }
 }
 
