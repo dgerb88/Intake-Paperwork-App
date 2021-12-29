@@ -16,10 +16,10 @@
 		4F207D96271AAA6400B74F3A /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F207D95271AAA6400B74F3A /* ModelView.swift */; };
 		4F3EB9562725F3A7007384FA /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EB9552725F3A7007384FA /* BackgroundView.swift */; };
 		4F46EEAB272E4D6F00D8EEE3 /* QuickDashSpanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F46EEAA272E4D6F00D8EEE3 /* QuickDashSpanView.swift */; };
-		4F66742227445DA5006B9ED0 /* SideBarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66742127445DA5006B9ED0 /* SideBarMenuView.swift */; };
 		4F667424274462B0006B9ED0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F667423274462B0006B9ED0 /* SettingsView.swift */; };
 		4F667426274464B6006B9ED0 /* PDFRetrievalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F667425274464B6006B9ED0 /* PDFRetrievalView.swift */; };
 		4F82A6C8273EE446003DC3BF /* NewSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82A6C7273EE446003DC3BF /* NewSelectionView.swift */; };
+		4F89C1CC277CFFC000159150 /* LockedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F89C1CB277CFFC000159150 /* LockedView.swift */; };
 		4F8B17D92727C76C000A1573 /* BackIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B17D82727C76C000A1573 /* BackIndexView.swift */; };
 		4F8B17DB2727C998000A1573 /* LefsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B17DA2727C998000A1573 /* LefsView.swift */; };
 		4FA55E36277BBD4100456AB6 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FA55E34277BBD4100456AB6 /* CoreDataModel.xcdatamodeld */; };
@@ -49,10 +49,10 @@
 		4F207D95271AAA6400B74F3A /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		4F3EB9552725F3A7007384FA /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		4F46EEAA272E4D6F00D8EEE3 /* QuickDashSpanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickDashSpanView.swift; sourceTree = "<group>"; };
-		4F66742127445DA5006B9ED0 /* SideBarMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarMenuView.swift; sourceTree = "<group>"; };
 		4F667423274462B0006B9ED0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4F667425274464B6006B9ED0 /* PDFRetrievalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFRetrievalView.swift; sourceTree = "<group>"; };
 		4F82A6C7273EE446003DC3BF /* NewSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSelectionView.swift; sourceTree = "<group>"; };
+		4F89C1CB277CFFC000159150 /* LockedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedView.swift; sourceTree = "<group>"; };
 		4F8B17D82727C76C000A1573 /* BackIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackIndexView.swift; sourceTree = "<group>"; };
 		4F8B17DA2727C998000A1573 /* LefsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LefsView.swift; sourceTree = "<group>"; };
 		4FA55E35277BBD4100456AB6 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -129,9 +129,9 @@
 				4F207D85271AA69100B74F3A /* HomeView.swift */,
 				4F82A6C7273EE446003DC3BF /* NewSelectionView.swift */,
 				4F3EB9552725F3A7007384FA /* BackgroundView.swift */,
-				4F66742127445DA5006B9ED0 /* SideBarMenuView.swift */,
 				4F667425274464B6006B9ED0 /* PDFRetrievalView.swift */,
 				4FD830562758205D0075B219 /* PDFViewer.swift */,
+				4F89C1CB277CFFC000159150 /* LockedView.swift */,
 				4FD32B362760654B00CEC1C9 /* SheetView.swift */,
 				4FD32B342760619600CEC1C9 /* FinishedView.swift */,
 				4F667423274462B0006B9ED0 /* SettingsView.swift */,
@@ -256,7 +256,6 @@
 				4FA55E39277BBDB200456AB6 /* Items+CoreDataClass.swift in Sources */,
 				4FD901E52750B7A50042FEBD /* Constants.swift in Sources */,
 				4FD32B352760619600CEC1C9 /* FinishedView.swift in Sources */,
-				4F66742227445DA5006B9ED0 /* SideBarMenuView.swift in Sources */,
 				4F8B17DB2727C998000A1573 /* LefsView.swift in Sources */,
 				4F12AAC62727BBD5006905FD /* QuickDashEngView.swift in Sources */,
 				4F82A6C8273EE446003DC3BF /* NewSelectionView.swift in Sources */,
@@ -264,6 +263,7 @@
 				4FA55E3C277BBE5700456AB6 /* Persistence.swift in Sources */,
 				4F667426274464B6006B9ED0 /* PDFRetrievalView.swift in Sources */,
 				4FCC6334272B5E620041BE4C /* MedicalHistoryView.swift in Sources */,
+				4F89C1CC277CFFC000159150 /* LockedView.swift in Sources */,
 				4FCD26AB273052A900F4859F /* NDIView.swift in Sources */,
 				4FCC6330272B5E3E0041BE4C /* PrivacyPolicyView.swift in Sources */,
 				4FD32B372760654B00CEC1C9 /* SheetView.swift in Sources */,
@@ -412,6 +412,7 @@
 				DEVELOPMENT_TEAM = D268656BM6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "This application would like to use FaceID for user authentication.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -442,6 +443,7 @@
 				DEVELOPMENT_TEAM = D268656BM6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "This application would like to use FaceID for user authentication.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -13,7 +13,7 @@ struct PDFRetrievalView: View {
     @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "timestamp", ascending: false)]) var CoreDataItems: FetchedResults<Items>
     
     @EnvironmentObject var model: SurveyModel
-    @State var showSheetView = false 
+    @State var showSheetView = false
     
     var body: some View {
         ZStack {
@@ -51,9 +51,10 @@ struct PDFRetrievalView: View {
                         Spacer()
 
                     }.padding()
-                }
+                }.navigationBarBackButtonHidden(true)
             }.padding(.top)
-        }.navigationBarTitleDisplayMode(.inline)
+        }
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("Saved PDF's")
@@ -61,12 +62,21 @@ struct PDFRetrievalView: View {
                         .foregroundColor(.white)
                         .font(.largeTitle)
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        model.viewSelectionInt = nil
+                    } label: {
+                        HStack {
+                            Image(systemName: "chevron.left")
+                                .font(Font.body.weight(.bold))
+                            Text("Back")
+                                .font(Font.body.weight(.semibold))
+                        }
+                    }
+                }
             }
 
     }
-    
-    
-    
 }
 
 

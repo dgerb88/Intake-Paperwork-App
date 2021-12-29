@@ -26,6 +26,8 @@ class SurveyModel: ObservableObject {
     @Published var PDFfile: NSData?
     @Published var PDFfileArray = [NSData]()
     @Published var PDFfileArrayArray = [[NSData]]()
+    @Published var isUnlocked = false
+
 
     //MARK: User default bools
     @Published var showDryNeedling: Bool = UserDefaults.standard.bool(forKey: Constants.showDryNeedling) {

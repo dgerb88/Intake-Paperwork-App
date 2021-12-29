@@ -47,7 +47,7 @@ struct HomeView: View {
                             }
                             NavigationLink(tag: 1,
                         selection: $model.viewSelectionInt) {
-                                PDFRetrievalView()
+                                LockedView()
                             } label: {
                                 HStack {
                                     Image(systemName: "doc")
