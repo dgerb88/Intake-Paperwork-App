@@ -26,6 +26,11 @@
 		4FA55E39277BBDB200456AB6 /* Items+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA55E37277BBDB200456AB6 /* Items+CoreDataClass.swift */; };
 		4FA55E3A277BBDB200456AB6 /* Items+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA55E38277BBDB200456AB6 /* Items+CoreDataProperties.swift */; };
 		4FA55E3C277BBE5700456AB6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA55E3B277BBE5700456AB6 /* Persistence.swift */; };
+		4FB32B0B27960A9500CD77BE /* SpanishMedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB32B0A27960A9500CD77BE /* SpanishMedView.swift */; };
+		4FB32B0D279A15C400CD77BE /* SpanPrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB32B0C279A15C400CD77BE /* SpanPrivacyPolicyView.swift */; };
+		4FB32B0F279A15DA00CD77BE /* SpanDryNeedleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB32B0E279A15DA00CD77BE /* SpanDryNeedleView.swift */; };
+		4FB32B11279A15F200CD77BE /* SpanInsuranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB32B10279A15F200CD77BE /* SpanInsuranceView.swift */; };
+		4FB32B13279A160600CD77BE /* SpanInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB32B12279A160600CD77BE /* SpanInfoView.swift */; };
 		4FCC6330272B5E3E0041BE4C /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC632F272B5E3E0041BE4C /* PrivacyPolicyView.swift */; };
 		4FCC6332272B5E4F0041BE4C /* DryNeedlingConsentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6331272B5E4F0041BE4C /* DryNeedlingConsentView.swift */; };
 		4FCC6334272B5E620041BE4C /* MedicalHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6333272B5E620041BE4C /* MedicalHistoryView.swift */; };
@@ -59,6 +64,11 @@
 		4FA55E37277BBDB200456AB6 /* Items+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4FA55E38277BBDB200456AB6 /* Items+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4FA55E3B277BBE5700456AB6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		4FB32B0A27960A9500CD77BE /* SpanishMedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanishMedView.swift; sourceTree = "<group>"; };
+		4FB32B0C279A15C400CD77BE /* SpanPrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanPrivacyPolicyView.swift; sourceTree = "<group>"; };
+		4FB32B0E279A15DA00CD77BE /* SpanDryNeedleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanDryNeedleView.swift; sourceTree = "<group>"; };
+		4FB32B10279A15F200CD77BE /* SpanInsuranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanInsuranceView.swift; sourceTree = "<group>"; };
+		4FB32B12279A160600CD77BE /* SpanInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanInfoView.swift; sourceTree = "<group>"; };
 		4FCC632F272B5E3E0041BE4C /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		4FCC6331272B5E4F0041BE4C /* DryNeedlingConsentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DryNeedlingConsentView.swift; sourceTree = "<group>"; };
 		4FCC6333272B5E620041BE4C /* MedicalHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistoryView.swift; sourceTree = "<group>"; };
@@ -140,6 +150,30 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		4FB32B0827960A4F00CD77BE /* spanishViews */ = {
+			isa = PBXGroup;
+			children = (
+				4FB32B0A27960A9500CD77BE /* SpanishMedView.swift */,
+				4FB32B0C279A15C400CD77BE /* SpanPrivacyPolicyView.swift */,
+				4FB32B0E279A15DA00CD77BE /* SpanDryNeedleView.swift */,
+				4FB32B10279A15F200CD77BE /* SpanInsuranceView.swift */,
+				4FB32B12279A160600CD77BE /* SpanInfoView.swift */,
+			);
+			path = spanishViews;
+			sourceTree = "<group>";
+		};
+		4FB32B0927960A6300CD77BE /* englishViews */ = {
+			isa = PBXGroup;
+			children = (
+				4FCC632F272B5E3E0041BE4C /* PrivacyPolicyView.swift */,
+				4FCC6331272B5E4F0041BE4C /* DryNeedlingConsentView.swift */,
+				4FCC6333272B5E620041BE4C /* MedicalHistoryView.swift */,
+				4FCC6335272B5FAC0041BE4C /* InsuranceIntakeView.swift */,
+				4FCC6337272B5FCF0041BE4C /* InformationAndPoliciesView.swift */,
+			);
+			path = englishViews;
+			sourceTree = "<group>";
+		};
 		4FCC632D272B5DE30041BE4C /* Survey Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,11 +189,8 @@
 		4FCC632E272B5E170041BE4C /* Intake paper views */ = {
 			isa = PBXGroup;
 			children = (
-				4FCC632F272B5E3E0041BE4C /* PrivacyPolicyView.swift */,
-				4FCC6331272B5E4F0041BE4C /* DryNeedlingConsentView.swift */,
-				4FCC6333272B5E620041BE4C /* MedicalHistoryView.swift */,
-				4FCC6335272B5FAC0041BE4C /* InsuranceIntakeView.swift */,
-				4FCC6337272B5FCF0041BE4C /* InformationAndPoliciesView.swift */,
+				4FB32B0927960A6300CD77BE /* englishViews */,
+				4FB32B0827960A4F00CD77BE /* spanishViews */,
 			);
 			path = "Intake paper views";
 			sourceTree = "<group>";
@@ -252,16 +283,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FB32B0D279A15C400CD77BE /* SpanPrivacyPolicyView.swift in Sources */,
 				4FD830572758205D0075B219 /* PDFViewer.swift in Sources */,
 				4FA55E39277BBDB200456AB6 /* Items+CoreDataClass.swift in Sources */,
 				4FD901E52750B7A50042FEBD /* Constants.swift in Sources */,
 				4FD32B352760619600CEC1C9 /* FinishedView.swift in Sources */,
 				4F8B17DB2727C998000A1573 /* LefsView.swift in Sources */,
+				4FB32B13279A160600CD77BE /* SpanInfoView.swift in Sources */,
 				4F12AAC62727BBD5006905FD /* QuickDashEngView.swift in Sources */,
 				4F82A6C8273EE446003DC3BF /* NewSelectionView.swift in Sources */,
 				4FA55E3A277BBDB200456AB6 /* Items+CoreDataProperties.swift in Sources */,
 				4FA55E3C277BBE5700456AB6 /* Persistence.swift in Sources */,
 				4F667426274464B6006B9ED0 /* PDFRetrievalView.swift in Sources */,
+				4FB32B0B27960A9500CD77BE /* SpanishMedView.swift in Sources */,
 				4FCC6334272B5E620041BE4C /* MedicalHistoryView.swift in Sources */,
 				4F89C1CC277CFFC000159150 /* LockedView.swift in Sources */,
 				4FCD26AB273052A900F4859F /* NDIView.swift in Sources */,
@@ -271,11 +305,13 @@
 				4F3EB9562725F3A7007384FA /* BackgroundView.swift in Sources */,
 				4FA55E36277BBD4100456AB6 /* CoreDataModel.xcdatamodeld in Sources */,
 				4F207D94271AA99000B74F3A /* Model.swift in Sources */,
+				4FB32B0F279A15DA00CD77BE /* SpanDryNeedleView.swift in Sources */,
 				4F46EEAB272E4D6F00D8EEE3 /* QuickDashSpanView.swift in Sources */,
 				4F207D86271AA69100B74F3A /* HomeView.swift in Sources */,
 				4F8B17D92727C76C000A1573 /* BackIndexView.swift in Sources */,
 				4FCC6336272B5FAC0041BE4C /* InsuranceIntakeView.swift in Sources */,
 				4F207D96271AAA6400B74F3A /* ModelView.swift in Sources */,
+				4FB32B11279A15F200CD77BE /* SpanInsuranceView.swift in Sources */,
 				4FCC6338272B5FCF0041BE4C /* InformationAndPoliciesView.swift in Sources */,
 				4F207D84271AA69100B74F3A /* IntakePaperworkApp.swift in Sources */,
 				4F667424274462B0006B9ED0 /* SettingsView.swift in Sources */,

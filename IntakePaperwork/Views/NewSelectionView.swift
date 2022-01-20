@@ -484,7 +484,12 @@ struct NewSelectionView: View {
                                                            selection: $model.viewSelectionInt) {
                                                 if model.eval == true {
                                                     if model.showMedicalHistory == true && model.includeMedicalHistory == true {
-                                                        MedicalHistoryView(survey: survey)
+                                                        if language == "English" {
+                                                            MedicalHistoryView(survey: survey)
+                                                        }
+                                                        else {
+                                                            SpanishMedView(survey: survey)
+                                                        }
                                                     }
                                                     else if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {
                                                         InsuranceIntakeView(survey: survey)

@@ -498,7 +498,7 @@ struct MedicalHistoryView: View {
                                         Image(systemName: "square")
                                     }
                                 }
-                                Text("Angina(chest pain")
+                                Text("Angina(chest pain)")
                             }
                                 .foregroundColor(.black)
                             HStack(alignment: .top) {
@@ -1807,7 +1807,7 @@ struct MedicalHistoryView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(true)
+                        }
                     }
                 }
             }
