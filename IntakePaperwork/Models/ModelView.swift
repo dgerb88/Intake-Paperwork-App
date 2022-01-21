@@ -165,4 +165,32 @@ class SurveyModel: ObservableObject {
 
         return pdfData
     }
+    
+    func merge(pdfs: [NSData]) -> NSData
+    {
+        let out = NSMutableData()
+        UIGraphicsBeginPDFContextToData(out, .zero, nil)
+
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return out
+        }
+
+        for pdf in pdfs {
+            guard let dataProvider = CGDataProvider(data: pdf as CFData), let document = CGPDFDocument(dataProvider) else { continue }
+
+            for pageNumber in 1...document.numberOfPages {
+                guard let page = document.page(at: pageNumber) else { continue }
+                var mediaBox = page.getBoxRect(.mediaBox)
+                context.beginPage(mediaBox: &mediaBox)
+                context.drawPDFPage(page)
+                context.endPage()
+            }
+        }
+
+        context.closePDF()
+        UIGraphicsEndPDFContext()
+
+        return out
+    }
+    
 }
