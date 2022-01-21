@@ -35,6 +35,7 @@ struct MedicalHistoryView: View {
     @State var timesFallen = ""
     @State var reasonFall = ""
     @State var button5 = [false, false]
+    @State var keyboardChange = false
     
     var medView: some View {
         ZStack {
@@ -1622,6 +1623,9 @@ struct MedicalHistoryView: View {
                                 .textFieldStyle(.roundedBorder)
                                 .frame(width: 350)
                                 .padding(.bottom)
+                                .onTapGesture {
+                                    keyboardChange = true
+                                }
 
                         }
                         
@@ -1689,12 +1693,18 @@ struct MedicalHistoryView: View {
                                     .textFieldStyle(.roundedBorder)
                                     .padding(.bottom, 5)
                                     .frame(width: 350)
+                                    .onTapGesture {
+                                        keyboardChange = true
+                                    }
                                 Text("Reason for fall(s)?")
                                 TextField("Reason", text: $reasonFall)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
                                     .padding(.bottom, 5)
                                     .frame(width: 350)
+                                    .onTapGesture {
+                                        keyboardChange = true
+                                    }
                                 Text("Did any falls result in injury?")
                                     .padding(.bottom, 5)
                                 HStack {
@@ -1813,7 +1823,10 @@ struct MedicalHistoryView: View {
             }
         }.onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            keyboardChange = false
         }
+        .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
+        .animation(.easeOut(duration: 0.3))
     }
 }
 

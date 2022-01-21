@@ -18,6 +18,9 @@ struct InsuranceIntakeView: View {
     @State var signatureInsurance = ""
     @State var buttonInsurance = [false, false, false, false, false, false, false]
     var survey: Survey
+    @State var keyboardChange = false
+
+    
     var insuranceView: some View {
         ZStack {
             VStack {
@@ -218,6 +221,9 @@ struct InsuranceIntakeView: View {
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                                 .frame(width: 300)
+                                .onTapGesture {
+                                    keyboardChange = true
+                                }
                             Text("Date: ")
                                 .padding(.leading)
                             Text(Date().addingTimeInterval(600), style: .date)
@@ -296,7 +302,10 @@ struct InsuranceIntakeView: View {
             }
         }.onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            keyboardChange = false
         }
+        .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
+        .animation(.easeOut(duration: 0.3))
     }
 }
 

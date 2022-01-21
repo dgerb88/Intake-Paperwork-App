@@ -35,6 +35,7 @@ struct SpanishMedView: View {
     @State var timesFallen = ""
     @State var reasonFall = ""
     @State var button5 = [false, false]
+    @State var keyboardChange = false
     
     var spanMedView: some View {
         ZStack {
@@ -1623,16 +1624,17 @@ struct SpanishMedView: View {
                                         .foregroundColor(.black)
                                 }
                             }
-                            if button3[1] {
-                                Text("Describa las restricciones:")
-                                    .font(Font.headline)
-                                    .padding(.top)
-                                TextField("Restricciones", text: $workRestrictions)
-                                    .accentColor(.black)
-                                    .textFieldStyle(.roundedBorder)
-                                    .frame(width: 350)
-                                    .padding(.bottom)
-                            }
+                            Text("Describa las restricciones, si las hay:")
+                                .font(Font.headline)
+                                .padding(.top)
+                            TextField("Restricciones", text: $workRestrictions)
+                                .accentColor(.black)
+                                .textFieldStyle(.roundedBorder)
+                                .frame(width: 350)
+                                .padding(.bottom)
+                                .onTapGesture {
+                                    keyboardChange = true
+                                }
 
                         }
                         
@@ -1700,12 +1702,18 @@ struct SpanishMedView: View {
                                     .textFieldStyle(.roundedBorder)
                                     .padding(.bottom, 5)
                                     .frame(width: 350)
+                                    .onTapGesture {
+                                        keyboardChange = true
+                                    }
                                 Text("Razón de la caída?")
                                 TextField("Razón", text: $reasonFall)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
                                     .padding(.bottom, 5)
                                     .frame(width: 350)
+                                    .onTapGesture {
+                                        keyboardChange = true
+                                    }
                                 Text("¿Alguna de las caídas resultó en lesiones?")
                                     .padding(.bottom, 5)
                                 HStack {
@@ -1824,7 +1832,10 @@ struct SpanishMedView: View {
             }
         }.onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            keyboardChange = false
         }
+        .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
+        .animation(.easeOut(duration: 0.3))
     }
 }
 

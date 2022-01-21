@@ -17,6 +17,7 @@ struct SpanInfoView: View {
     @State var ContactPhoneNumberInfo = ""
     @State var ContactRelationInfo = ""
     @State var EmailAddressInfo = ""
+    @State var keyboardChange = false
 
     var spanInfoView: some View {
         ZStack {
@@ -266,6 +267,9 @@ struct SpanInfoView: View {
                                 .padding(.leading, 20)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
+                                .onTapGesture {
+                                    keyboardChange = true
+                                }
                             Text("Date: ")
                                 .padding(.leading)
                             Text(Date().addingTimeInterval(600), style: .date)
@@ -341,7 +345,10 @@ struct SpanInfoView: View {
             }
         }.onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            keyboardChange = false
         }
+        .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
+        .animation(.easeOut(duration: 0.3))
     }
 }
 

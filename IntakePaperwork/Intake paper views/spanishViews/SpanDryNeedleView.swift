@@ -13,6 +13,7 @@ struct SpanDryNeedleView: View {
     
     @State var buttonNeedle = [false, false, false, false, false, false, false, false, false]
     @State var signatureNeedle = ""
+    @State var keyboardChange = false
     
     var spanNeedleView: some View {
         ZStack {
@@ -294,6 +295,9 @@ struct SpanDryNeedleView: View {
                                     .padding(.leading, 20)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
+                                    .onTapGesture {
+                                        keyboardChange = true 
+                                    }
                                 Text("Date: ")
                                 .padding(.leading)
                                 Text(Date().addingTimeInterval(600), style: .date)
@@ -360,7 +364,10 @@ struct SpanDryNeedleView: View {
             }
         }.onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            keyboardChange = false
         }
+        .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
+        .animation(.easeOut(duration: 0.3))
     }
 }
 

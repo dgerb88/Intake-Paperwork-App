@@ -14,6 +14,7 @@ struct DryNeedlingConsentView: View {
     
     @State var buttonNeedle = [false, false, false, false, false, false, false, false, false]
     @State var signatureNeedle = ""
+    @State var keyboardChange = false
     
     var needleView: some View {
         ZStack {
@@ -295,6 +296,9 @@ struct DryNeedlingConsentView: View {
                                     .padding(.leading, 20)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
+                                    .onTapGesture {
+                                        keyboardChange = true
+                                    }
                                 Text("Date: ")
                                 .padding(.leading)
                                 Text(Date().addingTimeInterval(600), style: .date)
@@ -361,7 +365,10 @@ struct DryNeedlingConsentView: View {
             }
         }.onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            keyboardChange = false
         }
+        .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
+        .animation(.easeOut(duration: 0.3))
     }
 }
 
