@@ -154,9 +154,10 @@ struct LefsView: View {
                                             .padding(.bottom, 1)
                                             .padding(.leading, 20)
                                     }
+                                    Divider()
                                 }
-                            }.padding()
-                        }.frame(height: UIScreen.main.bounds.height/3.12)
+                            }.padding(.horizontal).padding(.top)
+                        }.frame(height: 350)
                         Spacer()
                     }
             }
