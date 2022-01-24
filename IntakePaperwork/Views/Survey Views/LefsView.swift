@@ -80,12 +80,12 @@ struct LefsView: View {
     var body: some View {
         ZStack {
             BackgroundView()
-            ScrollView {
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(.white)
-                        .cornerRadius(5)
-                        .shadow(radius: 5)
+            Rectangle()
+                .foregroundColor(.white)
+                .cornerRadius(5)
+                .shadow(radius: 5)
+            ZStack {
+                ScrollView {
                     VStack {
                         lefsView
                             .onDisappear {
@@ -116,8 +116,51 @@ struct LefsView: View {
                             }.padding().padding(.bottom)
                         }
                     }
+                    
                 }
+                    
+                    VStack(alignment: .leading) {
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(.white)
+                            VStack {
+                                VStack(alignment: .center) {
+                                    Text("Lower Extremity Functional Scale")
+                                        .bold()
+                                        .font(.largeTitle)
+                                        .padding(.bottom, 30)
+                                }.padding(.top)
+                                VStack(alignment: .leading) {
+                                    Text(survey.description)
+                                        .font(.headline)
+                                        .padding(.bottom, 10)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                    if survey.language == "English" {
+                                        Text("The following scale applies to every question:")
+                                            .font(.headline)
+                                            .bold()
+                                            .padding(.bottom, 5)
+                                        
+                                    }
+                                    else {
+                                        Text("El siguiente escala aplica a cada pregunta:")
+                                            .font(.headline)
+                                            .bold()
+                                            .padding(.bottom, 5)
+                                    }
+                                    ForEach(0..<survey.questions[0].rating.count) { index in
+                                        Text(survey.questions[0].rating[index])
+                                            .font(.subheadline)
+                                            .padding(.bottom, 1)
+                                            .padding(.leading, 20)
+                                    }
+                                }
+                            }.padding()
+                        }.frame(height: UIScreen.main.bounds.height/3.12)
+                        Spacer()
+                    }
             }
+            
         }.navigationBarBackButtonHidden(true)
         .onAppear {
             model.selectedValue.removeAll()
