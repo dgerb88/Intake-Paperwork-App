@@ -580,6 +580,7 @@ struct NewSelectionView: View {
             model.includeDryNeedlingConsent = true
             isSpanish = false
             isEnglish = true
+            model.personalName = ""
             model.selectedValue.removeAll()
             model.appendArray(25)
             LefsSelected = true

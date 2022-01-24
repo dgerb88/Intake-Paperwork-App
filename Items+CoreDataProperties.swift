@@ -20,6 +20,7 @@ extension Items {
     @NSManaged public var timestamp: Date?
     @NSManaged public var pdfArray: [NSData]
     @NSManaged public var imageArray: [UIImage]
+    @NSManaged public var name: String
 
 }
 

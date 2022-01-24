@@ -98,7 +98,7 @@ struct LefsView: View {
                                 model.PDFfileArray.append(mergedFile)
                                 model.savedPDFimage.append(model.PDFimage)
                                 model.PDFfileArrayArray.append(model.PDFfileArray)
-                                addItem(image: model.PDFimage, pdf: model.PDFfileArray)
+                                addItem(image: model.PDFimage, pdf: model.PDFfileArray, name: model.personalName)
                             }
                         NavigationLink {
                             FinishedView()
@@ -114,11 +114,11 @@ struct LefsView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(true)
+                        }
                     }
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
         .onAppear {
             model.selectedValue.removeAll()
             model.appendArray(survey.questions.count)
@@ -126,11 +126,12 @@ struct LefsView: View {
         }
         
     }
-    func addItem(image: [UIImage], pdf: [NSData]) {
+    func addItem(image: [UIImage], pdf: [NSData], name: String) {
         let newItem = Items(context: viewContext)
         newItem.timestamp = Date()
         newItem.imageArray = image
         newItem.pdfArray = pdf
+        newItem.name = name
 
         do {
             try viewContext.save()

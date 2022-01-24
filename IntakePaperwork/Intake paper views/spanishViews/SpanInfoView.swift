@@ -18,6 +18,9 @@ struct SpanInfoView: View {
     @State var ContactRelationInfo = ""
     @State var EmailAddressInfo = ""
     @State var keyboardChange = false
+    @State var personalNumber = ""
+    @State var personalAddress = ""
+    @State var reminderType = 0
 
     var spanInfoView: some View {
         ZStack {
@@ -32,42 +35,57 @@ struct SpanInfoView: View {
                     
                     Text("Please thoroughly fill out this form. All information in kept completely confidential. This information is necessary in order to give you the most effective treatment for your personal case. ")
                         .bold()
-                    HStack(alignment: .top, spacing: 50) {
+                    HStack(alignment: .top, spacing: 30) {
                         VStack(alignment: .leading) {
-                            Text("Emergency contact name: ")
-                                .padding(.bottom, 15)
+                            Text("Name:")
                                 .padding(.top, 10)
-                            Text("Emergency contact phone number: ")
-                                .padding(.bottom, 15)
-                            Text("Emergency contact relation to patient: ")
-                                .padding(.bottom, 15)
-                            Text("Personal Email address: ")
+                            TextField("Your name", text: $model.personalName)
+                                .accentColor(.black)
+                                .textFieldStyle(.roundedBorder)
+                            Text("Phone Number: ")
                                 .padding(.top, 10)
-
-                        }
-                        VStack(alignment: .leading, spacing: 15) {
-                            TextField("Name", text: $ContactNameInfo)
-                                .padding(.leading, 20)
+                            TextField("Your phone number", text: $personalNumber)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
-                            TextField("Phone Number", text: $ContactPhoneNumberInfo)
-                                .padding(.leading, 20)
+                            Text("House address")
+                                .padding(.top, 10)
+                            TextField("Your address", text: $personalAddress)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
-                            TextField("Relationship", text: $ContactRelationInfo)
-                                .padding(.leading, 20)
-                                .accentColor(.black)
-                                .textFieldStyle(.roundedBorder)
-                            TextField("Email address", text: $EmailAddressInfo)
-                                .padding(.leading, 20)
+                            Text("Email address: ")
+                                .padding(.top, 10)
+                            TextField("Your email address", text: $EmailAddressInfo)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                         }.padding(.trailing, 30)
+                        VStack(alignment: .leading) {
+                            Text("Emergency contact name: ")
+                                .padding(.top, 10)
+                            TextField("Name", text: $ContactNameInfo)
+                                .accentColor(.black)
+                                .textFieldStyle(.roundedBorder)
+                            Text("Emergency contact phone number: ")
+                                .padding(.top, 10)
+                            TextField("Phone Number", text: $ContactPhoneNumberInfo)
+                                .accentColor(.black)
+                                .textFieldStyle(.roundedBorder)
+                            Text("Emergency contact relation to patient: ")
+                                .padding(.top, 10)
+                            TextField("Relationship", text: $ContactRelationInfo)
+                                .accentColor(.black)
+                                .textFieldStyle(.roundedBorder)
+                            Picker("", selection: $reminderType) {
+                                Text("Call").tag(3)
+                                Text("Email").tag(2)
+                                Text("Text").tag(1)
+                                Text("Please select").tag(0)
+                            }
+                            .pickerStyle(MenuPickerStyle())
+                            .padding(.leading)
+                            .accentColor(.blue)
+                        }
+                        
                     }.padding(.bottom)
-                   
-                    //How would you like to receive appointment reminders?
-                        //Text, email, call picker
-                    
                 }.padding(.horizontal)
                 VStack(alignment: .leading) {
                     Text("Important Rules and Policies:")
@@ -281,7 +299,6 @@ struct SpanInfoView: View {
             }
         }.frame(width: UIScreen.main.bounds.width)
     }
-
     
     var body: some View {
         ZStack {

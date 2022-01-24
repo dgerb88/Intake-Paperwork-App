@@ -27,6 +27,7 @@ class SurveyModel: ObservableObject {
     @Published var PDFfileArray = [NSData]()
     @Published var PDFfileArrayArray = [[NSData]]()
     @Published var isUnlocked = false
+    @Published var personalName = ""
 
 
     //MARK: User default bools

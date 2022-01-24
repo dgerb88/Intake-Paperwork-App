@@ -27,8 +27,12 @@ struct PDFRetrievalView: View {
                                 PDFViewer(image: item.imageArray, nsDataArray: item.pdfArray)
                             } label : {
                                 HStack {
+                                    if item.name != "" {
+                                        Text(item.name)
+                                            .padding(.trailing, 15)
+                                    }
                                     Text("\((item.timestamp?.addingTimeInterval(1))!, style: .date)")
-                                        .padding(.trailing)
+                                        .padding(.trailing, 5)
                                     Text("\((item.timestamp?.addingTimeInterval(1))!, style: .time)")
                                 }
                             }
