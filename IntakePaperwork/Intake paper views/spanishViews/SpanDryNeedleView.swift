@@ -19,7 +19,7 @@ struct SpanDryNeedleView: View {
         ZStack {
             VStack {
                 VStack(alignment: .center) {
-                    Text("Dry Needling Consent Form")
+                    Text("Consentimiento de Punción Seca Funcional")
                         .bold()
                         .font(.largeTitle)
                         .padding(.bottom, 30)
@@ -27,13 +27,13 @@ struct SpanDryNeedleView: View {
                 VStack(alignment: .leading) {
                     VStack(alignment: .leading) {
                         
-                        Text("Patient consent for function dry needling (FDN):")
+                        Text("Consentimiento del paciente para punción seca functional(PSF):")
                             .bold()
                             .font(.title2)
                             .padding(.bottom, 3)
-                        Text("I understand that no guarantee or assurance has been made as to the results of this procedure and that it may not cure my condition. My therapist has also discussed with me the probability of success of this procedure, as well as the possibility of serious side effects. Multiple treatment sessions may be required/needed, thus this consent will cover this treatment as well as consecutive treatments by this facility. I have read and fully understand this consent form and understand that I should not sign this form until all items, including my questions, have been explained or answered to my satisfaction. With my signature, I hereby consent to the performance of this procedure. I also consent to any measures necessary to correct complications that may result.")
+                        Text("Entiendo que no se ha garantizado ni asegurado los resultados de este procedimiento y que es posible que no cure mi afección. Mi terapista también me ha comentado la probabilidad de éxito de este procedimiento, así como la posibilidad de efectos secundarios graves.  Es posible que se requieran/necesiten múltiples sesiones de tratamiento, por lo que este consentimiento cubrirá este tratamiento, así como los tratamientos consecutivos de esta instalación.  He leído y entiendo completamente este formulario de consentimiento y entiendo que no debo firmar este formulario hasta que todos los elementos, incluidas mis preguntas, hayan sido explicados o respondidos satisfactoriamente.  Con mi firma, doy mi consentimiento para la realización de este procedimiento.  También doy mi consentimiento a cualquier medida necesaria para corregir las complicaciones que puedan resultar.")
                             .padding(.bottom)
-                        Text("Authorization:")
+                        Text("Autorización:")
                             .bold()
                             .font(.title2)
                         HStack(alignment: .top) {
@@ -59,10 +59,10 @@ struct SpanDryNeedleView: View {
                                         .foregroundColor(.black)
                                 }
                             }.padding(.leading, 5)
-                            Text("I hereby authorize \(model.ptName), \(model.ptCredential) to perform Functional Dry Needling during my treatment.")
+                            Text("Por la presente autorizo a \(model.ptName), \(model.ptCredential) a realizar la Punción Seca Funcional durante mi tratamiento.")
                                 .padding(.bottom)
                         }
-                        Text("Patient refusal of service:")
+                        Text("Denegación de servicio del paciente:")
                             .bold()
                             .font(.title2)
                         HStack(alignment: .top) {
@@ -88,12 +88,12 @@ struct SpanDryNeedleView: View {
                                         .foregroundColor(.black)
                                 }
                             }.padding(.leading, 5).padding(.top, 3)
-                            Text("I do NOT give consent for the use of Functional Dry Needling (FDN) as part of my treatment and hereby refuse this service.")
+                            Text("No doy mi consentimiento para el uso de Punción Seca Functional como parte de mi tratamiento y por la presente rechazo este servicio")
                                 .padding(.bottom)
                         }
                     }
                     VStack(alignment: .leading) {
-                        Text("Are you pregnant?")
+                        Text("Está embarazada?")
                             .bold()
                             .font(.title3)
                         HStack(alignment: .top) {
@@ -120,7 +120,7 @@ struct SpanDryNeedleView: View {
                                         .foregroundColor(.black)
                                 }
                             }.padding(.leading, 5)
-                            Text("Yes").padding(.trailing)
+                            Text("Sí").padding(.trailing)
                             Button {
                                 if buttonNeedle[3] == false {
                                     buttonNeedle[3] = true
@@ -168,11 +168,11 @@ struct SpanDryNeedleView: View {
                                         .foregroundColor(.black)
                                 }
                             }
-                            Text("Does not apply")
+                            Text("No aplica")
                             
                             
                         }
-                        Text("Are you immunocompromised?")
+                        Text("Está inmunodeprimido?")
                             .bold()
                             .font(.title3)
                         HStack(alignment: .top) {
@@ -198,7 +198,7 @@ struct SpanDryNeedleView: View {
                                         .foregroundColor(.black)
                                 }
                             }.padding(.leading, 5)
-                            Text("Yes").padding(.trailing)
+                            Text("Sí").padding(.trailing)
                             Button {
                                 if buttonNeedle[6] == false {
                                     buttonNeedle[6] = true
@@ -224,7 +224,7 @@ struct SpanDryNeedleView: View {
                             Text("No").padding(.trailing)
                             
                         }
-                        Text("Are you taking blood thinners?")
+                        Text("Está tomando anticoagulantes?")
                             .bold()
                             .font(.title3)
                         HStack(alignment: .top) {
@@ -250,7 +250,7 @@ struct SpanDryNeedleView: View {
                                         .foregroundColor(.black)
                                 }
                             }.padding(.leading, 5)
-                            Text("Yes").padding(.trailing)
+                            Text("Sí").padding(.trailing)
                             Button {
                                 if buttonNeedle[8] == false {
                                     buttonNeedle[8] = true
@@ -277,20 +277,20 @@ struct SpanDryNeedleView: View {
                             
                         }
                         if signatureNeedle == "" {
-                            Text("Patient/Legal Guardian Electronic Signature:")
+                            Text("Firma del paciente/Tutor Legal:")
                                 .bold()
                                 .font(.title2)
                                 .padding(.top, 5)
                                 .foregroundColor(.red)
                         }
                         else {
-                            Text("Patient/Legal Guardian Electronic Signature:")
+                            Text("Firma del paciente/Tutor Legal:")
                                 .bold()
                                 .font(.title2)
                                 .padding(.top, 5)
                         }
                         HStack {
-                                TextField("Sign Here", text: $signatureNeedle)
+                                TextField("Firme aquí", text: $signatureNeedle)
                                     .frame(width: 300)
                                     .padding(.leading, 20)
                                     .accentColor(.black)
@@ -298,12 +298,11 @@ struct SpanDryNeedleView: View {
                                     .onTapGesture {
                                         keyboardChange = true 
                                     }
-                                Text("Date: ")
+                                Text("Fecha: ")
                                 .padding(.leading)
                                 Text(Date().addingTimeInterval(600), style: .date)
                                         .padding(.leading)
                         }.padding(.bottom)
-                        Text("You have the right to withdraw consent for this procedure at any time before it is performed.")
                     }
                 }.padding(.bottom).padding(.horizontal)
             }

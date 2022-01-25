@@ -79,14 +79,14 @@ struct SpanPrivacyPolicyView: View {
                         Text("Por la presente doy mi consentimiento para que \(model.clinicName) use y divulge información médica protegida (PHI) sobra mí para llevar a cabo operaciones de tratamiento, pago, y atención médica.  Entiendo que me reservo el derecho de revocar este consentimiento notificando a la práctica por escrito en cualquier momento, momento en el cual \(model.clinicName) tiene 30 días para responder a mi solicitud.")
                     }.padding(.bottom)
                     if signaturePrivate == "" {
-                        Text("Firma del Paciente o Tutor Legal:")
+                        Text("Firma del Paciente/Tutor Legal:")
                             .bold()
                             .font(.title2)
                             .padding(.top, 5)
                             .foregroundColor(.red)
                     }
                     else {
-                        Text("Patient/Legal Guardian Electronic Signature:")
+                        Text("Firma del Paciente/Tutor Legal:")
                             .bold()
                             .font(.title2)
                             .padding(.top, 5)
