@@ -18,13 +18,13 @@ struct SpanPrivacyPolicyView: View {
         ZStack {
             VStack {
                 VStack(alignment: .center) {
-                    Text("Notice of Privacy Practices")
+                    Text("Aviso de Prácticas de Privacidad")
                         .bold()
                         .font(.largeTitle)
                         .padding(.bottom, 30)
                 }.padding()
                 VStack(alignment: .leading) {
-                    Text("Acknowledgement:")
+                    Text("Reconocimiento:")
                         .bold()
                         .font(.title2)
                         .padding(.bottom, 10)
@@ -48,10 +48,10 @@ struct SpanPrivacyPolicyView: View {
                                     .foregroundColor(.black)
                             }
                         }
-
-                        Text("I have received, read, and fully understand the Notice of Privacy Practices for \(model.clinicName). I understand that \(model.clinicName) may use or disclose my personal health information for the purpose of carrying out treatment, obtaining payment, evaluating the quality of service provided, and any administrative operations related to treatment or payment. I understand that I have the right to request restrictions, in writing, regarding how my personal health information is used and disclosed for treatment, payment, and administrative operations. I also understand that \(model.clinicName) will consider requests for restrictions on a case by case basis, but is not required to oblige to such requests.")
+                        
+                        Text("He recibido, leído y entendido completamente el Aviso de prácticas de privacidad para fisioterapia de \(model.clinicName). Entiendo que \(model.clinicName) puede usar o divulgar mi información de salud personal con el fin de realizar un tratamiento, obtener el pago, evaluar la calidad del servicio prestado y cualquier operación administrativa relacionada con el tratamiento o el pago.  Entiendo que tengo derecho a solicitar restricciones, por escrito, con respecto a cómo se usa y divulga mi información médica personal para el tratamiento, pago, y operaciones administrativas.  También entiendo que \(model.clinicName) considerará las solicitudes de restricciones caso por caso, pero no está obligada a cumplir con dichas solicitudes.")
                     }.padding(.bottom)
-                    Text("Consent:")
+                    Text("Consentimiento:")
                         .bold()
                         .font(.title2)
                         .padding(.bottom, 10)
@@ -76,10 +76,10 @@ struct SpanPrivacyPolicyView: View {
                             }
                         }
 
-                        Text("I hereby give my consent for \(model.clinicName) to use and disclose protected health information (PHI) about me to carry out treatment, payment, and health care operations. I understand that I retain the right to revoke this consent by notifying the practice in writing at any time, at which point \(model.clinicName) has 30 days to respond to my request.")
+                        Text("Por la presente doy mi consentimiento para que \(model.clinicName) use y divulge información médica protegida (PHI) sobra mí para llevar a cabo operaciones de tratamiento, pago, y atención médica.  Entiendo que me reservo el derecho de revocar este consentimiento notificando a la práctica por escrito en cualquier momento, momento en el cual \(model.clinicName) tiene 30 días para responder a mi solicitud.")
                     }.padding(.bottom)
                     if signaturePrivate == "" {
-                        Text("Patient/Legal Guardian Electronic Signature:")
+                        Text("Firma del Paciente o Tutor Legal:")
                             .bold()
                             .font(.title2)
                             .padding(.top, 5)
@@ -92,12 +92,12 @@ struct SpanPrivacyPolicyView: View {
                             .padding(.top, 5)
                     }
                     HStack {
-                            TextField("Sign Here", text: $signaturePrivate)
+                            TextField("Firme aquí", text: $signaturePrivate)
                                 .frame(width: 300)
                                 .padding(.leading, 20)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
-                            Text("Date: ")
+                            Text("Fecha: ")
                             .padding(.leading)
                             Text(Date().addingTimeInterval(600), style: .date)
                                     .padding(.leading)

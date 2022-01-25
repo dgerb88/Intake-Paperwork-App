@@ -492,16 +492,36 @@ struct NewSelectionView: View {
                                                         }
                                                     }
                                                     else if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {
-                                                        InsuranceIntakeView(survey: survey)
+                                                        if language == "English" {
+                                                            InsuranceIntakeView(survey: survey)
+                                                        }
+                                                        else {
+                                                            SpanInsuranceView(survey: survey)
+                                                        }
                                                     }
                                                     else if model.showInfoAndPolicies == true && model.includeInformationAndPolicies == true {
-                                                        InformationAndPoliciesView(survey: survey)
+                                                        if language == "English" {
+                                                            InformationAndPoliciesView(survey: survey)
+                                                        }
+                                                        else {
+                                                            SpanInfoView(survey: survey)
+                                                        }
                                                     }
                                                     else if model.showPrivacyPolicy == true && model.includePrivacyPolicy == true {
-                                                        PrivacyPolicyView(survey: survey)
+                                                        if language == "English" {
+                                                            PrivacyPolicyView(survey: survey)
+                                                        }
+                                                        else {
+                                                            SpanPrivacyPolicyView(survey: survey)
+                                                        }
                                                     }
                                                     else if model.showDryNeedling == true && model.includeDryNeedlingConsent == true {
-                                                        DryNeedlingConsentView(survey: survey)
+                                                        if language == "English" {
+                                                            DryNeedlingConsentView(survey: survey)
+                                                        }
+                                                        else {
+                                                            SpanDryNeedleView(survey: survey)
+                                                        }
                                                     }
                                                     else {
                                                         if survey.name == "LEFS" {
