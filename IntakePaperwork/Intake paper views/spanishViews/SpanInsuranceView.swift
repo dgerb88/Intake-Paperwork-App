@@ -39,7 +39,7 @@ struct SpanInsuranceView: View {
                                     .textFieldStyle(.roundedBorder)
                                     .padding(.bottom, 5)
                                 Text("Nombre de la compañía de seguros principal:")
-                                TextField("Insurance Name", text: $InsuranceNameInsurance[0])
+                                TextField("Nombre", text: $InsuranceNameInsurance[0])
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
                                     .padding(.bottom, 5)
@@ -56,7 +56,7 @@ struct SpanInsuranceView: View {
                             }
                             VStack(alignment: .leading, spacing: 5) {
                                 Text("Nombre de la compañía de seguros secundaria (si aplica):")
-                                TextField("Secondary Insurance Name", text: $InsuranceNameInsurance[1])
+                                TextField("Nombre", text: $InsuranceNameInsurance[1])
                                     .padding(.bottom, 5)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
@@ -78,6 +78,7 @@ struct SpanInsuranceView: View {
                             .bold()
                             .font(.title2)
                             .padding(.top, 20)
+                            .padding(.bottom, 3)
                         Text("Acuerdo: \(model.clinicName) desea ser lo más transparente posible con respecto a las tarifas por servicios y responsabilidades. Debido a que reconocemos la necesidad de un entendimiento claro entre el paciente y el proveedor médico con respecto a los arreglos financieros para la atención médica, se proporciona la siguiente información para evitar cualquier malentendido sobre la información médica protegida y el pago por servicios profesionales.")
                             .fixedSize(horizontal: false, vertical: true)
 
@@ -85,7 +86,7 @@ struct SpanInsuranceView: View {
                             .bold()
                             .font(.title2)
                             .padding(.top, 10)
-                        Text("Marque la caja para indicar que entiende lo siguiente:")
+                        Text("Marque la casilla para indicar que entiende lo siguiente:")
                             .bold()
                             .padding(.vertical)
                             .font(.title3)
