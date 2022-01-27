@@ -26,59 +26,59 @@ struct SpanInfoView: View {
         ZStack {
             VStack {
                 VStack(alignment: .center) {
-                    Text("Information and Policies")
+                    Text("Información y políticas importantes")
                         .bold()
                         .font(.largeTitle)
                         .padding(.bottom, 30)
                 }.padding()
                 VStack(alignment: .leading) {
                     
-                    Text("Please thoroughly fill out this form. All information in kept completely confidential. This information is necessary in order to give you the most effective treatment for your personal case. ")
+                    Text("Por favor llene completamente este formulario. Toda la información se mantiene completamente confidencial. Esta información es necesaria para brindarle el tratamiento más efectivo para su caso personal. ")
                         .bold()
                     HStack(alignment: .top, spacing: 30) {
                         VStack(alignment: .leading) {
-                            Text("Name:")
+                            Text("Nombre:")
                                 .padding(.top, 10)
-                            TextField("Your name", text: $model.personalName)
+                            TextField("Tu nombre", text: $model.personalName)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
-                            Text("Phone Number: ")
+                            Text("Número de teléfono: ")
                                 .padding(.top, 10)
-                            TextField("Your phone number", text: $personalNumber)
+                            TextField("Tu número", text: $personalNumber)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
-                            Text("House address")
+                            Text("Dirección de casa")
                                 .padding(.top, 10)
-                            TextField("Your address", text: $personalAddress)
+                            TextField("Tu dirección", text: $personalAddress)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
-                            Text("Email address: ")
+                            Text("Correo electrónico: ")
                                 .padding(.top, 10)
-                            TextField("Your email address", text: $EmailAddressInfo)
+                            TextField("Tu correo electrónico", text: $EmailAddressInfo)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                         }.padding(.trailing, 30)
                         VStack(alignment: .leading) {
-                            Text("Emergency contact name: ")
+                            Text("Nombre del contacto de emergencia: ")
                                 .padding(.top, 10)
-                            TextField("Name", text: $ContactNameInfo)
+                            TextField("Nombre", text: $ContactNameInfo)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
-                            Text("Emergency contact phone number: ")
+                            Text("Número de teléfono de contacto de emergencia: ")
                                 .padding(.top, 10)
-                            TextField("Phone Number", text: $ContactPhoneNumberInfo)
+                            TextField("Número", text: $ContactPhoneNumberInfo)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
-                            Text("Emergency contact relation to patient: ")
+                            Text("Relación de contacto de emergencia con el/la paciente: ")
                                 .padding(.top, 10)
-                            TextField("Relationship", text: $ContactRelationInfo)
+                            TextField("Relación", text: $ContactRelationInfo)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                             Picker("", selection: $reminderType) {
-                                Text("Call").tag(3)
-                                Text("Email").tag(2)
-                                Text("Text").tag(1)
-                                Text("Please select").tag(0)
+                                Text("Llamar").tag(3)
+                                Text("Correo electrónico").tag(2)
+                                Text("Texto").tag(1)
+                                Text("Por favor selecciona").tag(0)
                             }
                             .pickerStyle(MenuPickerStyle())
                             .padding(.leading)
@@ -88,12 +88,12 @@ struct SpanInfoView: View {
                     }.padding(.bottom)
                 }.padding(.horizontal)
                 VStack(alignment: .leading) {
-                    Text("Important Rules and Policies:")
+                    Text("Reglas y políticas importantes:")
                         .bold()
                         .font(.title)
                         .padding(.top, 20)
                         .padding(.bottom, 10)
-                    Text("Please check the box to indicate that you understand the following:")
+                    Text("Marque la casilla mientras lee lo siguiente:")
                         .bold()
                         .padding(.bottom)
                         .font(.title3)
@@ -120,7 +120,7 @@ struct SpanInfoView: View {
                                         .foregroundColor(.black)
                                 }
                             }
-                            Text("1. Late Policy: If you are more than 10-minutes late to your appointment, you may be rescheduled or asked to wait for next available open time slot.")
+                            Text("1. Política de retrasos: si llega más de 10 minutos tarde a su cita, es posible que se le cambie la fecha o se le pida que espere hasta el próximo horario disponible.")
                         }
                         HStack(alignment: .top) {
                             Button {
@@ -144,7 +144,7 @@ struct SpanInfoView: View {
                                         .foregroundColor(.black)
                                 }
                             }
-                            Text("2. Cancel/No Show Policy: Please call our office if you cannot come to an appointment already scheduled. 24-hour advance notice is required for changes to your appointment. Giving less than 24-hour notice of appointment changes will result in a $\(model.cancelFee) LATE CANCEL fee added to your account. Failure to call or show for an appointment will result in a $\(model.noShowFee) NO-SHOW fee added to your account.")
+                            Text("2. Política de cancelación / no presentación: llame a nuestra oficina si no puede asistir a una cita ya programada. Se requiere un aviso con 24 horas de anticipación para cambios en su cita. Si avisa con menos de 24 horas de anticipación sobre los cambios en las citas, se agregará a su cuenta una tarifa de cancelación tardía de $\(model.cancelFee). Si no llama o no se presenta para una cita, se agregará a su cuenta una tarifa de $\(model.noShowFee) por NO PRESENTARSE.")
                         }
                         HStack(alignment: .top) {
                             Button {
@@ -168,7 +168,7 @@ struct SpanInfoView: View {
                                         .foregroundColor(.black)
                                 }
                             }
-                            Text("3. Co-pays and/or deductibles are due prior to each treatment session.")
+                            Text("3. Los copagos y / o deducibles vencen antes de cada sesión de tratamiento.")
                         }
                         HStack(alignment: .top) {
                             Button {
@@ -192,7 +192,7 @@ struct SpanInfoView: View {
                                         .foregroundColor(.black)
                                 }
                             }
-                            Text("4. If you are experiencing any financial hardship, please notify us immediately so we can create a payment program that is feasible.")
+                            Text("4. Si tiene alguna dificultad económica, notifíquenos de inmediato para que podamos crear un programa de pago que sea factible.")
                         }
                         HStack(alignment: .top) {
                             Button {
@@ -216,71 +216,71 @@ struct SpanInfoView: View {
                                         .foregroundColor(.black)
                                 }
                             }
-                            Text("5. If for any reason, you are not satisfied with the care received, please call us at \(model.phoneNumber) so we can resolve any issues.")
+                            Text("5. Si por alguna razón no está satisfecho con la atención recibida, llámenos al \(model.phoneNumber) para que podamos resolver cualquier problema.")
                         }
                     }.padding(.horizontal)
                 }.padding(.horizontal)
 
                 VStack(alignment: .leading) {
-                    Text("CONSENT TO PHYSICAL THERAPY EVALUATION AND TREATMENT:")
+                    Text("CONSENTIMIENTO PARA EVALUACIÓN Y TRATAMIENTO DE TERAPIA FÍSICA:")
                         .bold()
                         .padding(.top)
                         .padding(.bottom, 5)
                         .font(.title3)
-                    Text("By signing below, I hereby consent to the evaluation and treatment of my condition by a licensed physical therapist employed by \(model.clinicName). The physical therapist will explain the nature and purposes of these procedures, evaluation, and course of treatment. The physical therapist will inform me of expected benefits and complications, and any discomforts, and risk that may arise, as well as alternatives to the proposed treatment and the risk and consequences of no treatment.")
+                    Text("Al firmar a continuación, doy mi consentimiento para la evaluación y el tratamiento de mi afección por parte de un fisioterapeuta autorizado empleado por \(model.clinicName). El fisioterapeuta explicará la naturaleza y los propósitos de estos procedimientos, la evaluación y el curso del tratamiento. El fisioterapeuta me informará de los beneficios y complicaciones esperados, y las molestias y riesgos que puedan surgir, así como las alternativas al tratamiento propuesto y los riesgos y consecuencias de no recibir tratamiento.")
                     if signaturesInfo[0] == "" {
-                        Text("Electronic Signature of PATIENT or LEGAL GUARDIAN:")
+                        Text("Firma del PACIENTE o TUTOR LEGAL:")
                             .bold()
                             .padding(.top, 10)
                             .padding(.bottom, 5)
                             .foregroundColor(.red)
                     }
                     else {
-                        Text("Electronic Signature of PATIENT or LEGAL GUARDIAN:")
+                        Text("Firma del PACIENTE o TUTOR LEGAL:")
                             .bold()
                             .padding(.top, 10)
                             .padding(.bottom, 5)
                             .foregroundColor(.black)
                     }
                     HStack {
-                        TextField("Sign Here", text: $signaturesInfo[0])
+                        TextField("Firme aquí", text: $signaturesInfo[0])
                             .frame(width: 300)
                             .padding(.leading, 20)
                             .accentColor(.black)
                             .textFieldStyle(.roundedBorder)
-                        Text("Date: ")
+                        Text("Fecha: ")
                             .padding(.leading)
                         Text(Date().addingTimeInterval(600), style: .date)
                                 .padding(.leading)
                         
                         
                     }
-                    Text("RELEASE FROM LIABILITY DISCLAIMER:")
+                    Text("Descargo de Responsabilidad:")
                         .bold()
                         .padding(.top)
                         .padding(.bottom, 5)
                         .font(.title3)
-                    Text("I fully understand and acknowledge that (a) the activities in which I will engage as part of the treatment provided by \(model.clinicName) and the physical therapy activities and equipment I may use as a part of that treatment have inherent risks, dangers, and hazards and such exists in my use of any equipment and my participation in these activities; (b) my participation in such activities and/or use of such equipment may result in injury or illness including, but not limited to bodily injury, disease, strains, fractures, partial and/or total paralysis, death or other ailments that, could cause serious disability; (c) these risks and dangers may be caused by the negligence of the representatives or employees of \(model.clinicName), and any other entity, person, or associate, the negligence of the participants, the negligence of others, accidents, breaches of contract, or other causes. By my participation in these activities and for use of equipment, I hereby assume all risks and dangers and all responsibility for any losses and/or damages whether caused in whole or in part by the negligence or the conduct of the representatives or employees of \(model.clinicName), or by any other person. I, on behalf of myself, my personal representatives and my heirs, hereby voluntarily agree to release, waive, discharge, hold harmless, defend, and indemnify \(model.clinicName) and their representatives, employees, and assigns from any and all claims, actions or losses for bodily injury, property damage, wrongful death, loss of services or otherwise which may arise out of my use of any equipment or participation in these activities. I specifically understand that I am releasing, discharging, and waiving any claims or actions that I may have presently or in the future for the negligent acts or other conduct by the representatives or employees of \(model.clinicName).")
-                    Text("BY SIGNING BELOW, YOU ARE CONFIRMING THE FOLLOWING:")
+                    Text("Entiendo y reconozco plenamente que (a) las actividades en las que participaré como parte del tratamiento proporcionado por \(model.clinicName) y las actividades y el equipo de fisioterapia que puedo usar como parte de ese tratamiento tienen riesgos, peligros y peligros inherentes y tal existe en mi uso de cualquier equipo y mi participación en estas actividades; (b) mi participación en dichas actividades y / o el uso de dicho equipo puede resultar en lesiones o enfermedades que incluyen, entre otras, lesiones corporales, enfermedades, distensiones, fracturas, parálisis parcial y / o total, muerte u otras dolencias que podrían causar discapacidad grave; (c) estos riesgos y peligros pueden ser causados ​​por la negligencia de los representantes o empleados de \(model.clinicName), y cualquier otra entidad, persona o asociado, la negligencia de los participantes, la negligencia de otros, accidentes, incumplimientos de contrato, u otras causas. Por mi participación en estas actividades y por el uso de equipos, por la presente asumo todos los riesgos y peligros y toda la responsabilidad por cualquier pérdida y / o daño causado en todo o en parte por la negligencia o la conducta de los representantes o empleados de \(model.clinicName), o por cualquier otra persona. Yo, en mi nombre, mis representantes personales y mis herederos, por la presente acepto voluntariamente liberar, renunciar, despedir, eximir de responsabilidad, defender e indemnizar a \(model.clinicName) y a sus representantes, empleados y cesionarios de todas y cada una de las demandas, acciones o pérdidas por lesiones corporales, daños a la propiedad, muerte por negligencia, pérdida de servicios o de otro tipo que puedan surgir de mi uso de cualquier equipo o participación en estas actividades. Entiendo específicamente que estoy liberando, descargando y renunciando a cualquier reclamo o acción que pueda tener en el presente o en el futuro por los actos negligentes u otra conducta de los representantes o empleados de \(model.clinicName).")
+                    Text("AL FIRMAR A CONTINUACIÓN, ESTÁ CONFIRMANDO LO SIGUIENTE:")
                         .bold()
                         .padding(.vertical, 5)
-                    Text("“I HAVE READ THE ABOVE WAIVER AND RELEASE AND BY SIGNING IT AGREE. IT IS MY INTENTION TO EXEMPT AND RELIEVE \(model.clinicName.uppercased()) FROM LIABILITY FOR PERSONAL INJURY, PROPERTY DAMAGE OR WRONGFUL DEATH CAUSED BY NEGLIGENCE OR ANY OTHER CAUSE.”")
+                    Text("“HE LEÍDO LA RENUNCIA Y LIBERACIÓN ANTERIORES Y AL FIRMARLO ACEPTO. ES MI INTENCIÓN EXENTAR Y ALIVIAR A \(model.clinicName.uppercased()) DE RESPONSABILIDAD POR LESIONES PERSONALES, DAÑOS A LA PROPIEDAD O MUERTE INJUSTA CAUSADA POR NEGLIGENCIA O CUALQUIER OTRA CAUSA.”")
                     if signaturesInfo[1] == "" {
-                        Text("Electronic Signature of PATIENT or LEGAL GUARDIAN:")
+                        Text("Firma del PACIENTE o TUTOR LEGAL:")
                             .bold()
                             .padding(.top, 10)
                             .padding(.bottom, 5)
                             .foregroundColor(.red)
                     }
                     else {
-                        Text("Electronic Signature of PATIENT or LEGAL GUARDIAN:")
+                        Text("Firma del PACIENTE o TUTOR LEGAL:")
                             .bold()
                             .padding(.top, 10)
                             .padding(.bottom, 5)
                             .foregroundColor(.black)
                     }
                     HStack {
-                            TextField("Sign Here", text: $signaturesInfo[1])
+                            TextField("Firme aquí", text: $signaturesInfo[1])
                                 .frame(width: 300)
                                 .padding(.leading, 20)
                                 .accentColor(.black)
@@ -288,7 +288,7 @@ struct SpanInfoView: View {
                                 .onTapGesture {
                                     keyboardChange = true
                                 }
-                            Text("Date: ")
+                            Text("Fecha: ")
                                 .padding(.leading)
                             Text(Date().addingTimeInterval(600), style: .date)
                                     .padding(.leading)
