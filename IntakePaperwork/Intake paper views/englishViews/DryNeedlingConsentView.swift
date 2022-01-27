@@ -327,6 +327,7 @@ struct DryNeedlingConsentView: View {
                                 model.PDFimage.append(image)
                                 model.PDFfile = model.createPDF(image: image)
                                 model.PDFfileArray.append(model.PDFfile!)
+                                model.pageCount += 1
                         }
                         NavigationLink {
                             if survey.name == "LEFS" {
@@ -359,7 +360,7 @@ struct DryNeedlingConsentView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(true)
+                        }.navigationBarBackButtonHidden(model.pageCount == 1 ? false:true)
                     }
                 }
             }

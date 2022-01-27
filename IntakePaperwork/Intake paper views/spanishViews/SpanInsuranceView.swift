@@ -24,7 +24,7 @@ struct SpanInsuranceView: View {
         ZStack {
             VStack {
                 VStack(alignment: .center) {
-                    Text("Insurance Information")
+                    Text("Información del Seguro")
                         .bold()
                         .font(.largeTitle)
                         .padding(.bottom, 30)
@@ -33,40 +33,40 @@ struct SpanInsuranceView: View {
                     VStack(alignment: .leading) {
                         HStack(alignment: .top, spacing: 20) {
                             VStack(alignment: .leading, spacing: 5) {
-                                Text("Name of Patient or Legal Guardian(if patient is a minor):")
-                                TextField("Name", text: $patientNameInsurance)
+                                Text("Nombre de paciente o tutor legal si paciente es menor:")
+                                TextField("Nombre", text: $patientNameInsurance)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
                                     .padding(.bottom, 5)
-                                Text("Name of Primary Insurance Carrier:")
+                                Text("Nombre de la compañía de seguros principal:")
                                 TextField("Insurance Name", text: $InsuranceNameInsurance[0])
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
                                     .padding(.bottom, 5)
-                                Text("Member ID:")
-                                TextField("ID number", text: $memberIdInsurance[0])
+                                Text("Identificación de miembro:")
+                                TextField("Número", text: $memberIdInsurance[0])
                                     .padding(.bottom, 5)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
-                                Text("Group Number:")
-                                TextField("Number", text: $groupNumberInsurance[0])
+                                Text("Número de grupo:")
+                                TextField("Número", text: $groupNumberInsurance[0])
                                     .padding(.bottom, 5)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
                             }
                             VStack(alignment: .leading, spacing: 5) {
-                                Text("Name of Secondary Insurance Carrier (if applicable):")
+                                Text("Nombre de la compañía de seguros secundaria (si aplica):")
                                 TextField("Secondary Insurance Name", text: $InsuranceNameInsurance[1])
                                     .padding(.bottom, 5)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
-                                Text("Member ID:")
-                                TextField("ID number", text: $memberIdInsurance[1])
+                                Text("Identificación de miembro:")
+                                TextField("Número", text: $memberIdInsurance[1])
                                     .padding(.bottom, 5)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
-                                Text("Group Number:")
-                                TextField("Number", text: $groupNumberInsurance[1])
+                                Text("Número de grupo:")
+                                TextField("Número", text: $groupNumberInsurance[1])
                                     .padding(.bottom, 5)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
@@ -74,18 +74,18 @@ struct SpanInsuranceView: View {
                         }
                     }
                     VStack(alignment: .leading) {
-                        Text("Patient Financial Responsibility form:")
+                        Text("Formulario de responsabilidad financiera del paciente:")
                             .bold()
                             .font(.title2)
                             .padding(.top, 20)
-                        Text("Agreement: \(model.clinicName) would like to be as transparent as possible in regard to fees for services and responsibilities. Because we recognize the need for a clear understanding between patient and medical provider regarding financial arrangements for healthcare, the following information is provided to avoid any misunderstanding concerning protected health information and payment for professional services.")
+                        Text("Acuerdo: \(model.clinicName) desea ser lo más transparente posible con respecto a las tarifas por servicios y responsabilidades. Debido a que reconocemos la necesidad de un entendimiento claro entre el paciente y el proveedor médico con respecto a los arreglos financieros para la atención médica, se proporciona la siguiente información para evitar cualquier malentendido sobre la información médica protegida y el pago por servicios profesionales.")
                             .fixedSize(horizontal: false, vertical: true)
 
-                        Text("Insurance Patient Financial Responsibility Form - Consents")
+                        Text("Formulario de responsabilidad financiera del paciente del seguro -- Consentimientos")
                             .bold()
                             .font(.title2)
                             .padding(.top, 10)
-                        Text("Please check the box to indicate that you understand the following:")
+                        Text("Marque la caja para indicar que entiende lo siguiente:")
                             .bold()
                             .padding(.vertical)
                             .font(.title3)
@@ -109,7 +109,7 @@ struct SpanInsuranceView: View {
                                         .foregroundColor(.black)
                                 }
                             }
-                            Text("As a courtesy, we bill your insurance carrier. However, it must be understood that the contract is between you and your insurance carrier and you are fully responsible for any amount that they do not pay.")
+                            Text("Como cortesía, le enviaremos la factura a su compañía de seguros. Sin embargo, debe entenderse que el contrato es entre usted y su compañía de seguros y usted es totalmente responsable de cualquier monto que no pague.")
                             .fixedSize(horizontal: false, vertical: true)
                         }.padding(.bottom, 10)
                         HStack(alignment: .top) {
@@ -132,7 +132,7 @@ struct SpanInsuranceView: View {
                                         .foregroundColor(.black)
                                 }
                             }
-                            Text("Our office does not guarantee that your insurance will pay. Some insurance companies do not cover certain treatments. We will assist you in making every attempt to receive verification of your policy. If your claim is denied for any reason, you are responsible for the full amount of your bill.")
+                            Text("Nuestra oficina no garantiza que su seguro pague. Algunas compañías de seguros no cubren ciertos tratamientos. Le ayudaremos a hacer todo lo posible por recibir la verificación de su póliza. Si su reclamo es denegado por cualquier motivo, usted es responsable del monto total de su factura.")
                                 .fixedSize(horizontal: false, vertical: true)
                         }.padding(.bottom, 10)
                         HStack(alignment: .top) {
@@ -155,7 +155,7 @@ struct SpanInsuranceView: View {
                                         .foregroundColor(.black)
                                 }
                             }
-                            Text("Our office will not enter into a dispute with your insurance company over any unpaid claim.")
+                            Text("Nuestra oficina no entrará en disputas con su compañía de seguros por ningún reclamo impago.")
                         }.padding(.bottom, 10)
                         HStack(alignment: .top) {
                             Button {
@@ -177,45 +177,45 @@ struct SpanInsuranceView: View {
                                         .foregroundColor(.black)
                                 }
                             }
-                            Text("PAYMENT: Even though insurance will be billed, you are responsible for any balance after insurance processes your claim. All charges for treatment become due and payable sixty (60) days after the date of service. These periods allow sufficient time to process insurance and make payment in full of any remaining balance.")
+                            Text("PAGO: Aunque se facturará al seguro, usted es responsable de cualquier saldo después de que el seguro procese su reclamo. Todos los cargos por tratamiento vencen y se pagan sesenta (60) días después de la fecha del servicio. Estos períodos dan tiempo suficiente para procesar el seguro y realizar el pago total de cualquier saldo restante.")
                                 .fixedSize(horizontal: false, vertical: true)
                         }.padding(.bottom, 10)
                     }
                     VStack(alignment: .leading) {
-                        Text("Insurance Payment Agreement:")
+                        Text("Acuerdo de pago del seguro:")
                             .bold()
                             .font(.title2)
                             .padding(.top, 10)
-                        Text("I understand that I am financially responsible for my health insurance deductible, coinsurance, or non-covered service. Copayments are due at time of service. In the event that my health plan determines a service to be “not payable”, I will be responsible for the complete charge and agree to pay the costs of all services provided. In the event that my insurer does not pay all of the medical charges incurred, I hereby authorize \(model.clinicName) to automatically charge the credit or debit card on my account for the remaining balance due.")
+                        Text("Entiendo que soy financieramente responsable por el deducible, coseguro o servicio no cubierto de mi seguro médico. Los copagos vencen al momento del servicio. En el caso de que mi plan de salud determine que un servicio \("no es pagadero"), seré responsable del cargo completo y acepto pagar los costos de todos los servicios prestados. En caso de que mi aseguradora no paga todos los gastos médicos incurridos, por la presente autorizo a \(model.clinicName) to automatically charge the credit or debit card on my account for the remaining balance due.")
                             .fixedSize(horizontal: false, vertical: true)
 
-                        Text("Insurance Authorization for Assigment of Benefits:")
+                        Text("Autorización del seguro para la asignación de beneficios:")
                             .bold()
                             .font(.title2)
                             .padding(.top, 10)
-                        Text("I hereby authorize and direct payment of my medical benefits to \(model.clinicName) on my behalf for any services furnished to me by the providers.")
+                        Text("Por la presente autorizo y dirijo el pago de mis beneficios médicos a \(model.clinicName) en mi nombre por cualquier servicio que me proporcionen los proveedores.")
                             .fixedSize(horizontal: false, vertical: true)
-                        Text("Authorization to Release Records:")
+                        Text("Autorización para divulgar registros:")
                             .bold()
                             .font(.title2)
                             .padding(.top, 10)
-                        Text("I hereby authorize \(model.clinicName) to release to my insurer, governmental agencies, or any other entity financially responsible for my medical care, all information, including diagnosis and the records of any treatment or examination rendered to me needed to substantiate payment for such medical services as well as information required for pre-certification, authorization or referral to other medical provider")
+                        Text("Por la presente autorizo a \(model.clinicName) a divulgar a mi aseguradora, agencias gubernamentales o cualquier otra entidad financieramente responsable de mi atención médica, toda la información, incluido el diagnóstico y los registros de cualquier tratamiento o examen que se me haya prestado para justificar el pago de dichos servicios médicos. así como la información requerida para la precertificación, autorización o derivación a otro proveedor médico.")
                             .fixedSize(horizontal: false, vertical: true)
-                        Text("I have read and understand these policies and my responsibility concerning the payment of these services")
+                        Text("He leído y comprendo estas políticas y mi responsabilidad con respecto a la pago de estos servicios.")
                             .bold()
                             .fixedSize(horizontal: false, vertical: true)
                             .font(.title3)
                             .padding(.vertical, 10)
                         if signatureInsurance == "" {
-                            Text("Signature of patient or legal guardian:")
+                            Text("Firma del PACIENTE o TUTOR LEGAL:")
                                 .foregroundColor(.red)
                         }
                         else {
-                            Text("Signature of patient or legal guardian:")
+                            Text("Firma del PACIENTE o TUTOR LEGAL:")
                                 .foregroundColor(.black)
                         }
                         HStack {
-                            TextField("Signature", text: $signatureInsurance)
+                            TextField("Firme aquí", text: $signatureInsurance)
                                 .padding(.bottom, 5)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
@@ -223,7 +223,7 @@ struct SpanInsuranceView: View {
                                 .onTapGesture {
                                     keyboardChange = true
                                 }
-                            Text("Date: ")
+                            Text("Fecha: ")
                                 .padding(.leading)
                             Text(Date().addingTimeInterval(600), style: .date)
                                     .padding(.leading)
@@ -248,6 +248,7 @@ struct SpanInsuranceView: View {
                     VStack {
                         spanInsuranceView
                             .onDisappear {
+                                model.pageCount += 1
                                 let image = spanInsuranceView.snapshot()
                                 model.PDFimage.append(image)
                                 model.PDFfile = model.createPDF(image: image)
@@ -295,7 +296,7 @@ struct SpanInsuranceView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(true)
+                        }.navigationBarBackButtonHidden(model.pageCount == 1 ? false:true)
                     }
                 }
             }

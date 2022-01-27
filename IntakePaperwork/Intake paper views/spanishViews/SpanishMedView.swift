@@ -61,8 +61,8 @@ struct SpanishMedView: View {
                                 Text("Dolor de la espalda").tag(1)
                                 Text("Por favor selecciona").tag(0)
                             }
-                                .pickerStyle(MenuPickerStyle())
-                                .padding(.leading)
+                            .pickerStyle(MenuPickerStyle())
+                            .padding(.leading)
                             if primaryReason == 7 {
                                 Text("Por favor describa:")
                                 TextField("Razón", text: $primaryReasonOther)
@@ -1776,6 +1776,7 @@ struct SpanishMedView: View {
                     VStack {
                         spanMedView
                             .onDisappear {
+                                model.pageCount += 1
                                 let image = spanMedView.snapshot()
                                 model.PDFimage.append(image)
                                 model.PDFfile = model.createPDF(image: image)
@@ -1826,7 +1827,7 @@ struct SpanishMedView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }
+                        }.navigationBarBackButtonHidden(false)
                     }
                 }
             }

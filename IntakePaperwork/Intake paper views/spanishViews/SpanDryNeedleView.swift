@@ -321,6 +321,7 @@ struct SpanDryNeedleView: View {
                     VStack {
                         spanNeedleView
                             .onDisappear {
+                                model.pageCount += 1
                                 let image = spanNeedleView.snapshot()
                                 model.PDFimage.append(image)
                                 model.PDFfile = model.createPDF(image: image)
@@ -357,7 +358,7 @@ struct SpanDryNeedleView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(true)
+                        }.navigationBarBackButtonHidden(model.pageCount == 1 ? false:true)
                     }
                 }
             }

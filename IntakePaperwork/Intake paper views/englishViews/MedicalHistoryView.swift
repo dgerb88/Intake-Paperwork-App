@@ -1771,6 +1771,7 @@ struct MedicalHistoryView: View {
                                 model.PDFimage.append(image)
                                 model.PDFfile = model.createPDF(image: image)
                                 model.PDFfileArray.append(model.PDFfile!)
+                                model.pageCount += 1
                             }
                         NavigationLink {
                             if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {
@@ -1817,7 +1818,7 @@ struct MedicalHistoryView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }
+                        }.navigationBarBackButtonHidden(false)
                     }
                 }
             }

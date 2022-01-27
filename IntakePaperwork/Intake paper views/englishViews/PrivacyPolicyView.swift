@@ -123,6 +123,7 @@ struct PrivacyPolicyView: View {
                             model.PDFimage.append(image)
                             model.PDFfile = model.createPDF(image: image)
                             model.PDFfileArray.append(model.PDFfile!)
+                            model.pageCount += 1
                         }
                         NavigationLink {
                             if model.showDryNeedling == true && model.includeDryNeedlingConsent == true {
@@ -160,7 +161,7 @@ struct PrivacyPolicyView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(true)
+                        }.navigationBarBackButtonHidden(model.pageCount == 1 ? false:true)
                     }
                 }
             }

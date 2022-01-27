@@ -162,7 +162,7 @@ struct LefsView: View {
                     }
             }
             
-        }.navigationBarBackButtonHidden(true)
+        }.navigationBarBackButtonHidden(model.pageCount == 1 ? false:true)
         .onAppear {
             model.selectedValue.removeAll()
             model.appendArray(survey.questions.count)

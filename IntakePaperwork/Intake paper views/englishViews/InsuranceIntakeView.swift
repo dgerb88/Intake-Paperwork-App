@@ -200,7 +200,7 @@ struct InsuranceIntakeView: View {
                             .bold()
                             .font(.title2)
                             .padding(.top, 10)
-                        Text("I hereby authorize \(model.clinicName) to release to my insurer, governmental agencies, or any other entity financially responsible for my medical care, all information, including diagnosis and the records of any treatment or examination rendered to me needed to substantiate payment for such medical services as well as information required for pre-certification, authorization or referral to other medical provider")
+                        Text("I hereby authorize \(model.clinicName) to release to my insurer, governmental agencies, or any other entity financially responsible for my medical care, all information, including diagnosis and the records of any treatment or examination rendered to me needed to substantiate payment for such medical services as well as information required for pre-certification, authorization or referral to other medical provider.")
                             .fixedSize(horizontal: false, vertical: true)
                         Text("I have read and understand these policies and my responsibility concerning the payment of these services")
                             .bold()
@@ -253,6 +253,7 @@ struct InsuranceIntakeView: View {
                                 model.PDFimage.append(image)
                                 model.PDFfile = model.createPDF(image: image)
                                 model.PDFfileArray.append(model.PDFfile!)
+                                model.pageCount += 1
                             }
                         NavigationLink {
                             if model.showInfoAndPolicies == true && model.includeInformationAndPolicies == true {
@@ -296,7 +297,7 @@ struct InsuranceIntakeView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(true)
+                        }.navigationBarBackButtonHidden(model.pageCount == 1 ? false:true)
                     }
                 }
             }

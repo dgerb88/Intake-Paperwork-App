@@ -119,6 +119,7 @@ struct SpanPrivacyPolicyView: View {
                         .shadow(radius: 5)
                     VStack {
                         spanPrivacyView.onDisappear {
+                            model.pageCount += 1
                             let image = spanPrivacyView.snapshot()
                             model.PDFimage.append(image)
                             model.PDFfile = model.createPDF(image: image)
@@ -160,7 +161,7 @@ struct SpanPrivacyPolicyView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(true)
+                        }.navigationBarBackButtonHidden(model.pageCount == 1 ? false:true)
                     }
                 }
             }

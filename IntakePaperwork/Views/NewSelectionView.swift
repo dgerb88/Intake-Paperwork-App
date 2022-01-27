@@ -600,6 +600,7 @@ struct NewSelectionView: View {
             model.includeDryNeedlingConsent = true
             isSpanish = false
             isEnglish = true
+            model.pageCount = 1
             model.personalName = ""
             model.selectedValue.removeAll()
             model.appendArray(25)
