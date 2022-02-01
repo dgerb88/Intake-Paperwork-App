@@ -33,6 +33,7 @@ struct SpanDryNeedleView: View {
                             .padding(.bottom, 3)
                         Text("Entiendo que no se ha garantizado ni asegurado los resultados de este procedimiento y que es posible que no cure mi afección. Mi terapista también me ha comentado la probabilidad de éxito de este procedimiento, así como la posibilidad de efectos secundarios graves.  Es posible que se requieran/necesiten múltiples sesiones de tratamiento, por lo que este consentimiento cubrirá este tratamiento, así como los tratamientos consecutivos de esta instalación.  He leído y entiendo completamente este formulario de consentimiento y entiendo que no debo firmar este formulario hasta que todos los elementos, incluidas mis preguntas, hayan sido explicados o respondidos satisfactoriamente.  Con mi firma, doy mi consentimiento para la realización de este procedimiento.  También doy mi consentimiento a cualquier medida necesaria para corregir las complicaciones que puedan resultar.")
                             .padding(.bottom)
+                            .fixedSize(horizontal: false, vertical: true)
                         Text("Autorización:")
                             .bold()
                             .font(.title2)

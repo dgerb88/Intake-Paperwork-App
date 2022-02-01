@@ -28,6 +28,7 @@ struct BackIndexView: View {
                     Text(survey.description)
                         .font(.headline)
                         .padding(.bottom, 10)
+                        .fixedSize(horizontal: false, vertical: true)
                     Divider()
                     ForEach(0..<survey.questions.count) { index in
                         Text("\(survey.questions[index].title)")

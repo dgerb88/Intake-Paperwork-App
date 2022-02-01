@@ -50,6 +50,7 @@ struct SpanPrivacyPolicyView: View {
                         }
                         
                         Text("He recibido, leído y entendido completamente el Aviso de prácticas de privacidad para fisioterapia de \(model.clinicName). Entiendo que \(model.clinicName) puede usar o divulgar mi información de salud personal con el fin de realizar un tratamiento, obtener el pago, evaluar la calidad del servicio prestado y cualquier operación administrativa relacionada con el tratamiento o el pago.  Entiendo que tengo derecho a solicitar restricciones, por escrito, con respecto a cómo se usa y divulga mi información médica personal para el tratamiento, pago, y operaciones administrativas.  También entiendo que \(model.clinicName) considerará las solicitudes de restricciones caso por caso, pero no está obligada a cumplir con dichas solicitudes.")
+                            .fixedSize(horizontal: false, vertical: true)
                     }.padding(.bottom)
                     Text("Consentimiento:")
                         .bold()

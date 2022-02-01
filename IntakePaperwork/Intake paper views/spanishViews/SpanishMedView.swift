@@ -462,6 +462,7 @@ struct SpanishMedView: View {
                 VStack(alignment: .leading) {
                     Text("Marque cualquier condición de la que tenga un historial PERSONAL(no antecedentes familiares):")
                         .font(Font.title3.weight(.bold))
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 HStack(alignment: .top, spacing: 5) {
                     VStack(alignment: .leading, spacing: 3) {

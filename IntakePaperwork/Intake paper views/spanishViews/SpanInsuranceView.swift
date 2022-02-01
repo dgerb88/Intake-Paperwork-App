@@ -86,6 +86,7 @@ struct SpanInsuranceView: View {
                             .bold()
                             .font(.title2)
                             .padding(.top, 10)
+                            .fixedSize(horizontal: false, vertical: true)
                         Text("Marque la casilla para indicar que entiende lo siguiente:")
                             .bold()
                             .padding(.vertical)
@@ -157,6 +158,7 @@ struct SpanInsuranceView: View {
                                 }
                             }
                             Text("Nuestra oficina no entrará en disputas con su compañía de seguros por ningún reclamo impago.")
+                                .fixedSize(horizontal: false, vertical: true)
                         }.padding(.bottom, 10)
                         HStack(alignment: .top) {
                             Button {

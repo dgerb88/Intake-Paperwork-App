@@ -31,6 +31,7 @@ struct NDIView: View {
                     ForEach(0..<survey.questions.count) { index in
                         Text("\(survey.questions[index].title)")
                             .font(.title)
+                            .fixedSize(horizontal: false, vertical: true)
                         Picker("", selection: $model.selectedValue[index]) {
                             ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
                                 Text(String(ratingIndex)).tag(ratingIndex)
