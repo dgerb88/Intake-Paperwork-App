@@ -300,7 +300,7 @@ struct QuickDashSpanView: View {
                         }
                         
                         NavigationLink {
-                            FinishedView()
+                            FinishedView(survey: survey)
                         } label: {
                             ZStack {
                                 Rectangle()
@@ -308,7 +308,7 @@ struct QuickDashSpanView: View {
                                     .frame(height: 48)
                                     .cornerRadius(10)
                                     .shadow(radius: 1)
-                                Text("Finish")
+                                Text("Terminar")
                                     .foregroundColor(.white)
                                     .font(.title)
                                     .bold()

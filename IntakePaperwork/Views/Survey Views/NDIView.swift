@@ -93,7 +93,7 @@ struct NDIView: View {
                         }
                         
                         NavigationLink {
-                            FinishedView()
+                            FinishedView(survey: survey)
                         } label: {
                             ZStack {
                                 Rectangle()
@@ -101,10 +101,18 @@ struct NDIView: View {
                                     .frame(height: 48)
                                     .cornerRadius(10)
                                     .shadow(radius: 1)
-                                Text("Finish")
-                                    .foregroundColor(.white)
-                                    .font(.title)
-                                    .bold()
+                                if survey.language == "English" {
+                                    Text("Finish")
+                                        .foregroundColor(.white)
+                                        .font(.title)
+                                        .bold()
+                                }
+                                else {
+                                    Text("Terminar")
+                                        .foregroundColor(.white)
+                                        .font(.title)
+                                        .bold()
+                                }
                             }.padding().padding(.bottom)
                         }.navigationBarBackButtonHidden(model.pageCount == 1 ? false:true)
                     }

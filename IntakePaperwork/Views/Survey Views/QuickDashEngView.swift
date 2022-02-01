@@ -296,7 +296,7 @@ struct QuickDashEngView: View {
                             }
                         
                         NavigationLink {
-                            FinishedView()
+                            FinishedView(survey: survey)
                         } label: {
                             ZStack {
                                 Rectangle()

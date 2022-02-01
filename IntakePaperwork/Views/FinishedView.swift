@@ -12,6 +12,7 @@ struct FinishedView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var model: SurveyModel
     @State var showSheetView = false
+    var survey: Survey
     
     var body: some View {
         ZStack {
@@ -22,15 +23,28 @@ struct FinishedView: View {
                         .foregroundColor(.white)
                         .cornerRadius(5)
                         .frame(height: UIScreen.main.bounds.height*5/6)
-                    Text("Thank you for completing your pre-appointment forms.  Please return this tablet to the front desk.")
-                        .bold()
-                        .font(.largeTitle)
-                        .multilineTextAlignment(.center)
-                        .padding(.bottom, 200)
-                        .padding(.horizontal, 50)
-                        .sheet(isPresented: $showSheetView) {
-                            ShareSheet(activityItems: model.PDFfileArray)
-                        }
+                    if survey.language == "English" {
+                        Text("Thank you for completing your pre-appointment forms.  Please return this tablet to the front desk.")
+                            .bold()
+                            .font(.largeTitle)
+                            .multilineTextAlignment(.center)
+                            .padding(.bottom, 200)
+                            .padding(.horizontal, 50)
+                            .sheet(isPresented: $showSheetView) {
+                                ShareSheet(activityItems: model.PDFfileArray)
+                            }
+                    }
+                    else {
+                        Text("Gracias por llenar estos formularios en preparación de su cita.  El favor de devolver esta tableta al secretario.")
+                            .bold()
+                            .font(.largeTitle)
+                            .multilineTextAlignment(.center)
+                            .padding(.bottom, 200)
+                            .padding(.horizontal, 50)
+                            .sheet(isPresented: $showSheetView) {
+                                ShareSheet(activityItems: model.PDFfileArray)
+                            }
+                    }
                 }
                 HStack {
                     Button {

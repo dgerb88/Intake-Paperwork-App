@@ -101,7 +101,7 @@ struct LefsView: View {
                                 addItem(image: model.PDFimage, pdf: model.PDFfileArray, name: model.personalName)
                             }
                         NavigationLink {
-                            FinishedView()
+                            FinishedView(survey: survey)
                         } label: {
                             ZStack {
                                 Rectangle()
@@ -109,10 +109,18 @@ struct LefsView: View {
                                     .frame(height: 48)
                                     .cornerRadius(10)
                                     .shadow(radius: 1)
-                                Text("Finish")
-                                    .foregroundColor(.white)
-                                    .font(.title)
-                                    .bold()
+                                if survey.language == "English" {
+                                    Text("Finish")
+                                        .foregroundColor(.white)
+                                        .font(.title)
+                                        .bold()
+                                }
+                                else {
+                                    Text("Terminar")
+                                        .foregroundColor(.white)
+                                        .font(.title)
+                                        .bold()
+                                }
                             }.padding().padding(.bottom)
                         }
                     }
