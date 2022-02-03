@@ -1,0 +1,1093 @@
+[{
+        "id": 0,
+        "name": "LEFS",
+        "language": "English",
+        "description": "We are interested in knowing whether you are having any difficulty at all with the activities listed below because of your lower limb problem for which you are currently seeking attention. Please provide an answer for each activity.  Today, do you or would you have any difficulty at all with:",
+        "questions": [{
+                "id": 0,
+                "title": "Any of your usual work, housework, or school activities.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 1,
+                "title": "Your usual hobbies, recreational or sporting activities.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Getting into or out of the bath.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Walking between rooms.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 4,
+                "title": "Putting on your shoes or socks.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 5,
+                "title": "Squatting",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 6,
+                "title": "Lifting an object, like a bag of groceries, from the floor.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 7,
+                "title": "Performing light activities around your home.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 8,
+                "title": "Performing heavy activities around your home.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 9,
+                "title": "Getting into or out of your car.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 10,
+                "title": "Walking 2 blocks.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 11,
+                "title": "Walking a mile",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 12,
+                "title": "Going up or down 10 stairs (about 1 flight of stairs).",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 13,
+                "title": "Standing for 1 hour.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 14,
+                "title": "Sitting for 1 hour.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 15,
+                "title": "Running on even ground.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 16,
+                "title": "Running on uneven ground.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 17,
+                "title": "Making sharp turns while running fast.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 18,
+                "title": "Hopping",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            },
+            {
+                "id": 19,
+                "title": "Rolling over in bed.",
+                "rating": ["0 - Extreme difficulty or unable to perform",
+                    "1 - Quite a bit of difficulty",
+                    "2 - Moderate difficulty",
+                    "3 - A little bit of difficulty",
+                    "4 - No difficulty"
+                ]
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": "LEFS",
+        "language": "Spanish",
+        "description": "Estamos interesados en saber si esta teniendo alguna dificultad al realizar las actividades enumeradas a continuación debido al problema en su pierna. Por favor de una respuesta porcada una de las actividades.  En el dia de hoy, tiene o tendría alguna dificultad realizando alguna de las siguientes actividades:",
+        "questions": [{
+                "id": 0,
+                "title": "Alguna parte de su trabajo habitual, quehaceres domésticos, o actividades escolares.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 1,
+                "title": "Sus pasatiempos usuales, actividades recreativas o deportivas.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Entrando o saliendo de la tina.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Caminando de una habitación a otra.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 4,
+                "title": "Poniéndose los zapatos o medias.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 5,
+                "title": "Poniéndose en cuclillas.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 6,
+                "title": "Levantando un objeto, por ejemplo, una bolsa de compras de supermercado del piso.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 7,
+                "title": "Realizando actividades ligeras en su casa.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 8,
+                "title": "Realizando actividades pesadas en su casa.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 9,
+                "title": "Subiéndose o bajándose de un carro.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 10,
+                "title": "Caminando dos cuadras.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 11,
+                "title": "Caminando una milla.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 12,
+                "title": "Subiendo o bajando 10 peldaños de una escalera.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 13,
+                "title": "Estando parado por una hora.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 14,
+                "title": "Estando sentado por una hora.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 15,
+                "title": "Corriendo sobre terreno plano.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 16,
+                "title": "Corriendo sobre terreno irregular.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 17,
+                "title": "Haciendo vueltas agudas mientras corre rápidamente.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 18,
+                "title": "Soltando",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            },
+            {
+                "id": 19,
+                "title": "Volteandose en la cama.",
+                "rating": ["0 - Dificultad extrema o incapaz de realizar la actividad",
+                    "1 - Mucha dificultad",
+                    "2 - Dificultad moderada",
+                    "3 - Un poco de dificultad",
+                    "4 - Ninguna dificultad"
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Back Index",
+        "language": "English",
+        "description": "This questionnaire will give your provider information about how your back condition affects your everyday life. Please answer every section by marking the one statement that applies to you. If two or more statements in one section apply, please mark the one statement that most closely describes your problem.",
+        "questions": [{
+                "id": 0,
+                "title": "Pain Intensity",
+                "rating": ["0 - The pain comes and goes and is very mild.",
+                    "1 - The pain is mild and does not vary much.",
+                    "2 - The pain comes and goes and is moderate.",
+                    "3 - The pain is moderate and does not vary much.",
+                    "4 - The pain comes and goes and is very severe.",
+                    "5 - The pain is very severe and does not vary much."
+                ]
+            },
+            {
+                "id": 1,
+                "title": "Sleeping",
+                "rating": ["0 - I get no pain in bed.",
+                    "1 - I get pain in bed but it does not prevent me from sleeping well.",
+                    "2 - Because of pain my normal sleep is reduced by less than 25%.",
+                    "3 - Because of pain my normal sleep is reduced by less than 50%.",
+                    "4 - Because of pain my normal sleep is reduced by less than 75%.",
+                    "5 - Pain prevents me from sleeping at all."
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Sitting",
+                "rating": ["0 - I can sit in any chair as long as I like.",
+                    "1 - I can only sit in my favorite chair as long as I like.",
+                    "2 - Pain prevents me from sitting more than 1 hour.",
+                    "3 - Pain prevents me from sitting more than 1/2 hour.",
+                    "4 - Pain prevents me from sitting more than 10 minutes.",
+                    "5 - I avoid sitting because it increases pain immediately."
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Standing",
+                "rating": ["0 - I can stand as long as I want without pain.",
+                    "1 - I have some pain while standing but it does not increase with time.",
+                    "2 - I cannot stand for longer than 1 hour without increasing pain.",
+                    "3 - I cannot stand for longer than 1/2 hour without increasing pain.",
+                    "4 - I cannot stand for longer than 10 minutes without increasing pain.",
+                    "5 - I avoid standing because it increases pain immediately."
+                ]
+            },
+            {
+                "id": 4,
+                "title": "Walking",
+                "rating": ["0 - I have no pain while walking.",
+                    "1 - I have some pain while walking but it doesn’t increase with distance.",
+                    "2 - I cannot walk more than 1 mile without increasing pain.",
+                    "3 - I cannot walk more than 1/2 mile without increasing pain.",
+                    "4 - I cannot walk more than 1/4 mile without increasing pain.",
+                    "5 - I cannot walk at all without increasing pain."
+                ]
+            },
+            {
+                "id": 5,
+                "title": "Personal Care",
+                "rating": ["0 - I do not have to change my way of washing or dressing in order to avoid pain.",
+                    "1 - I do not normally change my way of washing or dressing even though it causes some pain.",
+                    "2 - Washing and dressing increases the pain but I manage not to change my way of doing it.",
+                    "3 - Washing and dressing increases the pain and I find it necessary to change my way of doing it.",
+                    "4 - Because of the pain I am unable to do some washing and dressing without help.",
+                    "5 - Because of the pain I am unable to do any washing and dressing without help."
+                ]
+            },
+            {
+                "id": 6,
+                "title": "Lifting",
+                "rating": ["0 - I can lift heavy weights without extra pain.",
+                    "1 - I can lift heavy weights but it causes extra pain.",
+                    "2 - Pain prevents me from lifting heavy weights off the floor.",
+                    "3 - Pain prevents me from lifting heavy weights off the floor, but I can manage if they are conveniently positioned (e.g., on a table).",
+                    "4 - Pain prevents me from lifting heavy weights off the floor, but I can manage light to medium weights if they are conveniently positioned.",
+                    "5 - I can only lift very light weights."
+                ]
+            },
+            {
+                "id": 7,
+                "title": "Traveling",
+                "rating": ["0 - I get no pain while traveling.",
+                    "1 - I get some pain while traveling but none of my usual forms of travel make it worse.",
+                    "2 - I get extra pain while traveling but it does not cause me to seek alternate forms of travel.",
+                    "3 - I get extra pain while traveling which causes me to seek alternate forms of travel.",
+                    "4 - Pain restricts all forms of travel except that done while lying down.",
+                    "5 - Pain restricts all forms of travel."
+                ]
+            },
+            {
+                "id": 8,
+                "title": "Social Life",
+                "rating": ["0 - My social life is normal and gives me no extra pain.",
+                    "1 - My social life is normal but increases the degree of pain.",
+                    "2 - Pain has no significant affect on my social life apart from limiting my more energetic interests (e.g., dancing, etc).",
+                    "3 - Pain has restricted my social life and I do not go out very often.",
+                    "4 - Pain has restricted my social life to my home.",
+                    "5 - I have hardly any social life because of the pain."
+                ]
+            },
+            {
+                "id": 9,
+                "title": "Changing degree of pain",
+                "rating": ["0 - My pain is rapidly getting better.",
+                    "1 - My pain fluctuates but overall is definitely getting better.",
+                    "2 - My pain seems to be getting better but improvement is slow.",
+                    "3 - My pain is neither getting better or worse.",
+                    "4 - My pain is gradually worsening.",
+                    "5 - My pain is rapidly worsening."
+                ]
+            }
+        ]
+    },
+     {
+        "id": 3,
+        "name": "Back Index",
+        "language": "Spanish",
+        "description": "Este questionario le dará información a su proveedor de salud sobre como la condición de su espalda afecta su vida diaria. Por favor conteste cada sección marcándo la frase que aplica a su condición. Si dos o más frases in una sección describen su condición, por favor marque la frase que describe su condición con más exactitud.",
+        "questions": [{
+                "id": 0,
+                "title": "Intensidad del Dolor",
+                "rating": ["0 - El dolor va y viene y es muy suave.",
+                    "1 - El dolor es suave y no varía mucho.",
+                    "2 - El dolor va y viene y es moderado.",
+                    "3 - El dolor es moderado y no varía mucho.",
+                    "4 - El dolor va y viene y es muy severo.",
+                    "5 - El dolor es muy severo y no varía mucho."
+                ]
+            },
+            {
+                "id": 1,
+                "title": "Al Dormir",
+                "rating": ["0 - No tengo dolor cuando estoy acostado",
+                    "1 - Tengo dolor cuando estoy acostado pero no evita que duerma bien.",
+                    "2 - Debido al dolor, mi sueño normal se ha reducido menos del 25%.",
+                    "3 - Debido al dolor, mi sueño normal se ha reducido menos del 50%.",
+                    "4 - Debido al dolor, mi sueño normal se ha reducido menos del 75%.",
+                    "5 - El dolor no me deja dormir."
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Al Sentarse",
+                "rating": ["0 - Puedo sentarme en cualquier silla por tanto tiempo como quiera.",
+                    "1 - Puedo sentarme solamente en mi silla favorita por tanto tiempo como quiera.",
+                    "2 - El dolor no me permite sentarme por más de una hora.",
+                    "3 - El dolor no me permite sentarme por más de media hora.",
+                    "4 - El dolor no me permite sentarme por más de 10 minutos.",
+                    "5 - Evito sentarme porque ésto aumenta el dolor inmediatamente."
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Al Estar De Pie",
+                "rating": ["0 - Puedo estar parado por tanto tiempo como quiera sin dolor.",
+                    "1 - Tengo algún dolor mientras que estoy parado pero el dolor no aumenta con el tiempo.",
+                    "2 - No puedo estar parado por más de una hora sin que el dolor aumente.",
+                    "3 - No puedo estar parado por más de media hora sin que el dolor aumente.",
+                    "4 - No puedo estar parado por más de 10 minutos sin que el dolor aumente.",
+                    "5 - Evito estar parado porque ésto incrementa el dolor inmediatamente."
+                ]
+            },
+            {
+                "id": 4,
+                "title": "Al Caminar",
+                "rating": ["0 - No tengo dolor mientras que camino.",
+                    "1 - Tengo algún dolor mientras que camino pero el dolor no aumenta con la distancia.",
+                    "2 - No puedo caminar más de una milla sin que el dolor aumente.",
+                    "3 - No puedo caminar más de media milla sin que el dolor aumente.",
+                    "4 - No puedo caminar más de un cuarto de milla sin que el dolor aumente.",
+                    "5 - No puedo caminar sin que el dolor aumente."
+                ]
+            },
+            {
+                "id": 5,
+                "title": "Cuidado Personal",
+                "rating": ["0 - No tengo que cambiar mi manera de bañarme o vestirme para evitar el dolor.",
+                    "1 - No he cambiado mi manera de bañarme o vestirme aunque ésto causa algo de dolor .",
+                    "2 - El bañarse o vestirse incrementa el dolor pero no he cambiado mi manera de hacerlo.",
+                    "3 - El bañarse o vestirse incrementa el dolor pero me ha sido necesario cambiar mi manera de hacerlo.",
+                    "4 - Debido al dolor, no puedo hacer alguna parte de mi baño o vestido sin ayuda.",
+                    "5 - Debido al dolor, no puedo bañarme o vestirme sin ayuda."
+                ]
+            },
+            {
+                "id": 6,
+                "title": "Al Levantar Objetos",
+                "rating": ["0 - Puedo levantar objetos pesados sin que cause más dolor.",
+                    "1 - Puedo levantar objetos pesados pero ésto causa más dolor.",
+                    "2 - El dolor no me permite levantar objetos pesados del piso.",
+                    "3 - El dolor no me permite levantar objetos pesados del piso, pero puedo levantarlos si son convenientemente colocados (por ejemplo, en una mesa).",
+                    "4 - El dolor no me permite levantar objetos pesados del piso, pero puedo levantar objetos livianos o medianamente pesados si son colocados convenientemente.",
+                    "5 - Puedo levantar solamente objetos muy ligeros."
+                ]
+            },
+            {
+                "id": 7,
+                "title": "Al Viajar",
+                "rating": ["0 - No tengo dolor al viajar.",
+                    "1 - Tengo algo de dolor al viajar pero ninguna de mis maneras habituales de viajar empeoran el dolor.",
+                    "2 - Tengo más dolor al viajar pero ésto no me obliga a buscar otras formas de viajar.",
+                    "3 - Tengo más dolor al viajar lo que me obliga a buscar otras formas de viajar.",
+                    "4 - El dolor ha restringido todas las formas de viaje excepto cuando voy acostado.",
+                    "5 - El dolor ha restringido todas las formas de viaje."
+                ]
+            },
+            {
+                "id": 8,
+                "title": "Vida Social",
+                "rating": ["0 - Mi vida social es normal y no me causa más dolor.",
+                    "1 - Mi vida social es normal pero aumenta el dolor.",
+                    "2 - 2. El dolor no ha tenido un efecto significante en mi vida social aparte de limitar mis intereses más enérgicos (por ejemplo, bailar, etc).",
+                    "3 - El dolor ha restringido mi vida social y no salgo muy frecuentemente",
+                    "4 - El dolor has restringido mi vida social a mi casa.",
+                    "5 - Difícilmente tengo alguna vida social debido al dolor."
+                ]
+            },
+            {
+                "id": 9,
+                "title": "Cambio en el Grado de Dolor",
+                "rating": ["0 - Mi dolor esta mejorando rápidamente.",
+                    "1 - Mi dolor fluctúa pero está mejorando definitivamente.",
+                    "2 - Mi dolor parece estar mejorando pero la mejoría es lenta.",
+                    "3 - Mi dolor no está ni mejorando ni empeorando.",
+                    "4 - Mi dolor está empeorando gradualmente.",
+                    "5 - Mi dolor está empeorando rápidamente."
+                ]
+            }
+        ]
+    },
+     {
+        "id": 4,
+        "name": "QuickDash",
+        "language": "English",
+        "description": "Please rate your ability to do the following activities in the last week by picking the number below the appropriate response.",
+        "questions": [{
+                "id": 0,
+                "title": "Open a tight or new jar.",
+                "rating": ["No difficulty",
+                       "Mild difficulty",
+                       "Moderate difficulty",
+                       "Severe difficulty",
+                       "Unable to do"]
+                  },
+                  {
+                      "id": 1,
+                "title": "Do heavy household chores (i.e., wash walls, floors).",
+                "rating": ["1 - No difficulty",
+                       "2 - Mild difficulty",
+                       "3 - Moderate difficulty",
+                       "4 - Severe difficulty",
+                       "5 - Unable to do"]
+                  },
+                  {
+                      "id": 2,
+                "title": "Carry a shopping bag or briefcase.",
+                "rating": ["1 - No difficulty",
+                       "2 - Mild difficulty",
+                       "3 - Moderate difficulty",
+                       "4 - Severe difficulty",
+                       "5 - Unable to do"]
+                  },
+                  {
+                      "id": 3,
+                "title": "Wash your back.",
+                "rating": ["1 - No difficulty",
+                       "2 - Mild difficulty",
+                       "3 - Moderate difficulty",
+                       "4 - Severe difficulty",
+                       "5 - Unable to do"]
+                  },
+                  {
+                      "id": 4,
+                "title": "Use a knife to cut food.",
+                "rating": ["1 - No difficulty",
+                       "2 - Mild difficulty",
+                       "3 - Moderate difficulty",
+                       "4 - Severe difficulty",
+                       "5 - Unable to do"]
+                  },
+                  {
+                      "id": 5,
+                "title": "Recreational activities in which you take some force or impact through your arm, shoulder or hand (i.e., golf, hammering, tennis etc.).",
+                "rating": ["1 - No difficulty",
+                       "2 - Mild difficulty",
+                       "3 - Moderate difficulty",
+                       "4 - Severe difficulty",
+                       "5 - Unable to do"]
+                  },
+                  {
+                      "id": 6,
+                "title": "During the past week, to what extent has your arm, shoulder or hand problem interfered with your normal social activities with family, friends, neighbors or groups?",
+                "rating": ["1 - Not at all",
+                       "2 - Slightly",
+                       "3 - Moderately",
+                       "4 - Quite a bit",
+                       "5 - Extremely"]
+                  },
+                  {
+                      "id": 7,
+                "title": "During the past week, were you limited in your work or other regular daily activities as a result of your arm, shoulder or hand problem?",
+                "rating": ["1 - Not limited at all",
+                       "2 - Slightly limited",
+                       "3 - Moderately limited",
+                       "4 - Very limited",
+                       "5 - Unable to do"]
+                  },
+                  {
+                      "id": 8,
+                "title": "Arm, shoulder or hand pain.",
+                "rating": ["1 - None",
+                       "2 - Mild",
+                       "3 - Moderate",
+                       "4 - Severe",
+                       "5 - Extreme"]
+                  },
+                  {
+                      "id": 9,
+                "title": "Tingling (pins and needles) in your arm, shoulder or hand.",
+                "rating": ["1 - None",
+                       "2 - Mild",
+                       "3 - Moderate",
+                       "4 - Severe",
+                       "5 - Extreme"]
+                  },
+                  {
+                      "id": 10,
+                "title": "During the past week, how much difficulty have you had sleeping because of the pain in your arm, shoulder or hand? ",
+                "rating": ["1 - No difficulty",
+                       "2 - Mild difficulty",
+                       "3 - Moderate difficulty",
+                       "4 - Severe difficulty",
+                       "5 - So much it prevents sleep"]
+                  }]
+    },
+     {
+        "id": 5,
+        "name": "QuickDash",
+        "language": "Spanish",
+        "description": "Por favor evalúe su capacidad de ejecutar las siguientes actividades durante la última semana. Indíquelo con elegir el número que le corresponda a su respuesta.",
+        "questions": [{
+                "id": 0,
+                "title": "Abrir un pomo nuevo o apretado",
+                "rating": ["No difficulty",
+                       "Mild difficulty",
+                       "Moderate difficulty",
+                       "Severe difficulty",
+                       "Unable to do"]
+                  },
+                  {
+                      "id": 1,
+                "title": "Hacer quehaceres domésticos pesados (p. ej. lavar paredes, ventanas o el piso)",
+                "rating": ["1 - No difficulty",
+                       "2 - Mild difficulty",
+                       "3 - Moderate difficulty",
+                       "4 - Severe difficulty",
+                       "5 - Unable to do"]
+                  },
+                  {
+                      "id": 2,
+                "title": "Cargar una bolsa de mercado o un portafolio",
+                "rating": ["1 - No difficulty",
+                       "2 - Mild difficulty",
+                       "3 - Moderate difficulty",
+                       "4 - Severe difficulty",
+                       "5 - Unable to do"]
+                  },
+                  {
+                      "id": 3,
+                "title": "Lavarse la espalda",
+                "rating": ["1 - No difficulty",
+                       "2 - Mild difficulty",
+                       "3 - Moderate difficulty",
+                       "4 - Severe difficulty",
+                       "5 - Unable to do"]
+                  },
+                  {
+                      "id": 4,
+                "title": "Usar cuchillo para cortar la comida",
+                "rating": ["1 - No difficulty",
+                       "2 - Mild difficulty",
+                       "3 - Moderate difficulty",
+                       "4 - Severe difficulty",
+                       "5 - Unable to do"]
+                  },
+                  {
+                      "id": 5,
+                "title": "Participar en actividades recreativas en las cual usted tome alguna fuerza o impacto a través de su brazo, hombro o mano (p. ej. jugar al béisbol, boliche, o martillar)",
+                "rating": ["1 - No difficulty",
+                       "2 - Mild difficulty",
+                       "3 - Moderate difficulty",
+                       "4 - Severe difficulty",
+                       "5 - Unable to do"]
+                  },
+                  {
+                      "id": 6,
+                "title": "Durante la última semana, ¿hasta qué punto le ha dificultado su problema de brazo, mano u hombro como para limitar o prevenir su participación en actividades sociales normales con la familia o conocidos?",
+                "rating": ["1 - Not at all",
+                       "2 - Slightly",
+                       "3 - Moderately",
+                       "4 - Quite a bit",
+                       "5 - Extremely"]
+                  },
+                  {
+                      "id": 7,
+                "title": "Durante la semana pasada, ¿estuvo limitado/a en su trabajo u otras actividades diarias por causa del problema con su brazo, hombro o mano?",
+                "rating": ["1 - Not limited at all",
+                       "2 - Slightly limited",
+                       "3 - Moderately limited",
+                       "4 - Very limited",
+                       "5 - Unable to do"]
+                  },
+                  {
+                      "id": 8,
+                "title": "Dolor de brazo, hombro o mano",
+                "rating": ["1 - None",
+                       "2 - Mild",
+                       "3 - Moderate",
+                       "4 - Severe",
+                       "5 - Extreme"]
+                  },
+                  {
+                      "id": 9,
+                "title": "Hormigueo (pinchazos) en el brazo, hombro o mano",
+                "rating": ["1 - None",
+                       "2 - Mild",
+                       "3 - Moderate",
+                       "4 - Severe",
+                       "5 - Extreme"]
+                  },
+                  {
+                      "id": 10,
+                "title": "Durante la última semana, ¿cuánta dificultad ha tenido para dormir a causa del dolor en el brazo, hombro o mano?",
+                "rating": ["1 - No difficulty",
+                       "2 - Mild difficulty",
+                       "3 - Moderate difficulty",
+                       "4 - Severe difficulty",
+                       "5 - So much it prevents sleep"]
+                  }]
+    },
+     {
+        "id": 6,
+        "name": "Neck Disability Index",
+        "language": "English",
+        "description": "Instructions: this questionnaire has been designed to give us information as to how your neck pain has affected your ability to manage everyday life. Please answer every section and mark in each section only the ONE box which applies to you at this time. We realize you may consider two of the statements in any section may relate to you, but please mark the box which most closely describes your problem TODAY.",
+        "questions": [{
+                "id": 0,
+                "title": "Pain Intensity",
+                "rating": ["I have no pain at the moment",
+                    "The pain is very mild at the moment",
+                    "The pain is moderate at the moment",
+                    "The pain is fairly severe at the moment",
+                    "The pain is very severe at the moment",
+                    "The pain is the worst imaginable at the moment"
+                ]
+            },
+            {
+                "id": 1,
+                "title": "Personal Care",
+                "rating": ["I can look after myself normally without causing extra pain",
+                    "I can look after myself normally but it causes extra pain",
+                    "It is painful to look after myself and I am slow and careful",
+                    "I need some help but manage most of my personal care",
+                    "I need help every day in most of my personal care",
+                    "I don’t get dressed, I wash with difficulty and stay in bed"
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Lifting",
+                "rating": ["I can lift heavy weights without causing extra pain",
+                    "I can lift heavy weights, but it gives me extra pain",
+                    "Pain prevents me from lifting heavy weights off the floor but I can manage if items are conveniently positioned, ie. on a table",
+                    "Pain prevents me from lifting heavy weights, but I can manage light weights if they are conveniently positioned",
+                    "I can lift only very light weights",
+                    "I cannot lift or carry anything at all"
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Work",
+                "rating": ["I can do as much work as I want",
+                    "I can only do my usual work, but no more",
+                    "I can do most of my usual work, but no more",
+                    "I can't do my usual work",
+                    "I can hardly do any work at all",
+                    "I can't do any work at all"
+                ]
+            },
+            {
+                "id": 4,
+                "title": "Headaches",
+                "rating": ["I have no headaches at all",
+                    "I have slight headaches that come infrequently",
+                    "I have moderate headaches that come infrequently",
+                    "I have moderate headaches that come frequently",
+                    "I have severe headaches that come frequently",
+                    "I have headaches almost all the time"
+                ]
+            },
+            {
+                "id": 5,
+                "title": "Concentration",
+                "rating": ["I can concentrate fully without difficulty",
+                    "I can concentrate fully with slight difficulty",
+                    "I have a fair degree of difficulty concentrating",
+                    "I have a lot of difficulty concentrating",
+                    "I have a great deal of difficulty concentrating",
+                    "I can't concentrate at all"
+                ]
+            },
+            {
+                "id": 6,
+                "title": "Sleeping",
+                "rating": ["I have no trouble sleeping",
+                    "My sleep is slightly disturbed for less than 1 hour",
+                    "My sleep is mildly disturbed for up to 1-2 hours",
+                    "My sleep is moderately disturbed for up to 2-3 hours",
+                    "My sleep is greatly disturbed for up to 3-5 hours",
+                    "My sleep is completely disturbed for up to 5-7 hours"
+                ]
+            },
+            {
+                "id": 7,
+                "title": "Driving",
+                "rating": ["I can drive my car without neck pain",
+                    "I can drive as long as I want with slight neck pain",
+                    "I can drive as long as I want with moderate neck pain",
+                    "I can't drive as long as I want because of moderate neck pain",
+                    "I can hardly drive at all because of severe neck pain",
+                    "I can't drive my care at all because of neck pain"
+                ]
+            },
+            {
+                "id": 8,
+                "title": "Reading",
+                "rating": ["I can read as much as I want with no neck pain",
+                    "I can read as much as I want with slight neck pain",
+                    "I can read as much as I want with moderate neck pain",
+                    "I can't read as much as I want because of moderate neck pain",
+                    "I can't read as much as I want because of severe neck pain",
+                    "I can't read at all"
+                ]
+            },
+            {
+                "id": 9,
+                "title": "Recreation",
+                "rating": ["I have no neck pain during all recreational activities",
+                    "I have some neck pain with all recreational activities",
+                    "I have some neck pain with a few recreational activities",
+                    "I have neck pain with most recreational activities",
+                    "I can hardly do recreational activities due to neck pain",
+                    "I can't do any recreational activities due to neck pain"
+                ]
+            }
+        ]
+    },
+     {
+        "id": 7,
+        "name": "Neck Disability Index",
+        "language": "Spanish",
+        "description": "Este cuestionario ha sido diseńado para aportarnos información sobra cuánto interfiere el dolor de cuello en sus actividades cotidianas.  Por favor, conteste a todas las secciones y, en cada una, marque sólo la frase que sea correcta en su caso.  Somos conscientes de que en cada sección puede pensar en dos o más frases son ciertas en su caso, pero por favor marque sólo la que considera que describe mejor su situación.  ",
+        "questions": [{
+                "id": 0,
+                "title": "Intensidad del dolor del cuello",
+                "rating": ["En este momento, no tengo dolor",
+                    "En este momento, tengo un dolor leve",
+                    "En este momento, tengo un dolor de intensidad media",
+                    "En este momento, tengo un dolor intenso",
+                    "En este momento, tengo un dolor muy intenso",
+                    "En este momento, tengo el peor dolor imaginable"
+                ]
+            },
+            {
+                "id": 1,
+                "title": "Higiene personal (lavarse, vestirse, etc.)",
+                "rating": ["Puedo encargarme de mi higiene personal de manera normal, sin empeorar mi dolor",
+                    "Puedo encargarme de mi higiene personal de manera normal, pero eso empeora mi dolor",
+                    "Encargarme de me higiene personal empeora mi dolor, y tengo que hacerlo lenta y cuidadosamente",
+                    "Necesito alguna ayuda, pero puedo encargarme de la mayor parte de mi higiene personal",
+                    "Cada día necesito ayuda para mi higiene personal",
+                    "No puedo vestirme, me lavo con dificultad y me quedo en la cama"
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Levantar pesos",
+                "rating": ["Puedo levantar objetos pesados sin empeorar mi dolor",
+                    "Puedo levantar objetos pesados per eso empeora mi dolor",
+                    "El dolor me impide levantar objetos pesados desde el suelo, pero puedo levantar los que están en sitios cómodos, como por ejemplo sobre una mesa",
+                    "El dolor me impide levantar objetos pesados desde el suelo, pero puedo levantar objetos de peso ligero o medio si están en sitios cómodos",
+                    "Sólo puedo levantar objetos muy ligeros",
+                    "No puedo levantar ni cargar nada"
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Leer",
+                "rating": ["Puedo leer tanto como quiera sin que me duela el cuello",
+                    "Puedo leer tanto como quiera, aunque me produce un ligero dolor en el cuello",
+                    "Puedo leer tanto como quiera, aunque me produce en el cuello un dolor de intensidad media",
+                    "No puedo leer tanto como quisiera porque me produce en el cuello un dolor de intensidad media",
+                    "Apenas puedo leer porque me produce un intenso dolor en el cuello",
+                    "No puedo leer nada"
+                ]
+            },
+            {
+                "id": 4,
+                "title": "Dolor de cabeza",
+                "rating": ["No me duele la cabeza",
+                    "Sólo infrecuentemente tengo un ligero dolor de cabeza",
+                    "Sólo infrecuentemente tengo un dolor de cabeza de intensidad media",
+                    "Con frecuencia tengo un dolor de cabeza de intensidad media",
+                    "Con frecuencia tengo un intenso dolor de cabeza",
+                    "Casi siempre tengo dolor de cabeza"
+                ]
+            },
+            {
+                "id": 5,
+                "title": "Concentración",
+                "rating": ["Siempre que quiero, me puedo concentrar plenamente y sin ninguna dificultad",
+                    "Siempre que quiero, me peudo concenterar plenamente, aunque con alguna dificultad por el dolor de cuello",
+                    "Por el dolor de cuello, me cuesta concentrarme",
+                    "Por el dolor de cuello, me cuesta mucho concentrarme",
+                    "Por el dolor de cuello, me cuesta muchísimo concentrarme",
+                    "Por el dolor de cuello, no me puedo concentrar en absoluto"
+                ]
+            },
+            {
+                "id": 6,
+                "title": "Trabajo (Sea remunerado o no, incluyendo las faenas domésticas)",
+                "rating": ["Puedo trabajar tanto como quiera",
+                    "Puedo hacer mi trabajo habitual, pero nada más",
+                    "Puedo hacer casi todo mi trabajo habitual, pero nada más",
+                    "No puedo hacer mi trabajo habitual",
+                    "Apenas puedo hacer algún trabajo",
+                    "No puedo hacer ningún trabajo"
+                ]
+            },
+            {
+                "id": 7,
+                "title": "Conducir (Si no conduce por motivos ajenos a su dolor de cuello, deje en blanco esta sección",
+                "rating": ["Puedo conducir sin que me duela el cuello",
+                    "Puedo conducir tanto como quiera, aunque me produce un ligero dolor en el cuello",
+                    "Puedo conducir tanto como quiera, aunque me produce en el cuello un dolor de intensidad moderada",
+                    "No puedo conducir tanto como quisiera porque me produce en el cuello un dolor de intensidad moderada",
+                    "Apenas puedo conducir porque me produce un dolor intenso en el cuello",
+                    "No puedo conducir por mi dolor de cuello"
+                ]
+            },
+            {
+                "id": 8,
+                "title": "Dormir",
+                "rating": ["No tengo problemas para dormir",
+                    "El dolor de cuello me afecta muy poco para dormir(me priva de menos de 1 hora de sueño)",
+                    "El dolor de cuello me afecta para dormir(me priva de entre 1 y 2 horas de sueño)",
+                    "El dolor de cuello me afecta bastante al dormir(me priva de entre 2 y 3 horas de sueño)",
+                    "El dolor de cuello me afecta mucho para dormir(me priva de entre 3 y 5 horas de sueño)",
+                    "Mi sueño está completamente alterado por el dolor de cuello(me priva de más de 5 horas de sueño)"
+                ]
+            },
+            {
+                "id": 9,
+                "title": "Ocio",
+                "rating": ["Puedo realizar todas mis actividades recreativas sin que me duela el cuello",
+                    "Puedo realizar todas mis actividades recreativas, aunque me causa algo de dolor en el cuello",
+                    "Puedo realizar la mayoría de mis actividades recreativas, pero no todas, por el dolor de cuello",
+                    "Sólo puedo hacer algunas de mis actividades recreativas por el dolor de cuello",
+                    "Apenas puedo hacer mis actividades recreativas por el dolor de cuello",
+                    "No puedo haver ninguna actividad recreativa por el dolor de cuello"
+                ]
+            }
+        ]
+    }
+]

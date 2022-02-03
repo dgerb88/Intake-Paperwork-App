@@ -91,7 +91,7 @@ class SurveyModel: ObservableObject {
     }
     
     init() {
-        getRemoteData()
+        getLocalData()
         checkLoadedSettings()
     }
     
@@ -118,33 +118,19 @@ class SurveyModel: ObservableObject {
         UserDefaults.standard.setValue(true, forKey: Constants.isSettingsPreloaded)
     }
     
-    func getRemoteData() {
+    func getLocalData() {
         
-        let UrlString = "https://dgerb88.github.io/Intake-Paperwork-data/FunctionalSurveys.json"
-        let url = URL(string: UrlString)
-        guard url != nil else {
-            return
+        let jsonURL = Bundle.main.url(forResource: "data", withExtension: "json")
+        
+        do {
+            let jsonData = try Data(contentsOf: jsonURL!)
+            let jsonDecoder = JSONDecoder()
+            let surveyList = try jsonDecoder.decode([Survey].self, from: jsonData)
+            self.surveys = surveyList
         }
-        let request = URLRequest(url: url!)
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request) { (data, response, error) in
-            guard error == nil else {
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let surveyList = try decoder.decode([Survey].self, from: data!)
-                DispatchQueue.main.async {
-                    self.surveys = surveyList
-                }
-            }
-            catch {
-                print("Couldn't parse remote json")
-            }
-            
+        catch {
+            print("Couldn't parse local data")
         }
-        dataTask.resume()
     }
     func appendArray(_ numberOfTimes: Int) {
         for _ in 0..<numberOfTimes {
