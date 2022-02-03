@@ -35,7 +35,7 @@ struct FinishedView: View {
                             }
                     }
                     else {
-                        Text("Gracias por llenar estos formularios en preparación de su cita.  El favor de devolver esta tableta al secretario.")
+                        Text("Gracias por llenar estos formularios en preparación de su cita.  El favor de devolver esta tableta al mostrador.")
                             .bold()
                             .font(.largeTitle)
                             .multilineTextAlignment(.center)
