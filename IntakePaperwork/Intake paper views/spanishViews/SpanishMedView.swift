@@ -1777,11 +1777,11 @@ struct SpanishMedView: View {
                     VStack {
                         spanMedView
                             .onDisappear {
-                                model.pageCount += 1
                                 let image = spanMedView.snapshot()
                                 model.PDFimage.append(image)
                                 model.PDFfile = model.createPDF(image: image)
                                 model.PDFfileArray.append(model.PDFfile!)
+                                model.pageCount += 1
                             }
                         NavigationLink {
                             if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {

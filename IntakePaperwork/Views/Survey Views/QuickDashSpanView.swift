@@ -313,15 +313,34 @@ struct QuickDashSpanView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(model.pageCount == 1 ? false:true)
+                        }.navigationBarBackButtonHidden(true)
                     }
                 }
             }
-        }.onAppear {
-            model.score = 0
-            model.selectedValue.removeAll()
-            model.appendArray(survey.questions.count)
         }
+            .onAppear {
+                model.score = 0
+                model.selectedValue.removeAll()
+                model.appendArray(survey.questions.count)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                    model.pageCount += 1
+                }            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    if model.pageCount == 1 {
+                        Button {
+                            model.viewSelectionInt = nil
+                        } label: {
+                            HStack {
+                                Image(systemName: "chevron.left")
+                                    .font(Font.body.weight(.bold))
+                                Text("Back")
+                                    .font(Font.body.weight(.semibold))
+                            }
+                        }
+                    }
+                }
+            }
         
     }
     func addItem(image: [UIImage], pdf: [NSData], name: String) {

@@ -1822,12 +1822,13 @@ struct MedicalHistoryView: View {
                     }
                 }
             }
-        }.onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-            keyboardChange = false
         }
-        .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
-        .animation(.easeOut(duration: 0.3))
+            .onTapGesture {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                keyboardChange = false
+            }
+            .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
+            .animation(.easeOut(duration: 0.3))
     }
 }
 

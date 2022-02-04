@@ -63,7 +63,6 @@ struct LefsView: View {
                                         model.score += model.selectedValue[index]
                                     }
                                 }
-                            
                         }.padding(.bottom, 40).padding(.top, 10)
                     }
                     HStack {
@@ -168,15 +167,33 @@ struct LefsView: View {
                         }.frame(height: 350)
                         Spacer()
                     }
-            }
+            }.padding(.top)
             
-        }.navigationBarBackButtonHidden(model.pageCount == 1 ? false:true)
-        .onAppear {
-            model.selectedValue.removeAll()
-            model.appendArray(survey.questions.count)
-            model.score = 0
         }
-        
+            .navigationBarBackButtonHidden(true)
+            .onAppear {
+                model.selectedValue.removeAll()
+                model.appendArray(survey.questions.count)
+                model.score = 0
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                    model.pageCount += 1
+                }            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    if model.pageCount == 1 {
+                        Button {
+                            model.viewSelectionInt = nil
+                        } label: {
+                            HStack {
+                                Image(systemName: "chevron.left")
+                                    .font(Font.body.weight(.bold))
+                                Text("Back")
+                                    .font(Font.body.weight(.semibold))
+                            }
+                        }
+                    }
+                }
+            }
     }
     func addItem(image: [UIImage], pdf: [NSData], name: String) {
         let newItem = Items(context: viewContext)

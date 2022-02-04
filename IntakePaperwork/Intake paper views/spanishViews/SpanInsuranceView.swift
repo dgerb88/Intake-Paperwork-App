@@ -251,7 +251,6 @@ struct SpanInsuranceView: View {
                     VStack {
                         spanInsuranceView
                             .onDisappear {
-                                model.pageCount += 1
                                 let image = spanInsuranceView.snapshot()
                                 model.PDFimage.append(image)
                                 model.PDFfile = model.createPDF(image: image)
@@ -303,7 +302,12 @@ struct SpanInsuranceView: View {
                     }
                 }
             }
-        }.onTapGesture {
+        }
+        .onAppear(perform: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                model.pageCount += 1
+            }        })
+        .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             keyboardChange = false
         }

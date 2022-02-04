@@ -318,7 +318,6 @@ struct SpanInfoView: View {
                     VStack {
                         spanInfoView
                             .onDisappear {
-                                model.pageCount += 1
                                 let image = spanInfoView.snapshot()
                                 model.PDFimage.append(image)
                                 model.PDFfile = model.createPDF(image: image)
@@ -367,7 +366,12 @@ struct SpanInfoView: View {
                     }
                 }
             }
-        }.onTapGesture {
+        }
+        .onAppear(perform: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                model.pageCount += 1
+            }        })
+        .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             keyboardChange = false
         }

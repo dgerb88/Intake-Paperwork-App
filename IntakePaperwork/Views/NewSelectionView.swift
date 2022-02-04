@@ -600,7 +600,6 @@ struct NewSelectionView: View {
             model.includeDryNeedlingConsent = true
             isSpanish = false
             isEnglish = true
-            model.pageCount = 1
             model.personalName = ""
             model.selectedValue.removeAll()
             model.appendArray(25)
@@ -610,6 +609,9 @@ struct NewSelectionView: View {
             QuickDashSelected = false
             model.PDFimage.removeAll()
             model.PDFfileArray.removeAll()
+        }
+        .onDisappear {
+            model.pageCount = 0
         }
     }
 }

@@ -120,7 +120,6 @@ struct SpanPrivacyPolicyView: View {
                         .shadow(radius: 5)
                     VStack {
                         spanPrivacyView.onDisappear {
-                            model.pageCount += 1
                             let image = spanPrivacyView.snapshot()
                             model.PDFimage.append(image)
                             model.PDFfile = model.createPDF(image: image)
@@ -166,9 +165,14 @@ struct SpanPrivacyPolicyView: View {
                     }
                 }
             }
-        }.onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
+            .onTapGesture {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
+            .onAppear(perform: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    model.pageCount += 1
+                }            })
     }
 }
 
