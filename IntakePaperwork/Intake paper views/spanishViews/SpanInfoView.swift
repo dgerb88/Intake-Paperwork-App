@@ -21,6 +21,7 @@ struct SpanInfoView: View {
     @State var personalNumber = ""
     @State var personalAddress = ""
     @State var reminderType = 0
+    @State var birthDay = ""
 
     var spanInfoView: some View {
         ZStack {
@@ -40,6 +41,11 @@ struct SpanInfoView: View {
                             Text("Nombre:")
                                 .padding(.top, 10)
                             TextField("Tu nombre", text: $model.personalName)
+                                .accentColor(.black)
+                                .textFieldStyle(.roundedBorder)
+                            Text("Fecha de nacimiento:")
+                                .padding(.top, 10)
+                            TextField("Fecha", text: $birthDay)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                             Text("Número de teléfono: ")
