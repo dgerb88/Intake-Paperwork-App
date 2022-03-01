@@ -298,15 +298,11 @@ struct SpanInsuranceView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(model.pageCount == 1 ? false:true)
+                        }.navigationBarBackButtonHidden(true)
                     }
                 }
             }
         }
-        .onAppear(perform: {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                model.pageCount += 1
-            }        })
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             keyboardChange = false

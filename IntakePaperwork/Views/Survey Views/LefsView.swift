@@ -12,6 +12,7 @@ struct LefsView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var model: SurveyModel
     var survey: Survey
+    @State var keyboardChange = false
     
     var lefsView: some View {
         ZStack {
@@ -66,10 +67,40 @@ struct LefsView: View {
                         }.padding(.bottom, 40).padding(.top, 10)
                     }
                     HStack {
-                        Spacer()
-                        Text("Score: \(model.score)/80")
-                            .font(.title)
-                            .padding()
+                        if survey.language == "English" {
+                            if model.eval == false {
+                                Text("Name:")
+                                TextField("", text: $model.personalName)
+                                    .frame(width: 300)
+                                    .padding(.horizontal, 20)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .onTapGesture {
+                                        keyboardChange = true
+                                    }
+                            }
+                            Spacer()
+                            Text("Score: \(model.score)/80")
+                                .font(.title)
+                                .padding()
+                        }
+                        else {
+                            if model.eval == false {
+                                Text("Nombre:")
+                                TextField("Nombre", text: $model.personalName)
+                                    .frame(width: 300)
+                                    .padding(.horizontal, 20)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .onTapGesture {
+                                        keyboardChange = true
+                                    }
+                            }
+                            Spacer()
+                            Text("Puntuación: \(model.score)/80")
+                                .font(.title)
+                                .padding()
+                        }
                     }
                 }.padding(.bottom).padding(.horizontal)
             }
@@ -170,29 +201,12 @@ struct LefsView: View {
             }.padding(.top)
             
         }
+            .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
             .navigationBarBackButtonHidden(true)
             .onAppear {
                 model.selectedValue.removeAll()
                 model.appendArray(survey.questions.count)
                 model.score = 0
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                    model.pageCount += 1
-                }            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    if model.pageCount == 1 {
-                        Button {
-                            model.viewSelectionInt = nil
-                        } label: {
-                            HStack {
-                                Image(systemName: "chevron.left")
-                                    .font(Font.body.weight(.bold))
-                                Text("Back")
-                                    .font(Font.body.weight(.semibold))
-                            }
-                        }
-                    }
-                }
             }
     }
     func addItem(image: [UIImage], pdf: [NSData], name: String) {

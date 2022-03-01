@@ -459,8 +459,9 @@ struct MedicalHistoryView: View {
                 }
                 Divider().padding(.vertical)
                 VStack(alignment: .leading) {
-                    Text("Please mark any conditions you have a PERSONAL history of(not family history):")
+                    Text("Please mark any conditions you have a PERSONAL history of (not family history):")
                         .font(Font.title3.weight(.bold))
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 HStack(alignment: .top, spacing: 5) {
                     VStack(alignment: .leading, spacing: 3) {
@@ -1771,7 +1772,6 @@ struct MedicalHistoryView: View {
                                 model.PDFimage.append(image)
                                 model.PDFfile = model.createPDF(image: image)
                                 model.PDFfileArray.append(model.PDFfile!)
-                                model.pageCount += 1
                             }
                         NavigationLink {
                             if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {
@@ -1818,7 +1818,7 @@ struct MedicalHistoryView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(false)
+                        }.navigationBarBackButtonHidden(true)
                     }
                 }
             }

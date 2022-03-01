@@ -123,7 +123,6 @@ struct PrivacyPolicyView: View {
                             model.PDFimage.append(image)
                             model.PDFfile = model.createPDF(image: image)
                             model.PDFfileArray.append(model.PDFfile!)
-                            model.pageCount += 1
                         }
                         NavigationLink {
                             if model.showDryNeedling == true && model.includeDryNeedlingConsent == true {
@@ -166,29 +165,9 @@ struct PrivacyPolicyView: View {
                 }
             }
         }
-        .onAppear(perform: {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                model.pageCount += 1
-            }        })
-            .onTapGesture {
-                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    if model.pageCount == 1 {
-                        Button {
-                            model.viewSelectionInt = nil
-                        } label: {
-                            HStack {
-                                Image(systemName: "chevron.left")
-                                    .font(Font.body.weight(.bold))
-                                Text("Back")
-                                    .font(Font.body.weight(.semibold))
-                            }
-                        }
-                    }
-                }
-            }
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
 }
 

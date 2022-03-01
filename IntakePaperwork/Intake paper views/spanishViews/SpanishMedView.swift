@@ -460,7 +460,7 @@ struct SpanishMedView: View {
                 }
                 Divider().padding(.vertical)
                 VStack(alignment: .leading) {
-                    Text("Marque cualquier condición de la que tenga un historial PERSONAL(no antecedentes familiares):")
+                    Text("Marque cualquier condición de la que tenga un historial PERSONAL (no antecedentes familiares):")
                         .font(Font.title3.weight(.bold))
                         .fixedSize(horizontal: false, vertical: true)
                 }
@@ -1781,7 +1781,6 @@ struct SpanishMedView: View {
                                 model.PDFimage.append(image)
                                 model.PDFfile = model.createPDF(image: image)
                                 model.PDFfileArray.append(model.PDFfile!)
-                                model.pageCount += 1
                             }
                         NavigationLink {
                             if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {
@@ -1828,7 +1827,7 @@ struct SpanishMedView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(false)
+                        }.navigationBarBackButtonHidden(true)
                     }
                 }
             }

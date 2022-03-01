@@ -607,11 +607,8 @@ struct NewSelectionView: View {
             NdiSelected = false
             BackIndexSelected = false
             QuickDashSelected = false
-            model.PDFimage.removeAll()
             model.PDFfileArray.removeAll()
-        }
-        .onDisappear {
-            model.pageCount = 0
+            model.PDFimage.removeAll()
         }
     }
 }

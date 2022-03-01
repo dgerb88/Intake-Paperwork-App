@@ -301,32 +301,12 @@ struct InsuranceIntakeView: View {
                 }
             }
         }
-            .onAppear(perform: {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    model.pageCount += 1
-                }            })
             .onTapGesture {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 keyboardChange = false
             }
             .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
             .animation(.easeOut(duration: 0.3))
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    if model.pageCount == 1 {
-                        Button {
-                            model.viewSelectionInt = nil
-                        } label: {
-                            HStack {
-                                Image(systemName: "chevron.left")
-                                    .font(Font.body.weight(.bold))
-                                Text("Back")
-                                    .font(Font.body.weight(.semibold))
-                            }
-                        }
-                    }
-                }
-            }
     }
 }
 
