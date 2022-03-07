@@ -12,6 +12,8 @@ struct BackIndexView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var model: SurveyModel
     var survey: Survey
+    @State var keyboardChange = false
+
     
     var backIndexView: some View {
         ZStack {
@@ -49,12 +51,41 @@ struct BackIndexView: View {
                         }.padding(.leading, 10)
                         Divider().padding(.bottom)
                     }
-                    
                     HStack {
-                        Spacer()
-                        Text("Score: \(Int(Double(model.score*100/50)))%")
-                            .font(.title)
-                            .padding()
+                        if survey.language == "English" {
+                            if model.eval == false {
+                                Text("Name:")
+                                TextField("", text: $model.personalName)
+                                    .frame(width: 300)
+                                    .padding(.horizontal, 20)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .onTapGesture {
+                                        keyboardChange = true
+                                    }
+                            }
+                            Spacer()
+                            Text("Score: \(Int(Double(model.score*100/50)))%")
+                                .font(.title)
+                                .padding()
+                        }
+                        else {
+                            if model.eval == false {
+                                Text("Nombre:")
+                                TextField("Nombre", text: $model.personalName)
+                                    .frame(width: 300)
+                                    .padding(.horizontal, 20)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .onTapGesture {
+                                        keyboardChange = true
+                                    }
+                            }
+                            Spacer()
+                            Text("Puntuación: \(Int(Double(model.score*100/50)))%")
+                                .font(.title)
+                                .padding()
+                        }
                     }
                 }.padding(.bottom).padding(.horizontal)
             }
@@ -116,6 +147,8 @@ struct BackIndexView: View {
                 }
             }
         }
+            .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
+
     }
     func addItem(image: [UIImage], pdf: [NSData], name: String) {
         let newItem = Items(context: viewContext)

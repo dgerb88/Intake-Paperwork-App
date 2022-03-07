@@ -12,6 +12,8 @@ struct QuickDashEngView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var model: SurveyModel
     var survey: Survey
+    @State var keyboardChange = false
+
     
     var quickDashEngView: some View {
         ZStack {
@@ -256,12 +258,23 @@ struct QuickDashEngView: View {
                             }
                         }
                         HStack {
+                            if model.eval == false {
+                                Text("Name:")
+                                TextField("", text: $model.personalName)
+                                    .frame(width: 300)
+                                    .padding(.horizontal, 20)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .onTapGesture {
+                                        keyboardChange = true
+                                    }
+                            }
                             Spacer()
                             Text("Score: \(model.score)/55")
-                                .bold()
                                 .font(.title)
                                 .padding()
                         }
+                        
                         .padding(.vertical, 5)
                     }
                 }.padding(.bottom).padding(.horizontal)
@@ -314,6 +327,7 @@ struct QuickDashEngView: View {
                 }
             }
         }
+            .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
             .onAppear {
                 model.score = 0
                 model.selectedValue.removeAll()

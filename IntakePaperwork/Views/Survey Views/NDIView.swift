@@ -12,6 +12,8 @@ struct NDIView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var model: SurveyModel
     var survey: Survey
+    @State var keyboardChange = false
+
     
     var ndiView: some View {
         ZStack {
@@ -49,16 +51,37 @@ struct NDIView: View {
                         Divider().padding(.bottom)
                     }
                     HStack {
-                        Spacer()
                         if survey.language == "English" {
+                            if model.eval == false {
+                                Text("Name:")
+                                TextField("", text: $model.personalName)
+                                    .frame(width: 300)
+                                    .padding(.horizontal, 20)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .onTapGesture {
+                                        keyboardChange = true
+                                    }
+                            }
+                            Spacer()
                             Text("Score: \(model.score)/50")
-                                .foregroundColor(.black)
                                 .font(.title)
                                 .padding()
                         }
                         else {
+                            if model.eval == false {
+                                Text("Nombre:")
+                                TextField("Nombre", text: $model.personalName)
+                                    .frame(width: 300)
+                                    .padding(.horizontal, 20)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .onTapGesture {
+                                        keyboardChange = true
+                                    }
+                            }
+                            Spacer()
                             Text("Puntuación: \(model.score)/50")
-                                .foregroundColor(.black)
                                 .font(.title)
                                 .padding()
                         }
@@ -123,6 +146,7 @@ struct NDIView: View {
                 }
             }
         }
+            .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
     }
     func addItem(image: [UIImage], pdf: [NSData], name: String) {
         let newItem = Items(context: viewContext)
