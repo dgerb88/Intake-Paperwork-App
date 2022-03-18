@@ -259,6 +259,9 @@ struct SpanInfoView: View {
                             .padding(.leading, 20)
                             .accentColor(.black)
                             .textFieldStyle(.roundedBorder)
+                            .onTapGesture {
+                                keyboardChange = true
+                            }
                         Text("Fecha: ")
                             .padding(.leading)
                         Text(Date().addingTimeInterval(600), style: .date)

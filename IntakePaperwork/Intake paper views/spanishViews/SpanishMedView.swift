@@ -1545,6 +1545,7 @@ struct SpanishMedView: View {
                             .onTapGesture {
                                 if medicationsList == "Enumere" {
                                     medicationsList = ""
+                                    keyboardChange = true
                                 }
                             }
                         Text("¿En qué trabaja?")
@@ -1554,6 +1555,9 @@ struct SpanishMedView: View {
                             .textFieldStyle(.roundedBorder)
                             .frame(width: 350)
                             .padding(.bottom)
+                            .onTapGesture {
+                                keyboardChange = true
+                            }
                         Text("Si está empleado, capacidad actual para trabajar: ")
                             .font(Font.title3.weight(.bold))
                             .padding(.bottom, 5)
@@ -1652,6 +1656,7 @@ struct SpanishMedView: View {
                             .onTapGesture {
                                 if workDuties == "Tareas laborales" {
                                     workDuties = ""
+                                    keyboardChange = true
                                 }
                             }
                         Text("¿Ha caído en los últimos 12 meses?")

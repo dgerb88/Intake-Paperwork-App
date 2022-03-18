@@ -263,6 +263,9 @@ struct InformationAndPoliciesView: View {
                             .padding(.leading, 20)
                             .accentColor(.black)
                             .textFieldStyle(.roundedBorder)
+                            .onTapGesture {
+                                keyboardChange = true
+                            }
                         Text("Date: ")
                             .padding(.leading)
                         Text(Date().addingTimeInterval(600), style: .date)

@@ -1738,6 +1738,7 @@ struct MedicalHistoryView: View {
                                 if medicationsList == "List" {
                                     medicationsList = ""
                                 }
+                                keyboardChange = true
                             }
                         Text("Occupation: ")
                             .font(Font.title3.weight(.bold))
@@ -1746,6 +1747,9 @@ struct MedicalHistoryView: View {
                             .textFieldStyle(.roundedBorder)
                             .frame(width: 350)
                             .padding(.bottom)
+                            .onTapGesture {
+                                keyboardChange = true
+                            }
                         Text("If employed, current ability to work: ")
                             .font(Font.title3.weight(.bold))
                             .padding(.bottom, 5)
@@ -1838,6 +1842,7 @@ struct MedicalHistoryView: View {
                                 if workDuties == "Duties" {
                                     workDuties = ""
                                 }
+                                keyboardChange = true
                             }
                         Text("Have you fallen in the last 12 months?")
                             .font(Font.title3.weight(.bold))

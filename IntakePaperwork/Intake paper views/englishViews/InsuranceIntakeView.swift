@@ -229,10 +229,10 @@ struct InsuranceIntakeView: View {
                             Text(Date().addingTimeInterval(600), style: .date)
                                     .padding(.leading)
                             
-                        }
+                        }.padding(.bottom)
                     }
                 }.padding(.bottom).padding(.horizontal)
-            }
+            }.padding(.bottom, 30)
         }.frame(width: UIScreen.main.bounds.width)
     }
 
