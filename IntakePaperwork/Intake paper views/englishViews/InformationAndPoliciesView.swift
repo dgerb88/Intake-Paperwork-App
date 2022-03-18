@@ -159,7 +159,7 @@ struct InformationAndPoliciesView: View {
                                         .foregroundColor(.black)
                                 }
                             }
-                            Text("2. Cancel/No Show Policy: Please call our office if you cannot come to an appointment already scheduled. 24-hour advance notice is required for changes to your appointment. Giving less than 24-hour notice of appointment changes will result in a $\(model.cancelFee) LATE CANCEL fee added to your account. Failure to call or show for an appointment will result in a $\(model.noShowFee) NO-SHOW fee added to your account.")
+                            Text("2. Cancel/No Show Policy: Please call our office if you cannot come to an appointment already scheduled. 24-hour advance notice is required for changes to your appointment. Giving less than 24-hour notice of appointment changes will result in up to a $\(model.cancelFee) LATE CANCEL fee added to your account. Failure to call or come to an appointment will result in a NO-SHOW fee up to the full price of your appointment added to your account.")
                         }
                         HStack(alignment: .top) {
                             Button {

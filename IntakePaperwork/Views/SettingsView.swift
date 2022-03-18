@@ -70,16 +70,6 @@ struct SettingsView: View {
                                     .frame(width: 450)
                                     .multilineTextAlignment(.trailing)
                             }
-                            HStack {
-                                Text("No show fee: ")
-                                    .padding(.trailing)
-                                Spacer()
-                                TextField("No show fee amount(numerical value only)", text: $model.noShowFee)
-                                    .accentColor(.black)
-                                    .frame(width: 450)
-                                    .multilineTextAlignment(.trailing)
-                            }
-                            
                         } header: {
                             Text("Clinic Specific Details")
                                 .font(.title2)
@@ -102,8 +92,4 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
-}
+

@@ -155,7 +155,7 @@ struct SpanInfoView: View {
                                         .foregroundColor(.black)
                                 }
                             }
-                            Text("2. Política de cancelación / no presentación: llame a nuestra oficina si no puede asistir a una cita ya programada. Se requiere un aviso con 24 horas de anticipación para cambios en su cita. Si avisa con menos de 24 horas de anticipación sobre los cambios en las citas, se agregará a su cuenta una tarifa de cancelación tardía de $\(model.cancelFee). Si no llama o no se presenta para una cita, se agregará a su cuenta una tarifa de $\(model.noShowFee) por NO PRESENTARSE.")
+                            Text("2. Política de cancelación / no presentación: llame a nuestra oficina si no puede asistir a una cita ya programada. Se requiere un aviso con 24 horas de anticipación para cambios en su cita. Si avisa con menos de 24 horas de anticipación sobre los cambios en las citas, se agregará a su cuenta una tarifa de cancelación tardía de $\(model.cancelFee). Si no llama o no se presenta para una cita, se agregará a su cuenta una tarifa hasta el precio total de su cita por NO PRESENTARSE.")
                         }
                         HStack(alignment: .top) {
                             Button {

@@ -78,11 +78,6 @@ class SurveyModel: ObservableObject {
             UserDefaults.standard.set(self.cancelFee, forKey: Constants.cancelFee)
         }
     }
-    @Published var noShowFee: String = UserDefaults.standard.string(forKey: Constants.noShowFee) ?? "" {
-        didSet {
-            UserDefaults.standard.set(self.noShowFee, forKey: Constants.noShowFee)
-        }
-    }
     @Published var phoneNumber: String = UserDefaults.standard.string(forKey: Constants.phoneNumber) ?? "" {
         didSet {
             UserDefaults.standard.set(self.phoneNumber, forKey: Constants.phoneNumber)
@@ -113,7 +108,6 @@ class SurveyModel: ObservableObject {
         clinicName = ""
         phoneNumber = ""
         cancelFee = ""
-        noShowFee = ""
         UserDefaults.standard.setValue(true, forKey: Constants.isSettingsPreloaded)
     }
     
