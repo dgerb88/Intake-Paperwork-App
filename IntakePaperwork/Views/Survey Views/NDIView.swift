@@ -47,6 +47,7 @@ struct NDIView: View {
                             }
                         ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
                             Text("\(ratingIndex) - \(survey.questions[index].rating[ratingIndex])").tag(ratingIndex)
+                                .fixedSize(horizontal: false, vertical: true)
                         }.padding(.leading, 10)
                         Divider().padding(.bottom)
                     }

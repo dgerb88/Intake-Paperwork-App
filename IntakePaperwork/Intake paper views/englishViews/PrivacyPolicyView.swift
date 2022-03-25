@@ -50,6 +50,7 @@ struct PrivacyPolicyView: View {
                         }
 
                         Text("I have received, read, and fully understand the Notice of Privacy Practices for \(model.clinicName). I understand that \(model.clinicName) may use or disclose my personal health information for the purpose of carrying out treatment, obtaining payment, evaluating the quality of service provided, and any administrative operations related to treatment or payment. I understand that I have the right to request restrictions, in writing, regarding how my personal health information is used and disclosed for treatment, payment, and administrative operations. I also understand that \(model.clinicName) will consider requests for restrictions on a case by case basis, but is not required to oblige to such requests.")
+                            .fixedSize(horizontal: false, vertical: true)
                     }.padding(.bottom)
                     Text("Consent:")
                         .bold()
@@ -77,6 +78,7 @@ struct PrivacyPolicyView: View {
                         }
 
                         Text("I hereby give my consent for \(model.clinicName) to use and disclose protected health information (PHI) about me to carry out treatment, payment, and health care operations. I understand that I retain the right to revoke this consent by notifying the practice in writing at any time, at which point \(model.clinicName) has 30 days to respond to my request.")
+                            .fixedSize(horizontal: false, vertical: true)
                     }.padding(.bottom)
                     if signaturePrivate == "" {
                         Text("Patient/Legal Guardian Electronic Signature:")
@@ -104,7 +106,7 @@ struct PrivacyPolicyView: View {
                     }
                 }.padding(.bottom).padding(.horizontal)
             }
-        }.frame(width: UIScreen.main.bounds.width)
+        }.frame(width: UIScreen.main.bounds.width).padding(.bottom)
     }
 
     

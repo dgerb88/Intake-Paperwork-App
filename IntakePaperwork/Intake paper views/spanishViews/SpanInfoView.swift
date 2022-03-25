@@ -36,6 +36,7 @@ struct SpanInfoView: View {
                     
                     Text("Por favor llene completamente este formulario. Toda la información se mantiene completamente confidencial. Esta información es necesaria para brindarle el tratamiento más efectivo para su caso personal. ")
                         .bold()
+                        .fixedSize(horizontal: false, vertical: true)
                     HStack(alignment: .top, spacing: 30) {
                         VStack(alignment: .leading) {
                             Text("Nombre:")
@@ -66,6 +67,7 @@ struct SpanInfoView: View {
                         }.padding(.trailing, 30)
                         VStack(alignment: .leading) {
                             Text("Nombre del contacto de emergencia: ")
+                                .fixedSize(horizontal: false, vertical: true)
                                 .padding(.top, 10)
                             TextField("Nombre", text: $ContactNameInfo)
                                 .accentColor(.black)
@@ -132,6 +134,7 @@ struct SpanInfoView: View {
                                 }
                             }
                             Text("1. Política de retrasos: si llega más de 10 minutos tarde a su cita, es posible que se le cambie la fecha o se le pida que espere hasta el próximo horario disponible.")
+                                .fixedSize(horizontal: false, vertical: true)
                         }
                         HStack(alignment: .top) {
                             Button {
@@ -156,6 +159,7 @@ struct SpanInfoView: View {
                                 }
                             }
                             Text("2. Política de cancelación / no presentación: llame a nuestra oficina si no puede asistir a una cita ya programada. Se requiere un aviso con 24 horas de anticipación para cambios en su cita. Si avisa con menos de 24 horas de anticipación sobre los cambios en las citas, se agregará a su cuenta una tarifa de cancelación tardía de $\(model.cancelFee). Si no llama o no se presenta para una cita, se agregará a su cuenta una tarifa hasta el precio total de su cita por NO PRESENTARSE.")
+                                .fixedSize(horizontal: false, vertical: true)
                         }
                         HStack(alignment: .top) {
                             Button {
@@ -204,6 +208,7 @@ struct SpanInfoView: View {
                                 }
                             }
                             Text("4. Si tiene alguna dificultad económica, notifíquenos de inmediato para que podamos crear un programa de pago que sea factible.")
+                                .fixedSize(horizontal: false, vertical: true)
                         }
                         HStack(alignment: .top) {
                             Button {
@@ -228,6 +233,7 @@ struct SpanInfoView: View {
                                 }
                             }
                             Text("5. Si por alguna razón no está satisfecho con la atención recibida, llámenos al \(model.phoneNumber) para que podamos resolver cualquier problema.")
+                                .fixedSize(horizontal: false, vertical: true)
                         }
                     }.padding(.horizontal)
                 }.padding(.horizontal)
@@ -239,6 +245,7 @@ struct SpanInfoView: View {
                         .padding(.bottom, 5)
                         .font(.title3)
                     Text("Al firmar a continuación, doy mi consentimiento para la evaluación y el tratamiento de mi afección por parte de un fisioterapeuta autorizado empleado por \(model.clinicName). El fisioterapeuta explicará la naturaleza y los propósitos de estos procedimientos, la evaluación y el curso del tratamiento. El fisioterapeuta me informará de los beneficios y complicaciones esperados, y las molestias y riesgos que puedan surgir, así como las alternativas al tratamiento propuesto y los riesgos y consecuencias de no recibir tratamiento.")
+                        .fixedSize(horizontal: false, vertical: true)
                     if signaturesInfo[0] == "" {
                         Text("Firma del PACIENTE o TUTOR LEGAL:")
                             .bold()
@@ -280,6 +287,7 @@ struct SpanInfoView: View {
                         .bold()
                         .padding(.vertical, 5)
                     Text("“HE LEÍDO LA RENUNCIA Y LIBERACIÓN ANTERIORES Y AL FIRMARLO ACEPTO. ES MI INTENCIÓN EXENTAR Y ALIVIAR A \(model.clinicName.uppercased()) DE RESPONSABILIDAD POR LESIONES PERSONALES, DAÑOS A LA PROPIEDAD O MUERTE INJUSTA CAUSADA POR NEGLIGENCIA O CUALQUIER OTRA CAUSA.”")
+                        .fixedSize(horizontal: false, vertical: true)
                     if signaturesInfo[1] == "" {
                         Text("Firma del PACIENTE o TUTOR LEGAL:")
                             .bold()

@@ -33,6 +33,7 @@ struct DryNeedlingConsentView: View {
                             .font(.title2)
                             .padding(.bottom, 3)
                         Text("I understand that no guarantee or assurance has been made as to the results of this procedure and that it may not cure my condition. My therapist has also discussed with me the probability of success of this procedure, as well as the possibility of serious side effects. Multiple treatment sessions may be required/needed, thus this consent will cover this treatment as well as consecutive treatments by this facility. I have read and fully understand this consent form and understand that I should not sign this form until all items, including my questions, have been explained or answered to my satisfaction. With my signature, I hereby consent to the performance of this procedure. I also consent to any measures necessary to correct complications that may result.")
+                            .fixedSize(horizontal: false, vertical: true)
                             .padding(.bottom)
                         Text("Authorization:")
                             .bold()
@@ -61,6 +62,7 @@ struct DryNeedlingConsentView: View {
                                 }
                             }.padding(.leading, 5)
                             Text("I hereby authorize \(model.ptName), \(model.ptCredential) to perform Functional Dry Needling during my treatment.")
+                                .fixedSize(horizontal: false, vertical: true)
                                 .padding(.bottom)
                         }
                         Text("Patient refusal of service:")
@@ -90,6 +92,7 @@ struct DryNeedlingConsentView: View {
                                 }
                             }.padding(.leading, 5).padding(.top, 3)
                             Text("I do NOT give consent for the use of Functional Dry Needling (FDN) as part of my treatment and hereby refuse this service.")
+                                .fixedSize(horizontal: false, vertical: true)
                                 .padding(.bottom)
                         }
                     }

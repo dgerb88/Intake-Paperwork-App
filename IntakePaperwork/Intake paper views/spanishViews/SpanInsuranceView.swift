@@ -34,6 +34,7 @@ struct SpanInsuranceView: View {
                         HStack(alignment: .top, spacing: 20) {
                             VStack(alignment: .leading, spacing: 5) {
                                 Text("Nombre de paciente o tutor legal si paciente es menor:")
+                                    .fixedSize(horizontal: false, vertical: true)
                                 TextField("Nombre", text: $patientNameInsurance)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
@@ -56,6 +57,7 @@ struct SpanInsuranceView: View {
                             }
                             VStack(alignment: .leading, spacing: 5) {
                                 Text("Nombre de la compañía de seguros secundaria (si aplica):")
+                                    .fixedSize(horizontal: false, vertical: true)
                                 TextField("Nombre", text: $InsuranceNameInsurance[1])
                                     .padding(.bottom, 5)
                                     .accentColor(.black)

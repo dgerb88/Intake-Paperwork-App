@@ -62,6 +62,7 @@ struct SpanDryNeedleView: View {
                             }.padding(.leading, 5)
                             Text("Por la presente autorizo a \(model.ptName), \(model.ptCredential) a realizar la Punción Seca Funcional durante mi tratamiento.")
                                 .padding(.bottom)
+                                .fixedSize(horizontal: false, vertical: true)
                         }
                         Text("Denegación de servicio del paciente:")
                             .bold()
@@ -91,6 +92,7 @@ struct SpanDryNeedleView: View {
                             }.padding(.leading, 5).padding(.top, 3)
                             Text("No doy mi consentimiento para el uso de Punción Seca Functional como parte de mi tratamiento y por la presente rechazo este servicio")
                                 .padding(.bottom)
+                                .fixedSize(horizontal: false, vertical: true)
                         }
                     }
                     VStack(alignment: .leading) {

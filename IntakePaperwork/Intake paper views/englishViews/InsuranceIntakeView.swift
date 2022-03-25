@@ -35,6 +35,7 @@ struct InsuranceIntakeView: View {
                         HStack(alignment: .top, spacing: 20) {
                             VStack(alignment: .leading, spacing: 5) {
                                 Text("Name of Patient or Legal Guardian(if patient is a minor):")
+                                    .fixedSize(horizontal: false, vertical: true)
                                 TextField("Name", text: $patientNameInsurance)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
