@@ -23,6 +23,7 @@ struct SpanInfoView: View {
     @State var reminderType = 0
     @State var birthDay = ""
     @State var showAlert = false
+    @State var fillAlert = false
 
     var spanInfoView: some View {
         ZStack {
@@ -341,6 +342,51 @@ struct SpanInfoView: View {
                                 model.PDFfile = model.createPDF(image: image)
                                 model.PDFfileArray.append(model.PDFfile!)
                             }
+                        if signaturesInfo[0] == "" || signaturesInfo[1] == "" {
+                            Button {
+                                fillAlert = true
+                            } label: {
+                                ZStack {
+                                    Rectangle()
+                                        .foregroundColor(.green)
+                                        .frame(height: 48)
+                                        .cornerRadius(10)
+                                        .shadow(radius: 1)
+                                    Text("Próximo")
+                                        .foregroundColor(.white)
+                                        .font(.title)
+                                        .bold()
+                                }.padding().padding(.bottom)
+                            }.alert(isPresented: $fillAlert) {
+                                Alert(title: Text("El favor de firmar las areas rojas antes de ir a la próxima sección."), dismissButton: .cancel(Text("Confirmar")))
+                            }
+                            .navigationBarBackButtonHidden(true)
+                            .navigationBarTitleDisplayMode(.inline)
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarLeading) {
+                                    Button {
+                                        showAlert = true
+                                    } label: {
+                                        Image(systemName: "house")
+                                            .resizable(resizingMode: .tile)
+                                            .frame(width: 30, height: 30)
+                                            .foregroundColor(.white)
+                                            .padding(.vertical, 20)
+                                    }.alert(isPresented: $showAlert) {
+                                        Alert(
+                                           title: Text("Seguro que quieres volver a la pantalla de inicio? Tu progreso serà perdido."),
+                                           primaryButton: .destructive(Text("Vuelve a la pantalla de inicio.")) {
+                                               model.viewSelectionInt = nil
+                                           },
+                                           secondaryButton: .cancel(Text("Cancelar"))
+                                           
+                                        )
+                                    }
+                                }
+                            }
+
+                        }
+                        else {
                         NavigationLink {
                             if model.showPrivacyPolicy == true && model.includePrivacyPolicy == true {
                                 SpanPrivacyPolicyView(survey: survey)
@@ -404,6 +450,7 @@ struct SpanInfoView: View {
                                     }
                                 }
                             }
+                        }
                     }
                 }
             }
