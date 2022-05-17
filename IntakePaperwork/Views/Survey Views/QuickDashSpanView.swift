@@ -297,18 +297,19 @@ struct QuickDashSpanView: View {
                         .cornerRadius(5)
                         .shadow(radius: 5)
                     VStack {
-                        quickDashSpanView.onDisappear {
-                            let image = quickDashSpanView.snapshot()
-                            model.PDFimage.append(image)
-                            model.PDFfile = model.createPDF(image: image)
-                            model.PDFfileArray.append(model.PDFfile!)
-                            let mergedFile = model.merge(pdfs: model.PDFfileArray)
-                            model.PDFfileArray.removeAll()
-                            model.PDFfileArray.append(mergedFile)
-                            model.savedPDFimage.append(model.PDFimage)
-                            model.PDFfileArrayArray.append(model.PDFfileArray)
-                            addItem(image: model.PDFimage, pdf: model.PDFfileArray, name: model.personalName)
-                        }
+                        quickDashSpanView
+                            .onDisappear {
+                                let image = quickDashSpanView.snapshot()
+                                model.PDFimage.append(image)
+                                model.PDFfile = model.createPDF(image: image)
+                                model.PDFfileArray.append(model.PDFfile!)
+                                let mergedFile = model.merge(pdfs: model.PDFfileArray)
+                                model.PDFfileArray.removeAll()
+                                model.PDFfileArray.append(mergedFile)
+                                model.savedPDFimage.append(model.PDFimage)
+                                model.PDFfileArrayArray.append(model.PDFfileArray)
+                                addItem(image: model.PDFimage, pdf: model.PDFfileArray, name: model.personalName)
+                            }
                         
                         NavigationLink {
                             FinishedView(survey: survey)
@@ -324,18 +325,17 @@ struct QuickDashSpanView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(true)
+                        }.navigationBarBackButtonHidden(model.eval)
                     }
                 }
             }
         }
-            .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
-            .onAppear {
-                model.score = 0
-                model.selectedValue.removeAll()
-                model.appendArray(survey.questions.count)
-                
-            }
+        .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
+        .onAppear {
+            model.score = 0
+            model.selectedValue.removeAll()
+            model.appendArray(survey.questions.count)
+        }
     }
     func addItem(image: [UIImage], pdf: [NSData], name: String) {
         let newItem = Items(context: viewContext)
@@ -343,7 +343,7 @@ struct QuickDashSpanView: View {
         newItem.imageArray = image
         newItem.pdfArray = pdf
         newItem.name = name
-
+        
         do {
             try viewContext.save()
         } catch {

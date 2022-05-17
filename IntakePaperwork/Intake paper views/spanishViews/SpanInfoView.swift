@@ -22,6 +22,7 @@ struct SpanInfoView: View {
     @State var personalAddress = ""
     @State var reminderType = 0
     @State var birthDay = ""
+    @State var showAlert = false
 
     var spanInfoView: some View {
         ZStack {
@@ -380,6 +381,29 @@ struct SpanInfoView: View {
                                     .bold()
                             }.padding().padding(.bottom)
                         }.navigationBarBackButtonHidden(true)
+                            .navigationBarTitleDisplayMode(.inline)
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarLeading) {
+                                    Button {
+                                        showAlert = true
+                                    } label: {
+                                        Image(systemName: "house")
+                                            .resizable(resizingMode: .tile)
+                                            .frame(width: 30, height: 30)
+                                            .foregroundColor(.white)
+                                            .padding(.vertical, 20)
+                                    }.alert(isPresented: $showAlert) {
+                                        Alert(
+                                           title: Text("Seguro que quieres volver a la pantalla de inicio? Tu progreso serà perdido."),
+                                           primaryButton: .destructive(Text("Vuelve a la pantalla de inicio.")) {
+                                               model.viewSelectionInt = nil
+                                           },
+                                           secondaryButton: .cancel(Text("Cancelar"))
+                                           
+                                        )
+                                    }
+                                }
+                            }
                     }
                 }
             }

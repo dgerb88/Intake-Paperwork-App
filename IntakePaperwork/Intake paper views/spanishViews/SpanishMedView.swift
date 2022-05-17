@@ -36,6 +36,7 @@ struct SpanishMedView: View {
     @State var reasonFall = ""
     @State var button5 = [false, false]
     @State var keyboardChange = false
+    @State var showAlert = false
     
     var spanMedView: some View {
         ZStack {
@@ -1833,7 +1834,29 @@ struct SpanishMedView: View {
                                     .bold()
                             }.padding().padding(.bottom)
                         }.navigationBarBackButtonHidden(true)
-                    }
+                            .navigationBarTitleDisplayMode(.inline)
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarLeading) {
+                                    Button {
+                                        showAlert = true
+                                    } label: {
+                                        Image(systemName: "house")
+                                            .resizable(resizingMode: .tile)
+                                            .frame(width: 30, height: 30)
+                                            .foregroundColor(.white)
+                                            .padding(.vertical, 20)
+                                    }.alert(isPresented: $showAlert) {
+                                        Alert(
+                                           title: Text("Seguro que quieres volver a la pantalla de inicio? Tu progreso serà perdido."),
+                                           primaryButton: .destructive(Text("Vuelve a la pantalla de inicio.")) {
+                                               model.viewSelectionInt = nil
+                                           },
+                                           secondaryButton: .cancel(Text("Cancelar"))
+                                           
+                                        )
+                                    }
+                                }
+                            }                    }
                 }
             }
         }.onTapGesture {

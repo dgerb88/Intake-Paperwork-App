@@ -138,7 +138,7 @@ struct NDIView: View {
                                         .bold()
                                 }
                             }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(true)
+                        }.navigationBarBackButtonHidden(model.eval)
                     }
                 }.onAppear {
                     model.score = 0

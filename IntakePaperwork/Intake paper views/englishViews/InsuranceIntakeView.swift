@@ -19,6 +19,7 @@ struct InsuranceIntakeView: View {
     @State var buttonInsurance = [false, false, false, false, false, false, false]
     var survey: Survey
     @State var keyboardChange = false
+    @State var showAlert = false
 
     
     var insuranceView: some View {
@@ -298,6 +299,29 @@ struct InsuranceIntakeView: View {
                                     .bold()
                             }.padding().padding(.bottom)
                         }.navigationBarBackButtonHidden(true)
+                            .navigationBarTitleDisplayMode(.inline)
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarLeading) {
+                                    Button {
+                                        showAlert = true
+                                    } label: {
+                                        Image(systemName: "house")
+                                            .resizable(resizingMode: .tile)
+                                            .frame(width: 30, height: 30)
+                                            .foregroundColor(.white)
+                                            .padding(.vertical, 20)
+                                    }.alert(isPresented: $showAlert) {
+                                        Alert(
+                                           title: Text("Are you sure you wish to return home? Current progress will be lost."),
+                                           primaryButton: .destructive(Text("Return home")) {
+                                               model.viewSelectionInt = nil
+                                           },
+                                           secondaryButton: .cancel()
+                                           
+                                        )
+                                    }
+                                }
+                            }
                     }
                 }
             }

@@ -22,6 +22,7 @@ struct InformationAndPoliciesView: View {
     @State var personalAddress = ""
     @State var reminderType = 0
     @State var birthDay = ""
+    @State var showAlert = false
 
     var infoView: some View {
         ZStack {
@@ -384,6 +385,29 @@ struct InformationAndPoliciesView: View {
                                     .bold()
                             }.padding().padding(.bottom)
                         }.navigationBarBackButtonHidden(true)
+                            .navigationBarTitleDisplayMode(.inline)
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarLeading) {
+                                    Button {
+                                        showAlert = true
+                                    } label: {
+                                        Image(systemName: "house")
+                                            .resizable(resizingMode: .tile)
+                                            .frame(width: 30, height: 30)
+                                            .foregroundColor(.white)
+                                            .padding(.vertical, 20)
+                                    }.alert(isPresented: $showAlert) {
+                                        Alert(
+                                           title: Text("Are you sure you wish to return home? Current progress will be lost."),
+                                           primaryButton: .destructive(Text("Return home")) {
+                                               model.viewSelectionInt = nil
+                                           },
+                                           secondaryButton: .cancel()
+                                           
+                                        )
+                                    }
+                                }
+                            }
                     }
                 }
             }

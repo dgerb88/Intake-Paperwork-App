@@ -322,7 +322,7 @@ struct QuickDashEngView: View {
                                     .font(.title)
                                     .bold()
                             }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(true)
+                        }.navigationBarBackButtonHidden(model.eval)
                     }
                 }
             }

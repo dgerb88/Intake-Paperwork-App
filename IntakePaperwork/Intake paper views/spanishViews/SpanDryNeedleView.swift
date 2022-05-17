@@ -14,6 +14,7 @@ struct SpanDryNeedleView: View {
     @State var buttonNeedle = [false, false, false, false, false, false, false, false, false]
     @State var signatureNeedle = ""
     @State var keyboardChange = false
+    @State var showAlert = false
     
     var spanNeedleView: some View {
         ZStack {
@@ -172,8 +173,6 @@ struct SpanDryNeedleView: View {
                                 }
                             }
                             Text("No aplica")
-                            
-                            
                         }
                         Text("Está inmunodeprimido?")
                             .bold()
@@ -361,6 +360,29 @@ struct SpanDryNeedleView: View {
                                     .bold()
                             }.padding().padding(.bottom)
                         }.navigationBarBackButtonHidden(true)
+                            .navigationBarTitleDisplayMode(.inline)
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarLeading) {
+                                    Button {
+                                        showAlert = true
+                                    } label: {
+                                        Image(systemName: "house")
+                                            .resizable(resizingMode: .tile)
+                                            .frame(width: 30, height: 30)
+                                            .foregroundColor(.white)
+                                            .padding(.vertical, 20)
+                                    }.alert(isPresented: $showAlert) {
+                                        Alert(
+                                           title: Text("Seguro que quieres volver a la pantalla de inicio? Tu progreso serà perdido."),
+                                           primaryButton: .destructive(Text("Vuelve a la pantalla de inicio.")) {
+                                               model.viewSelectionInt = nil
+                                           },
+                                           secondaryButton: .cancel(Text("Cancelar"))
+                                           
+                                        )
+                                    }
+                                }
+                            }
                     }
                 }
             }

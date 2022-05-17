@@ -202,7 +202,7 @@ struct LefsView: View {
             
         }
             .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
-            .navigationBarBackButtonHidden(true)
+            .navigationBarBackButtonHidden(model.eval)
             .onAppear {
                 model.selectedValue.removeAll()
                 model.appendArray(survey.questions.count)
