@@ -862,13 +862,13 @@ struct MedicalHistoryView: View {
                                     }
                                 } label: {
                                     if button2[45] {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
                                             Text("Degenerative disc disease")
                                         }
                                     }
                                     else {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "square")
                                             Text("Degenerative disc disease")
                                         }
@@ -954,13 +954,13 @@ struct MedicalHistoryView: View {
                                     }
                                 } label: {
                                     if button2[18] {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
                                             Text("DVT(deep vein thrombosis)")
                                         }
                                     }
                                     else {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "square")
                                             Text("DVT(deep vein thrombosis)")
                                         }
@@ -1518,7 +1518,6 @@ struct MedicalHistoryView: View {
                                         HStack {
                                             Image(systemName: "checkmark.square")
                                             Text("PVD(peripheral vascular disease)")
-                                                .fixedSize(horizontal: false, vertical: true)
                                         }
                                     }
                                     else {

@@ -464,12 +464,14 @@ struct SpanishMedView: View {
                                     HStack(alignment: .top) {
                                         Image(systemName: "checkmark.square")
                                         Text("Accidente cerebrovascular")
+                                            .fixedSize(horizontal: false, vertical: true)
                                     }
                                 }
                                 else {
-                                    HStack {
+                                    HStack(alignment: .top) {
                                         Image(systemName: "square")
                                         Text("Accidente cerebrovascular")
+                                            .fixedSize(horizontal: false, vertical: true)
                                     }
                                 }
                             }
@@ -819,13 +821,13 @@ struct SpanishMedView: View {
                                     }
                                 } label: {
                                     if button2[43] {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
                                             Text("Dolor en las articulaciones")
                                         }
                                     }
                                     else {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "square")
                                             Text("Dolor en las articulaciones")
                                         }
@@ -889,13 +891,13 @@ struct SpanishMedView: View {
                                     }
                                 } label: {
                                     if button2[15] {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
                                             Text("Enfermedad degenerativa del disco")
                                         }
                                     }
                                     else {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "square")
                                             Text("Enfermedad degenerativa del disco")
                                         }
@@ -933,13 +935,13 @@ struct SpanishMedView: View {
                                     }
                                 } label: {
                                     if button2[17] {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
                                             Text("Enfermedad por reflujo gastroesofágico")
                                         }
                                     }
                                     else {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "square")
                                             Text("Enfermedad por reflujo gastroesofágico")
                                         }
@@ -955,13 +957,13 @@ struct SpanishMedView: View {
                                     }
                                 } label: {
                                     if button2[18] {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
                                             Text("Enfermedad pulmonar obstructiva crónica")
                                         }
                                     }
                                     else {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "square")
                                             Text("Enfermedad pulmonar obstructiva crónica")
                                         }
@@ -977,13 +979,13 @@ struct SpanishMedView: View {
                                     }
                                 } label: {
                                     if button2[19] {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
                                             Text("Enfermedad vascular periférica")
                                         }
                                     }
                                     else {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "square")
                                             Text("Enfermedad vascular periférica")
                                         }
@@ -1294,13 +1296,13 @@ struct SpanishMedView: View {
                                     }
                                 } label: {
                                     if button2[28] {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
                                             Text("Infección frecuente del tracto urinario")
                                         }
                                     }
                                     else {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "square")
                                             Text("Infección frecuente del tracto urinario")
                                         }
@@ -1338,13 +1340,13 @@ struct SpanishMedView: View {
                                     }
                                 } label: {
                                     if button2[30] {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
                                             Text("Insuficiencia cardíaca congestiva")
                                         }
                                     }
                                     else {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "square")
                                             Text("Insuficiencia cardíaca congestiva")
                                         }
@@ -1360,13 +1362,13 @@ struct SpanishMedView: View {
                                     }
                                 } label: {
                                     if button2[31] {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
                                             Text("Lesión en la cabeza cerrada")
                                         }
                                     }
                                     else {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "square")
                                             Text("Lesión en la cabeza cerrada")
                                         }
@@ -1516,13 +1518,13 @@ struct SpanishMedView: View {
                                     }
                                 } label: {
                                     if button2[38] {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
                                             Text("Síndrome del intestino irritable")
                                         }
                                     }
                                     else {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "square")
                                             Text("Síndrome del intestino irritable")
                                         }
@@ -1582,13 +1584,13 @@ struct SpanishMedView: View {
                                     }
                                 } label: {
                                     if button2[41] {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
                                             Text("Trastorno de la coagulación sanguinea")
                                         }
                                     }
                                     else {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "square")
                                             Text("Trastorno de la coagulación sanguinea")
                                         }
@@ -1606,13 +1608,13 @@ struct SpanishMedView: View {
                                     }
                                 } label: {
                                     if button2[50] {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
                                             Text("Trombosis venosa profunda")
                                         }
                                     }
                                     else {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "square")
                                             Text("Trombosis venosa profunda")
                                         }
