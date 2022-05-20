@@ -729,14 +729,14 @@ struct MedicalHistoryView: View {
                                     if button2[12] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Crohn's Disease")
+                                            Text("Closed head injury")
                                         }
 
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Crohn's Disease")
+                                            Text("Closed head injury")
                                         }
                                     }
                                 }
@@ -752,13 +752,13 @@ struct MedicalHistoryView: View {
                                     if button2[13] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Closed head injury")
+                                            Text("Colitis")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Closed head injury")
+                                            Text("Colitis")
                                         }
                                     }
                                 }
@@ -774,13 +774,13 @@ struct MedicalHistoryView: View {
                                     if button2[14] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Colitis")
+                                            Text("Congestive heart failure")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Colitis")
+                                            Text("Congestive heart failure")
                                         }
                                     }
                                 }
@@ -798,13 +798,13 @@ struct MedicalHistoryView: View {
                                     if button2[42] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("MI(heart attack)")
+                                            Text("COPD")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("MI(heart attack)")
+                                            Text("COPD")
                                         }
                                     }
                                 }
@@ -820,13 +820,13 @@ struct MedicalHistoryView: View {
                                     if button2[43] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Osteoarthritis")
+                                            Text("Crohn's disease")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Osteoarthritis")
+                                            Text("Crohn's disease")
                                         }
                                     }
                                 }
@@ -842,13 +842,13 @@ struct MedicalHistoryView: View {
                                     if button2[44] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Osteoporosis")
+                                            Text("CVA(stroke)")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Osteoporosis")
+                                            Text("CVA(stroke)")
                                         }
                                     }
                                 }
@@ -864,13 +864,13 @@ struct MedicalHistoryView: View {
                                     if button2[45] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Peripheral Neuropathy")
+                                            Text("Degenerative disc disease")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Peripheral Neuropathy")
+                                            Text("Degenerative disc disease")
                                         }
                                     }
                                 }
@@ -890,13 +890,13 @@ struct MedicalHistoryView: View {
                                     if button2[15] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Congestive Heart Failure")
+                                            Text("Depression")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Congestive Heart Failure")
+                                            Text("Depression")
                                         }
                                     }
                                 }
@@ -912,13 +912,13 @@ struct MedicalHistoryView: View {
                                     if button2[16] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("COPD")
+                                            Text("Diabetes(type 1)")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("COPD")
+                                            Text("Diabetes(type 1)")
                                         }
                                     }
                                 }
@@ -934,13 +934,13 @@ struct MedicalHistoryView: View {
                                     if button2[17] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("CVA(stroke)")
+                                            Text("Diabetes(type 2)")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("CVA(stroke)")
+                                            Text("Diabetes(type 2)")
                                         }
                                     }
                                 }
@@ -956,13 +956,13 @@ struct MedicalHistoryView: View {
                                     if button2[18] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Degenerative Disc Disease")
+                                            Text("DVT(deep vein thrombosis)")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Degenerative Disc Disease")
+                                            Text("DVT(deep vein thrombosis)")
                                         }
                                     }
                                 }
@@ -978,13 +978,13 @@ struct MedicalHistoryView: View {
                                     if button2[19] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Depression")
+                                            Text("Fibromyalgia")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Depression")
+                                            Text("Fibromyalgia")
                                         }
                                     }
                                 }
@@ -1000,13 +1000,13 @@ struct MedicalHistoryView: View {
                                     if button2[20] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Diabetes(Type 1)")
+                                            Text("Frequent UTI")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Diabetes(Type 1)")
+                                            Text("Frequent UTI")
                                         }
                                     }
                                 }
@@ -1024,13 +1024,13 @@ struct MedicalHistoryView: View {
                                     if button2[21] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Diabetes(Type 2")
+                                            Text("GERD")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Diabetes(Type 2")
+                                            Text("GERD")
                                         }
                                     }
                                 }
@@ -1046,13 +1046,13 @@ struct MedicalHistoryView: View {
                                     if button2[22] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("DVT(Deep Vein Thrombosis)")
+                                            Text("Glaucoma")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("DVT(Deep Vein Thrombosis)")
+                                            Text("Glaucoma")
                                         }
                                     }
                                 }
@@ -1068,13 +1068,13 @@ struct MedicalHistoryView: View {
                                     if button2[23] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Fibromyalgia")
+                                            Text("Gout")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Fibromyalgia")
+                                            Text("Gout")
                                         }
                                     }
                                 }
@@ -1090,13 +1090,13 @@ struct MedicalHistoryView: View {
                                     if button2[24] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Frequent UTI")
+                                            Text("Heart disease")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Frequent UTI")
+                                            Text("Heart disease")
                                         }
                                     }
                                 }
@@ -1112,13 +1112,13 @@ struct MedicalHistoryView: View {
                                     if button2[25] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("GERD")
+                                            Text("Hepatitis B")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("GERD")
+                                            Text("Hepatitis B")
                                         }
                                     }
                                 }
@@ -1134,13 +1134,13 @@ struct MedicalHistoryView: View {
                                     if button2[26] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Glaucoma")
+                                            Text("Hepatitis C")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Glaucoma")
+                                            Text("Hepatitis C")
                                         }
                                     }
                                 }
@@ -1156,13 +1156,13 @@ struct MedicalHistoryView: View {
                                     if button2[27] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Gout")
+                                            Text("Hiatal hernia")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Gout")
+                                            Text("Hiatal hernia")
                                         }
                                     }
                                 }
@@ -1180,13 +1180,13 @@ struct MedicalHistoryView: View {
                                     if button2[46] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Psoriatic Arthritis")
+                                            Text("High Cholesterol")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Psoriatic Arthritis")
+                                            Text("High Cholesterol")
                                         }
                                     }
                                 }
@@ -1202,13 +1202,13 @@ struct MedicalHistoryView: View {
                                     if button2[47] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("PVD(Peripheral Vascular Disease")
+                                            Text("HIV/AIDS")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("PVD(Peripheral Vascular Disease")
+                                            Text("HIV/AIDS")
                                         }
                                     }
                                 }
@@ -1224,13 +1224,13 @@ struct MedicalHistoryView: View {
                                     if button2[48] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Rheumatoid Arthritis")
+                                            Text("Hypertension")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Rheumatoid Arthritis")
+                                            Text("Hypertension")
                                         }
                                     }
                                 }
@@ -1246,13 +1246,13 @@ struct MedicalHistoryView: View {
                                     if button2[49] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Scoliosis")
+                                            Text("Hypothyroidism")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Scoliosis")
+                                            Text("Hypothyroidism")
                                         }
                                     }
                                 }
@@ -1268,13 +1268,13 @@ struct MedicalHistoryView: View {
                                     if button2[54] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Urinary Incontinence")
+                                            Text("IBS")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Urinary Incontinence")
+                                            Text("IBS")
                                         }
                                     }
                                 }
@@ -1295,13 +1295,13 @@ struct MedicalHistoryView: View {
                                     if button2[28] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Heart Disease")
+                                            Text("Joint pain")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Heart Disease")
+                                            Text("Joint pain")
                                         }
                                     }
                                 }
@@ -1317,13 +1317,13 @@ struct MedicalHistoryView: View {
                                     if button2[29] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Hepatitis B")
+                                            Text("Lymphedema")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Hepatitis B")
+                                            Text("Lymphedema")
                                         }
                                     }
                                 }
@@ -1339,13 +1339,13 @@ struct MedicalHistoryView: View {
                                     if button2[30] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Hepatitis C")
+                                            Text("Migraine headaches")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Hepatitis C")
+                                            Text("Migraine headaches")
                                         }
                                     }
                                 }
@@ -1361,13 +1361,13 @@ struct MedicalHistoryView: View {
                                     if button2[31] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Hiatal Hernia")
+                                            Text("MI(heart attack)")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Hiatal Hernia")
+                                            Text("MI(heart attack)")
                                         }
                                     }
                                 }
@@ -1383,13 +1383,13 @@ struct MedicalHistoryView: View {
                                     if button2[32] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("High Cholesterol")
+                                            Text("MRSA")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("High Cholesterol")
+                                            Text("MRSA")
                                         }
                                     }
                                 }
@@ -1405,13 +1405,13 @@ struct MedicalHistoryView: View {
                                     if button2[33] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("HIV/AIDS")
+                                            Text("Multiple Sclerosis")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("HIV/AIDS")
+                                            Text("Multiple Sclerosis")
                                         }
                                     }
                                 }
@@ -1427,13 +1427,13 @@ struct MedicalHistoryView: View {
                                     if button2[34] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Hypertension")
+                                            Text("Osteoarthritis")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Hypertension")
+                                            Text("Osteoarthritis")
                                         }
                                     }
                                 }
@@ -1451,13 +1451,13 @@ struct MedicalHistoryView: View {
                                     if button2[35] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Hypothyroidism")
+                                            Text("Osteoporosis")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Hypothyroidism")
+                                            Text("Osteoporosis")
                                         }
                                     }
                                 }
@@ -1473,13 +1473,13 @@ struct MedicalHistoryView: View {
                                     if button2[36] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("IBS")
+                                            Text("Peripheral Neuropathy")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("IBS")
+                                            Text("Peripheral Neuropathy")
                                         }
                                     }
                                 }
@@ -1495,13 +1495,13 @@ struct MedicalHistoryView: View {
                                     if button2[37] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Joint pain")
+                                            Text("Psoriatic Arthritis")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Joint pain")
+                                            Text("Psoriatic Arthritis")
                                         }
                                     }
                                 }
@@ -1517,13 +1517,14 @@ struct MedicalHistoryView: View {
                                     if button2[38] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Lymphedema")
+                                            Text("PVD(peripheral vascular disease)")
+                                                .fixedSize(horizontal: false, vertical: true)
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Lymphedema")
+                                            Text("PVD(peripheral vascular disease)")
                                         }
                                     }
                                 }
@@ -1539,13 +1540,13 @@ struct MedicalHistoryView: View {
                                     if button2[39] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Migraine headaches")
+                                            Text("Rheumatoid Arthritis")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Migraine headaches")
+                                            Text("Rheumatoid Arthritis")
                                         }
                                     }
                                 }
@@ -1561,13 +1562,13 @@ struct MedicalHistoryView: View {
                                     if button2[40] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("MRSA")
+                                            Text("Scoliosis")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("MRSA")
+                                            Text("Scoliosis")
                                         }
                                     }
                                 }
@@ -1583,18 +1584,19 @@ struct MedicalHistoryView: View {
                                     if button2[41] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Multiple Sclerosis")
+                                            Text("Seizure disorder")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Multiple Sclerosis")
+                                            Text("Seizure disorder")
                                         }
                                     }
                                 }
                                     .foregroundColor(.black)
                         }
+
                         VStack(alignment: .leading, spacing: 5) {
                                 Button {
                                     if button2[50] {
@@ -1607,13 +1609,13 @@ struct MedicalHistoryView: View {
                                     if button2[50] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Seizure Disorder")
+                                            Text("Shortness of breath")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Seizure Disorder")
+                                            Text("Shortness of breath")
                                         }
                                     }
                                 }
@@ -1629,13 +1631,13 @@ struct MedicalHistoryView: View {
                                     if button2[51] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Shortness of breath")
+                                            Text("Sleeping disorder")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Shortness of breath")
+                                            Text("Sleeping disorder")
                                         }
                                     }
                                 }
@@ -1651,13 +1653,13 @@ struct MedicalHistoryView: View {
                                     if button2[52] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("Sleeping disorder")
+                                            Text("TB(tuberculosis)")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("Sleeping disorder")
+                                            Text("TB(tuberculosis)")
                                         }
                                     }
                                 }
@@ -1673,13 +1675,13 @@ struct MedicalHistoryView: View {
                                     if button2[53] {
                                         HStack {
                                             Image(systemName: "checkmark.square")
-                                            Text("TB(Tuberculosis")
+                                            Text("Urinary incontinence")
                                         }
                                     }
                                     else {
                                         HStack {
                                             Image(systemName: "square")
-                                            Text("TB(Tuberculosis")
+                                            Text("Urinary incontinence")
                                         }
                                     }
                                 }
@@ -2030,6 +2032,7 @@ struct MedicalHistoryView: View {
                                          .frame(width: 30, height: 30)
                                          .foregroundColor(.white)
                                          .padding(.vertical, 20)
+                                         .padding(.bottom, 20)
                                  }.alert(isPresented: $showAlert) {
                                      Alert(
                                         title: Text("Are you sure you wish to return home? Current progress will be lost."),

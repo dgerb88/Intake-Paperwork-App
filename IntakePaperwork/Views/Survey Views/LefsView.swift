@@ -21,7 +21,7 @@ struct LefsView: View {
                     Text("Lower Extremity Functional Scale")
                         .bold()
                         .font(.largeTitle)
-                        .padding(.bottom, 30)
+                        .padding(.bottom, 20)
                 }.padding(.top)
                 VStack(alignment: .leading) {
                     Text(survey.description)
