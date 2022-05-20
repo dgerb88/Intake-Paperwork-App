@@ -1515,15 +1515,21 @@ struct MedicalHistoryView: View {
                                     }
                                 } label: {
                                     if button2[38] {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
-                                            Text("PVD(peripheral vascular disease)")
+                                            VStack(alignment: .leading) {
+                                                Text("PVD(peripheral")
+                                                Text("vascular disease)")
+                                            }
                                         }
                                     }
                                     else {
-                                        HStack {
+                                        HStack(alignment: .top) {
                                             Image(systemName: "square")
-                                            Text("PVD(peripheral vascular disease)")
+                                            VStack(alignment: .leading) {
+                                                Text("PVD(peripheral")
+                                                Text("vascular disease)")
+                                            }
                                         }
                                     }
                                 }
