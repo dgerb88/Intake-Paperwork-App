@@ -18,6 +18,7 @@ struct SpanishMedView: View {
     @State private var button = [false, false, false, false, false, false, false, false, false, false, false]
     @State var button2 = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     var famHistName = ["Accidente Cerebrovascular", "Angina de pecho", "Ansiedad", "Arritmia", "Artritis psoriásica", "Artritis reumatoide", "Asma", "Cáncer", "Cardiopatía", "Celulitis", "Colesterol alto", "Colitis", "Depresión", "Diabetes tipo 1", "Diabetes tipo 2", "Dificultad para respirar", "Dolor en las articulaciones", "Dolor de cuello crónico", "Dolor de espalda crónico"]
+    var famHistName2 = ["Esclerosis múltiple", "Escoliosis", "Fibromialgia", "Glaucoma", "Gota", "Hepatitis B", "Hepatitis C", "Hernia hiatal", "Hipertensión", "Hipertiroidismo", "Incontinencia intestinal", "Incontinencia urinaria", "Infarto de miocardio"]
     @State var diagnosticTesting = ""
     @State var secondReason = ""
     @State var historyCondition = "Historia"
@@ -512,7 +513,6 @@ struct SpanishMedView: View {
                     }
                     VStack(alignment: .leading, spacing: 5) {
                         VStack(alignment: .leading, spacing: 5) {
-                                
                                 Button {
                                     if button2[20] {
                                         button2[20] = false
@@ -546,13 +546,19 @@ struct SpanishMedView: View {
                                     if button2[21] {
                                         HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
-                                            Text("Enfermedad por reflujo gastroesofágico")
+                                            VStack(alignment: .leading) {
+                                                Text("Enfermedad por reflujo")
+                                                Text("gastroesofágico")
+                                            }
                                         }
                                     }
                                     else {
                                         HStack(alignment: .top) {
                                             Image(systemName: "square")
-                                            Text("Enfermedad por reflujo gastroesofágico")
+                                            VStack(alignment: .leading) {
+                                                Text("Enfermedad por reflujo")
+                                                Text("gastroesofágico")
+                                            }
                                         }
                                     }
                                 }
@@ -568,13 +574,19 @@ struct SpanishMedView: View {
                                     if button2[22] {
                                         HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
-                                            Text("Enfermedad pulmonar obstructiva crónica")
+                                            VStack(alignment: .leading) {
+                                                Text("Enfermedad pulmonar")
+                                                Text("obstructiva crónica")
+                                            }
                                         }
                                     }
                                     else {
                                         HStack(alignment: .top) {
                                             Image(systemName: "square")
-                                            Text("Enfermedad pulmonar obstructiva crónica")
+                                            VStack(alignment: .leading) {
+                                                Text("Enfermedad pulmonar")
+                                                Text("obstructiva crónica")
+                                            }
                                         }
                                     }
                                 }
@@ -590,308 +602,50 @@ struct SpanishMedView: View {
                                     if button2[23] {
                                         HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
-                                            Text("Enfermedad vascular periférica")
+                                            VStack(alignment: .leading) {
+                                                Text("Enfermedad vascular")
+                                                Text("periférica")
+                                            }
                                         }
                                     }
                                     else {
                                         HStack(alignment: .top) {
                                             Image(systemName: "square")
-                                            Text("Enfermedad vascular periférica")
+                                            VStack(alignment: .leading) {
+                                                Text("Enfermedad vascular")
+                                                Text("periférica")
+                                            }
                                         }
                                     }
                                 }
                                     .foregroundColor(.black)
-                                Button {
-                                    if button2[24] {
-                                        button2[24] = false
-                                    }
-                                    else {
-                                        button2[24] = true
-                                    }
-                                } label: {
-                                    if button2[24] {
-                                        HStack {
-                                            Image(systemName: "checkmark.square")
-                                            Text("Esclerosis múltiple")
+                            VStack(alignment: .leading, spacing: 5) {
+                                ForEach(0..<13) { index2 in
+                                    Button {
+                                        if button2[index2+24] {
+                                            button2[index2+24] = false
                                         }
-                                    }
-                                    else {
-                                        HStack {
-                                            Image(systemName: "square")
-                                            Text("Esclerosis múltiple")
+                                        else {
+                                            button2[index2+24] = true
                                         }
-                                    }
+                                    } label: {
+                                        if button2[index2+24] {
+                                            HStack(alignment: .top) {
+                                                Image(systemName: "checkmark.square")
+                                                Text(famHistName2[index2])
+                                                    .fixedSize(horizontal: false, vertical: true)
+                                            }
+                                        }
+                                        else {
+                                            HStack(alignment: .top) {
+                                                Image(systemName: "square")
+                                                Text(famHistName2[index2])
+                                                    .fixedSize(horizontal: false, vertical: true)
+                                            }
+                                        }
+                                    }.foregroundColor(.black)
                                 }
-                                    .foregroundColor(.black)
-                        }
-                        VStack(alignment: .leading, spacing: 5) {
-                                Button {
-                                    if button2[25] {
-                                        button2[25] = false
-                                    }
-                                    else {
-                                        button2[25] = true
-                                    }
-                                } label: {
-                                    if button2[25] {
-                                        HStack {
-                                            Image(systemName: "checkmark.square")
-                                            Text("Escoliosis")
-                                        }
-                                    }
-                                    else {
-                                        HStack {
-                                            Image(systemName: "square")
-                                            Text("Escoliosis")
-                                        }
-                                    }
-                                }
-                                    .foregroundColor(.black)
-                                Button {
-                                    if button2[26] {
-                                        button2[26] = false
-                                    }
-                                    else {
-                                        button2[26] = true
-                                    }
-                                } label: {
-                                    if button2[26] {
-                                        HStack {
-                                            Image(systemName: "checkmark.square")
-                                            Text("Fibromialgia")
-                                        }
-                                    }
-                                    else {
-                                        HStack {
-                                            Image(systemName: "square")
-                                            Text("Fibromialgia")
-                                        }
-                                    }
-                                }
-                                    .foregroundColor(.black)
-                                Button {
-                                    if button2[27] {
-                                        button2[27] = false
-                                    }
-                                    else {
-                                        button2[27] = true
-                                    }
-                                } label: {
-                                    if button2[27] {
-                                        HStack {
-                                            Image(systemName: "checkmark.square")
-                                            Text("Glaucoma")
-                                        }
-                                    }
-                                    else {
-                                        HStack {
-                                            Image(systemName: "square")
-                                            Text("Glaucoma")
-                                        }
-                                    }
-                                }
-                                    .foregroundColor(.black)
-                                Button {
-                                    if button2[28] {
-                                        button2[28] = false
-                                    }
-                                    else {
-                                        button2[28] = true
-                                    }
-                                } label: {
-                                    if button2[28] {
-                                        HStack {
-                                            Image(systemName: "checkmark.square")
-                                            Text("Gota")
-                                        }
-                                    }
-                                    else {
-                                        HStack {
-                                            Image(systemName: "square")
-                                            Text("Gota")
-                                        }
-                                    }
-                                }
-                                    .foregroundColor(.black)
-                                Button {
-                                    if button2[29] {
-                                        button2[29] = false
-                                    }
-                                    else {
-                                        button2[29] = true
-                                    }
-                                } label: {
-                                    if button2[29] {
-                                        HStack {
-                                            Image(systemName: "checkmark.square")
-                                            Text("Hepatitis B")
-                                        }
-                                    }
-                                    else {
-                                        HStack {
-                                            Image(systemName: "square")
-                                            Text("Hepatitis B")
-                                        }
-                                    }
-                                }
-                                    .foregroundColor(.black)
-                                Button {
-                                    if button2[30] {
-                                        button2[30] = false
-                                    }
-                                    else {
-                                        button2[30] = true
-                                    }
-                                } label: {
-                                    if button2[30] {
-                                        HStack {
-                                            Image(systemName: "checkmark.square")
-                                            Text("Hepatitis C")
-                                        }
-                                    }
-                                    else {
-                                        HStack {
-                                            Image(systemName: "square")
-                                            Text("Hepatitis C")
-                                        }
-                                    }
-                                }
-                                    .foregroundColor(.black)
-                                Button {
-                                    if button2[31] {
-                                        button2[31] = false
-                                    }
-                                    else {
-                                        button2[31] = true
-                                    }
-                                } label: {
-                                    if button2[31] {
-                                        HStack {
-                                            Image(systemName: "checkmark.square")
-                                            Text("Hernia hiatal")
-                                        }
-                                    }
-                                    else {
-                                        HStack {
-                                            Image(systemName: "square")
-                                            Text("Hernia hiatal")
-                                        }
-                                    }
-                                }
-                                    .foregroundColor(.black)
-                        }
-                        VStack(alignment: .leading, spacing: 5) {
-                                Button {
-                                    if button2[32] {
-                                        button2[32] = false
-                                    }
-                                    else {
-                                        button2[32] = true
-                                    }
-                                } label: {
-                                    if button2[32] {
-                                        HStack {
-                                            Image(systemName: "checkmark.square")
-                                            Text("Hipertensión")
-                                        }
-                                    }
-                                    else {
-                                        HStack {
-                                            Image(systemName: "square")
-                                            Text("Hipertensión")
-                                        }
-                                    }
-                                }
-                                    .foregroundColor(.black)
-                                Button {
-                                    if button2[33] {
-                                        button2[33] = false
-                                    }
-                                    else {
-                                        button2[33] = true
-                                    }
-                                } label: {
-                                    if button2[33] {
-                                        HStack {
-                                            Image(systemName: "checkmark.square")
-                                            Text("Hipertiroidismo")
-                                        }
-                                    }
-                                    else {
-                                        HStack {
-                                            Image(systemName: "square")
-                                            Text("Hipertiroidismo")
-                                        }
-                                    }
-                                }
-                                    .foregroundColor(.black)
-                                Button {
-                                    if button2[34] {
-                                        button2[34] = false
-                                    }
-                                    else {
-                                        button2[34] = true
-                                    }
-                                } label: {
-                                    if button2[34] {
-                                        HStack {
-                                            Image(systemName: "checkmark.square")
-                                            Text("Incontinencia intestinal")
-                                        }
-                                    }
-                                    else {
-                                        HStack {
-                                            Image(systemName: "square")
-                                            Text("Incontinencia intestinal")
-                                        }
-                                    }
-                                }
-                                    .foregroundColor(.black)
-                                Button {
-                                    if button2[35] {
-                                        button2[35] = false
-                                    }
-                                    else {
-                                        button2[35] = true
-                                    }
-                                } label: {
-                                    if button2[35] {
-                                        HStack {
-                                            Image(systemName: "checkmark.square")
-                                            Text("Incontinencia urinaria")
-                                        }
-                                    }
-                                    else {
-                                        HStack {
-                                            Image(systemName: "square")
-                                            Text("Incontinencia urinaria")
-                                        }
-                                    }
-                                }
-                                    .foregroundColor(.black)
-                                Button {
-                                    if button2[36] {
-                                        button2[36] = false
-                                    }
-                                    else {
-                                        button2[36] = true
-                                    }
-                                } label: {
-                                    if button2[36] {
-                                        HStack {
-                                            Image(systemName: "checkmark.square")
-                                            Text("Infarto de miocardio")
-                                        }
-                                    }
-                                    else {
-                                        HStack {
-                                            Image(systemName: "square")
-                                            Text("Infarto de miocardio")
-                                        }
-                                    }
-                                }
-                                    .foregroundColor(.black)
-
+                            }
                         }
                     }
                     VStack(alignment: .leading, spacing: 5) {
@@ -907,13 +661,19 @@ struct SpanishMedView: View {
                                     if button2[37] {
                                         HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
-                                            Text("Infección frecuente del tracto urinario")
+                                            VStack(alignment: .leading) {
+                                                Text("Infección frecuente del")
+                                                Text("tracto urinario")
+                                            }
                                         }
                                     }
                                     else {
                                         HStack(alignment: .top) {
                                             Image(systemName: "square")
-                                            Text("Infección frecuente del tracto urinario")
+                                            VStack(alignment: .leading) {
+                                                Text("Infección frecuente del")
+                                                Text("tracto urinario")
+                                            }
                                         }
                                     }
                                 }
@@ -951,13 +711,19 @@ struct SpanishMedView: View {
                                     if button2[39] {
                                         HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
-                                            Text("Insuficiencia cardíaca congestiva")
+                                            VStack(alignment: .leading) {
+                                                Text("Insuficiencia")
+                                                Text("cardíaca congestiva")
+                                            }
                                         }
                                     }
                                     else {
                                         HStack(alignment: .top) {
                                             Image(systemName: "square")
-                                            Text("Insuficiencia cardíaca congestiva")
+                                            VStack(alignment: .leading) {
+                                                Text("Insuficiencia")
+                                                Text("cardíaca congestiva")
+                                            }
                                         }
                                     }
                                 }
@@ -973,13 +739,19 @@ struct SpanishMedView: View {
                                     if button2[40] {
                                         HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
-                                            Text("Lesión en la cabeza cerrada")
+                                            VStack(alignment: .leading) {
+                                                Text("Lesión en la")
+                                                Text("cabeza cerrada")
+                                            }
                                         }
                                     }
                                     else {
                                         HStack(alignment: .top) {
                                             Image(systemName: "square")
-                                            Text("Lesión en la cabeza cerrada")
+                                            VStack(alignment: .leading) {
+                                                Text("Lesión en la")
+                                                Text("cabeza cerrada")
+                                            }
                                         }
                                     }
                                 }
@@ -1129,13 +901,19 @@ struct SpanishMedView: View {
                                     if button2[47] {
                                         HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
-                                            Text("Síndrome del intestino irritable")
+                                            VStack(alignment: .leading) {
+                                                Text("Síndrome del")
+                                                Text("intestino irritable")
+                                            }
                                         }
                                     }
                                     else {
                                         HStack(alignment: .top) {
                                             Image(systemName: "square")
-                                            Text("Síndrome del intestino irritable")
+                                            VStack(alignment: .leading) {
+                                                Text("Síndrome del")
+                                                Text("intestino irritable")
+                                            }
                                         }
                                     }
                                 }
@@ -1195,13 +973,19 @@ struct SpanishMedView: View {
                                     if button2[50] {
                                         HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
-                                            Text("Trastorno de la coagulación sanguinea")
+                                            VStack(alignment: .leading) {
+                                                Text("Trastorno de la")
+                                                Text("coagulación sanguinea")
+                                            }
                                         }
                                     }
                                     else {
                                         HStack(alignment: .top) {
                                             Image(systemName: "square")
-                                            Text("Trastorno de la coagulación sanguinea")
+                                            VStack(alignment: .leading) {
+                                                Text("Trastorno de la")
+                                                Text("coagulación sanguinea")
+                                            }
                                         }
                                     }
                                 }
@@ -1219,13 +1003,19 @@ struct SpanishMedView: View {
                                     if button2[51] {
                                         HStack(alignment: .top) {
                                             Image(systemName: "checkmark.square")
-                                            Text("Trombosis venosa profunda")
+                                            VStack(alignment: .leading) {
+                                                Text("Trombosis venosa")
+                                                Text("profunda")
+                                            }
                                         }
                                     }
                                     else {
                                         HStack(alignment: .top) {
                                             Image(systemName: "square")
-                                            Text("Trombosis venosa profunda")
+                                            VStack(alignment: .leading) {
+                                                Text("Trombosis venosa")
+                                                Text("profunda")
+                                            }
                                         }
                                     }
                                 }
