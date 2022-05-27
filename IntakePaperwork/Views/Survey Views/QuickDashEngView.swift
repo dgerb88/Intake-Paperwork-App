@@ -300,12 +300,6 @@ struct QuickDashEngView: View {
                                 model.PDFimage.append(image)
                                 model.PDFfile = model.createPDF(image: image)
                                 model.PDFfileArray.append(model.PDFfile!)
-                                let mergedFile = model.merge(pdfs: model.PDFfileArray)
-                                model.PDFfileArray.removeAll()
-                                model.PDFfileArray.append(mergedFile)
-                                model.savedPDFimage.append(model.PDFimage)
-                                model.PDFfileArrayArray.append(model.PDFfileArray)
-                                addItem(image: model.PDFimage, pdf: model.PDFfileArray, name: model.personalName)
                             }
                         
                         NavigationLink {
@@ -334,19 +328,6 @@ struct QuickDashEngView: View {
                 model.appendArray(survey.questions.count)
             }
         
-    }
-    func addItem(image: [UIImage], pdf: [NSData], name: String) {
-        let newItem = Items(context: viewContext)
-        newItem.timestamp = Date()
-        newItem.imageArray = image
-        newItem.pdfArray = pdf
-        newItem.name = name
-
-        do {
-            try viewContext.save()
-        } catch {
-            // Error
-        }
     }
 }
 
