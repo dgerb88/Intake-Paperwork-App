@@ -41,14 +41,14 @@ struct LefsView: View {
                             .bold()
                             .padding(.bottom, 5)
                     }
-                    ForEach(0..<survey.questions[0].rating.count) { index in
+                    ForEach(0..<survey.questions[0].rating.count, id: \.self) { index in
                         Text(survey.questions[0].rating[index])
                             .font(.subheadline)
                             .padding(.bottom, 1)
                             .padding(.leading, 20)
                     }
                     Divider()
-                    ForEach(0..<survey.questions.count) { index in
+                    ForEach(0..<survey.questions.count, id: \.self) { index in
                         VStack(alignment: .leading) {
                             Text("\(survey.questions[index].title)")
                                 .font(.headline)
@@ -181,7 +181,7 @@ struct LefsView: View {
                                             .bold()
                                             .padding(.bottom, 5)
                                     }
-                                    ForEach(0..<survey.questions[0].rating.count) { index in
+                                    ForEach(0..<survey.questions[0].rating.count, id: \.self) { index in
                                         Text(survey.questions[0].rating[index])
                                             .font(.subheadline)
                                             .padding(.bottom, 1)
@@ -204,18 +204,6 @@ struct LefsView: View {
                 model.score = 0
             }
     }
-    func addItem(image: [UIImage], pdf: [NSData], name: String) {
-        let newItem = Items(context: viewContext)
-        newItem.timestamp = Date()
-        newItem.imageArray = image
-        newItem.pdfArray = pdf
-        newItem.name = name
-
-        do {
-            try viewContext.save()
-        } catch {
-            // Error
-        }
-    }
+    
 }
 

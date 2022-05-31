@@ -64,7 +64,7 @@ struct QuickDashSpanView: View {
                                     
                                     VStack {
                                         Picker("", selection: $model.selectedValue[index]) {
-                                            ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
+                                            ForEach(0..<survey.questions[index].rating.count, id: \.self) { ratingIndex in
                                                 Text(String(ratingIndex+1)).tag(ratingIndex)
                                             }
                                         }.pickerStyle(SegmentedPickerStyle())
@@ -114,7 +114,7 @@ struct QuickDashSpanView: View {
                             
                             VStack {
                                 Picker("", selection: $model.selectedValue[6]) {
-                                    ForEach(0..<survey.questions[0].rating.count) { ratingIndex in
+                                    ForEach(0..<survey.questions[0].rating.count, id: \.self) { ratingIndex in
                                         Text(String(ratingIndex+1)).tag(ratingIndex)
                                     }
                                 }.pickerStyle(SegmentedPickerStyle())
@@ -158,7 +158,7 @@ struct QuickDashSpanView: View {
                             
                             VStack {
                                 Picker("", selection: $model.selectedValue[7]) {
-                                    ForEach(0..<survey.questions[0].rating.count) { ratingIndex in
+                                    ForEach(0..<survey.questions[0].rating.count, id: \.self) { ratingIndex in
                                         Text(String(ratingIndex+1)).tag(ratingIndex)
                                     }
                                 }.pickerStyle(SegmentedPickerStyle())
@@ -195,7 +195,7 @@ struct QuickDashSpanView: View {
                             
                             VStack {
                                 Picker("", selection: $model.selectedValue[8]) {
-                                    ForEach(0..<survey.questions[0].rating.count) { ratingIndex in
+                                    ForEach(0..<survey.questions[0].rating.count, id: \.self) { ratingIndex in
                                         Text(String(ratingIndex+1)).tag(ratingIndex)
                                     }
                                 }.pickerStyle(SegmentedPickerStyle())
@@ -210,7 +210,7 @@ struct QuickDashSpanView: View {
                             
                             VStack {
                                 Picker("", selection: $model.selectedValue[9]) {
-                                    ForEach(0..<survey.questions[0].rating.count) { ratingIndex in
+                                    ForEach(0..<survey.questions[0].rating.count, id: \.self) { ratingIndex in
                                         Text(String(ratingIndex+1)).tag(ratingIndex)
                                     }
                                 }.pickerStyle(SegmentedPickerStyle())
@@ -254,7 +254,7 @@ struct QuickDashSpanView: View {
                             
                             VStack {
                                 Picker("", selection: $model.selectedValue[10]) {
-                                    ForEach(0..<survey.questions[0].rating.count) { ratingIndex in
+                                    ForEach(0..<survey.questions[0].rating.count, id: \.self) { ratingIndex in
                                         Text(String(ratingIndex+1)).tag(ratingIndex)
                                     }
                                 }.pickerStyle(SegmentedPickerStyle())

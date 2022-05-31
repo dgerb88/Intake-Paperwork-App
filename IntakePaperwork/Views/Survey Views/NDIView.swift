@@ -30,12 +30,12 @@ struct NDIView: View {
                         .padding(.bottom, 10)
                         .fixedSize(horizontal: false, vertical: true)
                     Divider()
-                    ForEach(0..<survey.questions.count) { index in
+                    ForEach(0..<survey.questions.count, id: \.self) { index in
                         Text("\(survey.questions[index].title)")
                             .font(.title)
                             .fixedSize(horizontal: false, vertical: true)
                         Picker("", selection: $model.selectedValue[index]) {
-                            ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
+                            ForEach(0..<survey.questions[index].rating.count, id: \.self) { ratingIndex in
                                 Text(String(ratingIndex)).tag(ratingIndex)
                             }
                         }.pickerStyle(SegmentedPickerStyle())
@@ -45,7 +45,7 @@ struct NDIView: View {
                                     model.score += model.selectedValue[index]
                                 }
                             }
-                        ForEach(0..<survey.questions[index].rating.count) { ratingIndex in
+                        ForEach(0..<survey.questions[index].rating.count, id: \.self) { ratingIndex in
                             Text("\(ratingIndex) - \(survey.questions[index].rating[ratingIndex])").tag(ratingIndex)
                                 .fixedSize(horizontal: false, vertical: true)
                         }.padding(.leading, 10)

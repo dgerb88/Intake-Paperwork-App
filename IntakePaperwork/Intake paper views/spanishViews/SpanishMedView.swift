@@ -1374,23 +1374,28 @@ struct SpanishMedView: View {
                                 SpanDryNeedleView(survey: survey)
                             }
                             else {
-                                if survey.name == "LEFS" {
-                                    LefsView(survey: survey)
-                                }
-                                else if survey.name == "Back Index" {
-                                    BackIndexView(survey: survey)
-                                }
-                                else if survey.name == "QuickDash" && survey.language == "English" {
-                                    QuickDashEngView(survey: survey)
-                                }
-                                else if survey.name == "QuickDash" && survey.language == "Spanish" {
-                                    QuickDashSpanView(survey: survey)
-                                }
-                                else if survey.name == "Neck Disability Index" {
-                                    NDIView(survey: survey)
+                                if model.includeSurvey {
+                                    if survey.name == "LEFS" {
+                                        LefsView(survey: survey)
+                                    }
+                                    else if survey.name == "Back Index" {
+                                        BackIndexView(survey: survey)
+                                    }
+                                    else if survey.name == "QuickDash" && survey.language == "English" {
+                                        QuickDashEngView(survey: survey)
+                                    }
+                                    else if survey.name == "QuickDash" && survey.language == "Spanish" {
+                                        QuickDashSpanView(survey: survey)
+                                    }
+                                    else if survey.name == "Neck Disability Index" {
+                                        NDIView(survey: survey)
+                                    }
+                                    else {
+                                        Text("Survey not found")
+                                    }
                                 }
                                 else {
-                                    Text("Survey not found")
+                                    FinishedView(survey: survey)
                                 }
                             }
                         } label: {
@@ -1417,7 +1422,6 @@ struct SpanishMedView: View {
                                             .frame(width: 30, height: 30)
                                             .foregroundColor(.white)
                                             .padding(.vertical, 20)
-                                            .padding(.bottom, 20)
                                     }.alert(isPresented: $showAlert) {
                                         Alert(
                                            title: Text("Seguro que quieres volver a la pantalla de inicio? Tu progreso serà perdido."),
@@ -1432,7 +1436,9 @@ struct SpanishMedView: View {
                             }                    }
                 }
             }
-        }.onTapGesture {
+        }
+        .padding(.top)
+        .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             keyboardChange = false
         }

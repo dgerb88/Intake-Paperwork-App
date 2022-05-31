@@ -395,23 +395,28 @@ struct SpanInfoView: View {
                                 SpanDryNeedleView(survey: survey)
                             }
                             else {
-                                if survey.name == "LEFS" {
-                                    LefsView(survey: survey)
-                                }
-                                else if survey.name == "Back Index" {
-                                    BackIndexView(survey: survey)
-                                }
-                                else if survey.name == "QuickDash" && survey.language == "English" {
-                                    QuickDashEngView(survey: survey)
-                                }
-                                else if survey.name == "QuickDash" && survey.language == "Spanish" {
-                                    QuickDashSpanView(survey: survey)
-                                }
-                                else if survey.name == "Neck Disability Index" {
-                                    NDIView(survey: survey)
+                                if model.includeSurvey {
+                                    if survey.name == "LEFS" {
+                                        LefsView(survey: survey)
+                                    }
+                                    else if survey.name == "Back Index" {
+                                        BackIndexView(survey: survey)
+                                    }
+                                    else if survey.name == "QuickDash" && survey.language == "English" {
+                                        QuickDashEngView(survey: survey)
+                                    }
+                                    else if survey.name == "QuickDash" && survey.language == "Spanish" {
+                                        QuickDashSpanView(survey: survey)
+                                    }
+                                    else if survey.name == "Neck Disability Index" {
+                                        NDIView(survey: survey)
+                                    }
+                                    else {
+                                        Text("Survey not found")
+                                    }
                                 }
                                 else {
-                                    Text("Survey not found")
+                                    FinishedView(survey: survey)
                                 }
                             }
                         } label: {
@@ -455,6 +460,7 @@ struct SpanInfoView: View {
                 }
             }
         }
+        .padding(.top)
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             keyboardChange = false

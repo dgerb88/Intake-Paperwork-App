@@ -343,129 +343,137 @@ struct NewSelectionView: View {
                             .foregroundColor(.white)
                             .cornerRadius(5)
                         VStack {
-                            Text("Surveys")
-                                .bold()
-                                .font(.largeTitle)
-                                .padding(.bottom, 20)
-                            Button {
-                                if LefsSelected == false {
-                                    LefsSelected = true
-                                    BackIndexSelected = false
-                                    NdiSelected = false
-                                    QuickDashSelected = false
-                                }
-                            } label: {
-                                if LefsSelected == true {
-                                    HStack {
-                                        Image(systemName: "checkmark")
-                                            .font(Font.title2.weight(.semibold))
-                                            .foregroundColor(.black)
-                                        Text("LEFS")
-                                            .font(Font.title2.weight(.semibold))
-                                            .foregroundColor(.black)
-                                        Spacer()
-                                    }.padding(.horizontal, 20)
-                                }
-                                else {
-                                    HStack {
-                                        Text("LEFS")
-                                            .foregroundColor(.black)
-                                            .font(.title2)
-                                        Spacer()
-                                    }.padding(.horizontal, 20)
-                                }
+                            VStack {
+                                Text("Surveys")
+                                    .bold()
+                                    .font(.largeTitle)
+                                    .padding(.bottom, 20)
+                                Toggle("Include survey", isOn: $model.includeSurvey)
+                                    .font(Font.title2)
+                                    .padding(.horizontal, 20)
+                                Divider().padding(.bottom, 30)
                             }
-                            Divider()
-                            Button {
-                                if NdiSelected == false {
-                                    NdiSelected = true
-                                    BackIndexSelected = false
-                                    LefsSelected = false
-                                    QuickDashSelected = false
+                            if model.includeSurvey {
+                                Button {
+                                    if LefsSelected == false {
+                                        LefsSelected = true
+                                        BackIndexSelected = false
+                                        NdiSelected = false
+                                        QuickDashSelected = false
+                                    }
+                                } label: {
+                                    if LefsSelected == true {
+                                        HStack {
+                                            Image(systemName: "checkmark")
+                                                .font(Font.title2.weight(.semibold))
+                                                .foregroundColor(.black)
+                                            Text("LEFS")
+                                                .font(Font.title2.weight(.semibold))
+                                                .foregroundColor(.black)
+                                            Spacer()
+                                        }.padding(.horizontal, 20)
+                                    }
+                                    else {
+                                        HStack {
+                                            Text("LEFS")
+                                                .foregroundColor(.black)
+                                                .font(.title2)
+                                            Spacer()
+                                        }.padding(.horizontal, 20)
+                                    }
                                 }
-                                
-                            } label: {
-                                if NdiSelected == true {
-                                    HStack {
-                                        Image(systemName: "checkmark")
-                                            .font(Font.title2.weight(.semibold))
-                                            .foregroundColor(.black)
-                                        Text("NDI")
-                                            .font(Font.title2.weight(.semibold))
-                                            .foregroundColor(.black)
-                                        Spacer()
-                                    }.padding(.horizontal, 20)
+                                Divider()
+                                Button {
+                                    if NdiSelected == false {
+                                        NdiSelected = true
+                                        BackIndexSelected = false
+                                        LefsSelected = false
+                                        QuickDashSelected = false
+                                    }
+                                    
+                                } label: {
+                                    if NdiSelected == true {
+                                        HStack {
+                                            Image(systemName: "checkmark")
+                                                .font(Font.title2.weight(.semibold))
+                                                .foregroundColor(.black)
+                                            Text("NDI")
+                                                .font(Font.title2.weight(.semibold))
+                                                .foregroundColor(.black)
+                                            Spacer()
+                                        }.padding(.horizontal, 20)
+                                    }
+                                    else {
+                                        HStack {
+                                            Text("NDI")
+                                                .foregroundColor(.black)
+                                                .font(.title2)
+                                            Spacer()
+                                        }.padding(.horizontal, 20)
+                                    }
                                 }
-                                else {
-                                    HStack {
-                                        Text("NDI")
-                                            .foregroundColor(.black)
-                                            .font(.title2)
-                                        Spacer()
-                                    }.padding(.horizontal, 20)
+                                Divider()
+                                Button {
+                                    if BackIndexSelected == false {
+                                        BackIndexSelected = true
+                                        LefsSelected = false
+                                        NdiSelected = false
+                                        QuickDashSelected = false
+                                    }
+                                    
+                                } label: {
+                                    if BackIndexSelected == true {
+                                        HStack {
+                                            Image(systemName: "checkmark")
+                                                .font(Font.title2.weight(.semibold))
+                                                .foregroundColor(.black)
+                                            Text("Back Index")
+                                                .font(Font.title2.weight(.semibold))
+                                                .foregroundColor(.black)
+                                            Spacer()
+                                        }.padding(.horizontal, 20)
+                                    }
+                                    else {
+                                        HStack {
+                                            Text("Back Index")
+                                                .foregroundColor(.black)
+                                                .font(.title2)
+                                            Spacer()
+                                        }.padding(.horizontal, 20)
+                                    }
                                 }
+                                Divider()
+                                Button {
+                                    if QuickDashSelected == false {
+                                        QuickDashSelected = true
+                                        BackIndexSelected = false
+                                        NdiSelected = false
+                                        LefsSelected = false
+                                    }
+                                    
+                                } label: {
+                                    if QuickDashSelected == true {
+                                        HStack {
+                                            Image(systemName: "checkmark")
+                                                .font(Font.title2.weight(.semibold))
+                                                .foregroundColor(.black)
+                                            Text("Quick Dash")
+                                                .font(Font.title2.weight(.semibold))
+                                                .foregroundColor(.black)
+                                            Spacer()
+                                        }.padding(.horizontal, 20)
+                                    }
+                                    else {
+                                        HStack {
+                                            Text("Quick Dash")
+                                                .foregroundColor(.black)
+                                                .font(.title2)
+                                            Spacer()
+                                        }.padding(.horizontal, 20)
+                                    }
+                                }
+                                Divider().padding(.bottom, 20)
                             }
-                            Divider()
-                            Button {
-                                if BackIndexSelected == false {
-                                    BackIndexSelected = true
-                                    LefsSelected = false
-                                    NdiSelected = false
-                                    QuickDashSelected = false
-                                }
-                                
-                            } label: {
-                                if BackIndexSelected == true {
-                                    HStack {
-                                        Image(systemName: "checkmark")
-                                            .font(Font.title2.weight(.semibold))
-                                            .foregroundColor(.black)
-                                        Text("Back Index")
-                                            .font(Font.title2.weight(.semibold))
-                                            .foregroundColor(.black)
-                                        Spacer()
-                                    }.padding(.horizontal, 20)
-                                }
-                                else {
-                                    HStack {
-                                        Text("Back Index")
-                                            .foregroundColor(.black)
-                                            .font(.title2)
-                                        Spacer()
-                                    }.padding(.horizontal, 20)
-                                }
-                            }
-                            Divider()
-                            Button {
-                                if QuickDashSelected == false {
-                                    QuickDashSelected = true
-                                    BackIndexSelected = false
-                                    NdiSelected = false
-                                    LefsSelected = false
-                                }
-                                
-                            } label: {
-                                if QuickDashSelected == true {
-                                    HStack {
-                                        Image(systemName: "checkmark")
-                                            .font(Font.title2.weight(.semibold))
-                                            .foregroundColor(.black)
-                                        Text("Quick Dash")
-                                            .font(Font.title2.weight(.semibold))
-                                            .foregroundColor(.black)
-                                        Spacer()
-                                    }.padding(.horizontal, 20)
-                                }
-                                else {
-                                    HStack {
-                                        Text("Quick Dash")
-                                            .foregroundColor(.black)
-                                            .font(.title2)
-                                        Spacer()
-                                    }.padding(.horizontal, 20)
-                                }
-                            }
-                            Divider().padding(.bottom, 20)
                             //MARK: Go button
                             VStack {
                                 ZStack {
@@ -596,43 +604,45 @@ struct NewSelectionView: View {
                                                     }
                                                 }
                                                 else {
-                                                    if survey.name == "LEFS" {
-                                                        LefsView(survey: survey)
-                                                            .onAppear {
-                                                                model.PDFfileArray.removeAll()
-                                                                model.PDFimage.removeAll()
-                                                            }
-                                                    }
-                                                    else if survey.name == "Back Index" {
-                                                        BackIndexView(survey: survey)
-                                                            .onAppear {
-                                                                model.PDFfileArray.removeAll()
-                                                                model.PDFimage.removeAll()
-                                                            }
-                                                    }
-                                                    else if survey.name == "QuickDash" && survey.language == "English" {
-                                                        QuickDashEngView(survey: survey)
-                                                            .onAppear {
-                                                                model.PDFfileArray.removeAll()
-                                                                model.PDFimage.removeAll()
-                                                            }
-                                                    }
-                                                    else if survey.name == "QuickDash" && survey.language == "Spanish" {
-                                                        QuickDashSpanView(survey: survey)
-                                                            .onAppear {
-                                                                model.PDFfileArray.removeAll()
-                                                                model.PDFimage.removeAll()
-                                                            }
-                                                    }
-                                                    else if survey.name == "Neck Disability Index" {
-                                                        NDIView(survey: survey)
-                                                            .onAppear {
-                                                                model.PDFfileArray.removeAll()
-                                                                model.PDFimage.removeAll()
-                                                            }
-                                                    }
-                                                    else {
-                                                        Text("Survey not found")
+                                                    if model.includeSurvey {
+                                                        if survey.name == "LEFS" {
+                                                            LefsView(survey: survey)
+                                                                .onAppear {
+                                                                    model.PDFfileArray.removeAll()
+                                                                    model.PDFimage.removeAll()
+                                                                }
+                                                        }
+                                                        else if survey.name == "Back Index" {
+                                                            BackIndexView(survey: survey)
+                                                                .onAppear {
+                                                                    model.PDFfileArray.removeAll()
+                                                                    model.PDFimage.removeAll()
+                                                                }
+                                                        }
+                                                        else if survey.name == "QuickDash" && survey.language == "English" {
+                                                            QuickDashEngView(survey: survey)
+                                                                .onAppear {
+                                                                    model.PDFfileArray.removeAll()
+                                                                    model.PDFimage.removeAll()
+                                                                }
+                                                        }
+                                                        else if survey.name == "QuickDash" && survey.language == "Spanish" {
+                                                            QuickDashSpanView(survey: survey)
+                                                                .onAppear {
+                                                                    model.PDFfileArray.removeAll()
+                                                                    model.PDFimage.removeAll()
+                                                                }
+                                                        }
+                                                        else if survey.name == "Neck Disability Index" {
+                                                            NDIView(survey: survey)
+                                                                .onAppear {
+                                                                    model.PDFfileArray.removeAll()
+                                                                    model.PDFimage.removeAll()
+                                                                }
+                                                        }
+                                                        else {
+                                                            Text("Survey not found")
+                                                        }
                                                     }
                                                 }
                                             } label: {
@@ -647,9 +657,10 @@ struct NewSelectionView: View {
                                                         .font(.title)
                                                         .foregroundColor(.white)
                                                 }
-                                            }.navigationBarBackButtonHidden(true)
+                                            }
+                                            .disabled(model.includeSurvey == false && model.eval == false ? true:false)
+                                            .navigationBarBackButtonHidden(true)
                                         }
-                                        
                                     }
                                 }
                             }
@@ -664,6 +675,7 @@ struct NewSelectionView: View {
         .frame(width: UIScreen.main.bounds.width)
         .onAppear {
             model.eval = true
+            model.includeSurvey = true
             model.includePrivacyPolicy = true
             model.includeMedicalHistory = true
             model.includeInsuranceIntake = true
