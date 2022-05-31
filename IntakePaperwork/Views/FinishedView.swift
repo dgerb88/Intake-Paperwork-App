@@ -17,11 +17,11 @@ struct FinishedView: View {
     
     var body: some View {
         if progressView == 1 {
-            ProgressView("Loading...")
+            ProgressView("Compiling...")
                 .progressViewStyle(CircularProgressViewStyle(tint: .black))
                 .foregroundColor(.black)
                 .onAppear(perform: {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                         progressView = 0
                     }
                 })
