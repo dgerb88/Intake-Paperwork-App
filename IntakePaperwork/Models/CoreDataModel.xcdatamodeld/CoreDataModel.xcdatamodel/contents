@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Items" representedClassName="Items" syncable="YES">
-        <attribute name="imageArray" optional="YES" attributeType="Transformable" customClassName="[UIImage]"/>
+        <attribute name="imageArray" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[UIImage]"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="pdfArray" optional="YES" attributeType="Transformable" customClassName="[NSData]"/>
+        <attribute name="pdfArray" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[NSData]"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
