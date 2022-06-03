@@ -46,7 +46,7 @@
 
 /* Begin PBXFileReference section */
 		4F12AAC52727BBD5006905FD /* QuickDashEngView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickDashEngView.swift; sourceTree = "<group>"; };
-		4F207D80271AA69100B74F3A /* Paperless Paperwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Paperless Paperwork.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F207D80271AA69100B74F3A /* PaperlessWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaperlessWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F207D83271AA69100B74F3A /* IntakePaperworkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakePaperworkApp.swift; sourceTree = "<group>"; };
 		4F207D85271AA69100B74F3A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4F207D87271AA69200B74F3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		4F207D81271AA69100B74F3A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4F207D80271AA69100B74F3A /* Paperless Paperwork.app */,
+				4F207D80271AA69100B74F3A /* PaperlessWork.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -235,9 +235,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4F207D7F271AA69000B74F3A /* Paperless Paperwork */ = {
+		4F207D7F271AA69000B74F3A /* PaperlessWork */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4F207D8E271AA69200B74F3A /* Build configuration list for PBXNativeTarget "Paperless Paperwork" */;
+			buildConfigurationList = 4F207D8E271AA69200B74F3A /* Build configuration list for PBXNativeTarget "PaperlessWork" */;
 			buildPhases = (
 				4F207D7C271AA69000B74F3A /* Sources */,
 				4F207D7D271AA69000B74F3A /* Frameworks */,
@@ -247,9 +247,9 @@
 			);
 			dependencies = (
 			);
-			name = "Paperless Paperwork";
+			name = PaperlessWork;
 			productName = IntakePaperwork;
-			productReference = 4F207D80271AA69100B74F3A /* Paperless Paperwork.app */;
+			productReference = 4F207D80271AA69100B74F3A /* PaperlessWork.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -267,7 +267,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4F207D7B271AA69000B74F3A /* Build configuration list for PBXProject "Paperless Paperwork" */;
+			buildConfigurationList = 4F207D7B271AA69000B74F3A /* Build configuration list for PBXProject "PaperlessWork" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -280,7 +280,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4F207D7F271AA69000B74F3A /* Paperless Paperwork */,
+				4F207D7F271AA69000B74F3A /* PaperlessWork */,
 			);
 		};
 /* End PBXProject section */
@@ -482,7 +482,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Dax.Gerber.Apps.IntakePaperwork;
-				PRODUCT_NAME = "Paperless Paperwork";
+				PRODUCT_NAME = PaperlessWork;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -514,7 +514,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Dax.Gerber.Apps.IntakePaperwork;
-				PRODUCT_NAME = "Paperless Paperwork";
+				PRODUCT_NAME = PaperlessWork;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -524,7 +524,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4F207D7B271AA69000B74F3A /* Build configuration list for PBXProject "Paperless Paperwork" */ = {
+		4F207D7B271AA69000B74F3A /* Build configuration list for PBXProject "PaperlessWork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4F207D8C271AA69200B74F3A /* Debug */,
@@ -533,7 +533,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4F207D8E271AA69200B74F3A /* Build configuration list for PBXNativeTarget "Paperless Paperwork" */ = {
+		4F207D8E271AA69200B74F3A /* Build configuration list for PBXNativeTarget "PaperlessWork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4F207D8F271AA69200B74F3A /* Debug */,
