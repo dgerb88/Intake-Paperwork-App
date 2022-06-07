@@ -36,6 +36,11 @@ class SurveyModel: ObservableObject {
             UserDefaults.standard.set(self.showDryNeedling, forKey: Constants.showDryNeedling)
         }
     }
+    @Published var confirmSettings: Bool = UserDefaults.standard.bool(forKey: Constants.confirmSettings) {
+        didSet {
+            UserDefaults.standard.set(self.confirmSettings, forKey: Constants.confirmSettings)
+        }
+    }
     @Published var showPrivacyPolicy: Bool = UserDefaults.standard.bool(forKey: Constants.showPrivacyPolicy) {
         didSet {
             UserDefaults.standard.set(self.showPrivacyPolicy, forKey: Constants.showPrivacyPolicy)

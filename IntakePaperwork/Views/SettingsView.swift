@@ -75,9 +75,33 @@ struct SettingsView: View {
                                 .font(.title2)
                                 .foregroundColor(.black)
                         }
-
                     }
+                    
                 }
+                if model.confirmSettings == false {
+                    VStack {
+                        Button {
+                            model.confirmSettings = true
+                        } label: {
+                            ZStack {
+                                Rectangle()
+                                    .foregroundColor(.green)
+                                    .frame(height: 48)
+                                    .cornerRadius(10)
+                                    .shadow(radius: 1)
+                                    
+                                Text("Confirm")
+                                    .bold()
+                                    .font(.title)
+                                    .padding()
+                                .foregroundColor(.white)
+                            }
+                        }
+
+                    }.padding(.top, 100)
+                        .padding()
+                }
+                
             }.padding(.top)
         }.navigationBarTitleDisplayMode( .inline)
             .toolbar {
