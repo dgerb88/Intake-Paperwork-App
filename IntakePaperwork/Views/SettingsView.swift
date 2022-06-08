@@ -14,7 +14,7 @@ struct SettingsView: View {
     var body: some View {
         ZStack {
             BackgroundView()
-            ZStack {
+            ZStack(alignment: .bottom) {
                 VStack(alignment: .leading) {
                     List {
                         Section(header: Text("Intake forms shown").font(.title2).foregroundColor(.black)) {
@@ -79,6 +79,7 @@ struct SettingsView: View {
                     
                 }
                 if model.confirmSettings == false {
+                    Spacer()
                     VStack {
                         Button {
                             model.confirmSettings = true
@@ -98,7 +99,7 @@ struct SettingsView: View {
                             }
                         }
 
-                    }.padding(.top, 100)
+                    }.padding(.bottom, 20)
                         .padding()
                 }
                 
