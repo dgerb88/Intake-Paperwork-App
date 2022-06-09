@@ -99,19 +99,24 @@ class SurveyModel: ObservableObject {
     init() {
         getLocalData()
         checkLoadedSettings()
+        checkSubscription()
+    }
+    
+    func checkSubscription() {
         Purchases.shared.getCustomerInfo { (info, error) in
             if info?.entitlements["All Access"]?.isActive == true {
                 self.confirmPurchase = true
             }
         }
     }
-    
     func checkLoadedSettings() {
         
         let status = UserDefaults.standard.bool(forKey: Constants.isSettingsPreloaded)
         if status == false {
             preLoadSettings()
         }
+        
+        
     }
     
     func preLoadSettings() {
