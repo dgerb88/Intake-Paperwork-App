@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import RevenueCat
 
 class SurveyModel: ObservableObject {
 
@@ -61,6 +62,11 @@ class SurveyModel: ObservableObject {
             UserDefaults.standard.set(self.showMedicalHistory, forKey: Constants.showMedicalHistory)
         }
     }
+    @Published var confirmPurchase: Bool = UserDefaults.standard.bool(forKey: Constants.confirmPurchase) {
+        didSet {
+            UserDefaults.standard.set(self.confirmPurchase, forKey: Constants.confirmPurchase)
+        }
+    }
     
     
     //MARK: User default strings
@@ -93,6 +99,11 @@ class SurveyModel: ObservableObject {
     init() {
         getLocalData()
         checkLoadedSettings()
+        Purchases.shared.getCustomerInfo { (info, error) in
+            if info?.entitlements["All Access"]?.isActive == true {
+                self.confirmPurchase = true
+            }
+        }
     }
     
     func checkLoadedSettings() {

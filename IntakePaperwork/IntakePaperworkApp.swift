@@ -6,10 +6,16 @@
 //
 
 import SwiftUI
+import RevenueCat
 
     @main
 struct IntakePaperworkApp: App {
     let persistenceController = PersistenceController.shared
+    
+    init() {
+        Purchases.logLevel = .debug
+        Purchases.configure(withAPIKey: "appl_PWLYzRggQruwncIXmKwHlRrPzis")
+    }
     
     var body: some Scene {
         WindowGroup {

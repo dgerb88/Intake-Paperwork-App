@@ -24,4 +24,5 @@ struct Constants {
     static var PDFfileArrayArray = "PDFfileArrayArray"
     static var savedImageArray = "saveImageArray"
     static var confirmSettings = "confirmSettings"
+    static var confirmPurchase = "confirmPurchase"
 }
