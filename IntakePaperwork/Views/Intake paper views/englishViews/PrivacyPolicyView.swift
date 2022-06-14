@@ -124,9 +124,8 @@ struct PrivacyPolicyView: View {
                     VStack {
                         privacyView.onDisappear {
                             let image = privacyView.snapshot()
-                            model.PDFimage.append(image)
-                            model.PDFfile = model.createPDF(image: image)
-                            model.PDFfileArray.append(model.PDFfile!)
+                            model.makeAddPdf(image: image)
+
                         }
                         if signaturePrivate == "" {
                             Button {

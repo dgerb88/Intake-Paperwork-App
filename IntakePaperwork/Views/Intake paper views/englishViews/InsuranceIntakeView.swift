@@ -18,7 +18,7 @@ struct InsuranceIntakeView: View {
     @State var signatureInsurance = ""
     @State var buttonInsurance = [false, false, false, false, false, false, false]
     var survey: Survey
-    @State var keyboardChange = false
+    @FocusState var keyboardChange: Bool
     @State var showAlert = false
     @State var fillAlert = false 
 
@@ -224,9 +224,8 @@ struct InsuranceIntakeView: View {
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                                 .frame(width: 300)
-                                .onTapGesture {
-                                    keyboardChange = true
-                                }
+                                .focused($keyboardChange)
+
                             Text("Date: ")
                                 .padding(.leading)
                             Text(Date().addingTimeInterval(600), style: .date)
@@ -253,9 +252,8 @@ struct InsuranceIntakeView: View {
                         insuranceView
                             .onDisappear {
                                 let image = insuranceView.snapshot()
-                                model.PDFimage.append(image)
-                                model.PDFfile = model.createPDF(image: image)
-                                model.PDFfileArray.append(model.PDFfile!)
+                                model.makeAddPdf(image: image)
+
                             }
                         if signatureInsurance == "" {
                             Button {
@@ -382,7 +380,7 @@ struct InsuranceIntakeView: View {
                 keyboardChange = false
             }
             .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
-            .animation(.easeOut(duration: 0.3))
+            .animation(.easeInOut(duration: 0.3), value: true)
     }
 }
 

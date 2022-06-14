@@ -36,7 +36,7 @@ struct MedicalHistoryView: View {
     @State var timesFallen = ""
     @State var reasonFall = ""
     @State var button5 = [false, false]
-    @State var keyboardChange = false
+    @FocusState var keyboardChange: Bool
     @State var showAlert = false
     
     var medView: some View {
@@ -1425,12 +1425,10 @@ struct MedicalHistoryView: View {
                             if button2[55] {
                                 Image(systemName: "checkmark.square")
                                     .font(.headline)
-
                             }
                             else {
                                 Image(systemName: "square")
                                     .font(.headline)
-
                             }
                         }
                         Text("None of the above")
@@ -1461,8 +1459,9 @@ struct MedicalHistoryView: View {
                                 if medicationsList == "List" {
                                     medicationsList = ""
                                 }
-                                keyboardChange = true
                             }
+                            .focused($keyboardChange)
+
                         Text("Occupation: ")
                             .font(Font.title3.weight(.bold))
                         TextField("Text here", text: $occupation)
@@ -1470,9 +1469,8 @@ struct MedicalHistoryView: View {
                             .textFieldStyle(.roundedBorder)
                             .frame(width: 350)
                             .padding(.bottom)
-                            .onTapGesture {
-                                keyboardChange = true
-                            }
+                            .focused($keyboardChange)
+
                         Text("If employed, current ability to work: ")
                             .font(Font.title3.weight(.bold))
                             .padding(.bottom, 5)
@@ -1545,9 +1543,8 @@ struct MedicalHistoryView: View {
                                 .textFieldStyle(.roundedBorder)
                                 .frame(width: 350)
                                 .padding(.bottom)
-                                .onTapGesture {
-                                    keyboardChange = true
-                                }
+                                .focused($keyboardChange)
+
 
                         }
                         
@@ -1565,8 +1562,8 @@ struct MedicalHistoryView: View {
                                 if workDuties == "Duties" {
                                     workDuties = ""
                                 }
-                                keyboardChange = true
                             }
+                            .focused($keyboardChange)
                         Text("Have you fallen in the last 12 months?")
                             .font(Font.title3.weight(.bold))
                             .fixedSize(horizontal: false, vertical: true)
@@ -1616,18 +1613,15 @@ struct MedicalHistoryView: View {
                                     .textFieldStyle(.roundedBorder)
                                     .padding(.bottom, 5)
                                     .frame(width: 350)
-                                    .onTapGesture {
-                                        keyboardChange = true
-                                    }
+                                    .focused($keyboardChange)
+
                                 Text("Reason for fall(s)?")
                                 TextField("Reason", text: $reasonFall)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
                                     .padding(.bottom, 5)
                                     .frame(width: 350)
-                                    .onTapGesture {
-                                        keyboardChange = true
-                                    }
+                                    .focused($keyboardChange)
                                 Text("Did any falls result in injury?")
                                     .padding(.bottom, 5)
                                 HStack {
@@ -1691,9 +1685,8 @@ struct MedicalHistoryView: View {
                         medView
                             .onDisappear {
                                 let image = medView.snapshot()
-                                model.PDFimage.append(image)
-                                model.PDFfile = model.createPDF(image: image)
-                                model.PDFfileArray.append(model.PDFfile!)
+                                model.makeAddPdf(image: image)
+
                             }
                         NavigationLink {
                             if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {
@@ -1777,7 +1770,7 @@ struct MedicalHistoryView: View {
                 keyboardChange = false
             }
             .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
-            .animation(.easeOut(duration: 0.3))
+            .animation(.easeInOut(duration: 0.3), value: true)
     }
 }
 

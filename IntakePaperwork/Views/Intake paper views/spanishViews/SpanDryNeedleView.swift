@@ -13,7 +13,7 @@ struct SpanDryNeedleView: View {
     
     @State var buttonNeedle = [false, false, false, false, false, false, false, false, false]
     @State var signatureNeedle = ""
-    @State var keyboardChange = false
+    @FocusState var keyboardChange: Bool
     @State var showAlert = false
     @State var fillAlert = false 
     
@@ -298,9 +298,8 @@ struct SpanDryNeedleView: View {
                                     .padding(.leading, 20)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
-                                    .onTapGesture {
-                                        keyboardChange = true 
-                                    }
+                                    .focused($keyboardChange)
+
                                 Text("Fecha: ")
                                 .padding(.leading)
                                 Text(Date().addingTimeInterval(600), style: .date)
@@ -325,9 +324,7 @@ struct SpanDryNeedleView: View {
                         spanNeedleView
                             .onDisappear {
                                 let image = spanNeedleView.snapshot()
-                                model.PDFimage.append(image)
-                                model.PDFfile = model.createPDF(image: image)
-                                model.PDFfileArray.append(model.PDFfile!)
+                                model.makeAddPdf(image: image)
                         }
                         if signatureNeedle == "" {
                             Button {
@@ -444,7 +441,7 @@ struct SpanDryNeedleView: View {
             keyboardChange = false
         }
         .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
-        .animation(.easeOut(duration: 0.3))
+        .animation(.easeInOut(duration: 0.3), value: true)
     }
 }
 

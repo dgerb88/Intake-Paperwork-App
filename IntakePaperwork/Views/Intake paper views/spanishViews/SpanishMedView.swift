@@ -37,7 +37,7 @@ struct SpanishMedView: View {
     @State var timesFallen = ""
     @State var reasonFall = ""
     @State var button5 = [false, false]
-    @State var keyboardChange = false
+    @FocusState var keyboardChange: Bool
     @State var showAlert = false
     
     var spanMedView: some View {
@@ -1118,9 +1118,9 @@ struct SpanishMedView: View {
                             .onTapGesture {
                                 if medicationsList == "Enumere" {
                                     medicationsList = ""
-                                    keyboardChange = true
                                 }
                             }
+                            .focused($keyboardChange)
                         Text("¿En qué trabaja?")
                             .font(Font.title3.weight(.bold))
                         TextField("Trabajo", text: $occupation)
@@ -1128,9 +1128,8 @@ struct SpanishMedView: View {
                             .textFieldStyle(.roundedBorder)
                             .frame(width: 350)
                             .padding(.bottom)
-                            .onTapGesture {
-                                keyboardChange = true
-                            }
+                            .focused($keyboardChange)
+
                         Text("Si está empleado, capacidad actual para trabajar: ")
                             .font(Font.title3.weight(.bold))
                             .padding(.bottom, 5)
@@ -1210,9 +1209,8 @@ struct SpanishMedView: View {
                                 .textFieldStyle(.roundedBorder)
                                 .frame(width: 350)
                                 .padding(.bottom)
-                                .onTapGesture {
-                                    keyboardChange = true
-                                }
+                                .focused($keyboardChange)
+
 
                         }
                         
@@ -1229,9 +1227,10 @@ struct SpanishMedView: View {
                             .onTapGesture {
                                 if workDuties == "Tareas laborales" {
                                     workDuties = ""
-                                    keyboardChange = true
                                 }
                             }
+                            .focused($keyboardChange)
+
                         Text("¿Ha caído en los últimos 12 meses?")
                             .font(Font.title3.weight(.bold))
                             .fixedSize(horizontal: false, vertical: true)
@@ -1281,18 +1280,16 @@ struct SpanishMedView: View {
                                     .textFieldStyle(.roundedBorder)
                                     .padding(.bottom, 5)
                                     .frame(width: 350)
-                                    .onTapGesture {
-                                        keyboardChange = true
-                                    }
+                                    .focused($keyboardChange)
+
                                 Text("Razón de la caída?")
                                 TextField("Razón", text: $reasonFall)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
                                     .padding(.bottom, 5)
                                     .frame(width: 350)
-                                    .onTapGesture {
-                                        keyboardChange = true
-                                    }
+                                    .focused($keyboardChange)
+
                                 Text("¿Alguna de las caídas resultó en lesiones?")
                                     .padding(.bottom, 5)
                                 HStack {
@@ -1356,9 +1353,8 @@ struct SpanishMedView: View {
                         spanMedView
                             .onDisappear {
                                 let image = spanMedView.snapshot()
-                                model.PDFimage.append(image)
-                                model.PDFfile = model.createPDF(image: image)
-                                model.PDFfileArray.append(model.PDFfile!)
+                                model.makeAddPdf(image: image)
+
                             }
                         NavigationLink {
                             if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {
@@ -1442,7 +1438,7 @@ struct SpanishMedView: View {
             keyboardChange = false
         }
         .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
-        .animation(.easeOut(duration: 0.3))
+        .animation(.easeInOut(duration: 0.3), value: true)
     }
 }
 

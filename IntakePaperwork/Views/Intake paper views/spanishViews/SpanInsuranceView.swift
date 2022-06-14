@@ -18,7 +18,7 @@ struct SpanInsuranceView: View {
     @State var signatureInsurance = ""
     @State var buttonInsurance = [false, false, false, false, false, false, false]
     var survey: Survey
-    @State var keyboardChange = false
+    @FocusState var keyboardChange: Bool
     @State var showAlert = false
     @State var fillAlert = false
     
@@ -227,9 +227,8 @@ struct SpanInsuranceView: View {
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                                 .frame(width: 300)
-                                .onTapGesture {
-                                    keyboardChange = true
-                                }
+                                .focused($keyboardChange)
+
                             Text("Fecha: ")
                                 .padding(.leading)
                             Text(Date().addingTimeInterval(600), style: .date)
@@ -256,9 +255,7 @@ struct SpanInsuranceView: View {
                         spanInsuranceView
                             .onDisappear {
                                 let image = spanInsuranceView.snapshot()
-                                model.PDFimage.append(image)
-                                model.PDFfile = model.createPDF(image: image)
-                                model.PDFfileArray.append(model.PDFfile!)
+                                model.makeAddPdf(image: image)
                             }
                         if signatureInsurance == "" {
                             Button {
@@ -386,7 +383,7 @@ struct SpanInsuranceView: View {
             keyboardChange = false
         }
         .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
-        .animation(.easeOut(duration: 0.3))
+        .animation(.easeInOut(duration: 0.3), value: true)
     }
 }
 

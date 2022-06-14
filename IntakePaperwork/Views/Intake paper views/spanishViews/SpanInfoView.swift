@@ -338,9 +338,8 @@ struct SpanInfoView: View {
                         spanInfoView
                             .onDisappear {
                                 let image = spanInfoView.snapshot()
-                                model.PDFimage.append(image)
-                                model.PDFfile = model.createPDF(image: image)
-                                model.PDFfileArray.append(model.PDFfile!)
+                                model.makeAddPdf(image: image)
+
                             }
                         if signaturesInfo[0] == "" || signaturesInfo[1] == "" {
                             Button {
@@ -465,7 +464,7 @@ struct SpanInfoView: View {
             keyboardChange = false
         }
         .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
-        .animation(.easeOut(duration: 0.3))
+        .animation(.easeInOut(duration: 0.3), value: true)
     }
 }
 

@@ -14,7 +14,7 @@ struct DryNeedlingConsentView: View {
     
     @State var buttonNeedle = [false, false, false, false, false, false, false, false, false]
     @State var signatureNeedle = ""
-    @State var keyboardChange = false
+    @FocusState var keyboardChange: Bool
     @State var showAlert = false
     @State var fillAlert = false
     
@@ -301,9 +301,8 @@ struct DryNeedlingConsentView: View {
                                     .padding(.leading, 20)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
-                                    .onTapGesture {
-                                        keyboardChange = true
-                                    }
+                                    .focused($keyboardChange)
+
                                 Text("Date: ")
                                 .padding(.leading)
                                 Text(Date().addingTimeInterval(600), style: .date)
@@ -329,9 +328,8 @@ struct DryNeedlingConsentView: View {
                         needleView
                             .onDisappear {
                                 let image = needleView.snapshot()
-                                model.PDFimage.append(image)
-                                model.PDFfile = model.createPDF(image: image)
-                                model.PDFfileArray.append(model.PDFfile!)
+                                model.makeAddPdf(image: image)
+
                         }
                         if signatureNeedle == "" {
                             Button {
@@ -450,8 +448,8 @@ struct DryNeedlingConsentView: View {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 keyboardChange = false
             }
-            .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
-            .animation(.easeOut(duration: 0.3))
+            .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*5/20 : 0)
+            .animation(.easeInOut(duration: 0.3), value: true)
     }
 }
 

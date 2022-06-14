@@ -119,6 +119,25 @@ class SurveyModel: ObservableObject {
         
     }
     
+    func makeAddPdf(image: UIImage) {
+        self.PDFimage.append(image)
+        self.PDFfile = createPDF(image: image)
+        self.PDFfileArray.append(self.PDFfile!)
+    }
+    
+    func setSettings() {
+        self.eval = true
+        self.includeSurvey = true
+        self.includePrivacyPolicy = true
+        self.includeMedicalHistory = true
+        self.includeInsuranceIntake = true
+        self.includeInformationAndPolicies = true
+        self.includeDryNeedlingConsent = true
+        self.personalName = ""
+        self.selectedValue.removeAll()
+        self.appendArray(25)
+    }
+    
     func preLoadSettings() {
         showDryNeedling = true
         showPrivacyPolicy = true

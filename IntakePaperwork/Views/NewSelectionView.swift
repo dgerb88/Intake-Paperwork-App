@@ -50,7 +50,8 @@ struct NewSelectionView: View {
             Rectangle()
                 .foregroundColor(Color.init(.sRGB, red: 0.92941, green: 0.92941, blue: 0.92941, opacity: 1))
                 .cornerRadius(5)
-                .shadow(radius: 5)                
+                .shadow(radius: 5)
+                .ignoresSafeArea(.all, edges: .bottom)
             ScrollView {
                 VStack(spacing: 30) {
                     //MARK: Language
@@ -64,6 +65,7 @@ struct NewSelectionView: View {
                                 .font(.largeTitle)
                                 .padding(.bottom, 20)
                             HStack(spacing: 0) {
+                                Group {
                                 Button {
                                     if isEnglish == false {
                                         withAnimation {
@@ -128,6 +130,7 @@ struct NewSelectionView: View {
                                     }
                                     
                                 }
+                                }
                                 
                                 
                             }.padding(.bottom, 20)
@@ -147,9 +150,8 @@ struct NewSelectionView: View {
                                 .font(Font.title2)
                                 .padding(.horizontal, 20)
                             Divider().padding(.bottom, 20)
-                            VStack {
                                 if model.eval == true {
-                                    VStack {
+                                    Group {
                                         
                                         if model.showMedicalHistory {
                                             Button {
@@ -223,7 +225,7 @@ struct NewSelectionView: View {
                                         }
                                         
                                     }
-                                    VStack {
+                                    Group {
                                         
                                         if model.showInfoAndPolicies {
                                             Button {
@@ -333,7 +335,6 @@ struct NewSelectionView: View {
                                         
                                     }
                                 }
-                            }
                             
                         }.padding(20)
                     }
@@ -343,7 +344,7 @@ struct NewSelectionView: View {
                             .foregroundColor(.white)
                             .cornerRadius(5)
                         VStack {
-                            VStack {
+                            Group {
                                 Text("Surveys")
                                     .bold()
                                     .font(.largeTitle)
@@ -354,6 +355,7 @@ struct NewSelectionView: View {
                                 Divider().padding(.bottom, 30)
                             }
                             if model.includeSurvey {
+                                Group {
                                 Button {
                                     if LefsSelected == false {
                                         LefsSelected = true
@@ -472,200 +474,16 @@ struct NewSelectionView: View {
                                         }.padding(.horizontal, 20)
                                     }
                                 }
-                                Divider().padding(.bottom, 20)
+                                Divider().padding(.bottom, 20) }
                             }
                             //MARK: Go button
-                            VStack {
-                                ZStack {
-                                    ForEach(model.surveys) { survey in
-                                        if survey.name == nameSelected && survey.language == language {
-                                            NavigationLink(tag: 0,
-                                                           selection: $model.viewSelectionInt) {
-                                                if model.eval == true {
-                                                    if model.showMedicalHistory == true && model.includeMedicalHistory == true {
-                                                        if language == "English" {
-                                                            MedicalHistoryView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                        else {
-                                                            SpanishMedView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                    }
-                                                    else if model.showInsuranceIntake == true && model.includeInsuranceIntake == true {
-                                                        if language == "English" {
-                                                            InsuranceIntakeView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                        else {
-                                                            SpanInsuranceView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                    }
-                                                    else if model.showInfoAndPolicies == true && model.includeInformationAndPolicies == true {
-                                                        if language == "English" {
-                                                            InformationAndPoliciesView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                        else {
-                                                            SpanInfoView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                    }
-                                                    else if model.showPrivacyPolicy == true && model.includePrivacyPolicy == true {
-                                                        if language == "English" {
-                                                            PrivacyPolicyView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                        else {
-                                                            SpanPrivacyPolicyView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                    }
-                                                    else if model.showDryNeedling == true && model.includeDryNeedlingConsent == true {
-                                                        if language == "English" {
-                                                            DryNeedlingConsentView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                        else {
-                                                            SpanDryNeedleView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                    }
-                                                    else {
-                                                        if survey.name == "LEFS" {
-                                                            LefsView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                        else if survey.name == "Back Index" {
-                                                            BackIndexView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                        else if survey.name == "QuickDash" && survey.language == "English" {
-                                                            QuickDashEngView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                        else if survey.name == "QuickDash" && survey.language == "Spanish" {
-                                                            QuickDashSpanView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                        else if survey.name == "Neck Disability Index" {
-                                                            NDIView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                        else {
-                                                            Text("Survey not found")
-                                                        }
-                                                    }
-                                                }
-                                                else {
-                                                    if model.includeSurvey {
-                                                        if survey.name == "LEFS" {
-                                                            LefsView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                        else if survey.name == "Back Index" {
-                                                            BackIndexView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                        else if survey.name == "QuickDash" && survey.language == "English" {
-                                                            QuickDashEngView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                        else if survey.name == "QuickDash" && survey.language == "Spanish" {
-                                                            QuickDashSpanView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                        else if survey.name == "Neck Disability Index" {
-                                                            NDIView(survey: survey)
-                                                                .onAppear {
-                                                                    model.PDFfileArray.removeAll()
-                                                                    model.PDFimage.removeAll()
-                                                                }
-                                                        }
-                                                        else {
-                                                            Text("Survey not found")
-                                                        }
-                                                    }
-                                                }
-                                            } label: {
-                                                ZStack {
-                                                    Rectangle()
-                                                        .foregroundColor(.green)
-                                                        .frame(height: 48)
-                                                        .cornerRadius(10)
-                                                        .shadow(radius: 1)
-                                                    Text("Go")
-                                                        .bold()
-                                                        .font(.title)
-                                                        .foregroundColor(.white)
-                                                }
-                                            }
-                                            .disabled(model.includeSurvey == false && model.eval == false ? true:false)
-                                            .navigationBarBackButtonHidden(true)
-                                        }
+                            ForEach(model.surveys) { survey in
+                                if survey.name == nameSelected {
+                                    if survey.language == language {
+                                        GoButtonView(nameSelected: nameSelected, language: language, survey: survey)
                                     }
                                 }
                             }
-                            
-                            
                         }.padding(20)
                     }
                     Spacer()
@@ -674,18 +492,9 @@ struct NewSelectionView: View {
         }
         .frame(width: UIScreen.main.bounds.width)
         .onAppear {
-            model.eval = true
-            model.includeSurvey = true
-            model.includePrivacyPolicy = true
-            model.includeMedicalHistory = true
-            model.includeInsuranceIntake = true
-            model.includeInformationAndPolicies = true
-            model.includeDryNeedlingConsent = true
+            model.setSettings()
             isSpanish = false
             isEnglish = true
-            model.personalName = ""
-            model.selectedValue.removeAll()
-            model.appendArray(25)
             LefsSelected = true
             NdiSelected = false
             BackIndexSelected = false

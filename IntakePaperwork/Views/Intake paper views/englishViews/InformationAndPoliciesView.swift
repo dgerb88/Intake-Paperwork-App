@@ -17,7 +17,7 @@ struct InformationAndPoliciesView: View {
     @State var ContactPhoneNumberInfo = ""
     @State var ContactRelationInfo = ""
     @State var EmailAddressInfo = ""
-    @State var keyboardChange = false
+    @FocusState var keyboardChange: Bool
     @State var personalNumber = ""
     @State var personalAddress = ""
     @State var reminderType = 0
@@ -271,9 +271,7 @@ struct InformationAndPoliciesView: View {
                             .padding(.leading, 20)
                             .accentColor(.black)
                             .textFieldStyle(.roundedBorder)
-                            .onTapGesture {
-                                keyboardChange = true
-                            }
+                            .focused($keyboardChange)
                         Text("Date: ")
                             .padding(.leading)
                         Text(Date().addingTimeInterval(600), style: .date)
@@ -313,9 +311,8 @@ struct InformationAndPoliciesView: View {
                                 .padding(.leading, 20)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
-                                .onTapGesture {
-                                    keyboardChange = true
-                                }
+                                .focused($keyboardChange)
+
                             Text("Date: ")
                                 .padding(.leading)
                             Text(Date().addingTimeInterval(600), style: .date)
@@ -342,9 +339,8 @@ struct InformationAndPoliciesView: View {
                         infoView
                             .onDisappear {
                                 let image = infoView.snapshot()
-                                model.PDFimage.append(image)
-                                model.PDFfile = model.createPDF(image: image)
-                                model.PDFfileArray.append(model.PDFfile!)
+                                model.makeAddPdf(image: image)
+
                             }
                         if signaturesInfo[0] == "" || signaturesInfo[1] == "" {
                             Button {
@@ -469,7 +465,7 @@ struct InformationAndPoliciesView: View {
                 keyboardChange = false
             }
             .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
-            .animation(.easeOut(duration: 0.3))
+            .animation(.easeInOut(duration: 0.3), value: true)
     }
 }
 
