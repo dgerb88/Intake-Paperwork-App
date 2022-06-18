@@ -318,102 +318,41 @@ struct DryNeedlingConsentView: View {
     var body: some View {
         ZStack {
             BackgroundView()
-            ScrollView {
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(.white)
-                        .cornerRadius(5)
-                        .shadow(radius: 5)
-                    VStack {
-                        needleView
-                            .onDisappear {
-                                let image = needleView.snapshot()
-                                model.makeAddPdf(image: image)
+            Rectangle()
+                .foregroundColor(.white)
+                .shadow(radius: 5)
+                .padding(.top, 15)
+            VStack(spacing: 0) {
+                Rectangle()
+                    .foregroundColor(.white)
+                    .frame(width: UIScreen.main.bounds.width, height:  1)
+                ScrollView {
+                        VStack {
+                            needleView
+                                .onDisappear {
+                                    let image = needleView.snapshot()
+                                    model.makeAddPdf(image: image)
 
-                        }
-                        if signatureNeedle == "" {
-                            Button {
-                                fillAlert = true
-                            } label: {
-                                ZStack {
-                                    Rectangle()
-                                        .foregroundColor(.green)
-                                        .frame(height: 48)
-                                        .cornerRadius(10)
-                                        .shadow(radius: 1)
-                                    Text("Next")
-                                        .foregroundColor(.white)
-                                        .font(.title)
-                                        .bold()
-                                }.padding().padding(.bottom)
-                            }.alert(isPresented: $fillAlert) {
-                                Alert(title: Text("Please sign areas in red before continuing"), dismissButton: .cancel(Text("Confirm")))
                             }
-                            .navigationBarBackButtonHidden(true)
-                            .navigationBarTitleDisplayMode(.inline)
-                            .toolbar {
-                                ToolbarItem(placement: .navigationBarLeading) {
-                                    Button {
-                                        showAlert = true
-                                    } label: {
-                                        Image(systemName: "house")
-                                            .resizable(resizingMode: .tile)
-                                            .frame(width: 30, height: 30)
+                            if signatureNeedle == "" {
+                                Button {
+                                    fillAlert = true
+                                } label: {
+                                    ZStack {
+                                        Rectangle()
+                                            .foregroundColor(.green)
+                                            .frame(height: 48)
+                                            .cornerRadius(10)
+                                            .shadow(radius: 1)
+                                        Text("Next")
                                             .foregroundColor(.white)
-                                            .padding(.vertical, 20)
-                                    }.alert(isPresented: $showAlert) {
-                                        Alert(
-                                           title: Text("Are you sure you wish to return home? Current progress will be lost."),
-                                           primaryButton: .destructive(Text("Return home")) {
-                                               model.viewSelectionInt = nil
-                                           },
-                                           secondaryButton: .cancel()
-                                           
-                                        )
-                                    }
+                                            .font(.title)
+                                            .bold()
+                                    }.padding().padding(.bottom)
+                                }.alert(isPresented: $fillAlert) {
+                                    Alert(title: Text("Please sign areas in red before continuing"), dismissButton: .cancel(Text("Confirm")))
                                 }
-                            }
-
-                        }
-                        else {
-                            NavigationLink {
-                                if model.includeSurvey {
-                                    if survey.name == "LEFS" {
-                                        LefsView(survey: survey)
-                                    }
-                                    else if survey.name == "Back Index" {
-                                        BackIndexView(survey: survey)
-                                    }
-                                    else if survey.name == "QuickDash" && survey.language == "English" {
-                                        QuickDashEngView(survey: survey)
-                                    }
-                                    else if survey.name == "QuickDash" && survey.language == "Spanish" {
-                                        QuickDashSpanView(survey: survey)
-                                    }
-                                    else if survey.name == "Neck Disability Index" {
-                                        NDIView(survey: survey)
-                                    }
-                                    else {
-                                        Text("Survey not found")
-                                    }
-                                }
-                                else {
-                                    FinishedView(survey: survey)
-                                }
-                                
-                            } label: {
-                                ZStack {
-                                    Rectangle()
-                                        .foregroundColor(.green)
-                                        .frame(height: 48)
-                                        .cornerRadius(10)
-                                        .shadow(radius: 1)
-                                    Text("Next")
-                                        .foregroundColor(.white)
-                                        .font(.title)
-                                        .bold()
-                                }.padding().padding(.bottom)
-                            }.navigationBarBackButtonHidden(true)
+                                .navigationBarBackButtonHidden(true)
                                 .navigationBarTitleDisplayMode(.inline)
                                 .toolbar {
                                     ToolbarItem(placement: .navigationBarLeading) {
@@ -437,12 +376,77 @@ struct DryNeedlingConsentView: View {
                                         }
                                     }
                                 }
+
+                            }
+                            else {
+                                NavigationLink {
+                                    if model.includeSurvey {
+                                        if survey.name == "LEFS" {
+                                            LefsView(survey: survey)
+                                        }
+                                        else if survey.name == "Back Index" {
+                                            BackIndexView(survey: survey)
+                                        }
+                                        else if survey.name == "QuickDash" && survey.language == "English" {
+                                            QuickDashEngView(survey: survey)
+                                        }
+                                        else if survey.name == "QuickDash" && survey.language == "Spanish" {
+                                            QuickDashSpanView(survey: survey)
+                                        }
+                                        else if survey.name == "Neck Disability Index" {
+                                            NDIView(survey: survey)
+                                        }
+                                        else {
+                                            Text("Survey not found")
+                                        }
+                                    }
+                                    else {
+                                        FinishedView(survey: survey)
+                                    }
+                                    
+                                } label: {
+                                    ZStack {
+                                        Rectangle()
+                                            .foregroundColor(.green)
+                                            .frame(height: 48)
+                                            .cornerRadius(10)
+                                            .shadow(radius: 1)
+                                        Text("Next")
+                                            .foregroundColor(.white)
+                                            .font(.title)
+                                            .bold()
+                                    }.padding().padding(.bottom)
+                                }.navigationBarBackButtonHidden(true)
+                                    .navigationBarTitleDisplayMode(.inline)
+                                    .toolbar {
+                                        ToolbarItem(placement: .navigationBarLeading) {
+                                            Button {
+                                                showAlert = true
+                                            } label: {
+                                                Image(systemName: "house")
+                                                    .resizable(resizingMode: .tile)
+                                                    .frame(width: 30, height: 30)
+                                                    .foregroundColor(.white)
+                                                    .padding(.vertical, 20)
+                                            }.alert(isPresented: $showAlert) {
+                                                Alert(
+                                                   title: Text("Are you sure you wish to return home? Current progress will be lost."),
+                                                   primaryButton: .destructive(Text("Return home")) {
+                                                       model.viewSelectionInt = nil
+                                                   },
+                                                   secondaryButton: .cancel()
+                                                   
+                                                )
+                                            }
+                                        }
+                                    }
+                            }
+                            
+                            
                         }
-                        
-                        
-                    }
+                    
                 }
-            }.padding(.top, 10)
+            }.padding(.top)
         }
             .onTapGesture {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)

@@ -107,6 +107,9 @@ class SurveyModel: ObservableObject {
             if info?.entitlements["All Access"]?.isActive == true {
                 self.confirmPurchase = true
             }
+            else {
+                self.confirmPurchase = false
+            }
         }
     }
     func checkLoadedSettings() {

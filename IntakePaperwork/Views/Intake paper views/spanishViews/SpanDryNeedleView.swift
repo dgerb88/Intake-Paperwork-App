@@ -314,21 +314,90 @@ struct SpanDryNeedleView: View {
     var body: some View {
         ZStack {
             BackgroundView()
-            ScrollView {
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(.white)
-                        .cornerRadius(5)
-                        .shadow(radius: 5)
-                    VStack {
-                        spanNeedleView
-                            .onDisappear {
-                                let image = spanNeedleView.snapshot()
-                                model.makeAddPdf(image: image)
-                        }
-                        if signatureNeedle == "" {
-                            Button {
-                                fillAlert = true
+            Rectangle()
+                .foregroundColor(.white)
+                .shadow(radius: 5)
+            VStack(spacing: 0) {
+                Rectangle()
+                    .foregroundColor(.white)
+                    .frame(width: UIScreen.main.bounds.width, height:  1)
+                    .padding(.top)
+                ScrollView {
+                        VStack {
+                            spanNeedleView
+                                .onDisappear {
+                                    let image = spanNeedleView.snapshot()
+                                    model.makeAddPdf(image: image)
+                            }
+                            if signatureNeedle == "" {
+                                Button {
+                                    fillAlert = true
+                                } label: {
+                                    ZStack {
+                                        Rectangle()
+                                            .foregroundColor(.green)
+                                            .frame(height: 48)
+                                            .cornerRadius(10)
+                                            .shadow(radius: 1)
+                                        Text("Próximo")
+                                            .foregroundColor(.white)
+                                            .font(.title)
+                                            .bold()
+                                    }.padding().padding(.bottom)
+                                }.alert(isPresented: $fillAlert) {
+                                    Alert(title: Text("El favor de firmar las areas rojas antes de ir a la próxima sección."), dismissButton: .cancel(Text("Confirmar")))
+                                }
+                                .navigationBarBackButtonHidden(true)
+                                .navigationBarTitleDisplayMode(.inline)
+                                .toolbar {
+                                    ToolbarItem(placement: .navigationBarLeading) {
+                                        Button {
+                                            showAlert = true
+                                        } label: {
+                                            Image(systemName: "house")
+                                                .resizable(resizingMode: .tile)
+                                                .frame(width: 30, height: 30)
+                                                .foregroundColor(.white)
+                                                .padding(.vertical, 20)
+                                        }.alert(isPresented: $showAlert) {
+                                            Alert(
+                                               title: Text("Seguro que quieres volver a la pantalla de inicio? Tu progreso serà perdido."),
+                                               primaryButton: .destructive(Text("Vuelve a la pantalla de inicio.")) {
+                                                   model.viewSelectionInt = nil
+                                               },
+                                               secondaryButton: .cancel(Text("Cancelar"))
+                                               
+                                            )
+                                        }
+                                    }
+                                }
+
+                            }
+                            else {
+                            NavigationLink {
+                                if model.includeSurvey {
+                                    if survey.name == "LEFS" {
+                                        LefsView(survey: survey)
+                                    }
+                                    else if survey.name == "Back Index" {
+                                        BackIndexView(survey: survey)
+                                    }
+                                    else if survey.name == "QuickDash" && survey.language == "English" {
+                                        QuickDashEngView(survey: survey)
+                                    }
+                                    else if survey.name == "QuickDash" && survey.language == "Spanish" {
+                                        QuickDashSpanView(survey: survey)
+                                    }
+                                    else if survey.name == "Neck Disability Index" {
+                                        NDIView(survey: survey)
+                                    }
+                                    else {
+                                        Text("Survey not found")
+                                    }
+                                }
+                                else {
+                                    FinishedView(survey: survey)
+                                }
                             } label: {
                                 ZStack {
                                     Rectangle()
@@ -341,100 +410,35 @@ struct SpanDryNeedleView: View {
                                         .font(.title)
                                         .bold()
                                 }.padding().padding(.bottom)
-                            }.alert(isPresented: $fillAlert) {
-                                Alert(title: Text("El favor de firmar las areas rojas antes de ir a la próxima sección."), dismissButton: .cancel(Text("Confirmar")))
-                            }
-                            .navigationBarBackButtonHidden(true)
-                            .navigationBarTitleDisplayMode(.inline)
-                            .toolbar {
-                                ToolbarItem(placement: .navigationBarLeading) {
-                                    Button {
-                                        showAlert = true
-                                    } label: {
-                                        Image(systemName: "house")
-                                            .resizable(resizingMode: .tile)
-                                            .frame(width: 30, height: 30)
-                                            .foregroundColor(.white)
-                                            .padding(.vertical, 20)
-                                    }.alert(isPresented: $showAlert) {
-                                        Alert(
-                                           title: Text("Seguro que quieres volver a la pantalla de inicio? Tu progreso serà perdido."),
-                                           primaryButton: .destructive(Text("Vuelve a la pantalla de inicio.")) {
-                                               model.viewSelectionInt = nil
-                                           },
-                                           secondaryButton: .cancel(Text("Cancelar"))
-                                           
-                                        )
-                                    }
-                                }
-                            }
-
-                        }
-                        else {
-                        NavigationLink {
-                            if model.includeSurvey {
-                                if survey.name == "LEFS" {
-                                    LefsView(survey: survey)
-                                }
-                                else if survey.name == "Back Index" {
-                                    BackIndexView(survey: survey)
-                                }
-                                else if survey.name == "QuickDash" && survey.language == "English" {
-                                    QuickDashEngView(survey: survey)
-                                }
-                                else if survey.name == "QuickDash" && survey.language == "Spanish" {
-                                    QuickDashSpanView(survey: survey)
-                                }
-                                else if survey.name == "Neck Disability Index" {
-                                    NDIView(survey: survey)
-                                }
-                                else {
-                                    Text("Survey not found")
-                                }
-                            }
-                            else {
-                                FinishedView(survey: survey)
-                            }
-                        } label: {
-                            ZStack {
-                                Rectangle()
-                                    .foregroundColor(.green)
-                                    .frame(height: 48)
-                                    .cornerRadius(10)
-                                    .shadow(radius: 1)
-                                Text("Próximo")
-                                    .foregroundColor(.white)
-                                    .font(.title)
-                                    .bold()
-                            }.padding().padding(.bottom)
-                        }.navigationBarBackButtonHidden(true)
-                            .navigationBarTitleDisplayMode(.inline)
-                            .toolbar {
-                                ToolbarItem(placement: .navigationBarLeading) {
-                                    Button {
-                                        showAlert = true
-                                    } label: {
-                                        Image(systemName: "house")
-                                            .resizable(resizingMode: .tile)
-                                            .frame(width: 30, height: 30)
-                                            .foregroundColor(.white)
-                                            .padding(.vertical, 20)
-                                    }.alert(isPresented: $showAlert) {
-                                        Alert(
-                                           title: Text("Seguro que quieres volver a la pantalla de inicio? Tu progreso serà perdido."),
-                                           primaryButton: .destructive(Text("Vuelve a la pantalla de inicio.")) {
-                                               model.viewSelectionInt = nil
-                                           },
-                                           secondaryButton: .cancel(Text("Cancelar"))
-                                           
-                                        )
+                            }.navigationBarBackButtonHidden(true)
+                                .navigationBarTitleDisplayMode(.inline)
+                                .toolbar {
+                                    ToolbarItem(placement: .navigationBarLeading) {
+                                        Button {
+                                            showAlert = true
+                                        } label: {
+                                            Image(systemName: "house")
+                                                .resizable(resizingMode: .tile)
+                                                .frame(width: 30, height: 30)
+                                                .foregroundColor(.white)
+                                                .padding(.vertical, 20)
+                                        }.alert(isPresented: $showAlert) {
+                                            Alert(
+                                               title: Text("Seguro que quieres volver a la pantalla de inicio? Tu progreso serà perdido."),
+                                               primaryButton: .destructive(Text("Vuelve a la pantalla de inicio.")) {
+                                                   model.viewSelectionInt = nil
+                                               },
+                                               secondaryButton: .cancel(Text("Cancelar"))
+                                               
+                                            )
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
+                    
                 }
-            }.padding(.top, 10)
+            }.padding(.top)
         }
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)

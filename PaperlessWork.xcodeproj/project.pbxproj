@@ -164,16 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				4FCC632E272B5E170041BE4C /* Intake paper views */,
-				4F207D85271AA69100B74F3A /* HomeView.swift */,
-				4F82A6C7273EE446003DC3BF /* NewSelectionView.swift */,
-				4FB07F2228580F4800D74928 /* GoButtonView.swift */,
-				4F3EB9552725F3A7007384FA /* BackgroundView.swift */,
-				4F667425274464B6006B9ED0 /* PDFRetrievalView.swift */,
-				4FD830562758205D0075B219 /* PDFViewer.swift */,
-				4F89C1CB277CFFC000159150 /* LockedView.swift */,
-				4FD32B362760654B00CEC1C9 /* SheetView.swift */,
-				4FD32B342760619600CEC1C9 /* FinishedView.swift */,
-				4F667423274462B0006B9ED0 /* SettingsView.swift */,
+				4F9C68CF285D5DAA0085EE9B /* SupportViews */,
+				4F9C68D2285E71770085EE9B /* EndViews */,
 				4FCC632D272B5DE30041BE4C /* Survey Views */,
 			);
 			path = Views;
@@ -194,6 +186,28 @@
 				4F6440A827AC7CC0009EA77B /* data.json */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		4F9C68CF285D5DAA0085EE9B /* SupportViews */ = {
+			isa = PBXGroup;
+			children = (
+				4F3EB9552725F3A7007384FA /* BackgroundView.swift */,
+				4FD32B362760654B00CEC1C9 /* SheetView.swift */,
+				4FB07F2228580F4800D74928 /* GoButtonView.swift */,
+			);
+			path = SupportViews;
+			sourceTree = "<group>";
+		};
+		4F9C68D2285E71770085EE9B /* EndViews */ = {
+			isa = PBXGroup;
+			children = (
+				4FD830562758205D0075B219 /* PDFViewer.swift */,
+				4F89C1CB277CFFC000159150 /* LockedView.swift */,
+				4FD32B342760619600CEC1C9 /* FinishedView.swift */,
+				4F667423274462B0006B9ED0 /* SettingsView.swift */,
+				4F667425274464B6006B9ED0 /* PDFRetrievalView.swift */,
+			);
+			path = EndViews;
 			sourceTree = "<group>";
 		};
 		4FB32B0827960A4F00CD77BE /* spanishViews */ = {
@@ -235,6 +249,8 @@
 		4FCC632E272B5E170041BE4C /* Intake paper views */ = {
 			isa = PBXGroup;
 			children = (
+				4F207D85271AA69100B74F3A /* HomeView.swift */,
+				4F82A6C7273EE446003DC3BF /* NewSelectionView.swift */,
 				4FB32B0927960A6300CD77BE /* englishViews */,
 				4FB32B0827960A4F00CD77BE /* spanishViews */,
 			);
