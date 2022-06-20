@@ -21,7 +21,7 @@ struct SpanInfoView: View {
     @State var personalNumber = ""
     @State var personalAddress = ""
     @State var reminderType = 0
-    @State var birthDay = ""
+    @State var birthDay = ["", "", ""]
     @State var showAlert = false
     @State var fillAlert = false
 
@@ -48,9 +48,26 @@ struct SpanInfoView: View {
                                 .textFieldStyle(.roundedBorder)
                             Text("Fecha de nacimiento:")
                                 .padding(.top, 10)
-                            TextField("Fecha", text: $birthDay)
-                                .accentColor(.black)
-                                .textFieldStyle(.roundedBorder)
+                            HStack {
+                                TextField("MM", text: $birthDay[0])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 45)
+                                    .keyboardType(.numberPad)
+                                Text("/")
+                                TextField("DD", text: $birthDay[1])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 40)
+                                    .keyboardType(.numberPad)
+                                Text("/")
+                                TextField("YYYY", text: $birthDay[2])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 60)
+                                    .keyboardType(.numberPad)
+                            }
+
                             Text("Número de teléfono: ")
                                 .padding(.top, 10)
                             TextField("Tu número", text: $personalNumber)

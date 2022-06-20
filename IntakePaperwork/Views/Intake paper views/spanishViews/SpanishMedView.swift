@@ -14,7 +14,7 @@ struct SpanishMedView: View {
 
     @State var primaryReason = ""
     @State var primaryReasonOther = ""
-    @State var dateProblemStarted = ""
+    @State var dateProblemStarted = ["", "", ""]
     @State private var button = [false, false, false, false, false, false, false, false, false, false, false]
     @State var button2 = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     var famHistName = ["Accidente Cerebrovascular", "Angina de pecho", "Ansiedad", "Arritmia", "Artritis psoriásica", "Artritis reumatoide", "Asma", "Cáncer", "Cardiopatía", "Celulitis", "Colesterol alto", "Colitis", "Depresión", "Diabetes tipo 1", "Diabetes tipo 2", "Dificultad para respirar", "Dolor en las articulaciones", "Dolor de cuello crónico", "Dolor de espalda crónico"]
@@ -22,9 +22,9 @@ struct SpanishMedView: View {
     @State var diagnosticTesting = ""
     @State var secondReason = ""
     @State var historyCondition = "Historia"
-    @State var dateSurgery = ""
+    @State var dateSurgery = ["", "", ""]
     @State var typeSurgery = ""
-    @State var dateNextDoc = ""
+    @State var dateNextDoc = ["", "", ""]
     @State var PTin12 = ""
     @State var weeksPregnant = ""
     @State var otherConditions = ""
@@ -61,12 +61,25 @@ struct SpanishMedView: View {
                             Text("Fecha en que comenzó la condición:")
                                 .font(Font.title3.weight(.bold))
                                 .padding(.top)
-                            TextField("MM/DD/YYYY", text: $dateProblemStarted)
-                                .accentColor(.black)
-                                .textFieldStyle(.roundedBorder)
-                                .padding(.bottom, 5)
-                                .frame(width: 140)
-                                .keyboardType(.numberPad)
+                            HStack {
+                                TextField("MM", text: $dateProblemStarted[0])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 45)
+                                    .keyboardType(.numberPad)
+                                Text("/")
+                                TextField("DD", text: $dateProblemStarted[1])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 40)
+                                    .keyboardType(.numberPad)
+                                Text("/")
+                                TextField("YYYY", text: $dateProblemStarted[2])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 60)
+                                    .keyboardType(.numberPad)
+                            }
                         }
                         VStack(alignment: .leading) {
                             Text("¿Es esta una lesión relacionada con el trabajo?")
@@ -126,13 +139,26 @@ struct SpanishMedView: View {
                             Text("Fecha de la cirugía (si aplica):")
                                 .font(Font.title3.weight(.bold))
                                 .padding(.top)
-                            TextField("MM/DD/YYYY", text: $dateSurgery)
-                                .accentColor(.black)
-                                .textFieldStyle(.roundedBorder)
-                                .padding(.bottom, 5)
-                                .frame(width: 140)
-                                .keyboardType(.numberPad)
-                            if dateSurgery != "" {
+                            HStack {
+                                TextField("MM", text: $dateSurgery[0])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 45)
+                                    .keyboardType(.numberPad)
+                                Text("/")
+                                TextField("DD", text: $dateSurgery[1])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 40)
+                                    .keyboardType(.numberPad)
+                                Text("/")
+                                TextField("YYYY", text: $dateSurgery[2])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 60)
+                                    .keyboardType(.numberPad)
+                            }
+                            if dateSurgery[0] != "" {
                                 Text("Tipo de cirugía:")
                                     .font(Font.title3.weight(.bold))
                                     .padding(.top)
@@ -145,12 +171,25 @@ struct SpanishMedView: View {
                                 .font(Font.title3.weight(.bold))
                                 .padding(.top)
                                 .fixedSize(horizontal: false, vertical: true)
-                            TextField("MM/DD/YYYY", text: $dateNextDoc)
-                                .accentColor(.black)
-                                .textFieldStyle(.roundedBorder)
-                                .padding(.bottom, 5)
-                                .frame(width: 140)
-                                .keyboardType(.numberPad)
+                            HStack {
+                                TextField("MM", text: $dateNextDoc[0])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 45)
+                                    .keyboardType(.numberPad)
+                                Text("/")
+                                TextField("DD", text: $dateNextDoc[1])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 40)
+                                    .keyboardType(.numberPad)
+                                Text("/")
+                                TextField("YYYY", text: $dateNextDoc[2])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 60)
+                                    .keyboardType(.numberPad)
+                            }
                         }
                         VStack(alignment: .leading) {
                             Text("¿Ha tenido alguna prueba de diagnóstico relacionada con esta condición? (por ejemplo: rayos X, resonancia magnética, o ultrasonido")
