@@ -14,16 +14,16 @@ struct MedicalHistoryView: View {
 
     @State var primaryReason = ""
     @State var primaryReasonOther = ""
-    @State var dateProblemStarted = ""
+    @State var dateProblemStarted = ["", "", ""]
     @State private var button = [false, false, false, false, false, false, false, false, false, false, false]
     @State var button2 = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     var famHistName = ["Fibromyalgia", "Frequent UTI", "GERD", "Glaucoma", "Gout", "Heart Disease", "Hepatitis B", "Hepatitis C", "Hiatal hernia", "High Cholesterol", "HIV/AIDS", "Hypertension", "Hypothyroidism", "IBS"]
     @State var diagnosticTesting = ""
     @State var secondReason = ""
     @State var historyCondition = "History"
-    @State var dateSurgery = ""
+    @State var dateSurgery = ["", "", ""]
     @State var typeSurgery = ""
-    @State var dateNextDoc = ""
+    @State var dateNextDoc = ["", "", ""]
     @State var PTin12 = ""
     @State var weeksPregnant = ""
     @State var otherConditions = ""
@@ -49,7 +49,7 @@ struct MedicalHistoryView: View {
                 }
                 HStack(alignment: .top, spacing: 40) {
                     VStack(alignment: .leading) {
-                        VStack(alignment: .leading) {
+                        Group {
                             Text("Primary reason for visit:")
                                 .font(Font.title3.weight(.bold))
                             TextField("Reason", text: $primaryReason)
@@ -59,14 +59,27 @@ struct MedicalHistoryView: View {
                             Text("Date condition began:")
                                 .font(Font.title3.weight(.bold))
                                 .padding(.top)
-                            TextField("MM/DD/YYYY", text: $dateProblemStarted)
-                                .accentColor(.black)
-                                .textFieldStyle(.roundedBorder)
-                                .padding(.bottom, 5)
-                                .frame(width: 140)
-                                .keyboardType(.numberPad)
+                            HStack {
+                                TextField("MM", text: $dateProblemStarted[0])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 45)
+                                    .keyboardType(.numberPad)
+                                Text("/")
+                                TextField("DD", text: $dateProblemStarted[1])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 40)
+                                    .keyboardType(.numberPad)
+                                Text("/")
+                                TextField("YYYY", text: $dateProblemStarted[2])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 60)
+                                    .keyboardType(.numberPad)
+                            }
                         }
-                        VStack(alignment: .leading) {
+                        Group {
                             Text("Is this a work-related injury?")
                                 .font(Font.title3.weight(.bold))
                                 .padding(.top)
@@ -119,17 +132,30 @@ struct MedicalHistoryView: View {
                                 }
                             }.padding(.top, 5)
                         }
-                        VStack(alignment: .leading) {
+                        Group {
                             Text("Date of surgery (if applicable):")
                                 .font(Font.title3.weight(.bold))
                                 .padding(.top)
-                            TextField("MM/DD/YYYY", text: $dateSurgery)
-                                .accentColor(.black)
-                                .textFieldStyle(.roundedBorder)
-                                .padding(.bottom, 5)
-                                .frame(width: 140)
-                                .keyboardType(.numberPad)
-                            if dateSurgery != "" {
+                            HStack {
+                                TextField("MM", text: $dateSurgery[0])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 45)
+                                    .keyboardType(.numberPad)
+                                Text("/")
+                                TextField("DD", text: $dateSurgery[1])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 40)
+                                    .keyboardType(.numberPad)
+                                Text("/")
+                                TextField("YYYY", text: $dateSurgery[2])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 60)
+                                    .keyboardType(.numberPad)
+                            }
+                            if dateSurgery[0] != "" {
                                 Text("Type of surgery:")
                                     .font(Font.title3.weight(.bold))
                                     .padding(.top)
@@ -142,14 +168,30 @@ struct MedicalHistoryView: View {
                                 .font(Font.title3.weight(.bold))
                                 .padding(.top)
                                 .fixedSize(horizontal: false, vertical: true)
-                            TextField("MM/DD/YYYY", text: $dateNextDoc)
-                                .accentColor(.black)
-                                .textFieldStyle(.roundedBorder)
-                                .padding(.bottom, 5)
-                                .frame(width: 140)
-                                .keyboardType(.numberPad)
+                            HStack {
+                                TextField("MM", text: $dateNextDoc[0])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .padding(.bottom, 5)
+                                    .frame(width: 45)
+                                    .keyboardType(.numberPad)
+                                Text("/")
+                                TextField("DD", text: $dateNextDoc[1])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .padding(.bottom, 5)
+                                    .frame(width: 40)
+                                    .keyboardType(.numberPad)
+                                Text("/")
+                                TextField("YYYY", text: $dateNextDoc[2])
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .padding(.bottom, 5)
+                                    .frame(width: 60)
+                                    .keyboardType(.numberPad)
+                            }
                         }
-                        VStack(alignment: .leading) {
+                        Group {
                             Text("Have you had any diagnostic tests related to this condition? i.e. X-Ray, MRI, Ultrasound, etc.")
                                 .font(Font.title3.weight(.bold))
                                 .fixedSize(horizontal: false, vertical: true)
@@ -211,7 +253,7 @@ struct MedicalHistoryView: View {
                         }
                     }
                     VStack(alignment: .leading) {
-                        VStack(alignment: .leading) {
+                        Group {
                             Text("Secondary reason for visit (if applicable):")
                                 .padding(.bottom, 5)
                                 .font(Font.title3.weight(.bold))
@@ -235,7 +277,7 @@ struct MedicalHistoryView: View {
                                     }
                                 }
                         }
-                        VStack(alignment: .leading) {
+                        Group {
                             Text("Have you received physical therapy in the last 12 months?")
                                 .padding(.top)
                                 .padding(.bottom, 5)
@@ -450,7 +492,7 @@ struct MedicalHistoryView: View {
                 }
                 HStack(alignment: .top, spacing: 30) {
                     VStack(alignment: .leading, spacing: 5) {
-                        VStack(alignment: .leading, spacing: 5) {
+                        Group {
                             Button {
                                 if button2[0] {
                                     button2[0] = false
@@ -606,7 +648,7 @@ struct MedicalHistoryView: View {
                             }
                                 .foregroundColor(.black)
                         }
-                        VStack(alignment: .leading, spacing: 5) {
+                        Group {
                                 Button {
                                     if button2[7] {
                                         button2[7] = false
@@ -786,7 +828,7 @@ struct MedicalHistoryView: View {
                                 }
                                     .foregroundColor(.black)
                         }
-                        VStack(alignment: .leading, spacing: 5) {
+                        Group {
                                 Button {
                                     if button2[15] {
                                         button2[15] = false
@@ -878,7 +920,7 @@ struct MedicalHistoryView: View {
                         }
                     }
                     VStack(alignment: .leading, spacing: 5) {
-                        VStack(alignment: .leading, spacing: 5) {
+                        Group {
                                 Button {
                                     if button2[19] {
                                         button2[19] = false
@@ -997,7 +1039,7 @@ struct MedicalHistoryView: View {
                         }
                     }
                     VStack(alignment: .leading, spacing: 5) {
-                        VStack(alignment: .leading, spacing: 5) {
+                        Group {
                                 Button {
                                     if button2[37] {
                                         button2[37] = false
@@ -1153,7 +1195,7 @@ struct MedicalHistoryView: View {
                                 }
                                     .foregroundColor(.black)
                         }
-                        VStack(alignment: .leading, spacing: 5) {
+                        Group {
                                 Button {
                                     if button2[44] {
                                         button2[44] = false
@@ -1315,8 +1357,7 @@ struct MedicalHistoryView: View {
                                 }
                                     .foregroundColor(.black)
                         }
-
-                        VStack(alignment: .leading, spacing: 5) {
+                        Group {
                                 Button {
                                     if button2[51] {
                                         button2[51] = false
@@ -1676,7 +1717,7 @@ struct MedicalHistoryView: View {
             Rectangle()
                 .foregroundColor(.white)
                 .shadow(radius: 5)
-                .padding(.top, 15)
+                .padding(.top, UIScreen.main.bounds.height/75)
             VStack(spacing: 0) {
                 Rectangle()
                     .foregroundColor(.white)
@@ -1765,7 +1806,7 @@ struct MedicalHistoryView: View {
                         }
                     
                 }
-            }.padding(.top)
+            }.padding(.top, UIScreen.main.bounds.height/75)
 
         }
             .onTapGesture {

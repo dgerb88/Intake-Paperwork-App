@@ -1,13 +1,13 @@
 //
-//  BackIndexView.swift
+//  NDIView.swift
 //  IntakePaperwork
 //
-//  Created by Dax Gerber on 10/25/21.
+//  Created by Dax Gerber on 11/1/21.
 //
 
 import SwiftUI
 
-struct BackIndexView: View {
+struct NDIView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var model: SurveyModel
@@ -15,17 +15,15 @@ struct BackIndexView: View {
     @State var keyboardChange = false
 
     
-    var backIndexView: some View {
+    var ndiView: some View {
         ZStack {
             VStack {
                 VStack(alignment: .center) {
-                    VStack(alignment: .center) {
-                        Text("Back Index")
-                            .bold()
-                            .font(.largeTitle)
-                            .padding(.bottom, 30)
-                    }.padding(.top)
-                }
+                    Text("Neck Disability Index")
+                        .bold()
+                        .font(.largeTitle)
+                        .padding(.bottom, 30)
+                }.padding(.top)
                 VStack(alignment: .leading) {
                     Text(survey.description)
                         .font(.headline)
@@ -35,6 +33,7 @@ struct BackIndexView: View {
                     ForEach(0..<survey.questions.count, id: \.self) { index in
                         Text("\(survey.questions[index].title)")
                             .font(.title)
+                            .fixedSize(horizontal: false, vertical: true)
                         Picker("", selection: $model.selectedValue[index]) {
                             ForEach(0..<survey.questions[index].rating.count, id: \.self) { ratingIndex in
                                 Text(String(ratingIndex)).tag(ratingIndex)
@@ -47,7 +46,7 @@ struct BackIndexView: View {
                                 }
                             }
                         ForEach(0..<survey.questions[index].rating.count, id: \.self) { ratingIndex in
-                            Text(survey.questions[index].rating[ratingIndex]).tag(ratingIndex)
+                            Text("\(ratingIndex) - \(survey.questions[index].rating[ratingIndex])").tag(ratingIndex)
                                 .fixedSize(horizontal: false, vertical: true)
                         }.padding(.leading, 10)
                         Divider().padding(.bottom)
@@ -66,7 +65,7 @@ struct BackIndexView: View {
                                     }
                             }
                             Spacer()
-                            Text("Score: \(Int(Double(model.score*100/50)))%")
+                            Text("Score: \(model.score)/50")
                                 .font(.title)
                                 .padding()
                         }
@@ -83,7 +82,7 @@ struct BackIndexView: View {
                                     }
                             }
                             Spacer()
-                            Text("Puntuación: \(Int(Double(model.score*100/50)))%")
+                            Text("Puntuación: \(model.score)/50")
                                 .font(.title)
                                 .padding()
                         }
@@ -91,6 +90,7 @@ struct BackIndexView: View {
                 }.padding(.bottom).padding(.horizontal)
             }
         }.frame(width: UIScreen.main.bounds.width)
+        
     }
     
     var body: some View {
@@ -103,13 +103,12 @@ struct BackIndexView: View {
                         .cornerRadius(5)
                         .shadow(radius: 5)
                     VStack {
-                        backIndexView
-                            .onDisappear {
-                                let image = backIndexView.snapshot()
-                                model.PDFimage.append(image)
-                                model.PDFfile = model.createPDF(image: image)
-                                model.PDFfileArray.append(model.PDFfile!)
-                            }
+                        ndiView.onDisappear {
+                            let image = ndiView.snapshot()
+                            model.PDFimage.append(image)
+                            model.PDFfile = model.createPDF(image: image)
+                            model.PDFfileArray.append(model.PDFfile!)
+                        }
                         
                         NavigationLink {
                             FinishedView(survey: survey)
@@ -140,10 +139,9 @@ struct BackIndexView: View {
                     model.selectedValue.removeAll()
                     model.appendArray(survey.questions.count)
                 }
-            }
+            }.padding(.top, UIScreen.main.bounds.height/75)
         }
             .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
-
     }
 }
 

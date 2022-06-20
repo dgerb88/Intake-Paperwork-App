@@ -321,7 +321,7 @@ struct DryNeedlingConsentView: View {
             Rectangle()
                 .foregroundColor(.white)
                 .shadow(radius: 5)
-                .padding(.top, 15)
+                .padding(.top, UIScreen.main.bounds.height/75)
             VStack(spacing: 0) {
                 Rectangle()
                     .foregroundColor(.white)
@@ -446,7 +446,7 @@ struct DryNeedlingConsentView: View {
                         }
                     
                 }
-            }.padding(.top)
+            }.padding(.top, UIScreen.main.bounds.height/75)
         }
             .onTapGesture {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)

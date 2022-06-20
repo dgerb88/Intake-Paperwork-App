@@ -478,10 +478,8 @@ struct NewSelectionView: View {
                             }
                             //MARK: Go button
                             ForEach(model.surveys) { survey in
-                                if survey.name == nameSelected {
-                                    if survey.language == language {
+                                if survey.name == nameSelected && survey.language == language {
                                         GoButtonView(nameSelected: nameSelected, language: language, survey: survey)
-                                    }
                                 }
                             }
                         }.padding(20)

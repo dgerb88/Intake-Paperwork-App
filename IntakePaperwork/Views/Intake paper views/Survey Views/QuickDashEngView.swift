@@ -319,7 +319,7 @@ struct QuickDashEngView: View {
                         }.navigationBarBackButtonHidden(model.eval)
                     }
                 }
-            }
+            }.padding(.top, UIScreen.main.bounds.height/75)
         }
             .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
             .onAppear {

@@ -317,11 +317,11 @@ struct SpanDryNeedleView: View {
             Rectangle()
                 .foregroundColor(.white)
                 .shadow(radius: 5)
+                .padding(.top, UIScreen.main.bounds.height/75)
             VStack(spacing: 0) {
                 Rectangle()
                     .foregroundColor(.white)
                     .frame(width: UIScreen.main.bounds.width, height:  1)
-                    .padding(.top)
                 ScrollView {
                         VStack {
                             spanNeedleView
@@ -438,7 +438,7 @@ struct SpanDryNeedleView: View {
                         }
                     
                 }
-            }.padding(.top)
+            }.padding(.top, UIScreen.main.bounds.height/75)
         }
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)

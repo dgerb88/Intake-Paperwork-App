@@ -15,7 +15,6 @@ struct GoButtonView: View {
     var survey: Survey
     
     var body: some View {
-        ZStack {
                     NavigationLink(tag: 0,
                                    selection: $model.viewSelectionInt) {
                         if model.eval == true {
@@ -200,7 +199,7 @@ struct GoButtonView: View {
                     .navigationBarBackButtonHidden(true)
                 
             
-        }
+        
 
     }
 }

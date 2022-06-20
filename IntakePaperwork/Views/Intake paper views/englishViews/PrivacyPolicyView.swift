@@ -242,7 +242,7 @@ struct PrivacyPolicyView: View {
                         
                     }
                 }
-            }.padding(.top, 10)
+            }.padding(.top, UIScreen.main.bounds.height/75)
         }
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)

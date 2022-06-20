@@ -15,7 +15,6 @@ struct LefsView: View {
     @State var keyboardChange = false
     
     var lefsView: some View {
-        ZStack {
             VStack {
                 VStack(alignment: .center) {
                     Text("Lower Extremity Functional Scale")
@@ -103,8 +102,7 @@ struct LefsView: View {
                         }
                     }
                 }.padding(.bottom).padding(.horizontal)
-            }
-        }.frame(width: UIScreen.main.bounds.width)
+            }.frame(width: UIScreen.main.bounds.width)
     }
     
     var body: some View {
@@ -114,6 +112,7 @@ struct LefsView: View {
                 .foregroundColor(.white)
                 .cornerRadius(5)
                 .shadow(radius: 5)
+                .padding(.top, UIScreen.main.bounds.height/75)
             ZStack {
                 ScrollView {
                     VStack {
@@ -150,8 +149,7 @@ struct LefsView: View {
                         }
                     }
                     
-                }
-                    
+                }.padding(.top)
                     VStack(alignment: .leading) {
                         ZStack {
                             Rectangle()
@@ -193,7 +191,7 @@ struct LefsView: View {
                         }.frame(height: 350)
                         Spacer()
                     }
-            }.padding(.top)
+            }.padding(.top, UIScreen.main.bounds.height/75)
             
         }
             .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)

@@ -141,8 +141,8 @@
 		4F207D82271AA69100B74F3A /* IntakePaperwork */ = {
 			isa = PBXGroup;
 			children = (
-				4F300861285190D700031AC7 /* Oboarding */,
 				4F207D83271AA69100B74F3A /* IntakePaperworkApp.swift */,
+				4F300861285190D700031AC7 /* Oboarding */,
 				4F207D97271AAC7300B74F3A /* Views */,
 				4FD901AE2750AAA00042FEBD /* Models */,
 				4FD901E32750B7870042FEBD /* Utilities */,
@@ -166,7 +166,6 @@
 				4FCC632E272B5E170041BE4C /* Intake paper views */,
 				4F9C68CF285D5DAA0085EE9B /* SupportViews */,
 				4F9C68D2285E71770085EE9B /* EndViews */,
-				4FCC632D272B5DE30041BE4C /* Survey Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,6 +250,7 @@
 			children = (
 				4F207D85271AA69100B74F3A /* HomeView.swift */,
 				4F82A6C7273EE446003DC3BF /* NewSelectionView.swift */,
+				4FCC632D272B5DE30041BE4C /* Survey Views */,
 				4FB32B0927960A6300CD77BE /* englishViews */,
 				4FB32B0827960A4F00CD77BE /* spanishViews */,
 			);
