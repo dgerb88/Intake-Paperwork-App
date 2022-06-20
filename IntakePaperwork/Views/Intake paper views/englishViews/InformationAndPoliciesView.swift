@@ -332,7 +332,7 @@ struct InformationAndPoliciesView: View {
             Rectangle()
                 .foregroundColor(.white)
                 .shadow(radius: 5)
-                .padding(.top, UIScreen.main.bounds.height/75)
+                .padding(.top, UIScreen.main.bounds.width == 768 || UIScreen.main.bounds.width == 810 ? 0 : 15)
             VStack(spacing: 0) {
                 Rectangle()
                     .foregroundColor(.white)
@@ -462,7 +462,7 @@ struct InformationAndPoliciesView: View {
                         }
                     
                 }
-            }.padding(.top, UIScreen.main.bounds.height/75)
+            }.padding(.top, UIScreen.main.bounds.width == 768 || UIScreen.main.bounds.width == 810 ? 0 : 15)
 
         }
             .onTapGesture {

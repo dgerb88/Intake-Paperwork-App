@@ -140,7 +140,7 @@ struct BackIndexView: View {
                     model.selectedValue.removeAll()
                     model.appendArray(survey.questions.count)
                 }
-            }.padding(.top, UIScreen.main.bounds.height/75)
+            }.padding(.top, UIScreen.main.bounds.width == 768 || UIScreen.main.bounds.width == 810 ? 0 : 15)
 
         }
             .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
