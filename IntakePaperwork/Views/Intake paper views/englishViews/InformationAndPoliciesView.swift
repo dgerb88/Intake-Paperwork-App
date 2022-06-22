@@ -116,9 +116,6 @@ struct InformationAndPoliciesView: View {
                         }
                         
                     }.padding(.bottom)
-                   
-                    //How would you like to receive appointment reminders?
-                        //Text, email, call picker
                     
                 }.padding(.horizontal)
                 VStack(alignment: .leading) {
@@ -361,7 +358,7 @@ struct InformationAndPoliciesView: View {
                                     model.makeAddPdf(image: image)
 
                                 }
-                            if signaturesInfo[0] == "" || signaturesInfo[1] == "" {
+                            if signaturesInfo[0] == "" || signaturesInfo[1] == "" || buttonInfo[0] == false || buttonInfo[1] == false || buttonInfo[2] == false || buttonInfo[3] == false || buttonInfo[4] == false {
                                 Button {
                                     fillAlert = true
                                 } label: {
@@ -377,7 +374,7 @@ struct InformationAndPoliciesView: View {
                                             .bold()
                                     }.padding().padding(.bottom)
                                 }.alert(isPresented: $fillAlert) {
-                                    Alert(title: Text("Please sign areas in red before continuing"), dismissButton: .cancel(Text("Confirm")))
+                                    Alert(title: Text("Please sign areas in red and check all boxes before continuing"), dismissButton: .cancel(Text("Confirm")))
                                 }
                                 .navigationBarBackButtonHidden(true)
                                 .navigationBarTitleDisplayMode(.inline)

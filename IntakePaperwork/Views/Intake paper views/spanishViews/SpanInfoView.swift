@@ -361,7 +361,7 @@ struct SpanInfoView: View {
                                     model.makeAddPdf(image: image)
 
                                 }
-                            if signaturesInfo[0] == "" || signaturesInfo[1] == "" {
+                            if signaturesInfo[0] == "" || signaturesInfo[1] == "" || buttonInfo[0] == false || buttonInfo[1] == false || buttonInfo[2] == false || buttonInfo[3] == false || buttonInfo[4] == false{
                                 Button {
                                     fillAlert = true
                                 } label: {
@@ -377,7 +377,7 @@ struct SpanInfoView: View {
                                             .bold()
                                     }.padding().padding(.bottom)
                                 }.alert(isPresented: $fillAlert) {
-                                    Alert(title: Text("El favor de firmar las areas rojas antes de ir a la próxima sección."), dismissButton: .cancel(Text("Confirmar")))
+                                    Alert(title: Text("El favor de firmar las areas rojas y marcar todas las casillas antes de ir a la próxima sección."), dismissButton: .cancel(Text("Confirmar")))
                                 }
                                 .navigationBarBackButtonHidden(true)
                                 .navigationBarTitleDisplayMode(.inline)

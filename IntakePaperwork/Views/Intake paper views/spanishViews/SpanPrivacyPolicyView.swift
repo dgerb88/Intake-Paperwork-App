@@ -127,7 +127,7 @@ struct SpanPrivacyPolicyView: View {
                             model.makeAddPdf(image: image)
 
                         }
-                        if signaturePrivate == "" {
+                        if signaturePrivate == "" || buttonPrivate[0] == false || buttonPrivate[1] == false {
                             Button {
                                 fillAlert = true
                             } label: {
@@ -143,7 +143,7 @@ struct SpanPrivacyPolicyView: View {
                                         .bold()
                                 }.padding().padding(.bottom)
                             }.alert(isPresented: $fillAlert) {
-                                Alert(title: Text("El favor de firmar las areas rojas antes de ir a la próxima sección."), dismissButton: .cancel(Text("Confirmar")))
+                                Alert(title: Text("El favor de firmar las areas rojas y marcar todas las casillas antes de ir a la próxima sección."), dismissButton: .cancel(Text("Confirmar")))
                             }
                             .navigationBarBackButtonHidden(true)
                             .navigationBarTitleDisplayMode(.inline)

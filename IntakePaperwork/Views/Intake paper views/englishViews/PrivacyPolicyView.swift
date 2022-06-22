@@ -127,7 +127,7 @@ struct PrivacyPolicyView: View {
                             model.makeAddPdf(image: image)
 
                         }
-                        if signaturePrivate == "" {
+                        if signaturePrivate == "" || buttonPrivate[0] == false || buttonPrivate[1] == false {
                             Button {
                                 fillAlert = true
                             } label: {
@@ -143,7 +143,7 @@ struct PrivacyPolicyView: View {
                                         .bold()
                                 }.padding().padding(.bottom)
                             }.alert(isPresented: $fillAlert) {
-                                Alert(title: Text("Please sign areas in red before continuing"), dismissButton: .cancel(Text("Confirm")))
+                                Alert(title: Text("Please sign areas in red and check all boxes before continuing"), dismissButton: .cancel(Text("Confirm")))
                             }
                             .navigationBarBackButtonHidden(true)
                             .navigationBarTitleDisplayMode(.inline)
