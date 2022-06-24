@@ -54,7 +54,7 @@ struct SpanishMedView: View {
                         VStack(alignment: .leading) {
                             Text("Razón principal de la visita:")
                                 .font(Font.title3.weight(.bold))
-                            TextField("Razón", text: $primaryReason)
+                            TextField("Dolor de espalda, cuello, rodilla, etc.", text: $primaryReason)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                                 .frame(width: 350)

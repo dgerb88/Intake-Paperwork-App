@@ -1089,5 +1089,35 @@
                 ]
             }
         ]
+    },
+    {
+         "id": 8,
+         "name": "Berg Balance Scale",
+         "language": "English",
+         "description": "Something",
+         "questions": [
+             {
+                 "id": 0,
+                 "title": "1. Sitting to Standing",
+                 "rating": [
+                     "able to stand without using hands and stabilize independently",
+                     "able to stand independently using hands",
+                     "able to stand using hands after several tries",
+                     "needs minimal aid to stand or stabilize",
+                     "needs moderate or maximal assist to stand"
+                 ]
+             },
+             {
+                 "id": 1,
+                 "title": "2. Standing unsupported",
+                 "rating": [
+                     "able to stand safely for 2 minutes",
+                     "able to stand 2 minutes with supervision",
+                     "able to stand 30 seconds unsupported",
+                     "needs several tries to stand 30 seconds unsupported",
+                     "unable to stand 30 seconds unsupported"
+                 ]
+             }
+         ]
     }
 ]

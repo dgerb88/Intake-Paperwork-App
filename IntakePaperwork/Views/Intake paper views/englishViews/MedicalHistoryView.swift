@@ -52,7 +52,7 @@ struct MedicalHistoryView: View {
                         Group {
                             Text("Primary reason for visit:")
                                 .font(Font.title3.weight(.bold))
-                            TextField("Reason", text: $primaryReason)
+                            TextField("Back, Foot, Arm, etc.", text: $primaryReason)
                                 .accentColor(.black)
                                 .textFieldStyle(.roundedBorder)
                                 .frame(width: 350)

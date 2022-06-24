@@ -18,7 +18,7 @@ struct HomeView: View {
             }
             else {
                 if model.confirmSettings == false {
-                    SettingsView()
+                    Onboarding()
                 }
                 else {
                     ZStack(alignment: .center) {

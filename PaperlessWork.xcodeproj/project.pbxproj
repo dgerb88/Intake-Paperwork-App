@@ -19,6 +19,7 @@
 		4F300863285190F900031AC7 /* PurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F300862285190F900031AC7 /* PurchaseService.swift */; };
 		4F3EB9562725F3A7007384FA /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EB9552725F3A7007384FA /* BackgroundView.swift */; };
 		4F46EEAB272E4D6F00D8EEE3 /* QuickDashSpanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F46EEAA272E4D6F00D8EEE3 /* QuickDashSpanView.swift */; };
+		4F5DC27E2863E162005096DE /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5DC27D2863E162005096DE /* Onboarding.swift */; };
 		4F62C3FA28526EE000638899 /* PurchaseSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62C3F928526EE000638899 /* PurchaseSubscription.swift */; };
 		4F6440A927AC7CC0009EA77B /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F6440A827AC7CC0009EA77B /* data.json */; };
 		4F667424274462B0006B9ED0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F667423274462B0006B9ED0 /* SettingsView.swift */; };
@@ -31,7 +32,6 @@
 		4FA55E39277BBDB200456AB6 /* Items+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA55E37277BBDB200456AB6 /* Items+CoreDataClass.swift */; };
 		4FA55E3A277BBDB200456AB6 /* Items+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA55E38277BBDB200456AB6 /* Items+CoreDataProperties.swift */; };
 		4FA55E3C277BBE5700456AB6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA55E3B277BBE5700456AB6 /* Persistence.swift */; };
-		4FB07F2328580F4800D74928 /* GoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB07F2228580F4800D74928 /* GoButtonView.swift */; };
 		4FB32B0B27960A9500CD77BE /* SpanishMedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB32B0A27960A9500CD77BE /* SpanishMedView.swift */; };
 		4FB32B0D279A15C400CD77BE /* SpanPrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB32B0C279A15C400CD77BE /* SpanPrivacyPolicyView.swift */; };
 		4FB32B0F279A15DA00CD77BE /* SpanDryNeedleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB32B0E279A15DA00CD77BE /* SpanDryNeedleView.swift */; };
@@ -63,6 +63,7 @@
 		4F300862285190F900031AC7 /* PurchaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseService.swift; sourceTree = "<group>"; };
 		4F3EB9552725F3A7007384FA /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		4F46EEAA272E4D6F00D8EEE3 /* QuickDashSpanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickDashSpanView.swift; sourceTree = "<group>"; };
+		4F5DC27D2863E162005096DE /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		4F62C3F928526EE000638899 /* PurchaseSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSubscription.swift; sourceTree = "<group>"; };
 		4F6440A827AC7CC0009EA77B /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		4F667423274462B0006B9ED0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		4FA55E37277BBDB200456AB6 /* Items+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4FA55E38277BBDB200456AB6 /* Items+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4FA55E3B277BBE5700456AB6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		4FB07F2228580F4800D74928 /* GoButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoButtonView.swift; sourceTree = "<group>"; };
 		4FB32B0A27960A9500CD77BE /* SpanishMedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanishMedView.swift; sourceTree = "<group>"; };
 		4FB32B0C279A15C400CD77BE /* SpanPrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanPrivacyPolicyView.swift; sourceTree = "<group>"; };
 		4FB32B0E279A15DA00CD77BE /* SpanDryNeedleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanDryNeedleView.swift; sourceTree = "<group>"; };
@@ -175,6 +175,7 @@
 			children = (
 				4F300862285190F900031AC7 /* PurchaseService.swift */,
 				4F62C3F928526EE000638899 /* PurchaseSubscription.swift */,
+				4F5DC27D2863E162005096DE /* Onboarding.swift */,
 			);
 			path = Oboarding;
 			sourceTree = "<group>";
@@ -192,7 +193,7 @@
 			children = (
 				4F3EB9552725F3A7007384FA /* BackgroundView.swift */,
 				4FD32B362760654B00CEC1C9 /* SheetView.swift */,
-				4FB07F2228580F4800D74928 /* GoButtonView.swift */,
+				4F667423274462B0006B9ED0 /* SettingsView.swift */,
 			);
 			path = SupportViews;
 			sourceTree = "<group>";
@@ -203,7 +204,6 @@
 				4FD830562758205D0075B219 /* PDFViewer.swift */,
 				4F89C1CB277CFFC000159150 /* LockedView.swift */,
 				4FD32B342760619600CEC1C9 /* FinishedView.swift */,
-				4F667423274462B0006B9ED0 /* SettingsView.swift */,
 				4F667425274464B6006B9ED0 /* PDFRetrievalView.swift */,
 			);
 			path = EndViews;
@@ -422,6 +422,7 @@
 				4F89C1CC277CFFC000159150 /* LockedView.swift in Sources */,
 				4FCD26AB273052A900F4859F /* NDIView.swift in Sources */,
 				4FCC6330272B5E3E0041BE4C /* PrivacyPolicyView.swift in Sources */,
+				4F5DC27E2863E162005096DE /* Onboarding.swift in Sources */,
 				4FD32B372760654B00CEC1C9 /* SheetView.swift in Sources */,
 				4FCC6332272B5E4F0041BE4C /* DryNeedlingConsentView.swift in Sources */,
 				4F3EB9562725F3A7007384FA /* BackgroundView.swift in Sources */,
@@ -430,7 +431,6 @@
 				4FB32B0F279A15DA00CD77BE /* SpanDryNeedleView.swift in Sources */,
 				4F46EEAB272E4D6F00D8EEE3 /* QuickDashSpanView.swift in Sources */,
 				4F207D86271AA69100B74F3A /* HomeView.swift in Sources */,
-				4FB07F2328580F4800D74928 /* GoButtonView.swift in Sources */,
 				4F8B17D92727C76C000A1573 /* BackIndexView.swift in Sources */,
 				4F300863285190F900031AC7 /* PurchaseService.swift in Sources */,
 				4FCC6336272B5FAC0041BE4C /* InsuranceIntakeView.swift in Sources */,
@@ -580,6 +580,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -613,6 +614,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

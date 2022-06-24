@@ -20,10 +20,11 @@ struct SpanInfoView: View {
     @State var keyboardChange = false
     @State var personalNumber = ""
     @State var personalAddress = ""
-    @State var reminderType = 0
     @State var birthDay = ["", "", ""]
     @State var showAlert = false
     @State var fillAlert = false
+    @State var howYouFind = ""
+    @State var apptReminder = ""
 
     var spanInfoView: some View {
         ZStack {
@@ -85,32 +86,38 @@ struct SpanInfoView: View {
                                 .textFieldStyle(.roundedBorder)
                         }.padding(.trailing, 30)
                         VStack(alignment: .leading) {
-                            Text("Nombre del contacto de emergencia: ")
-                                .fixedSize(horizontal: false, vertical: true)
-                                .padding(.top, 10)
-                            TextField("Nombre", text: $ContactNameInfo)
-                                .accentColor(.black)
-                                .textFieldStyle(.roundedBorder)
-                            Text("Número de teléfono de contacto de emergencia: ")
-                                .padding(.top, 10)
-                                .fixedSize(horizontal: false, vertical: true)
-                            TextField("Número", text: $ContactPhoneNumberInfo)
-                                .accentColor(.black)
-                                .textFieldStyle(.roundedBorder)
-                            Text("Relación de contacto de emergencia con el/la paciente: ")
-                                .padding(.top, 10)
-                                .fixedSize(horizontal: false, vertical: true)
-                            TextField("Relación", text: $ContactRelationInfo)
-                                .accentColor(.black)
-                                .textFieldStyle(.roundedBorder)
-                            Text("¿Cómo le gustaría recibir recordatorios de citas?")
-                                .padding(.top, 10)
-                                .fixedSize(horizontal: false, vertical: true)
-                            Picker("", selection: $reminderType) {
-                                Text("Llamar").tag(3)
-                                Text("Correo electrónico").tag(2)
-                                Text("Texto").tag(1)
-                                Text("Por favor selecciona").tag(0)
+                            Group {
+                                Text("Nombre del contacto de emergencia: ")
+                                    .fixedSize(horizontal: false, vertical: true)
+                                    .padding(.top, 10)
+                                TextField("Nombre", text: $ContactNameInfo)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                Text("Número de teléfono de contacto de emergencia: ")
+                                    .padding(.top, 10)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                TextField("Número", text: $ContactPhoneNumberInfo)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                            }
+                            Group {
+                                Text("Relación de contacto de emergencia con el/la paciente: ")
+                                    .padding(.top, 10)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                TextField("Relación", text: $ContactRelationInfo)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                Text("¿Cómo le gustaría recibir recordatorios de citas?")
+                                    .padding(.top, 10)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                TextField("Texto, Correo electrónico, Llamada", text: $apptReminder)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                Text("Cómo nos encontró?")
+                                    .padding(.top, 10)
+                                TextField("Doctor, Eseguranza, Amigo/Familia, etc.", text: $howYouFind)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
                             }
                             .pickerStyle(MenuPickerStyle())
                             .padding(.leading)

@@ -20,10 +20,11 @@ struct InformationAndPoliciesView: View {
     @FocusState var keyboardChange: Bool
     @State var personalNumber = ""
     @State var personalAddress = ""
-    @State var reminderType = 0
     @State var birthDay = ["", "", ""]
     @State var showAlert = false
-    @State var fillAlert = false 
+    @State var fillAlert = false
+    @State var apptReminder = ""
+    @State var howYouFind = ""
 
     var infoView: some View {
         ZStack {
@@ -85,30 +86,36 @@ struct InformationAndPoliciesView: View {
                                 .textFieldStyle(.roundedBorder)
                         }.padding(.trailing, 30)
                         VStack(alignment: .leading) {
-                            Text("Emergency contact name: ")
-                                .padding(.top, 10)
-                            TextField("Name", text: $ContactNameInfo)
-                                .accentColor(.black)
-                                .textFieldStyle(.roundedBorder)
-                            Text("Emergency contact phone number: ")
-                                .padding(.top, 10)
-                            TextField("Phone Number", text: $ContactPhoneNumberInfo)
-                                .accentColor(.black)
-                                .textFieldStyle(.roundedBorder)
-                                .keyboardType(.numberPad)
-                            Text("Emergency contact relation to patient: ")
-                                .padding(.top, 10)
-                            TextField("Relationship", text: $ContactRelationInfo)
-                                .accentColor(.black)
-                                .textFieldStyle(.roundedBorder)
-                            Text("How would you like to receive appointment reminders?")
-                                .padding(.top, 10)
-                                .fixedSize(horizontal: false, vertical: true)
-                            Picker("", selection: $reminderType) {
-                                Text("Call").tag(3)
-                                Text("Email").tag(2)
-                                Text("Text").tag(1)
-                                Text("Please select").tag(0)
+                            Group {
+                                Text("Emergency contact name: ")
+                                    .padding(.top, 10)
+                                TextField("Name", text: $ContactNameInfo)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                Text("Emergency contact phone number: ")
+                                    .padding(.top, 10)
+                                TextField("Phone Number", text: $ContactPhoneNumberInfo)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                    .keyboardType(.numberPad)
+                            }
+                            Group {
+                                Text("Emergency contact relation to patient: ")
+                                    .padding(.top, 10)
+                                TextField("Relationship", text: $ContactRelationInfo)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                Text("How would you like to receive appointment reminders?")
+                                    .padding(.top, 10)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                TextField("Text, Email, Call", text: $apptReminder)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
+                                Text("How did you hear about us?")
+                                    .padding(.top, 10)
+                                TextField("Doctor, Insurance, Friend/Family, etc.", text: $howYouFind)
+                                    .accentColor(.black)
+                                    .textFieldStyle(.roundedBorder)
                             }
                             .pickerStyle(MenuPickerStyle())
                             .padding(.leading)
