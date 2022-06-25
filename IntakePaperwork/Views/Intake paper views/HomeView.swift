@@ -13,7 +13,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            if model.confirmPurchase == true {
+            if model.confirmPurchase == false {
                 PurchaseSubscription()
             }
             else {
@@ -63,6 +63,20 @@ struct HomeView: View {
                                                 .font(Font.title)
                                                 .padding(.leading, 3)
                                             Text("PDF retrieval")
+                                                .font(Font.title)
+                                                .foregroundColor(.black)
+                                                .padding(.trailing, 50)
+                                            Spacer()
+                                        }.padding(.leading).padding(.vertical)
+                                    }
+                                    NavigationLink {
+                                        ContactMe()
+                                    } label: {
+                                        HStack {
+                                            Image(systemName: "envelope")
+                                                .foregroundColor(.black)
+                                                .font(Font.title)
+                                            Text("Contact us")
                                                 .font(Font.title)
                                                 .foregroundColor(.black)
                                                 .padding(.trailing, 50)

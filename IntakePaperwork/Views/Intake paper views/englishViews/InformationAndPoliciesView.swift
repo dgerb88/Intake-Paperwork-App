@@ -98,8 +98,6 @@ struct InformationAndPoliciesView: View {
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
                                     .keyboardType(.numberPad)
-                            }
-                            Group {
                                 Text("Emergency contact relation to patient: ")
                                     .padding(.top, 10)
                                 TextField("Relationship", text: $ContactRelationInfo)

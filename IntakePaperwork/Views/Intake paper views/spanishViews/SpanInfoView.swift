@@ -99,8 +99,6 @@ struct SpanInfoView: View {
                                 TextField("Número", text: $ContactPhoneNumberInfo)
                                     .accentColor(.black)
                                     .textFieldStyle(.roundedBorder)
-                            }
-                            Group {
                                 Text("Relación de contacto de emergencia con el/la paciente: ")
                                     .padding(.top, 10)
                                     .fixedSize(horizontal: false, vertical: true)

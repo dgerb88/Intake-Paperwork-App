@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Onboarding: View {
     
+    @EnvironmentObject var model: SurveyModel
     @State var imageNum = 0
     
     var body: some View {
@@ -45,7 +46,6 @@ struct Onboarding: View {
                                 Text("Back")
                                     .font(Font.title2)
                             }
-
                         }
                         Spacer()
                         if imageNum == 3 {
