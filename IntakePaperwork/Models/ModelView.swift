@@ -217,4 +217,13 @@ class SurveyModel: ObservableObject {
         return out
     }
     
+    func scoringDash(num1: Int) -> Int {
+        
+        let score: Double = Double(num1)/11
+        let score2 = score - 1
+        let score3 = score2*25
+        let score4 = round(score3)
+        return Int(score4)
+    }
+    
 }

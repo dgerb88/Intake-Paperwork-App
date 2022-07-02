@@ -270,7 +270,7 @@ struct QuickDashEngView: View {
                                     }
                             }
                             Spacer()
-                            Text("Score: \(model.score)/55")
+                            Text("Score: \(model.scoringDash(num1: model.score))")
                                 .font(.title)
                                 .padding()
                         }

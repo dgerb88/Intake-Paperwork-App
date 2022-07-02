@@ -275,7 +275,7 @@ struct QuickDashSpanView: View {
                                     }
                             }
                             Spacer()
-                            Text("Puntuación: \(model.score)/55")
+                            Text("Puntuación: \(model.scoringDash(num1: model.score))")
                                 .font(.title)
                                 .padding()
                         }
@@ -331,4 +331,5 @@ struct QuickDashSpanView: View {
         }
     }
 }
+
 
