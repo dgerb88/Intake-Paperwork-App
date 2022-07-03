@@ -12,6 +12,7 @@ import RevenueCat
 class SurveyModel: ObservableObject {
 
     @Published var surveys = [Survey]()
+    @Published var surveysTF = [Bool]()
     @Published var PDFimage = [UIImage]()
     @Published var savedPDFimage = [[UIImage]]()
     @Published var selectedValue = [Int]()
@@ -100,6 +101,7 @@ class SurveyModel: ObservableObject {
         getLocalData()
         checkLoadedSettings()
         checkSubscription()
+        initiateTFSurvey()
     }
     
     func checkSubscription() {
@@ -224,6 +226,21 @@ class SurveyModel: ObservableObject {
         let score3 = score2*25
         let score4 = round(score3)
         return Int(score4)
+    }
+    
+    func setTFSurvey(index: Int) {
+        if surveysTF[index] == false {
+            for i in 0..<surveysTF.count {
+                surveysTF[i] = false
+            }
+            surveysTF[index] = true
+        }
+    }
+    
+    func initiateTFSurvey() {
+        for _ in 0..<surveys.count {
+            surveysTF.append(false)
+        }
     }
     
 }
