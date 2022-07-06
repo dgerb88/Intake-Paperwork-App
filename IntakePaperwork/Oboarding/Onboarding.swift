@@ -17,7 +17,7 @@ struct Onboarding: View {
             BackgroundView()
             VStack(spacing: 0) {
                 TabView(selection: $imageNum) {
-                    Image("HomeScreen")
+                    Image(systemName: "circle")
                         .resizable()
                         .border(.white, width: 3)
                         .cornerRadius(5)
