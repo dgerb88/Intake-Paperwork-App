@@ -44,6 +44,9 @@ struct PurchaseSubscription: View {
                             PurchaseService.purchase(productId: "Paperless_1m_sub") {
                                 model.confirmPurchase = true
                             }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                loadingView = false
+                            }
                         } label: {
                                 ZStack {
                                     Rectangle()
@@ -65,6 +68,9 @@ struct PurchaseSubscription: View {
                             loadingView = true
                             PurchaseService.purchase(productId: "Paperlesswork_3999_1y") {
                                 model.confirmPurchase = true
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                loadingView = false
                             }
                         } label: {
                             ZStack {
