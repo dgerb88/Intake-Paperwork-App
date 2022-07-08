@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContactMe: View {
+struct Support: View {
     
     var email = "dax.paperlesswork@gmail.com"
     
@@ -16,15 +16,22 @@ struct ContactMe: View {
             BackgroundView()
             VStack(alignment: .center) {
                 List {
-                    Text("For questions, concerns, and feedback please email \(email)")
-                        .font(Font.title2.weight(.semibold))
+                    Section {
+                    Text("For questions, concerns, and feedback including desired additional surveys and intake forms please email \(email)")
+                        .font(Font.title2)
                         .foregroundColor(.black)
+                    }
+                    Section {
+                    Text("To cancel your subscription at any time see Settings -> Apple ID -> Subscriptions")
+                        .font(Font.title2)
+                        .foregroundColor(.black)
+                    }
                 }.padding(.top)
-            }.padding(.top)
+            }
         }.navigationBarTitleDisplayMode( .inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("Contact us")
+                    Text("Support")
                         .bold()
                         .foregroundColor(.white)
                         .font(.largeTitle)

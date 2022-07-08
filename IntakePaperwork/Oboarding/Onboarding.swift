@@ -17,20 +17,26 @@ struct Onboarding: View {
             BackgroundView()
             VStack(spacing: 0) {
                 TabView(selection: $imageNum) {
-                    Image(systemName: "circle")
+                    Image("Slide 1")
                         .resizable()
-                        .border(.white, width: 3)
                         .cornerRadius(5)
                         .tag(0)
-                    Image(systemName: "arrow.right")
+                    Image("Slide 2")
                         .resizable()
+                        .cornerRadius(5)
                         .tag(1)
-                    Image(systemName: "circle")
+                    Image("Slide 3")
                         .resizable()
+                        .cornerRadius(5)
                         .tag(2)
-                    Image(systemName: "circle.fill")
+                    Image("Slide 4")
                         .resizable()
+                        .cornerRadius(5)
                         .tag(3)
+                    Image("Slide 5")
+                        .resizable()
+                        .cornerRadius(5)
+                        .tag(4)
 
                 }
                 .frame(width: UIScreen.main.bounds.width*5/6, height: UIScreen.main.bounds.height*5/6)
@@ -48,7 +54,7 @@ struct Onboarding: View {
                             }
                         }
                         Spacer()
-                        if imageNum == 3 {
+                        if imageNum == 4 {
                             NavigationLink {
                                 SettingsView()
                             } label: {
@@ -84,11 +90,16 @@ struct Onboarding: View {
                             .font(Font.title)
                             .foregroundColor(.white)
                             .opacity(imageNum == 2 ? 1 : 0.5)
-                        Text(".")
+                        Text(". ")
                             .bold()
                             .font(Font.title)
                             .foregroundColor(.white)
                             .opacity(imageNum == 3 ? 1 : 0.5)
+                        Text(".")
+                            .bold()
+                            .font(Font.title)
+                            .foregroundColor(.white)
+                            .opacity(imageNum == 4 ? 1 : 0.5)
                     }
                         .frame(width: UIScreen.main.bounds.width*5/6 - 40)
                         .padding(.top, 20)
@@ -98,7 +109,7 @@ struct Onboarding: View {
             .navigationBarTitleDisplayMode( .inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
-                        Text("Look how this works")
+                        Text("Overview")
                             .bold()
                             .foregroundColor(.white)
                             .font(.largeTitle)

@@ -45,12 +45,14 @@ struct PDFRetrievalView: View {
                             }
                             try! viewContext.save()
                         } label: {
-                            Image(systemName: "trash")
-                                .resizable(resizingMode: .tile)
-                                .frame(width: 22, height: 30)
-                                .foregroundColor(.white)
-                                .padding(.leading, 40)
-                                .padding(.bottom, 5)
+                            VStack {
+                                Image(systemName: "trash")
+                                    .resizable(resizingMode: .tile)
+                                    .frame(width: 22, height: 30)
+                                    .foregroundColor(.white)
+                                Text("Delete all")
+                                    .foregroundColor(.white)
+                            }.padding(.leading, 40)
                         }
                         Spacer()
 

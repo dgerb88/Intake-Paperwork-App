@@ -12,6 +12,7 @@ struct PurchaseSubscription: View {
     
     @EnvironmentObject var model: SurveyModel
     @State var loadingView = false
+    @State var ppNotFound = false
     
     var body: some View {
         
@@ -22,17 +23,18 @@ struct PurchaseSubscription: View {
                     Text("Welcome!")
                         .font(.system(size: 80, weight: .semibold))
                         .foregroundColor(.white)
-                    Image("pwimage")
+                    Image("Logo")
                         .resizable()
                         .frame(width: UIScreen.main.bounds.width*4/9, height: UIScreen.main.bounds.width*4/9)
-                        .cornerRadius(10)
+                        .border(.white, width: 3)
+                        .cornerRadius(5)
                         
                     VStack(alignment: .center, spacing: 10) {
                         VStack {
                             Text("Please choose a subscription:")
                                 .foregroundColor(.white)
                                 .font(Font.title)
-                            Text("(1/3 off for an annual subscription)")
+                            Text("(Enjoy the first 7 days free!)")
                                 .foregroundColor(.white)
                                 .font(.subheadline)
                                 .padding(.bottom)
@@ -89,6 +91,7 @@ struct PurchaseSubscription: View {
                                 }
                                 else {
                                     loadingView = false
+                                    ppNotFound = true
                                 }
                             }
                         } label: {
@@ -101,6 +104,8 @@ struct PurchaseSubscription: View {
                                     .foregroundColor(.white)
                             }
 
+                        }.alert(isPresented: $ppNotFound) {
+                            Alert(title: Text("No record found"), message: Text("If you believe there is an error please see customer support at dax.paperlesswork@gmail.com"), dismissButton: .default(Text("OK")))
                         }
                         Spacer()
                     }

@@ -551,7 +551,7 @@ struct NewSelectionView: View {
                                                     .bold()
                                                     .font(.title)
                                                     .foregroundColor(.white)
-                                            }
+                                            }.padding(.top)
                                         }
                                         .disabled(model.includeSurvey == false && model.eval == false ? true:false)
                                         .navigationBarBackButtonHidden(true)
@@ -567,6 +567,7 @@ struct NewSelectionView: View {
         .frame(width: UIScreen.main.bounds.width)
         .onAppear {
             model.setSettings()
+            model.checkSubscription()
             isSpanish = false
             isEnglish = true
             LefsSelected = true
