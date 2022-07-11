@@ -17,12 +17,16 @@ struct Support: View {
             VStack(alignment: .center) {
                 List {
                     Section {
-                    Text("For questions, concerns, and feedback including desired additional surveys and intake forms please email \(email)")
+                    Text("For questions, concerns, and feedback including desired additional surveys and intake forms please email ")
                         .font(Font.title2)
                         .foregroundColor(.black)
+                    + Text(email)
+                        .foregroundColor(.blue)
+                        .font(Font.title2)
+
                     }
                     Section {
-                    Text("To cancel your subscription at any time see Settings -> Apple ID -> Subscriptions")
+                    Text("To cancel your subscription at any time see:  Settings -> Apple ID -> Subscriptions")
                         .font(Font.title2)
                         .foregroundColor(.black)
                     }
