@@ -20,7 +20,13 @@ struct PurchaseSubscription: View {
             ZStack {
                 BackgroundView()
                 VStack(alignment: .center, spacing: 50) {
-                    Text("Welcome!")
+                    Text("Paper")
+                        .font(.system(size: 80, weight: .semibold))
+                        .foregroundColor(.white)
+                    + Text("less")
+                        .font(.system(size: 80, weight: .semibold))
+                        .foregroundColor(.gray)
+                    + Text("work")
                         .font(.system(size: 80, weight: .semibold))
                         .foregroundColor(.white)
                     Image("Logo")
@@ -44,7 +50,7 @@ struct PurchaseSubscription: View {
                             PurchaseService.purchase(productId: "Paperless_1m_sub") {
                                 model.confirmPurchase = true
                             }
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                                 loadingView = false
                             }
                         } label: {
@@ -69,7 +75,7 @@ struct PurchaseSubscription: View {
                             PurchaseService.purchase(productId: "Paperlesswork_3999_1y") {
                                 model.confirmPurchase = true
                             }
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                                 loadingView = false
                             }
                         } label: {

@@ -1098,7 +1098,7 @@
          "questions": [
              {
                  "id": 0,
-                 "title": "1. Sitting to Standing",
+                 "title": "1. Sitting to standing",
                  "rating": [
                      "able to stand without using hands and stabilize independently",
                      "able to stand independently using hands",
@@ -1116,6 +1116,138 @@
                      "able to stand 30 seconds unsupported",
                      "needs several tries to stand 30 seconds unsupported",
                      "unable to stand 30 seconds unsupported"
+                 ]
+             },
+             {
+                 "id": 2,
+                 "title": "3. Sitting with back unsupported but feet supported on floor or on a stool",
+                 "rating": [
+                     "able to sit safely and securely for 2 minutes",
+                     "able to sit 2 minutes under supervision",
+                     "able to sit 30 seconds",
+                     "able to sit 10 seconds",
+                     "unable to sit without support 10 seconds"
+                 ]
+             },
+             {
+                 "id": 3,
+                 "title": "4. Standing to sitting",
+                 "rating": [
+                     "sits safely with minimal use of hands",
+                     "controls descent by using hands",
+                     "uses back of legs against chair to control descent",
+                     "sits independently but has uncontrolled descent",
+                     "needs assist to sit"
+                 ]
+             },
+             {
+                 "id": 4,
+                 "title": "5. Transfers",
+                 "rating": [
+                     "able to transfer safely with minor use of hands",
+                     "able to transfer safely with definite need of hands",
+                     "able to transfer with verbal cuing and/or supervision",
+                     "needs one person to assist",
+                     "needs two people to assist or supervise to be safe"
+                 ]
+             },
+             {
+                 "id": 5,
+                 "title": "6. Standing unsupported with eyes closed",
+                 "rating": [
+                     "able to stand 10 seconds safely",
+                     "able to stand 10 seconds with supervision",
+                     "able to stand 3 seconds",
+                     "unable to keep eyes closed 3 seconds but stays safe",
+                     "needs help to keep from falling"
+                 ]
+             },
+             {
+                 "id": 6,
+                 "title": "7. Standing unsupported with feet together",
+                 "rating": [
+                     "able to place feet together independently and stand 1 minute safely",
+                     "able to place feet together independently and stand 1 minute with supervision",
+                     "able to place feet together independently but unable to hold for 30 seconds",
+                     "need help to attain position but able to stand 15 seconds feet together",
+                     "need help to attain position and unable to hold for 15 seconds"
+                 ]
+             },
+             {
+                 "id": 7,
+                 "title": "8. Reaching forward with outstretched arm while standing",
+                 "rating": [
+                     "can reach forward confidently 25 cm (10 inches)",
+                     "can reach forward 12 cm (5 inches)",
+                     "can reach forward 5 cm (2 inches)",
+                     "reaches forward but needs supervision",
+                     "loses balance while trying/requires external support"
+                 ]
+             },
+             {
+                 "id": 8,
+                 "title": "9. Pick up object from the floor from a standing position",
+                 "rating": [
+                     "able to pick up slipper safely and easily",
+                     "able to pick up slipper but needs supervision",
+                     "unable to pick up but reaches 2-5 cm(1-2 inches) from slipper and keeps balance independently",
+                     "unable to pick up and needs supervision while trying",
+                     "unable to try/needs assist to keep from losing balance or falling"
+                 ]
+             },
+             {
+                 "id": 9,
+                 "title": "10. Turning to look behind over left and right shoulders while standing",
+                 "rating": [
+                     "looks behind from both sides and weight shifts well",
+                     "looks behind one side only, other side shows less weight shift",
+                     "turns sideways only but maintains balance",
+                     "needs supervision when turning",
+                     "needs assist to keep from losing balance or falling"
+                 ]
+             },
+             {
+                 "id": 10,
+                 "title": "11. Turn 360 degrees",
+                 "rating": [
+                     "able to turn 360 degrees safely in 4 seconds or less",
+                     "able to turn 360 degrees safely one side on 4 seconds or less",
+                     "able to turn 360 degrees safely but slowly",
+                     "needs close supervision or verbal cuing",
+                     "needs assistance while turning"
+                 ]
+             },
+             {
+                 "id": 11,
+                 "title": "12. place alternate foot on step or stool while standing unsupported",
+                 "rating": [
+                     "able to stand independently and safely and complete 8 steps in 20 seconds",
+                     "able to stand independently and complete 8 steps in >20 seconds",
+                     "able to complete 4 steps without aid with supervision",
+                     "able to complete >2 steps needs minimal assist",
+                     "needs assistance to keep from falling/unable to try"
+                 ]
+             },
+             {
+                 "id": 12,
+                 "title": "13. Standing unsupported one foot in front",
+                 "rating": [
+                     "able to place foot tandem independently and hold 30 seconds",
+                     "able to place foot ahead independently and hold 30 seconds",
+                     "able to take small step independently and hold 30 seconds",
+                     "needs help to step but can hold 15 seconds ",
+                     "loses balance while stepping or standing"
+                 ]
+             },
+             {
+                 "id": 13,
+                 "title": "14. Standing on one leg",
+                 "rating": [
+                     "able to lift leg independently and hold >10 seconds",
+                     "able to lift leg independently and hold 5-10 seconds",
+                     "able to lift leg independently and hold ≥ 3 seconds",
+                     "tries to lift leg, unable to hold 3 seconds but remains standing independently",
+                     "unable to try or needs assist to prevent fall"
                  ]
              }
          ]
