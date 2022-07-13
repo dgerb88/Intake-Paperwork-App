@@ -493,6 +493,13 @@ struct NewSelectionView: View {
                                                                 model.PDFimage.removeAll()
                                                             }
                                                     }
+                                                    else if survey.name == "Berg Balance Scale" {
+                                                        BergBalance(survey: survey)
+                                                            .onAppear {
+                                                                model.PDFfileArray.removeAll()
+                                                                model.PDFimage.removeAll()
+                                                            }
+                                                    }
                                                     else {
                                                         Text("Survey not found")
                                                     }
@@ -530,6 +537,13 @@ struct NewSelectionView: View {
                                                     }
                                                     else if survey.name == "Neck Disability Index" {
                                                         NDIView(survey: survey)
+                                                            .onAppear {
+                                                                model.PDFfileArray.removeAll()
+                                                                model.PDFimage.removeAll()
+                                                            }
+                                                    }
+                                                    else if survey.name == "Berg Balance Scale" {
+                                                        BergBalance(survey: survey)
                                                             .onAppear {
                                                                 model.PDFfileArray.removeAll()
                                                                 model.PDFimage.removeAll()

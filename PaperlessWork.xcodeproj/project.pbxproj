@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B631E4C6DCF2F86E49D2CD3 /* Pods_PaperlessWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9DA1AF013160249E0B15ED /* Pods_PaperlessWork.framework */; };
 		4F12AAC62727BBD5006905FD /* QuickDashEngView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F12AAC52727BBD5006905FD /* QuickDashEngView.swift */; };
+		4F203E1C287F7ADB00DBA160 /* BergBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F203E1B287F7ADB00DBA160 /* BergBalance.swift */; };
 		4F207D84271AA69100B74F3A /* IntakePaperworkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F207D83271AA69100B74F3A /* IntakePaperworkApp.swift */; };
 		4F207D86271AA69100B74F3A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F207D85271AA69100B74F3A /* HomeView.swift */; };
 		4F207D88271AA69200B74F3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F207D87271AA69200B74F3A /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		19F33F5288D0F0F182C49272 /* Pods-PaperlessWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaperlessWork.debug.xcconfig"; path = "Target Support Files/Pods-PaperlessWork/Pods-PaperlessWork.debug.xcconfig"; sourceTree = "<group>"; };
 		4F12AAC52727BBD5006905FD /* QuickDashEngView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickDashEngView.swift; sourceTree = "<group>"; };
+		4F203E1B287F7ADB00DBA160 /* BergBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BergBalance.swift; sourceTree = "<group>"; };
 		4F207D80271AA69100B74F3A /* PaperlessWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaperlessWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F207D83271AA69100B74F3A /* IntakePaperworkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakePaperworkApp.swift; sourceTree = "<group>"; };
 		4F207D85271AA69100B74F3A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				4F8B17DA2727C998000A1573 /* LefsView.swift */,
 				4F8B17D82727C76C000A1573 /* BackIndexView.swift */,
 				4F12AAC52727BBD5006905FD /* QuickDashEngView.swift */,
+				4F203E1B287F7ADB00DBA160 /* BergBalance.swift */,
 				4FCD26AA273052A900F4859F /* NDIView.swift */,
 				4F46EEAA272E4D6F00D8EEE3 /* QuickDashSpanView.swift */,
 			);
@@ -439,6 +442,7 @@
 				4F300863285190F900031AC7 /* PurchaseService.swift in Sources */,
 				4FCC6336272B5FAC0041BE4C /* InsuranceIntakeView.swift in Sources */,
 				4F207D96271AAA6400B74F3A /* ModelView.swift in Sources */,
+				4F203E1C287F7ADB00DBA160 /* BergBalance.swift in Sources */,
 				4FB32B11279A15F200CD77BE /* SpanInsuranceView.swift in Sources */,
 				4FCC6338272B5FCF0041BE4C /* InformationAndPoliciesView.swift in Sources */,
 				4F207D84271AA69100B74F3A /* IntakePaperworkApp.swift in Sources */,

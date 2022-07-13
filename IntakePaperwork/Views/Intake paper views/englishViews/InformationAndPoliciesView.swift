@@ -432,6 +432,9 @@ struct InformationAndPoliciesView: View {
                                             else if survey.name == "Neck Disability Index" {
                                                 NDIView(survey: survey)
                                             }
+                                            else if survey.name == "Berg Balance Scale" {
+                                                BergBalance(survey: survey)
+                                            }
                                             else {
                                                 Text("Survey not found")
                                             }
