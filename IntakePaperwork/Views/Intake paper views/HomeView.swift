@@ -13,7 +13,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            if model.confirmPurchase == true {
+            if model.confirmPurchase == false {
                 PurchaseSubscription()
             }
             else {

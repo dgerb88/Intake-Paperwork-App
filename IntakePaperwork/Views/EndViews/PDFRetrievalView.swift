@@ -52,7 +52,7 @@ struct PDFRetrievalView: View {
                                     .foregroundColor(.white)
                                 Text("Delete all")
                                     .foregroundColor(.white)
-                            }.padding(.leading, 40)
+                            }.padding(.leading, 20)
                         }
                         Spacer()
 

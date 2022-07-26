@@ -323,7 +323,7 @@ struct QuickDashSpanView: View {
                 }
             }.padding(.top, UIScreen.main.bounds.width == 768 || UIScreen.main.bounds.width == 810 ? 0 : 15)
         }
-        .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
+        .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/15 : 0)
         .onAppear {
             model.score = 0
             model.selectedValue.removeAll()

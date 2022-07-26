@@ -489,7 +489,7 @@ struct SpanInfoView: View {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             keyboardChange = false
         }
-        .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/10 : 0)
+        .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/15 : 0)
         .animation(.easeInOut(duration: 0.3), value: true)
     }
 }
