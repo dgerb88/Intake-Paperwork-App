@@ -10,9 +10,20 @@ import SwiftUI
 struct BergBalance: View {
     
     @EnvironmentObject var model: SurveyModel
-    @State var scoreBerg = 0
+    var scoreBerg: Int {
+        var score = 0
+        for n in 0..<scoreArray.count {
+            if scoreArray[n] == 5 {
+                score = score + 0
+            }
+            else {
+                score = score + scoreArray[n]
+            }
+        }
+        return score
+    }
     var survey: Survey
-    var instructions = ["INSTRUCTIONS: Please stand up. Try not to use your hand for support.", "INSTRUCTIONS: Please stand for two minutes without holding on.", "INSTRUCTIONS: Please sit with arms folded for 2 minutes.", "INSTRUCTIONS: Please sit down.", "INSTRUCTIONS: Arrange chair(s) for pivot transfer. Ask subject to transfer one way toward a seat with armrests and one way toward a seat without armrests. You may use two chairs (one with and one without armrests) or a bed and a chair.", "INSTRUCTIONS: Please close your eyes and stand still for 10 seconds.", "INSTRUCTIONS: Place your feet together and stand without holding on.", "INSTRUCTIONS: Lift arm to 90 degrees. Stretch out your fingers and reach forward as far as you can. (Examiner places a ruler at the end of fingertips when arm is at 90 degrees. Fingers should not touch the ruler while reaching forward. The recorded measure is the distance forward that the fingers reach while the subject is in the most forward lean position. When possible, ask subject to use both arms when reaching to avoid rotation of the trunk.)", "INSTRUCTIONS: Pick up the shoe/slipper, which is place in front of your feet.", "INSTRUCTIONS: Turn to look directly behind you over toward the left shoulder. Repeat to the right. Examiner may pick an object to look at directly behind the subject to encourage a better twist turn.", "INSTRUCTIONS: Turn completely around in a full circle. Pause. Then turn a full circle in the other direction.", "INSTRUCTIONS: Place each foot alternately on the step/stool. Continue until each foot has touch the step/stool four times.", "INSTRUCTIONS: (DEMONSTRATE TO SUBJECT) Place one foot directly in front of the other. If you feel that you cannot place your foot directly in front, try to step far enough ahead that the heel of your forward foot is ahead of the toes of the other foot. (To score 3 points, the length of the step should exceed the length of the other foot and the width of the stance should approximate the subject’s normal stride width.)", "INSTRUCTIONS: Stand on one leg as long as you can without holding on."]
+    @State var scoreArray = [Int(),Int(),Int(),Int(),Int(),Int(),Int(),Int(),Int(),Int(),Int(),Int(),Int(),Int()]
     
     var bergView: some View {
         VStack {
@@ -67,27 +78,87 @@ struct BergBalance: View {
                             ForEach(0..<14) { i in
                                 Text(survey.questions[i].title)
                                     .bold()
-                                Text(instructions[i])
+                                Text(survey.questions[i].instructions!)
                                     .padding(.bottom, 1)
                                 VStack(alignment: .leading) {
-                                    ForEach(0..<survey.questions[i].rating.count, id: \.self) { r in
+                                    Button {
+                                        getScoreArray(num: 0, index: i)
+                                    } label: {
                                         HStack(alignment: .top) {
-                                            if r == 0 {
-                                                Text("4  ")
-                                            }
-                                            else if r == 1 {
-                                                Text("3  ")
-                                            }
-                                            else if r == 2 {
-                                                Text("2  ")
-                                            }
-                                            else if r == 3 {
-                                                Text("1  ")
+                                            if setBoldSelected(index: i) == 4 {
+                                                Image(systemName: "checkmark.square")
+                                                    .foregroundColor(.black)
                                             }
                                             else {
-                                                Text("0  ")
+                                                Image(systemName: "square")
+                                                    .foregroundColor(.black)
                                             }
-                                            Text(survey.questions[i].rating[r])
+                                            Text(survey.questions[i].rating[0])
+                                                .foregroundColor(.black)
+                                        }
+                                    }
+                                    Button {
+                                        getScoreArray(num: 1, index: i)
+                                    } label: {
+                                        HStack(alignment: .top) {
+                                            if setBoldSelected(index: i) == 3 {
+                                                Image(systemName: "checkmark.square")
+                                                    .foregroundColor(.black)
+                                            }
+                                            else {
+                                                Image(systemName: "square")
+                                                    .foregroundColor(.black)
+                                            }
+                                            Text(survey.questions[i].rating[1])
+                                                .foregroundColor(.black)
+                                        }
+                                    }
+                                    Button {
+                                        getScoreArray(num: 2, index: i)
+                                    } label: {
+                                        HStack(alignment: .top) {
+                                            if setBoldSelected(index: i) == 2 {
+                                                Image(systemName: "checkmark.square")
+                                                    .foregroundColor(.black)
+                                            }
+                                            else {
+                                                Image(systemName: "square")
+                                                    .foregroundColor(.black)
+                                            }
+                                            Text(survey.questions[i].rating[2])
+                                                .foregroundColor(.black)
+                                        }
+                                    }
+                                    Button {
+                                        getScoreArray(num: 3, index: i)
+                                    } label: {
+                                        HStack(alignment: .top) {
+                                            if setBoldSelected(index: i) == 1 {
+                                                Image(systemName: "checkmark.square")
+                                                    .foregroundColor(.black)
+                                            }
+                                            else {
+                                                Image(systemName: "square")
+                                                    .foregroundColor(.black)
+                                            }
+                                            Text(survey.questions[i].rating[3])
+                                                .foregroundColor(.black)
+                                        }
+                                    }
+                                    Button {
+                                        getScoreArray(num: 4, index: i)
+                                    } label: {
+                                        HStack(alignment: .top) {
+                                            if setBoldSelected(index: i) == 0 {
+                                                Image(systemName: "checkmark.square")
+                                                    .foregroundColor(.black)
+                                            }
+                                            else {
+                                                Image(systemName: "square")
+                                                    .foregroundColor(.black)
+                                            }
+                                            Text(survey.questions[i].rating[4])
+                                                .foregroundColor(.black)
                                         }
                                     }
                                 }.padding(.bottom)
@@ -127,8 +198,45 @@ struct BergBalance: View {
                     bergView
                 }.padding(25)
             }
+        }.onAppear {
+            for i in 0..<scoreArray.count {
+                scoreArray[i] = 5
+            }
         }
     }
+    
+    func getScoreArray(num: Int, index: Int) {
+        var numReturn = 0
+        
+        for i in 0..<14 {
+            if i == index {
+                scoreArray.remove(at: i)
+                if num == 0 {
+                    numReturn = 4
+                }
+                else if num == 1 {
+                    numReturn = 3
+                }
+                else if num == 2 {
+                    numReturn = 2
+                }
+                else if num == 3 {
+                    numReturn = 1
+                }
+                else if num == 4 {
+                    numReturn = 0
+                }
+                scoreArray.insert(numReturn, at: i)
+            }
+        }
+    }
+    
+    func setBoldSelected(index: Int) -> Int {
+        let array = scoreArray
+        let bolded = array[index]
+        return bolded
+    }
 }
+
 
 

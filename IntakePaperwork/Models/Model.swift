@@ -18,5 +18,6 @@ struct Survey: Identifiable, Decodable {
 struct Questions: Identifiable, Decodable {
     var id: Int
     var title: String
+    var instructions: String?
     var rating: [String]
 }
