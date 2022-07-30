@@ -32,7 +32,6 @@ struct LefsView: View {
                             .font(.headline)
                             .bold()
                             .padding(.bottom, 5)
-                        
                     }
                     else {
                         Text("El siguiente escala aplica a cada pregunta:")
@@ -101,7 +100,9 @@ struct LefsView: View {
                                 .padding()
                         }
                     }
-                }.padding(.bottom).padding(.horizontal)
+                }
+                    .padding(.bottom)
+                    .padding(.horizontal)
             }.frame(width: UIScreen.main.bounds.width)
     }
     
@@ -112,7 +113,7 @@ struct LefsView: View {
                 .foregroundColor(.white)
                 .cornerRadius(5)
                 .shadow(radius: 5)
-                .padding(.top, UIScreen.main.bounds.width == 768 || UIScreen.main.bounds.width == 810 ? 0 : 15)
+                .padding(.top, UIScreen.main.bounds.width == 768 || UIScreen.main.bounds.width == 810 || UIScreen.main.bounds.width == 744 ? 10 : 15)
             ZStack {
                 ScrollView {
                     VStack {
@@ -171,7 +172,6 @@ struct LefsView: View {
                                             .font(.headline)
                                             .bold()
                                             .padding(.bottom, 5)
-                                        
                                     }
                                     else {
                                         Text("El siguiente escala aplica a cada pregunta:")
@@ -191,7 +191,9 @@ struct LefsView: View {
                         }.frame(height: 350)
                         Spacer()
                     }
-            }.padding(.top, UIScreen.main.bounds.width == 768 || UIScreen.main.bounds.width == 810 ? 0 : 15)
+                    .padding(.top, UIScreen.main.bounds.width == 768 || survey.language == "Spanish" || UIScreen.main.bounds.width == 744 ? 10:0)
+
+            }.padding(.top, UIScreen.main.bounds.width == 768 || UIScreen.main.bounds.width == 810 || UIScreen.main.bounds.width == 744 ? 10 : 15)
             
         }
             .padding(.bottom, keyboardChange ? UIScreen.main.bounds.height*3/15 : 0)

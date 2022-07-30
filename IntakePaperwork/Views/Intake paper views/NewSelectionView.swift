@@ -56,6 +56,11 @@ struct NewSelectionView: View {
                                         withAnimation {
                                             isEnglish = true
                                             isSpanish = false
+                                            for i in 0..<model.surveysTF.count {
+                                                model.surveysTF[i] = false
+                                            }
+                                            model.surveysTF[0] = true
+                                            nameSelected = "LEFS"
                                         }
                                     }
                                 } label: {
@@ -88,6 +93,11 @@ struct NewSelectionView: View {
                                         withAnimation {
                                             isSpanish = true
                                             isEnglish = false
+                                            for i in 0..<model.surveysTF.count {
+                                                model.surveysTF[i] = false
+                                            }
+                                            model.surveysTF[1] = true
+                                            nameSelected = "LEFS"
                                         }
                                     }
                                 } label: {
